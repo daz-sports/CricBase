@@ -9,4 +9,4 @@ Tools used:
  - Python (Including packages: pandas, sqlite3, requests,...)
  - SQL
 
-This data is made available under the [Open Data Commons Attribution License (ODC-By) v1.0](https://opendatacommons.org/licenses/by/1-0/)
+The Cricsheet data is made available under the [Open Data Commons Attribution License (ODC-By) v1.0](https://opendatacommons.org/licenses/by/1-0/)
