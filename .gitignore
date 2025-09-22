@@ -205,3 +205,12 @@ cython_debug/
 marimo/_static/
 marimo/_lsp/
 __marimo__/
+
+# Ignore the main database file
+Documents/Cricket Database/CricBase100725.db
+
+# And the past databases
+Documents/Cricket Database/Past db/
+
+# Ignore the folder containing all raw JSON files
+Documents/Cricket Database/Cricsheet downloads/t20s_json/
