@@ -211,3 +211,4 @@ __marimo__/
 
 # Ignore the folder containing all raw JSON files
 /t20s_json/
+/non_git/
