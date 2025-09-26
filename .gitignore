@@ -210,5 +210,8 @@ __marimo__/
 *.db
 
 # Ignore the folder containing all raw JSON files
-/t20s_json/
 /non_git/
+
+# SQLite temporary files
+*.db-shm
+*.db-wal
