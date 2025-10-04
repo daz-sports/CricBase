@@ -208,9 +208,11 @@ __marimo__/
 
 # Ignore database files
 *.db
+*.log
 
 # Ignore the folder containing all raw JSON files
 /non_git/
+/Backups/
 
 # SQLite temporary files
 *.db-shm
