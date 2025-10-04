@@ -1,0 +1,504 @@
+key_cricsheet,key_cricinfo,key_cricinfo_2,cricsheet_name,unique_name,full_name,first_name,last_name,display_name,sex,birth_date,birth_place,birth_nation,bat_hand,bowl_hand,bowl_style,current_nation,previous_nation_1,previous_nation_2,wicketkeeper,death_date
+4b0e3049,661441.0,NaN,AA Alleyne,AA Alleyne,Aaliyah Alicia Alleyne,Aaliyah,Alleyne,Aaliyah Alleyne,female,1994-11-11,NaN,NaN,R,R,Seam,West Indies,Barbados,NaN,NaN,NaN
+a8e54ef4,793441.0,NaN,Aamer Jamal,Aamer Jamal,Aamer Jamal,Aamer,Jamal,Aamer Jamal,male,1996-07-05,Mianwali,Pakistan,R,R,Seam,Pakistan,NaN,NaN,NaN,NaN
+58c2fac4,1078692.0,NaN,A Athanaze,A Athanaze,Alick Athanaze,Alick,Athanaze,Alick Athanaze,male,1998-12-07,NaN,Dominica,L,R,Offbreak,West Indies,NaN,NaN,NaN,NaN
+6ef13460,303423.0,NaN,A Balbirnie,A Balbirnie,Andrew Balbirnie,Andrew,Balbirnie,Andy Balbirnie,male,1990-12-28,Dublin,Ireland,R,R,Offbreak,Ireland,NaN,NaN,1.0,NaN
+2cec2a92,1158538.0,NaN,Abbas Afridi,Abbas Afridi,Muhammad Abbas Afridi,Muhammad,Afridi,Abbas Afridi,male,2001-04-05,Fata,Pakistan,R,R,Seam,Pakistan,NaN,NaN,NaN,NaN
+f29185a1,1070183.0,NaN,Abhishek Sharma,Abhishek Sharma,Abhishek Sharma,Abhishek,Sharma,Abhishek Sharma,male,2000-09-04,Amritsar,India,L,L,Orthodox,India,NaN,NaN,NaN,NaN
+9565fda6,1255411.0,NaN,AB Kaur,AB Kaur,Amanjot Bhupinder Kaur,Amanjot,Kaur,Amanjot Kaur,female,2000-08-25,Chandigarh,India,R,R,Seam,India,NaN,NaN,NaN,NaN
+dcf0e8f4,482506.0,NaN,A Bosch,A Bosch,Anneke Elizabeth Bosch,Anneke,Bosch,Anneke Bosch,female,1993-08-17,East London,South Africa,R,R,"Seam, Offbreak",South Africa,NaN,NaN,NaN,NaN
+abb7c76c,734459.0,NaN,Abrar Ahmed,Abrar Ahmed,Abrar Ahmed,Abrar,Ahmed,Abrar Ahmed,male,1998-09-11,Karachi,Pakistan,R,R,Legbreak,Pakistan,NaN,NaN,NaN,NaN
+ffd5fcd8,1229015.0,NaN,A Canning,A Canning,Ava Canning,Ava,Canning,Ava Canning,female,2004-02-02,NaN,NaN,R,R,Seam,Ireland,NaN,NaN,NaN,NaN
+910dd54e,1187120.0,NaN,A Capsey,A Capsey,Alice Capsey,Alice,Capsey,Alice Capsey,female,2004-08-11,NaN,NaN,R,R,Offbreak,England,NaN,NaN,NaN,NaN
+ac56b5a7,318853.0,NaN,AC Jayangani,AC Jayangani,Athapaththu Mudiyanselage Chamari Jayangani Kumai Athapaththu,Athapaththu,Athapaththu,Chamari Athapaththu,female,1990-02-09,Gokarella,Sri Lanka,L,R,Offbreak,Sri Lanka,NaN,NaN,NaN,NaN
+7673c908,803971.0,NaN,AC Kerr,AC Kerr,Amelia Charlotte Kerr,Amelia,Kerr,Amelia Kerr,female,2000-10-13,Wellington,New Zealand,R,R,Legbreak,New Zealand,NaN,NaN,NaN,NaN
+66498395,1229005.0,NaN,A Dalzell,A Dalzell,Alana Dalzell,Alana,Dalzell,Alana Dalzell,female,2001-03-26,Londonderry,Northern Ireland,R,R,Seam,Ireland,NaN,NaN,NaN,NaN
+5b16a806,574178.0,NaN,A Dananjaya,A Dananjaya,Mahamarakkala Kurukulasooriya Patabendige Akila Dananjaya Perera,Mahamarakkala,Perera,Akila Dananjaya,male,1993-10-04,Panadura,Sri Lanka,L,R,"Offbreak, Legbreak",Sri Lanka,NaN,NaN,NaN,NaN
+d2b1f515,1163087.0,NaN,A Dercksen,A Dercksen,Annerie Dercksen,Annerie,Dercksen,Annerie Dercksen,female,2001-04-26,Beaufort West,South Africa,R,R,Seam,South Africa,NaN,NaN,NaN,NaN
+896d78ad,49764.0,NaN,AD Mathews,AD Mathews,Angelo Davis Mathews,Angelo,Mathews,Angelo Mathews,male,1987-06-02,Colombo,Sri Lanka,R,R,Seam,Sri Lanka,NaN,NaN,NaN,NaN
+bbd41817,276298.0,NaN,AD Russell,AD Russell,Andre Dwayne Russell,Andre,Russell,Andre Russell,male,1988-04-29,NaN,Jamaica,R,R,Seam,West Indies,NaN,NaN,NaN,NaN
+1bae756b,51862.0,NaN,ADS Fletcher,ADS Fletcher,Andre David Stephon Fletcher,Andre,Fletcher,Andre Fletcher,male,1987-11-28,La Tante,Grenada,R,R,"Seam, Legbreak",West Indies,NaN,NaN,1.0,NaN
+b05e45e4,515874.0,NaN,AE Jones,AE Jones,Amy Ellen Jones,Amy,Jones,Amy Jones,female,1993-06-13,Sutton Coldfield,England,R,NaN,NaN,England,NaN,NaN,1.0,NaN
+37138918,935995.0,NaN,Afif Hossain,Afif Hossain,Afif Hossain Dhrubo,Afif,Dhrubo,Afif Hossain,male,1999-09-22,Khulna,Bangladesh,L,R,Offbreak,Bangladesh,NaN,NaN,NaN,NaN
+350bb1b1,450860.0,NaN,AF Milne,AF Milne,Adam Fraser Milne,Adam,Milne,Adam Milne,male,1992-04-13,Palmerston North,New Zealand,R,R,Seam,New Zealand,NaN,NaN,NaN,NaN
+bc969efb,858809.0,NaN,A Gardner,A Gardner,Ashleigh Katherine Gardner,Ashleigh,Gardner,Ashleigh Gardner,female,1997-04-15,Bankstown,Australia,R,R,Offbreak,Australia,NaN,NaN,NaN,NaN
+89c16049,623977.0,NaN,Agha Salman,Agha Salman,Salman Ali Agha,Salman,Agha,Salman Agha,male,1993-11-23,Lahore,Pakistan,R,R,Offbreak,Pakistan,NaN,NaN,NaN,NaN
+ccaa3434,1208961.0,NaN,A Hlubi,A Hlubi,Ayanda Hlubi,Ayanda,Hlubi,Ayanda Hlubi,female,2004-07-16,NaN,NaN,R,R,Seam,South Africa,NaN,NaN,NaN,NaN
+e8fa03ed,1229014.0,NaN,A Hunter,A Hunter,Amy Hunter,Amy,Hunter,Amy Hunter,female,2005-10-11,Belfast,Northern Ireland,R,NaN,NaN,Ireland,NaN,NaN,1.0,NaN
+321644de,275486.0,NaN,AJ Healy,AJ Healy,Alyssa Jean Healy,Alyssa,Healy,Alyssa Healy,female,1990-03-24,Gold Coast,Australia,R,NaN,NaN,Australia,NaN,NaN,1.0,NaN
+4d7f517e,530812.0,NaN,AJ Hosein,AJ Hosein,Akeal Jerome Hosein,Akeal,Hosein,Akeal Hosein,male,1993-04-25,Port of Spain,Trinidad and Tobago,L,L,Orthodox,West Indies,NaN,NaN,NaN,NaN
+0d518f89,387261.0,NaN,A Khaka,A Khaka,Ayabonga Khaka,Ayabonga,Khaka,Ayabonga Khaka,female,1992-07-18,NaN,NaN,R,R,Seam,South Africa,NaN,NaN,NaN,NaN
+f888a374,1351945.0,NaN,AK Maguire,AK Maguire,Aimee Kate Maguire,Aimee,Maguire,Aimee Maguire,female,2006-09-09,Dublin,Ireland,R,L,Orthodox,Ireland,NaN,NaN,NaN,NaN
+6a26221c,600498.0,NaN,AK Markram,AK Markram,Aiden Kyle Markram,Aiden,Markram,Aiden Markram,male,1994-10-04,Centurion,South Africa,R,R,Offbreak,South Africa,NaN,NaN,NaN,NaN
+2904b4b6,572645.0,NaN,Aliya Riaz,Aliya Riaz,Aliya Riaz,Aliya,Riaz,Aliya Riaz,female,1992-09-24,Rawalpindi,Pakistan,R,R,Seam,Pakistan,NaN,NaN,NaN,NaN
+ab6b1c45,540316.0,NaN,AL Phehlukwayo,AL Phehlukwayo,Andile Lucky Phehlukwayo,Andile,Phehlukwayo,Andile Phehlukwayo,male,1996-03-03,Durban,South Africa,L,R,Seam,South Africa,NaN,NaN,NaN,NaN
+09a58e2d,538592.0,NaN,A Mazvishaya,A Mazvishaya,Audrey Mazvishaya,Audrey,Mazvishaya,Audrey Mazvishaya,female,1993-03-09,NaN,NaN,R,R,Seam,Zimbabwe,NaN,NaN,NaN,NaN
+de3d549a,786925.0,NaN,AM Fernando,AM Fernando,Asitha Madusanka Fernando,Asitha,Fernando,Asitha Fernando,male,1997-07-31,Katuneriya,Sri Lanka,R,R,Seam,Sri Lanka,NaN,NaN,NaN,NaN
+d405c0d5,1124283.0,NaN,AM Hardie,AM Hardie,Aaron Mark Hardie,Aaron,Hardie,Aaron Hardie,male,1999-01-07,Bournemouth,England,R,R,Seam,Australia,NaN,NaN,NaN,NaN
+a811cb83,1352168.0,NaN,A Munisar,A Munisar,Ashmini Munisar,Ashmini,Munisar,Ashmini Munisar,female,2003-12-07,NaN,Guyana,R,R,Offbreak,West Indies,NaN,NaN,NaN,NaN
+c8e6bddd,490956.0,NaN,A Ndiraya,A Ndiraya,Ashley Rutendo Ndiraya,Ashley,Ndiraya,Ashley Ndiraya,female,1992-07-06,NaN,NaN,L,R,Legbreak,Zimbabwe,NaN,NaN,NaN,NaN
+3abe1ef6,596456.0,NaN,A Ndlovu,A Ndlovu,Ainsley Ndlovu,Ainsley,Ndlovu,Ainsley Ndlovu,male,1996-01-26,Bulawayo,Zimbabwe,R,L,Orthodox,Zimbabwe,NaN,NaN,NaN,NaN
+397369e0,592593.0,NaN,AN Kelly,AN Kelly,Arlene Nora Kelly,Arlene,Kelly,Arlene Kelly,female,1994-01-08,Auckland,New Zealand,R,R,Seam,Ireland,NaN,NaN,NaN,NaN
+acdc62f5,481979.0,NaN,A Nortje,A Nortje,Anrich Arno Nortje,Anrich,Nortje,Anrich Nortje,male,1993-11-16,NaN,NaN,R,R,Seam,South Africa,NaN,NaN,NaN,NaN
+f2e8b37c,1332783.0,NaN,Arafat Minhas,Arafat Minhas,Arafat Minhas,Arafat,Minhas,Arafat Minhas,male,2005-01-02,Multan,Pakistan,L,L,Orthodox,Pakistan,NaN,NaN,NaN,NaN
+eadc8924,960867.0,NaN,A Reddy,A Reddy,Arundhati Reddy,Arundhati,Reddy,Arundhati Reddy,female,1997-04-10,NaN,NaN,R,R,Seam,India,NaN,NaN,NaN,NaN
+2e171977,554691.0,NaN,AR Patel,AR Patel,Axar Rajeshbhai Patel,Axar,Patel,Axar Patel,male,1994-01-20,Anand,India,L,L,Orthodox,India,NaN,NaN,NaN,NaN
+244048f6,1125976.0,NaN,Arshdeep Singh,Arshdeep Singh,Arshdeep Singh,Arshdeep,Singh,Arshdeep Singh,male,1999-02-05,Guna,India,L,L,Seam,India,NaN,NaN,NaN,NaN
+ebb74564,1070754.0,NaN,A Simelane,A Simelane,Andile Simelane,Andile,Simelane,Andile Simelane,male,2003-06-03,Durban,South Africa,R,R,Seam,South Africa,NaN,NaN,NaN,NaN
+b0946605,670031.0,NaN,AS Joseph,AS Joseph,Alzarri Shaheim Joseph,Alzarri,Joseph,Alzarri Joseph,male,1996-11-20,NaN,Antigua and Barduda,R,R,Seam,West Indies,NaN,NaN,NaN,NaN
+42d9dd09,355351.0,NaN,ASS Fletcher,ASS Fletcher,Afy Samantha Sharlyn Fletcher,Afy,Fletcher,Afy Fletcher,female,1987-03-17,NaN,Grenada,R,R,Legbreak,West Indies,NaN,NaN,NaN,NaN
+65d9b6b6,1071705.0,NaN,A Sutherland,A Sutherland,Annabel Sutherland,Annabel,Sutherland,Annabel Sutherland,female,2001-10-12,NaN,NaN,R,R,Seam,Australia,NaN,NaN,NaN,NaN
+249d60c9,244497.0,NaN,AU Rashid,AU Rashid,Adil Usman Rashid,Adil,Rashid,Adil Rashid,male,1988-02-17,Bradford,England,R,R,Legbreak,England,NaN,NaN,NaN,NaN
+eef2536f,694211.0,NaN,Avesh Khan,Avesh Khan,Avesh Khan,Avesh,Khan,Avesh Khan,male,1996-12-13,Indore,India,R,R,Seam,India,NaN,NaN,NaN,NaN
+e15f4fa4,915489.0,NaN,Ayesha Zafar,Ayesha Zafar,Ayesha Zafar,Ayesha,Zafar,Ayesha Zafar,female,1994-09-09,Sialkot,Pakistan,R,R,Legbreak,Pakistan,NaN,NaN,NaN,NaN
+ee8f1a6d,1137262.0,NaN,Azam Khan,Azam Khan,Azam Khan,Azam,Khan,Azam Khan,male,1998-08-10,NaN,NaN,R,NaN,NaN,Pakistan,NaN,NaN,1.0,NaN
+14f96089,379504.0,NaN,A Zampa,A Zampa,Adam Zampa,Adam,Zampa,Adam Zampa,male,1992-03-31,Shellharbour,Australia,R,R,Legbreak,Australia,NaN,NaN,NaN,NaN
+8a75e999,348144.0,NaN,Babar Azam,Babar Azam,Mohammad Babar Azam,Mohammad,Azam,Babar Azam,male,1994-10-15,Lahore,Pakistan,R,R,Offbreak,Pakistan,NaN,NaN,NaN,NaN
+cad40f5e,596417.0,NaN,BA Carse,BA Carse,Brydon Alexander Carse,Brydon,Carse,Brydon Carse,male,1995-07-31,Eastern Cape,South Africa,R,R,Seam,England,NaN,NaN,NaN,NaN
+7fca84b7,670035.0,NaN,BA King,BA King,Brandon Alexander King,Brandon,King,Brandon King,male,1994-12-16,Kingston,Jamaica,R,NaN,NaN,West Indies,NaN,NaN,NaN,NaN
+3b5a9438,916037.0,NaN,BAM Heath,BAM Heath,Bess Alice May Heath,Bess,Heath,Bess Heath,female,2001-08-20,Chesterfield,England,R,NaN,NaN,England,NaN,NaN,1.0,NaN
+564afdcf,499247.0,NaN,B Bezuidenhout,B Bezuidenhout,Bernadine Bezuidenhout,Bernadine,Bezuidenhout,Bernadine Bezuidenhout,female,1993-09-14,Kimberley,South Africa,R,NaN,NaN,New Zealand,South Africa,NaN,1.0,NaN
+8a522c6c,1302686.0,NaN,B Biza,B Biza,Beloved Biza,Beloved,Biza,Beloved Biza,female,2009-01-05,Chitungwiza,Zimbabwe,R,NaN,NaN,Zimbabwe,NaN,NaN,NaN,NaN
+9a2fc964,553249.0,NaN,BC Fortuin,BC Fortuin,Bjorn Carl Fortuin,Bjorn,Fortuin,Bjorn Fortuin,male,1994-10-21,Paarl,South Africa,R,L,Orthodox,South Africa,NaN,NaN,NaN,NaN
+dabbd0ae,629080.0,NaN,B Fernando,B Fernando,Binura Fernando,Binura,Fernando,Binura Fernando,male,1995-07-12,Colombo,Sri Lanka,R,L,Seam,Sri Lanka,NaN,NaN,NaN,NaN
+c64b7c5b,874277.0,NaN,BF Smith,BF Smith,Bryony Frances Smith,Bryony,Smith,Bryony Smith,female,1997-11-12,Sutton,England,R,R,Offbreak,England,NaN,NaN,NaN,NaN
+79f5bc26,1125536.0,NaN,BG Lister,BG Lister,Benjamin George Lister,Benjamin,Lister,Ben Lister,male,1996-01-01,Henderson,New Zealand,R,L,Seam,New Zealand,NaN,NaN,NaN,NaN
+eaa36b2a,1071484.0,NaN,BJ Bennett,BJ Bennett,Brian John Bennett,Brian,Bennett,Brian Bennett,male,2003-11-10,NaN,NaN,R,R,Offbreak,Zimbabwe,NaN,NaN,NaN,NaN
+3766056b,348059.0,NaN,BJ McCarthy,BJ McCarthy,Barry John McCarthy,Barry,McCarthy,Barry McCarthy,male,1992-09-13,NaN,NaN,R,R,Seam,Ireland,NaN,NaN,NaN,NaN
+5d1e7582,629074.0,NaN,BKG Mendis,BKG Mendis,Balapuwaduge Kusal Gimhan Mendis,Balapuwaduge,Mendis,Kusal Mendis,male,1995-02-02,Moratuwa,Sri Lanka,R,R,Legbreak,Sri Lanka,NaN,NaN,1.0,NaN
+52d1dbc8,381258.0,NaN,BL Mooney,BL Mooney,Bethany Louise Mooney,Bethany,Mooney,Beth Mooney,female,1994-01-14,Shepparton,Australia,L,NaN,NaN,Australia,NaN,NaN,1.0,NaN
+dadb9703,806239.0,NaN,B Mavuta,B Mavuta,Brandon Anesu Mavuta,Brandon,Mavuta,Brandon Mavuta,male,1997-03-04,Kadoma,Zimbabwe,R,R,Legbreak,Zimbabwe,NaN,NaN,NaN,NaN
+efb6cb2a,594654.0,NaN,BM Halliday,BM Halliday,Brooke Maree Halliday,Brooke,Halliday,Brooke Halliday,female,1995-10-30,Hamilton,New Zealand,L,R,Seam,New Zealand,NaN,NaN,NaN,NaN
+b55fb828,631609.0,NaN,BMSM Kumari,BMSM Kumari,Dasanayaka Mudiyanselage Sugandika Manel Kumari,Dasanayaka,Kumari,Sugandika Kumari,female,1991-10-05,Anamaduwa,Sri Lanka,L,L,Orthodox,Sri Lanka,NaN,NaN,NaN,NaN
+449f4e3c,827051.0,NaN,B Muzarabani,B Muzarabani,Blessing Muzarabani,Blessing,Muzarabani,Blessing Muzarabani,male,1996-10-02,Harare,Zimbabwe,R,R,Seam,Zimbabwe,NaN,NaN,NaN,NaN
+d5130a30,1151288.0,NaN,B Sai Sudharsan,B Sai Sudharsan,Bhardwaj Sai Sudharsan,Bhardwaj,Sudharsan,Sai Sudharsan,male,2001-10-15,Chennai,India,L,R,Legbreak,India,NaN,NaN,NaN,NaN
+e1891e00,959769.0,NaN,BV Sears,BV Sears,Benjamin Vincent Sears,Benjamin,Sears,Ben Sears,male,1998-02-11,Lower Hutt,New Zealand,R,R,Seam,New Zealand,NaN,NaN,NaN,NaN
+1a448be0,928059.0,NaN,B White,B White,Benjamin Charlie White,Benjamin,White,Ben White,male,1998-08-29,Dublin,Ireland,R,R,Legbreak,Ireland,NaN,NaN,NaN,NaN
+75820733,474190.0,NaN,CA Henry,CA Henry,Chinelle Akhalia Henry,Chinelle,Henry,Chinelle Henry,female,1995-08-17,NaN,NaN,R,R,Seam,West Indies,NaN,NaN,NaN,NaN
+bd0a4a7d,364343.0,NaN,CA Young,CA Young,Craig Alexander Young,Craig,Young,Craig Young,male,1990-04-04,Londonderry,Ireland,R,R,Seam,Ireland,NaN,NaN,NaN,NaN
+478a63e7,595921.0,NaN,C Campher,C Campher,Curtis Campher,Curtis,Campher,Curtis Campher,male,1999-04-20,Johannesburg,Scotland,R,R,Seam,Ireland,NaN,NaN,NaN,NaN
+fe366f34,1210488.0,NaN,C Connolly,C Connolly,Cooper Connolly,Cooper,Connolly,Cooper Connolly,male,2003-08-22,Perth,Australia,L,L,Orthodox,Australia,NaN,NaN,NaN,NaN
+39f351c6,1232213.0,NaN,CE Coulter Reilly,CE Coulter Reilly,Christina E Coulter Reilly,Christina,Reilly,Christina Coulter Reilly,female,2003-08-17,NaN,NaN,R,NaN,NaN,Ireland,NaN,NaN,1.0,NaN
+c6625a26,1039421.0,NaN,CE Dean,CE Dean,Charlotte Ellen Dean,Charlotte,Dean,Charlie Dean,female,2000-12-22,Burton-on-Trent,England,R,R,Offbreak,England,NaN,NaN,NaN,NaN
+d285acaf,526021.0,NaN,CE McConchie,CE McConchie,Cole Edward McConchie,Cole,McConchie,Cole McConchie,male,1992-01-12,Christchurch,New Zealand,R,R,Offbreak,New Zealand,NaN,NaN,NaN,NaN
+eaa76d3c,1076713.0,NaN,C Green,C Green,Cameron Donald Green,Cameron,Green,Cameron Green,male,1999-06-03,NaN,NaN,R,R,Seam,Australia,NaN,NaN,NaN,NaN
+ffe699c0,288992.0,NaN,CJ Jordan,CJ Jordan,Christopher James Jordan,Christopher,Jordan,Chris Jordan,male,1988-10-04,Christ Church,Barbados,R,R,Seam,England,NaN,NaN,NaN,NaN
+4d4605e6,453370.0,NaN,CL Tryon,CL Tryon,Chloe-Lesleigh Tryon,Chloe-Lesleigh,Tryon,Chloe Tryon,female,1994-01-25,Durban,South Africa,R,L,Orthodox,South Africa,NaN,NaN,NaN,NaN
+3560a786,1045883.0,NaN,C Madande,C Madande,Clive Madande,Clive,Madande,Clive Madande,male,2000-04-12,NaN,NaN,R,NaN,NaN,Zimbabwe,NaN,NaN,1.0,NaN
+5a50471c,1135028.0,NaN,C Murray,C Murray,Cara Murray,Cara,Murray,Cara Murray,female,2000-11-01,Belfast,Northern Ireland,R,R,Legbreak,Ireland,NaN,NaN,NaN,NaN
+1ba50005,1306917.0,NaN,C Mutasa,C Mutasa,Christine Mutasa,Christine,Mutasa,Christine Mutasa,female,NaN,NaN,NaN,NaN,NaN,NaN,Zimbabwe,NaN,NaN,NaN,NaN
+639000b6,355355.0,NaN,CN Nation,CN Nation,Chedean Natasha Nation,Chedean,Nation,Chedean Nation,female,1986-10-31,NaN,Jamaica,R,NaN,NaN,West Indies,NaN,NaN,1.0,NaN
+907e5f6c,1340525.0,NaN,C Pavely,C Pavely,Charis Pavely,Charis,Pavely,Charis Pavely,female,2004-10-24,Redditch,England,L,L,Orthodox,England,NaN,NaN,NaN,NaN
+c96311d4,55412.0,NaN,CR Ervine,CR Ervine,Craig Richard Ervine,Craig,Ervine,Craig Ervine,male,1985-08-19,Harare,Zimbabwe,L,R,Offbreak,Zimbabwe,NaN,NaN,NaN,NaN
+fb9a8cc3,1214080.0,NaN,CS Fraser,CS Fraser,Cherry-Ann Sarah Fraser,Cherry-Ann,Fraser,Cherry-Ann Fraser,female,1999-07-21,NaN,Guyana,L,R,Seam,West Indies,NaN,NaN,NaN,NaN
+99c86133,317148.0,NaN,CS Mugeri,CS Mugeri,Chipo Spiwe Mugeri-Tiripano,Chipo,Mugeri-Tiripano,Chipo Mugeri-Tiripano,female,1992-03-02,NaN,Zimbabwe,L,R,Seam,Zimbabwe,NaN,NaN,NaN,NaN
+8d7fba79,1094714.0,NaN,CT Dhururu,CT Dhururu,Chiedza Teresia Dhururu,Chiedza,Dhururu,Chiedza Dhururu,female,1996-01-04,NaN,NaN,R,NaN,NaN,Zimbabwe,NaN,NaN,1.0,NaN
+5b7ab5a9,1108375.0,NaN,CV Varun,CV Varun,Varun Chakravarthy Vinod,Varun,Vinod,Varun Chakravarthy,male,1991-08-29,Bidar,India,R,R,Legbreak,India,NaN,NaN,NaN,NaN
+a5c48ed1,1186658.0,NaN,C Wickramasinghe,C Wickramasinghe,Chamindu Wickramasinghe,Chamindu,Wickramasinghe,Chamindu Wickramasinghe,male,2002-09-06,Kandy,Sri Lanka,L,R,Seam,Sri Lanka,NaN,NaN,NaN,NaN
+d67d5f00,321777.0,NaN,DA Miller,DA Miller,David Andrew Miller,David,Miller,David Miller,male,1989-06-10,Pietermaritzburg,South Africa,L,R,Offbreak,South Africa,ICC World XI,NaN,NaN,NaN
+dcce6f09,219889.0,NaN,DA Warner,DA Warner,David Andrew Warner,David,Warner,David Warner,male,1986-10-27,Paddington,Australia,L,R,Legbreak,Australia,NaN,NaN,NaN,NaN
+47c449c5,550189.0,NaN,Dayyaan Galiem,Dayyaan Galiem,Abdu Dayyaan Galiem,Abdu,Galiem,Dayyaan Galiem,male,1997-01-02,Cape Town,South Africa,R,R,Seam,South Africa,NaN,NaN,NaN,NaN
+2e81be88,388845.0,NaN,D Brown,D Brown,Darcie R Brown,Darcie,Brown,Darcie Brown,female,2003-03-07,Kapunda,Australia,R,R,Seam,Australia,NaN,NaN,NaN,NaN
+201fef33,597811.0,NaN,DB Sharma,DB Sharma,Deepti Bhagwan Sharma,Deepti,Sharma,Deepti Sharma,female,1997-08-24,Agra,India,L,R,Offbreak,India,NaN,NaN,NaN,NaN
+f0af99a7,698315.0,NaN,D Ferreira,D Ferreira,Donovan Ferreira,Donovan,Ferreira,Donovan Ferreira,male,1998-07-21,Pretoria,South Africa,R,R,Offbreak,South Africa,NaN,NaN,1.0,NaN
+ed6894af,596099.0,NaN,D Foxcroft,D Foxcroft,Dean Foxcroft,Dean,Foxcroft,Dean Foxcroft,male,1998-04-20,Pretoria,South Africa,R,R,Offbreak,New Zealand,NaN,NaN,NaN,NaN
+1d6ff329,961107.0,NaN,D Hemalatha,D Hemalatha,Dayalan Hemalatha,Dayalan,Hemalatha,Dayalan Hemalatha,female,1994-09-29,Chennai,India,R,R,Offbreak,India,NaN,NaN,NaN,NaN
+bcf325d2,1175488.0,NaN,Dhruv Jurel,Dhruv Jurel,Dhruv Chand Jurel,Dhruv,Jurel,Dhruv Jurel,male,2001-01-21,Agra,India,R,NaN,NaN,India,NaN,NaN,1.0,NaN
+a51e6c6e,572638.0,NaN,Diana Baig,Diana Baig,Diana Baig,Diana,Baig,Diana Baig,female,1995-10-15,Gilgit,Pakistan,R,R,Seam,Pakistan,NaN,NaN,NaN,NaN
+f2670a3d,1346729.0,NaN,Dilara Akter,Dilara Akter,Dilara Akter Dola,Dilara,Dola,Dilara Akter,female,2004-04-06,Dinajpur,Bangladesh,R,NaN,NaN,Bangladesh,NaN,NaN,1.0,NaN
+eade4650,381743.0,NaN,DJ Mitchell,DJ Mitchell,Daryl Joseph Mitchell,Daryl,Mitchell,Daryl Mitchell,male,1991-05-20,Hamilton,New Zealand,R,R,Seam,New Zealand,NaN,NaN,NaN,NaN
+53bee17f,355349.0,NaN,DJS Dottin,DJS Dottin,Deandra Jalisa Shakira Dottin,Deandra,Dottin,Deandra Dottin,female,1991-06-21,NaN,Barbados,R,R,Seam,Barbados,West Indies,NaN,NaN,NaN
+de7d833e,793007.0,NaN,D Madushanka,D Madushanka,Lokumarakkalage Dilshan Madushanka,Lokumarakkalage,Madushanka,Dilshan Madushanka,male,2000-09-18,Hambantota,Sri Lanka,R,L,Seam,Sri Lanka,NaN,NaN,NaN,NaN
+7d608e12,465793.0,NaN,DM de Silva,DM de Silva,Dhananjaya Maduranga de Silva,Dhananjaya,Silva,Dhananjaya de Silva,male,1991-09-06,Colombo,Sri Lanka,R,R,Offbreak,Sri Lanka,NaN,NaN,NaN,NaN
+d96165b5,946517.0,NaN,D Myers,D Myers,Dion Nephy Myers,Dion,Myers,Dion Myers,male,2002-03-21,Harare,Zimbabwe,R,R,Seam,Zimbabwe,NaN,NaN,NaN,NaN
+736123bb,1152427.0,NaN,DN Wellalage,DN Wellalage,Dunith Nethmika Wellalage,Dunith,Wellalage,Dunith Wellalage,male,2003-01-09,Colombo,Sri Lanka,L,L,Orthodox,Sri Lanka,NaN,NaN,NaN,NaN
+a139c379,254168.0,NaN,DN Wyatt,DN Wyatt,Danielle Nicole Wyatt-Hodge,Danielle,Wyatt-Hodge,Danni Wyatt-Hodge,female,1991-04-22,Stoke-on-Trent,England,R,R,Offbreak,England,NaN,NaN,NaN,NaN
+df5a6881,379140.0,NaN,DP Conway,DP Conway,Devon Philip Conway,Devon,Conway,Devon Conway,male,1991-07-08,Johannesburg,South Africa,L,R,Seam,New Zealand,NaN,NaN,1.0,NaN
+d2763568,886203.0,NaN,DR Gibson,DR Gibson,Danielle Rose Gibson,Danielle,Gibson,Danielle Gibson,female,2001-04-30,Cheltenham,England,R,R,Seam,England,NaN,NaN,NaN,NaN
+876dbe2d,1172968.0,NaN,DR Mousley,DR Mousley,Daniel Richard Mousley,Daniel,Mousley,Dan Mousley,male,2001-07-08,Nuneaton,England,L,R,Offbreak,England,NaN,NaN,NaN,NaN
+50ee0500,54945.0,NaN,EAJ Richardson,EAJ Richardson,Eimear Ann Jermyn Richardson,Eimear,Richardson,Eimear Richardson,female,1986-09-14,Dublin,Ireland,R,R,Offbreak,Ireland,NaN,NaN,NaN,NaN
+be150fc8,275487.0,NaN,EA Perry,EA Perry,Ellyse Alexandra Perry,Ellyse,Perry,Ellyse Perry,female,1990-11-03,Wahroonga,Australia,R,R,Seam,Australia,NaN,NaN,NaN,NaN
+7693851c,1169661.0,NaN,EJ Carson,EJ Carson,Eden Jean Carson,Eden,Carson,Eden Carson,female,2001-08-08,Dunedin,New Zealand,R,R,Offbreak,New Zealand,NaN,NaN,NaN,NaN
+0ebfb1ad,431901.0,NaN,E Lewis,E Lewis,Evin Lewis,Evin,Lewis,Evin Lewis,male,1991-12-27,Port of Spain,Trinidad and Tobago,L,NaN,NaN,West Indies,NaN,NaN,NaN,NaN
+be592751,1137543.0,NaN,E Marx,E Marx,Eliz-Mari Marx,Eliz-Mari,Marx,Eliz-Mari Marx,female,2003-01-20,NaN,NaN,R,R,Seam,South Africa,NaN,NaN,NaN,NaN
+ec691a5b,1321016.0,NaN,EMKNH Senavirathna,EMKNH Senavirathna,Edirisooriya Mohottilage Kaushini Nuthyanga Heram Senavirathna,Edirisooriya,Senavirathna,Kaushini Nuthyangana,female,2002-08-05,Colombo,Sri Lanka,R,NaN,NaN,Sri Lanka,NaN,NaN,1.0,NaN
+b52ffbbd,670013.0,NaN,FA Allen,FA Allen,Fabian Anthony Allen,Fabian,Allen,Fabian Allen,male,1995-05-07,Kingston,Jamaica,R,L,Orthodox,West Indies,NaN,NaN,NaN,NaN
+558cdd64,627048.0,NaN,Fahima Khatun,Fahima Khatun,Fahima Khatun,Fahima,Khatun,Fahima Khatun,female,1992-11-02,NaN,NaN,R,R,Legbreak,Bangladesh,NaN,NaN,NaN,NaN
+1777c020,512191.0,NaN,Fakhar Zaman,Fakhar Zaman,Fakhar Zaman,Fakhar,Zaman,Fakhar Zaman,male,1990-04-10,Mardan,Pakistan,L,L,Orthodox,Pakistan,NaN,NaN,NaN,NaN
+7b51bfa4,1195124.0,NaN,Fariha Trisna,Fariha Trisna,Fariha Islam Trisna,Fariha,Trisna,Fariha Trisna,female,2002-09-13,NaN,NaN,R,L,Seam,Bangladesh,NaN,NaN,NaN,NaN
+fa6e2cb3,1229016.0,NaN,FA Sargent,FA Sargent,Freya Alexandra Sargent,Freya,Sargent,Freya Sargent,female,2006-01-21,Dublin,Ireland,R,R,Offbreak,Ireland,NaN,NaN,NaN,NaN
+ea9c54de,1144886.0,NaN,Fatima Sana,Fatima Sana,Fatima Sana,Fatima,Sana,Fatima Sana,female,2001-11-08,Karachi,Pakistan,R,R,Seam,Pakistan,NaN,NaN,NaN,NaN
+c0dc015b,1119417.0,NaN,F Chipare,F Chipare,Francisca Chipare,Francisca,Chipare,Francisca Chipare,female,1998-10-01,NaN,NaN,R,R,Seam,Zimbabwe,NaN,NaN,NaN,NaN
+6df697a9,1208952.0,NaN,FC Jonas,FC Jonas,Frances Cecilia Jonas,Frances,Jonas,Fran Jonas,female,2004-04-08,Auckland,New Zealand,R,L,Orthodox,New Zealand,NaN,NaN,NaN,NaN
+abc9f8a4,1195947.0,NaN,FG Kemp,FG Kemp,Freya Grace Kemp,Freya,Kemp,Freya Kemp,female,2005-04-21,London,England,L,L,Seam,England,NaN,NaN,NaN,NaN
+bf74b130,959759.0,NaN,FH Allen,FH Allen,Finnley Hugh Allen,Finnley,Allen,Finn Allen,male,1999-04-22,Auckland,New Zealand,R,NaN,NaN,New Zealand,NaN,NaN,1.0,NaN
+e3fe4b49,1099225.0,NaN,F Hand,F Hand,Fionn Philip Hand,Fionn,Hand,Fionn Hand,male,1998-07-01,Dublin,Ireland,R,R,Seam,Ireland,NaN,NaN,NaN,NaN
+41f534cd,939263.0,NaN,F Tunnicliffe,F Tunnicliffe,Faye Tunnicliffe,Faye,Tunnicliffe,Faye Tunnicliffe,female,1998-12-09,NaN,NaN,R,NaN,NaN,South Africa,NaN,NaN,1.0,NaN
+3204c99f,596010.0,NaN,G Coetzee,G Coetzee,Gerald Coetzee,Gerald,Coetzee,Gerald Coetzee,male,2000-10-02,NaN,NaN,R,R,Seam,South Africa,NaN,NaN,NaN,NaN
+940feccc,1229017.0,NaN,G Dempsey,G Dempsey,Georgina Dempsey,Georgina,Dempsey,Georgina Dempsey,female,2004-07-29,Dublin,Ireland,R,R,Seam,Ireland,NaN,NaN,NaN,NaN
+9a46c4e5,823509.0,NaN,GD Phillips,GD Phillips,Glenn Dominic Phillips,Glenn,Phillips,Glenn Phillips,male,1996-12-06,East London,South Africa,R,R,Offbreak,New Zealand,NaN,NaN,1.0,NaN
+575494db,1208951.0,NaN,GE Plimmer,GE Plimmer,Georgia Ellen Plimmer,Georgia,Plimmer,Georgia Plimmer,female,2004-02-08,Wellington,New Zealand,R,R,Seam,New Zealand,NaN,NaN,NaN,NaN
+e5437608,481875.0,NaN,GF Linde,GF Linde,George Fredrik Linde,George,Linde,George Linde,male,1991-12-04,Cape Town,South Africa,L,L,Orthodox,South Africa,NaN,NaN,NaN,NaN
+99cddc5e,348034.0,NaN,GH Dockrell,GH Dockrell,George Henry Dockrell,George,Dockrell,George Dockrell,male,1992-07-22,Dublin,Ireland,R,L,Orthodox,Ireland,NaN,NaN,NaN,NaN
+1b9d1579,774347.0,NaN,GH Lewis,GH Lewis,Gaby Hollis Lewis,Gaby,Lewis,Gaby Lewis,female,2001-03-27,Dublin,Ireland,R,R,Legbreak,Ireland,NaN,NaN,NaN,NaN
+25550d06,379144.0,NaN,GI Hume,GI Hume,Graham Ian Hume,Graham,Hume,Graham Hume,male,1990-11-23,Johannesburg,South Africa,L,R,Seam,Ireland,NaN,NaN,NaN,NaN
+33b3d2df,1099379.0,NaN,GJ Delany,GJ Delany,Gareth James Delany,Gareth,Delany,Gareth Delany,male,1997-04-28,Dublin,Ireland,R,R,Legbreak,Ireland,NaN,NaN,NaN,NaN
+b681e71e,325026.0,NaN,GJ Maxwell,GJ Maxwell,Glenn James Maxwell,Glenn,Maxwell,Glenn Maxwell,male,1988-10-14,Kew,Australia,R,R,Offbreak,Australia,NaN,NaN,NaN,NaN
+7b1f2542,469879.0,NaN,GL Adams,GL Adams,Georgia Louise Adams,Georgia,Adams,Georgia Adams,female,1993-10-04,Chesterfield,England,R,R,Offbreak,England,NaN,NaN,NaN,NaN
+72166006,381268.0,NaN,GM Harris,GM Harris,Grace Margaret Harris,Grace,Harris,Grace Harris,female,1993-09-18,NaN,NaN,R,R,Offbreak,Australia,NaN,NaN,NaN,NaN
+97bdec3d,670045.0,NaN,G Motie,G Motie,Gudakesh Motie,Gudakesh,Motie,Gudakesh Motie,male,1995-03-29,Georgetown,Guyana,L,L,Orthodox,West Indies,NaN,NaN,NaN,NaN
+4ec96094,468573.0,NaN,GR Adair,GR Adair,George Ross Adair,George,Adair,Ross Adair,male,1994-04-21,NaN,NaN,R,L,Orthodox,Ireland,NaN,NaN,NaN,NaN
+9ff1e91e,1144870.0,NaN,Gull Feroza,Gull Feroza,Gull Feroza,Gull,Feroza,Gull Feroza,female,1998-12-28,NaN,NaN,R,NaN,NaN,Pakistan,NaN,NaN,1.0,NaN
+f0b4e47d,946057.0,NaN,G Wareham,G Wareham,Georgia Wareham,Georgia,Wareham,Georgia Wareham,female,1999-05-26,Terang,Australia,R,R,Legbreak,Australia,NaN,NaN,NaN,NaN
+53068b45,371185.0,NaN,GWHM Perera,GWHM Perera,Gamachchi Withanage Hasini Madushika Perera,Gamachchi,Perera,Hasini Perera,female,1995-06-27,Colombo,Sri Lanka,L,R,Seam,Sri Lanka,NaN,NaN,NaN,NaN
+d7dc5c12,1429513.0,NaN,Habiba Islam,Habiba Islam,Habiba Islam Pinky,Habiba,Pinky,Habiba Islam,female,2009-06-01,NaN,NaN,R,R,Seam,Bangladesh,NaN,NaN,NaN,NaN
+24bb1c2f,1161606.0,NaN,Haris Rauf,Haris Rauf,Haris Rauf,Haris,Rauf,Haris Rauf,male,1993-11-07,NaN,NaN,R,R,Seam,Pakistan,NaN,NaN,NaN,NaN
+2911de16,681305.0,NaN,Hasan Ali,Hasan Ali,Hasan Ali,Hasan,Ali,Hasan Ali,male,1994-07-02,Gujranwala,Pakistan,R,R,Seam,Pakistan,NaN,NaN,NaN,NaN
+80ad39ac,926629.0,NaN,Hasan Mahmud,Hasan Mahmud,Hasan Mahmud,Hasan,Mahmud,Hasan Mahmud,male,1999-10-12,Laxmipur,Bangladesh,R,R,Seam,Bangladesh,NaN,NaN,NaN,NaN
+5691931a,1171127.0,NaN,Haseebullah Khan,Haseebullah Khan,Haseebullah Khan,Haseebullah,Khan,Haseebullah Khan,male,2003-03-20,Pishin,Pakistan,L,NaN,NaN,Pakistan,NaN,NaN,1.0,NaN
+4ae1755b,911707.0,NaN,HC Brook,HC Brook,Harry Cherrington Brook,Harry,Brook,Harry Brook,male,1999-02-22,Keighley,England,R,R,Seam,England,NaN,NaN,NaN,NaN
+4ba0289e,358259.0,NaN,HC Knight,HC Knight,Heather Clare Knight,Heather,Knight,Heather Knight,female,1990-12-26,Plymouth,England,R,R,Offbreak,England,NaN,NaN,NaN,NaN
+9948e262,337790.0,NaN,HE van der Dussen,HE van der Dussen,Hendrik Erasmus van der Dussen,Hendrik,Dussen,Rassie van der Dussen,male,1989-02-07,Pretoria,South Africa,R,R,Legbreak,South Africa,NaN,NaN,NaN,NaN
+99812d10,546629.0,NaN,H Graham,H Graham,Heather Graham,Heather,Graham,Heather Graham,female,1996-10-05,NaN,NaN,R,R,Seam,Australia,NaN,NaN,NaN,NaN
+dbe50b21,625371.0,NaN,HH Pandya,HH Pandya,Hardik Himanshu Pandya,Hardik,Pandya,Hardik Pandya,male,1993-10-11,Choryasi,India,R,R,Seam,India,NaN,NaN,NaN,NaN
+f05167d2,715351.0,NaN,HJ Armitage,HJ Armitage,Hollie Jade Armitage,Hollie,Armitage,Hollie Armitage,female,1997-06-14,Huddersfield,England,R,R,Legbreak,England,NaN,NaN,NaN,NaN
+53cd8da6,372317.0,NaN,H Kaur,H Kaur,Harmanpreet Kaur Bhullar,Harmanpreet,Bhullar,Harmanpreet Kaur,female,1989-03-08,Moga,India,R,R,Offbreak,India,NaN,NaN,NaN,NaN
+235c2bb6,436757.0,NaN,H Klaasen,H Klaasen,Heinrich Klaasen,Heinrich,Klaasen,Heinrich Klaasen,male,1991-07-30,Pretoria,South Africa,R,R,Offbreak,South Africa,NaN,NaN,1.0,NaN
+d32cf49a,474308.0,NaN,HK Matthews,HK Matthews,Hayley Kristen Matthews,Hayley,Matthews,Hayley Matthews,female,1998-03-19,NaN,Barbados,R,R,Offbreak,West Indies,Barbados,NaN,NaN,NaN
+85021bcd,557839.0,NaN,H Madavi,H Madavi,Harshitha Madavi Dissanayake Samarawickrama,Harshitha,Samarawickrama,Harshitha Samarawickrama,female,1998-06-29,Colombo,Sri Lanka,L,R,Seam,Sri Lanka,NaN,NaN,NaN,NaN
+8ca1f93a,543550.0,NaN,HM Rowe,HM Rowe,Hannah Maree Rowe,Hannah,Rowe,Hannah Rowe,female,1996-10-03,Palmerston North,New Zealand,R,R,Seam,New Zealand,NaN,NaN,NaN,NaN
+1ac2a995,443263.0,NaN,HR Walsh,HR Walsh,Hayden Rashidi Walsh,Hayden,Walsh,Hayden Walsh,male,1992-04-23,Saint Croix,U.S. Virgin Islands,L,R,Legbreak,West Indies,United States of America,NaN,NaN,NaN
+59ea70a4,961407.0,NaN,HT Tector,HT Tector,Harry Tom Tector,Harry,Tector,Harry Tector,male,1999-12-06,Dublin,Ireland,R,R,Offbreak,Ireland,NaN,NaN,NaN,NaN
+60c250bf,1211545.0,NaN,IC Gaze,IC Gaze,Isabella Charli Gaze,Isabella,Gaze,Isabella Gaze,female,2004-05-08,Haarlem,Netherlands,R,NaN,NaN,New Zealand,NaN,NaN,1.0,NaN
+a2c23f31,924291.0,NaN,I Dulani,I Dulani,Imesha Dulani Witharana,Imesha,Witharana,Imesha Dulani,female,2002-01-20,NaN,NaN,R,NaN,NaN,Sri Lanka,NaN,NaN,NaN,NaN
+e5b17517,1146066.0,NaN,IECM Wong,IECM Wong,Isabelle Eleanor Chih Ming Wong,Isabelle,Wong,Issy Wong,female,2002-05-15,Chelsea,England,R,R,Seam,England,NaN,NaN,NaN,NaN
+29e253dd,480603.0,NaN,Iftikhar Ahmed,Iftikhar Ahmed,Iftikhar Ahmed,Iftikhar,Ahmed,Iftikhar Ahmed,male,1990-09-03,Peshawar,Pakistan,R,R,Offbreak,Pakistan,NaN,NaN,NaN,NaN
+5ad8c974,465327.0,NaN,I Kaia,I Kaia,Innocent Kaia,Innocent,Kaia,Innocent Kaia,male,1992-08-10,Harare,Zimbabwe,R,R,Legbreak,Zimbabwe,NaN,NaN,NaN,NaN
+9cb8d7a6,227758.0,NaN,Imad Wasim,Imad Wasim,Syed Imad Wasim,Syed,Wasim,Imad Wasim,male,1988-12-18,Swansea,Wales,L,L,Orthodox,Pakistan,NaN,NaN,NaN,NaN
+dc596fac,572633.0,NaN,Iram Javed,Iram Javed,Iram Javed,Iram,Javed,Iram Javed,female,1991-12-16,Lahore,Pakistan,R,R,Seam,Pakistan,NaN,NaN,NaN,NaN
+a61850e6,434844.0,NaN,I Ranaweera,I Ranaweera,Inoka Ranaweera,Inoka,Ranaweera,Inoka Ranaweera,female,1986-02-18,Balapitiya,Sri Lanka,L,L,Orthodox,Sri Lanka,NaN,NaN,NaN,NaN
+ee95065d,1199426.0,NaN,Irfan Khan,Irfan Khan,Muhammad Irfan Khan,Muhammad,Khan,Irfan Khan,male,2002-12-28,Mianwali,Pakistan,R,R,Seam,Pakistan,NaN,NaN,NaN,NaN
+5d428b3d,1204961.0,NaN,Ishma Tanjim,Ishma Tanjim,Ishma Tanjim,Ishma,Tanjim,Ishma Tanjim,female,1997-02-10,NaN,NaN,R,R,Offbreak,Bangladesh,NaN,NaN,NaN,NaN
+641ac5ff,559066.0,NaN,IS Sodhi,IS Sodhi,Inderbir Singh Sodhi,Inderbir,Sodhi,Ish Sodhi,male,1992-10-31,Ludhiana,India,R,R,Legbreak,New Zealand,NaN,NaN,NaN,NaN
+bed90114,928015.0,NaN,JA Clarkson,JA Clarkson,Joshua Andrew Clarkson,Joshua,Clarkson,Josh Clarkson,male,1997-01-21,Christchurch,New Zealand,R,R,Seam,New Zealand,NaN,NaN,NaN,NaN
+dadbdb68,547766.0,NaN,JA Duffy,JA Duffy,Jacob Andrew Duffy,Jacob,Duffy,Jacob Duffy,male,1994-08-02,Lumsden,New Zealand,R,R,Seam,New Zealand,NaN,NaN,NaN,NaN
+752183c1,343649.0,NaN,Jahanara Alam,Jahanara Alam,Jahanara Alam,Jahanara,Alam,Jahanara Alam,female,1993-04-01,Khulna,Bangladesh,R,R,Seam,Bangladesh,NaN,NaN,NaN,NaN
+22d73540,1402359.0,NaN,Jahandad Khan,Jahandad Khan,Jahandad Khan,Jahandad,Khan,Jahandad Khan,male,2003-06-10,Rawalpindi,Pakistan,L,L,Seam,Pakistan,NaN,NaN,NaN,NaN
+cd56a813,824541.0,NaN,Jaker Ali,Jaker Ali,Jaker Ali Anik,Jaker,Anik,Jaker Ali,male,1998-02-22,NaN,NaN,R,NaN,NaN,Bangladesh,NaN,NaN,1.0,NaN
+fa948618,1051219.0,NaN,Jannatul Ferdus,Jannatul Ferdus,Most Jannatul Ferdus Sumona,Most,Sumona,Jannatul Ferdus,female,1999-12-12,Rangpur,Bangladesh,R,R,Offbreak,Bangladesh,NaN,NaN,NaN,NaN
+cdd875d9,1261866.0,NaN,JA Turner,JA Turner,John Andrew Turner,John,Turner,John Turner,male,2001-04-10,Johannesburg,South Africa,R,R,Seam,England,NaN,NaN,NaN,NaN
+0e63259d,1120613.0,NaN,J Campbell,J Campbell,Johnathan Mitchell Ross Campbell,Johnathan,Campbell,Johnathan Campbell,male,1997-12-17,Harare,Zimbabwe,L,R,Legbreak,Zimbabwe,NaN,NaN,NaN,NaN
+5574750c,669855.0,NaN,JC Archer,JC Archer,Jofra Chioke Archer,Jofra,Archer,Jofra Archer,male,1995-04-01,Bridgetown,Barbados,R,R,Seam,England,NaN,NaN,NaN,NaN
+99b75528,308967.0,NaN,JC Buttler,JC Buttler,Joseph Charles Buttler,Joseph,Buttler,Jos Buttler,male,1990-09-08,Taunton,England,R,NaN,NaN,England,NaN,NaN,1.0,NaN
+09a9d073,333066.0,NaN,J Charles,J Charles,Johnson Charles,Johnson,Charles,Johnson Charles,male,1989-01-14,NaN,Saint Lucia,R,NaN,NaN,West Indies,NaN,NaN,1.0,NaN
+9219eff0,355269.0,NaN,JDS Neesham,JDS Neesham,James Douglas Sheahan Neesham,James,Neesham,James Neesham,male,1990-09-17,Auckland,New Zealand,L,R,Seam,New Zealand,NaN,NaN,NaN,NaN
+9b6e1b3f,1168049.0,NaN,J Fraser-McGurk,J Fraser-McGurk,Jake Fraser-McGurk,Jake,Fraser-McGurk,Jake Fraser-McGurk,male,2002-04-11,NaN,NaN,R,R,Legbreak,Australia,NaN,NaN,NaN,NaN
+91cd48e0,498582.0,NaN,JF Smith,JF Smith,Jason Franswyn Smith,Jason,Smith,Jason Smith,male,1994-10-11,Cape Town,South Africa,R,R,Seam,South Africa,NaN,NaN,NaN,NaN
+3c55c703,1194959.0,NaN,JG Bethell,JG Bethell,Jacob Graham Bethell,Jacob,Bethell,Jacob Bethell,male,2003-10-23,Bridgetown,Barbados,L,L,Orthodox,England,NaN,NaN,NaN,NaN
+a2632c7c,1268602.0,NaN,J Glasgow,J Glasgow,Jannillea Glasgow,Jannillea,Glasgow,Jannillea Glasgow,female,2004-01-05,NaN,NaN,L,R,Seam,West Indies,NaN,NaN,NaN,NaN
+c8d74c21,596376.0,NaN,J Gumbie,J Gumbie,Joylord Gumbie,Joylord,Gumbie,Joylord Gumbie,male,1995-12-25,Harare,Zimbabwe,R,NaN,NaN,Zimbabwe,NaN,NaN,1.0,NaN
+cb08b611,883405.0,NaN,JI Rodrigues,JI Rodrigues,Jemimah Ivan Rodrigues,Jemimah,Rodrigues,Jemimah Rodrigues,female,2000-09-05,Mumbai,India,R,R,Offbreak,India,NaN,NaN,NaN,NaN
+462411b3,625383.0,NaN,JJ Bumrah,JJ Bumrah,Jasprit Jasbirsingh Bumrah,Jasprit,Bumrah,Jasprit Bumrah,male,1993-12-06,Ahmedabad,India,R,R,Seam,India,NaN,NaN,NaN,NaN
+9061a703,928067.0,NaN,J Little,J Little,Joshua Brian Little,Joshua,Little,Josh Little,male,1999-11-01,Dublin,Ireland,R,L,Seam,Ireland,NaN,NaN,NaN,NaN
+1b1c23bb,1229018.0,NaN,J Maguire,J Maguire,Jane Maguire,Jane,Maguire,Jane Maguire,female,2003-02-18,Dublin,Ireland,R,R,Seam,Ireland,NaN,NaN,NaN,NaN
+abb83e27,297433.0,NaN,JM Bairstow,JM Bairstow,Jonathan Marc Bairstow,Jonathan,Bairstow,Jonny Bairstow,male,1989-09-26,Bradford,England,R,R,Seam,England,NaN,NaN,1.0,NaN
+ff154ecd,1112537.0,NaN,JM Cox,JM Cox,Jordan Matthew Cox,Jordan,Cox,Jordan Cox,male,2000-10-21,Margate,England,R,NaN,NaN,England,NaN,NaN,1.0,NaN
+9af58032,1068933.0,NaN,JM Kerr,JM Kerr,Jessica Mackenzie Kerr,Jessica,Kerr,Jess Kerr,female,1998-01-18,Wellington,New Zealand,R,R,Seam,New Zealand,NaN,NaN,1.0,NaN
+36dfa62e,638256.0,NaN,J Nkomo,J Nkomo,Josephine Nakai Nkomo,Josephine,Nkomo,Josephine Nkomo,female,1997-05-21,Kwekwe,Zimbabwe,R,R,Seam,Zimbabwe,NaN,NaN,NaN,NaN
+ded9ff1e,1199304.0,NaN,JNT Seales,JNT Seales,Jayden Nigel Tristen Seales,Jayden,Seales,Jayden Seales,male,2001-09-10,NaN,Trinidad and Tobago,L,R,Seam,West Indies,NaN,NaN,NaN,NaN
+0f721006,391485.0,NaN,JO Holder,JO Holder,Jason Omar Holder,Jason,Holder,Jason Holder,male,1991-11-05,NaN,Barbados,R,R,Seam,West Indies,NaN,NaN,NaN,NaN
+59559bc2,510530.0,NaN,J Overton,J Overton,Jamie Overton,Jamie,Overton,Jamie Overton,male,1994-04-10,Barnstaple,England,R,R,Seam,England,NaN,NaN,NaN,NaN
+4933f499,272477.0,NaN,JP Behrendorff,JP Behrendorff,Jason Paul Behrendorff,Jason,Behrendorff,Jason Behrendorff,male,1990-04-20,Camden,Australia,R,L,Seam,Australia,NaN,NaN,NaN,NaN
+74d12124,510823.0,NaN,JP Greaves,JP Greaves,Justin Pierre Greaves,Justin,Greaves,Justin Greaves,male,1994-02-26,NaN,Barbados,R,R,Seam,West Indies,NaN,NaN,NaN,NaN
+989889ff,662235.0,NaN,JP Inglis,JP Inglis,Joshua Patrick Inglis,Joshua,Inglis,Josh Inglis,male,1995-03-04,Leeds,England,R,NaN,NaN,Australia,NaN,NaN,1.0,NaN
+03806cf8,288284.0,NaN,JR Hazlewood,JR Hazlewood,Josh Reginald Hazlewood,Josh,Hazlewood,Josh Hazlewood,male,1991-01-08,Tamworth,Australia,L,R,Seam,Australia,NaN,NaN,NaN,NaN
+ce3662d2,1351943.0,NaN,JR Loughran,JR Loughran,Joanna Roisin Loughran,Joanna,Loughran,Joanna Loughran,female,2004-08-25,Dublin,Ireland,R,NaN,NaN,Ireland,NaN,NaN,1.0,NaN
+4ac6664d,340004.0,NaN,KADA Kanchana,KADA Kanchana,Kathira Arachchige Dona Ama Kanchana,Kathira,Kanchana,Ama Kanchana,female,1991-04-07,Negombo,Sri Lanka,R,R,Seam,Sri Lanka,NaN,NaN,NaN,NaN
+0b60eb09,267724.0,NaN,KA Maharaj,KA Maharaj,Keshav Athmanand Maharaj,Keshav,Maharaj,Keshav Maharaj,male,1990-02-07,Durban,South Africa,R,L,Orthodox,South Africa,NaN,NaN,NaN,NaN
+5f311f1a,1302575.0,NaN,K Chigora,K Chigora,Kudzai Chigora,Kudzai,Chigora,Kudzai Chigora,female,2006-08-06,Mutare,Zimbabwe,R,R,Seam,Zimbabwe,NaN,NaN,NaN,NaN
+a0fdf513,335236.0,NaN,KDU Prabodhani,KDU Prabodhani,Kaluwa Dewage Udeshika Prabodhani,Kaluwa,Prabodhani,Udeshika Prabodhani,female,1985-09-20,Darga Town,Sri Lanka,R,L,Seam,Sri Lanka,NaN,NaN,NaN,NaN
+732c038e,784367.0,NaN,KIC Asalanka,KIC Asalanka,Kariyawasam Indipalage Charith Asalanka,Kariyawasam,Asalanka,Charith Asalanka,male,1997-06-29,Elpitiya,Sri Lanka,L,R,Offbreak,Sri Lanka,NaN,NaN,NaN,NaN
+0b69a844,418423.0,NaN,KJ Garth,KJ Garth,Kimberley Jennifer Garth,Kimberley,Garth,Kim Garth,female,1996-04-25,Dublin,Ireland,R,R,Seam,Australia,Ireland,NaN,NaN,NaN
+a2f46292,942645.0,NaN,KK Ahmed,KK Ahmed,Khaleel Khursheed Ahmed,Khaleel,Ahmed,Khaleel Ahmed,male,1997-12-05,Tonk,India,R,L,Seam,India,NaN,NaN,NaN,NaN
+2fa916b3,1371878.0,NaN,K Kavindi,K Kavindi,Kawya Kavindi,Kawya,Kavindi,Kawya Kavindi,female,2002-10-30,NaN,NaN,R,R,Seam,Sri Lanka,NaN,NaN,NaN,NaN
+1ade138e,297085.0,NaN,KL Cross,KL Cross,Kathryn Laura Cross,Kathryn,Cross,Kate Cross,female,1991-10-03,Manchester,England,R,R,Seam,England,NaN,NaN,NaN,NaN
+130336c6,1340108.0,NaN,K Meso,K Meso,Karabo Meso,Karabo,Meso,Karabo Meso,female,2007-09-18,NaN,NaN,R,NaN,NaN,South Africa,NaN,NaN,1.0,NaN
+8d25271a,1250707.0,NaN,K Ndlovu,K Ndlovu,Kelis Tanyaradzwa Ndhlovu,Kelis,Ndhlovu,Kelis Ndhlovu,female,2005-11-16,Chitungwiza,Zimbabwe,L,L,Orthodox,Zimbabwe,NaN,NaN,NaN,NaN
+e62dd25d,550215.0,NaN,K Rabada,K Rabada,Kagiso Rabada,Kagiso,Rabada,Kagiso Rabada,male,1995-05-25,Johannesburg,South Africa,L,R,Seam,South Africa,NaN,NaN,NaN,NaN
+321c980e,769517.0,NaN,K Ramharack,K Ramharack,Karishma Ramharack,Karishma,Ramharack,Karishma Ramharack,female,1995-01-20,NaN,NaN,L,R,Offbreak,West Indies,NaN,NaN,NaN,NaN
+73c18486,348056.0,NaN,KR Mayers,KR Mayers,Kyle Rico Mayers,Kyle,Mayers,Kyle Mayers,male,1992-09-08,NaN,Barbados,L,R,Seam,West Indies,NaN,NaN,NaN,NaN
+d027ba9f,277906.0,NaN,KS Williamson,KS Williamson,Kane Stuart Williamson,Kane,Williamson,Kane Williamson,male,1990-08-08,Tauranga,New Zealand,R,R,Offbreak,New Zealand,NaN,NaN,NaN,NaN
+107c26fb,1294342.0,NaN,KT Maphaka,KT Maphaka,Kwena Tshegofatso Maphaka,Kwena,Maphaka,Kwena Maphaka,male,2006-04-08,Johannesburg,South Africa,L,L,Seam,South Africa,NaN,NaN,NaN,NaN
+8d2c70ad,559235.0,NaN,Kuldeep Yadav,Kuldeep Yadav,Kuldeep Yadav,Kuldeep,Yadav,Kuldeep Yadav,male,1994-12-14,Kanpur,India,L,L,Unorthodox,India,NaN,NaN,NaN,NaN
+a1d95bd8,379887.0,NaN,LB Williams,LB Williams,Lizaad Buyron Williams,Lizaad,Williams,Lizaad Williams,male,1993-10-01,Vredenburg,South Africa,L,R,Seam,South Africa,NaN,NaN,NaN,NaN
+340202b0,517577.0,NaN,LCN Smith,LCN Smith,Linsey Claire Neale Smith,Linsey,Smith,Linsey Smith,female,1995-03-10,Hillingdon,England,L,L,Orthodox,England,NaN,NaN,NaN,NaN
+b4f73b44,418420.0,NaN,L Delany,L Delany,Laura Delany,Laura,Delany,Laura Delany,female,1992-12-23,NaN,NaN,R,R,Seam,Ireland,NaN,NaN,NaN,NaN
+31adb911,1146129.0,NaN,L Filer,L Filer,Lauren Louise Filer,Lauren,Filer,Lauren Filer,female,2000-12-22,Bristol,England,R,R,Seam,England,NaN,NaN,NaN,NaN
+2f9d0389,493773.0,NaN,LH Ferguson,LH Ferguson,Lachlan Hammond Ferguson,Lachlan,Ferguson,Lockie Ferguson,male,1991-06-13,Auckland,New Zealand,R,R,Seam,New Zealand,NaN,NaN,NaN,NaN
+0404d43c,536936.0,NaN,Liton Das,Liton Das,Litton Kumer Das,Litton,Das,Litton Das,male,1994-10-13,Dinajpur,Bangladesh,R,R,Offbreak,Bangladesh,NaN,NaN,1.0,NaN
+38b4583c,878025.0,NaN,LK Bell,LK Bell,Lauren Katie Bell,Lauren,Bell,Lauren Bell,female,2001-01-02,Swindon,England,R,R,Seam,England,NaN,NaN,NaN,NaN
+4f86926b,1094718.0,NaN,L Little,L Little,Louise Little,Louise,Little,Louise Little,female,2003-05-16,Dublin,Ireland,R,R,Seam,Ireland,NaN,NaN,NaN,NaN
+37f9eb59,1302733.0,NaN,L Mabhero,L Mabhero,Lindokuhle Mabhero,Lindokuhle,Mabhero,Lindokuhle Mabhero,female,2003-03-22,NaN,NaN,R,R,Offbreak,Zimbabwe,NaN,NaN,NaN,NaN
+b8704508,541224.0,NaN,LM Jongwe,LM Jongwe,Luke Mafuwa Jongwe,Luke,Jongwe,Luke Jongwe,male,1995-02-06,Harare,Zimbabwe,R,R,Seam,Zimbabwe,NaN,NaN,NaN,NaN
+9b73d523,306524.0,NaN,LM Kasperek,LM Kasperek,Leigh Meghan Kasperek,Leigh,Kasperek,Leigh Kasperek,female,1992-02-15,Edinburgh,Scotland,R,R,Offbreak,New Zealand,NaN,NaN,NaN,NaN
+60471339,380929.0,NaN,LMM Tahuhu,LMM Tahuhu,Lea-Marie Maureen Tahuhu,Lea-Marie,Tahuhu,Lea Tahuhu,female,1990-09-23,Christchurch,New Zealand,R,R,Seam,New Zealand,NaN,NaN,NaN,NaN
+f834dcfc,542023.0,NaN,L Ngidi,L Ngidi,Lungisani True-man Ngidi,Lungisani,Ngidi,Lungi Ngidi,male,1996-03-29,Durban,South Africa,R,R,Seam,South Africa,NaN,NaN,NaN,NaN
+07248d8e,1026403.0,NaN,L Paul,L Paul,Leah Paul,Leah,Paul,Leah Paul,female,1999-09-10,Dublin,Ireland,L,L,Orthodox,Ireland,NaN,NaN,NaN,NaN
+f892fcf9,698143.0,NaN,L Sipamla,L Sipamla,Lubabalo Lutho Sipamla,Lubabalo,Sipamla,Lutho Sipamla,male,1998-05-12,Port Elizabeth,South Africa,R,R,Seam,South Africa,NaN,NaN,NaN,NaN
+50c6bc2b,403902.0,NaN,LS Livingstone,LS Livingstone,Liam Stephen Livingstone,Liam,Livingstone,Liam Livingstone,male,1993-08-04,Barrow-in-Furness,England,R,R,"Offbreak, Legbreak",England,NaN,NaN,NaN,NaN
+f281dd00,538593.0,NaN,L Tshuma,L Tshuma,Loreen Tshuma,Loreen,Tshuma,Loreen Tshuma,female,1996-11-27,NaN,Zimbabwe,R,R,Seam,Zimbabwe,NaN,NaN,NaN,NaN
+3979b5e0,928057.0,NaN,L Tucker,L Tucker,Lorcan John Tucker,Lorcan,Tucker,Lorcan Tucker,male,1996-09-10,Dublin,Ireland,R,NaN,NaN,Ireland,NaN,NaN,1.0,NaN
+e60f81c9,922481.0,NaN,L Wolvaardt,L Wolvaardt,Laura Wolvaardt,Laura,Wolvaardt,Laura Wolvaardt,female,1999-04-26,Cape Town,South Africa,R,NaN,NaN,South Africa,NaN,NaN,NaN,NaN
+318a4039,493860.0,NaN,MAA Sanjeewani,MAA Sanjeewani,Meegama Acharige Anushka Sanjeewani,Meegama,Sanjeewani,Anushka Sanjeewani,female,1990-01-24,Galle,Sri Lanka,R,NaN,NaN,Sri Lanka,NaN,NaN,1.0,NaN
+9dad0f2e,833087.0,NaN,Mahedi Hasan,Mahedi Hasan,Mahedi Hasan,Mahedi,Hasan,Mahedi Hasan,male,1994-12-12,Khulna,Bangladesh,R,R,Offbreak,Bangladesh,NaN,NaN,NaN,NaN
+bf1d7d3e,56025.0,NaN,Mahmudullah,Mahmudullah,Mohammad Mahmudullah,Mohammad,Mahmudullah,Mahmudullah,male,1986-02-04,Mymensingh,Bangladesh,R,R,Offbreak,Bangladesh,NaN,NaN,NaN,NaN
+a50797a4,1332561.0,NaN,Marufa Akter,Marufa Akter,Marufa Akter,Marufa,Akter,Marufa Akter,female,2005-01-01,Nilphamari,Bangladesh,R,R,Seam,Bangladesh,NaN,NaN,NaN,NaN
+3fb19989,311592.0,NaN,MA Starc,MA Starc,Mitchell Aaron Starc,Mitchell,Starc,Mitchell Starc,male,1990-01-30,Sydney,Australia,L,L,Seam,Australia,NaN,NaN,NaN,NaN
+8d92a2c3,351588.0,NaN,MA Wood,MA Wood,Mark Andrew Wood,Mark,Wood,Mark Wood,male,1990-01-11,Ashington,England,R,R,Seam,England,NaN,NaN,NaN,NaN
+f21043a5,300631.0,NaN,MDKJ Perera,MDKJ Perera,Mathurage Don Kusal Janith Perera,Mathurage,Perera,Kusal Perera,male,1990-08-17,Kalubowila,Sri Lanka,L,NaN,NaN,Sri Lanka,NaN,NaN,1.0,NaN
+3ff033bb,437316.0,NaN,MD Shanaka,MD Shanaka,Madagamagamage Dasun Shanaka,Madagamagamage,Shanaka,Dasun Shanaka,male,1991-09-09,Negombo,Sri Lanka,R,R,Seam,Sri Lanka,NaN,NaN,NaN,NaN
+c2554b59,1022077.0,NaN,ME Bouchier,ME Bouchier,Maia Emily Bouchier,Maia,Bouchier,Maia Bouchier,female,1998-12-05,Kensington,England,R,R,Seam,England,NaN,NaN,NaN,NaN
+c58b0108,629063.0,NaN,Mehedi Hasan Miraz,Mehedi Hasan Miraz,Mehidy Hasan Miraz,Mehidy,Miraz,Mehidy Hasan Miraz,male,1997-10-25,Khulna,Bangladesh,R,R,Offbreak,Bangladesh,NaN,NaN,NaN,NaN
+38214163,1122851.0,NaN,M Faraz Akram,M Faraz Akram,Mohammad Faraz Akram,Mohammad,Akram,Faraz Akram,male,1993-10-03,Jeddah,Saudi Arabia,L,R,Seam,Zimbabwe,NaN,NaN,NaN,NaN
+df9cdebf,1171433.0,NaN,M Gaur,M Gaur,Mahika Gaur,Mahika,Gaur,Mahika Gaur,female,2006-03-09,Reading,England,R,L,Seam,England,United Arab Emirates,NaN,NaN,NaN
+e38bce7a,326968.0,NaN,MG Bracewell,MG Bracewell,Michael Gordon Bracewell,Michael,Bracewell,Michael Bracewell,male,1991-02-14,Masterton,New Zealand,L,R,Offbreak,New Zealand,NaN,NaN,1.0,NaN
+81c36ee9,696401.0,NaN,M Jansen,M Jansen,Marco Jansen,Marco,Jansen,Marco Jansen,male,2000-05-01,NaN,NaN,R,L,Seam,South Africa,NaN,NaN,NaN,NaN
+84c422e3,700557.0,NaN,MJ Greig,MJ Greig,Mikaela Jane Greig,Mikaela,Greig,Mikaela Greig,female,1995-04-22,Palmerston North,New Zealand,R,R,Offbreak,New Zealand,NaN,NaN,NaN,NaN
+732f711b,1243738.0,NaN,MJ Hay,MJ Hay,Mitchell James Hay,Mitchell,Hay,Mitchell Hay,male,2000-08-20,Christchurch,New Zealand,R,NaN,NaN,New Zealand,NaN,NaN,1.0,NaN
+e84ac20c,506612.0,NaN,MJ Henry,MJ Henry,Matthew James Henry,Matthew,Henry,Matt Henry,male,1991-12-14,Christchurch,New Zealand,R,R,Seam,New Zealand,NaN,NaN,NaN,NaN
+2c54c49b,1263361.0,NaN,MJ Humphreys,MJ Humphreys,Matthew James Humphreys,Matthew,Humphreys,Matthew Humphreys,male,2002-09-28,NaN,NaN,R,L,Orthodox,Ireland,NaN,NaN,NaN,NaN
+e4a0deae,502714.0,NaN,MJ Santner,MJ Santner,Mitchell Josef Santner,Mitchell,Santner,Mitchell Santner,male,1992-02-05,Hamilton,New Zealand,L,L,Orthodox,New Zealand,NaN,NaN,NaN,NaN
+63e3b6b3,351836.0,NaN,M Kapp,M Kapp,Marizanne Kapp,Marizanne,Kapp,Marizanne Kapp,female,1990-01-04,Port Elizabeth,South Africa,R,R,Seam,South Africa,NaN,NaN,NaN,NaN
+ce85fcaf,364368.0,NaN,M Klaas,M Klaas,Masabata Marie Klaas,Masabata,Klaas,Masabata Klaas,female,1991-02-03,Botshabelo,South Africa,R,R,Seam,South Africa,NaN,NaN,NaN,NaN
+cd62f670,874173.0,NaN,MK Villiers,MK Villiers,Mady Kate Villiers,Mady,Villiers,Mady Villiers,female,1998-08-26,Havering,England,R,R,Offbreak,England,NaN,NaN,NaN,NaN
+865eae1f,438265.0,NaN,ML Green,ML Green,Madeline Lee Green,Madeline,Green,Maddy Green,female,1992-10-20,Auckland,New Zealand,R,R,Offbreak,New Zealand,NaN,NaN,NaN,NaN
+17608a6f,420314.0,NaN,ML Schutt,ML Schutt,Megan Schutt,Megan,Schutt,Megan Schutt,female,1993-01-15,Adelaide,Australia,R,R,Seam,Australia,NaN,NaN,NaN,NaN
+bb351c23,8917.0,NaN,MM Ali,MM Ali,Moeen Munir Ali,Moeen,Ali,Moeen Ali,male,1987-06-18,Birmingham,England,L,R,Offbreak,England,NaN,NaN,NaN,NaN
+b9fec7a5,907733.0,NaN,M Mangru,M Mangru,Mandy Mangru,Mandy,Mangru,Mandy Mangru,female,1999-09-22,NaN,NaN,R,R,Offbreak,West Indies,NaN,NaN,NaN,NaN
+bb411d1e,1273947.0,NaN,M Mavunga,M Mavunga,Michelle Mavunga,Michelle,Mavunga,Michelle Mavunga,female,2004-12-31,NaN,NaN,R,R,Seam,Zimbabwe,NaN,NaN,NaN,NaN
+645b2a2f,1239671.0,NaN,MM Penfold,MM Penfold,Molly Mae Penfold,Molly,Penfold,Molly Penfold,female,2001-06-15,London,England,R,R,Seam,New Zealand,NaN,NaN,NaN,NaN
+6657b319,538591.0,NaN,M Mupachikwa,M Mupachikwa,Modester Mupachikwa,Modester,Mupachikwa,Modester Mupachikwa,female,1997-01-19,NaN,Zimbabwe,R,NaN,NaN,Zimbabwe,NaN,NaN,NaN,NaN
+94b52754,501348.0,NaN,M Musonda,M Musonda,Mary-Anne Musonda,Mary-Anne,Musonda,Mary-Anne Musonda,female,1991-08-04,NaN,NaN,R,R,Offbreak,Zimbabwe,NaN,NaN,NaN,NaN
+e174dadd,290948.0,NaN,Mohammad Amir,Mohammad Amir,Mohammad Amir,Mohammad,Amir,Mohammad Amir,male,1992-04-13,Gujjar Khan,Pakistan,L,L,Seam,Pakistan,NaN,NaN,NaN,NaN
+8596fe80,1158100.0,NaN,Mohammad Hasnain,Mohammad Hasnain,Mohammad Hasnain,Mohammad,Hasnain,Mohammad Hasnain,male,2000-04-05,Hyderabad,Pakistan,R,R,Seam,Pakistan,NaN,NaN,NaN,NaN
+3086f7a4,348148.0,NaN,Mohammad Nawaz,Mohammad Nawaz (3),Mohammad Nawaz,Mohammad,Nawaz,Mohammad Nawaz,male,1994-03-21,Rawalpindi,Pakistan,L,L,Orthodox,Pakistan,NaN,NaN,NaN,NaN
+2f26ac1a,323389.0,NaN,Mohammad Rizwan,Mohammad Rizwan,Mohammad Rizwan,Mohammad,Rizwan,Mohammad Rizwan,male,1992-06-01,Peshawar,Pakistan,R,R,Seam,Pakistan,NaN,NaN,1.0,NaN
+b3a28446,629070.0,NaN,Mohammad Saifuddin,Mohammad Saifuddin,Mohammad Saifuddin,Mohammad,Saifuddin,Mohammad Saifuddin,male,1996-11-01,Feni,Bangladesh,L,R,Seam,Bangladesh,NaN,NaN,NaN,NaN
+9e9af5f2,1185538.0,NaN,Mohammad Wasim,Mohammad Wasim,Mohammad Wasim,Mohammad,Wasim,Mohammad Wasim,male,2001-08-25,North Wazirastan,Pakistan,R,R,Seam,Pakistan,NaN,NaN,NaN,NaN
+2f49c897,940973.0,NaN,Mohammed Siraj,Mohammed Siraj,Mohammed Siraj,Mohammed,Siraj,Mohammed Siraj,male,1994-03-13,Hyderabad,India,R,R,Seam,India,NaN,NaN,NaN,NaN
+64839cb3,1194795.0,NaN,M Pathirana,M Pathirana,Matheesha Pathirana,Matheesha,Pathirana,Matheesha Pathirana,male,2002-12-18,Kandy,Sri Lanka,R,R,Seam,Sri Lanka,NaN,NaN,NaN,NaN
+35f173a0,595267.0,NaN,MP Breetzke,MP Breetzke,Matthew Paul Breetzke,Matthew,Breetzke,Matthew Breetzke,male,1998-11-03,NaN,NaN,R,NaN,NaN,South Africa,NaN,NaN,1.0,NaN
+d9273ee7,325012.0,NaN,MP Stoinis,MP Stoinis,Marcus Peter Stoinis,Marcus,Stoinis,Marcus Stoinis,male,1989-08-16,Perth,Australia,R,R,Seam,Australia,NaN,NaN,NaN,NaN
+b1ad996b,1292563.0,NaN,MP Yadav,MP Yadav,Mayank Prabhu Yadav,Mayank,Yadav,Mayank Yadav,male,2002-06-17,New Dehli,India,R,R,Seam,India,NaN,NaN,NaN,NaN
+fc55ec67,526441.0,NaN,MR Adair,MR Adair,Mark Richard Adair,Mark,Adair,Mark Adair,male,1996-03-27,Holywood,Northern Ireland,R,R,Seam,Ireland,NaN,NaN,NaN,NaN
+3d8feaf8,272450.0,NaN,MR Marsh,MR Marsh,Mitchell Ross Marsh,Mitchell,Marsh,Mitchell Marsh,male,1991-10-20,Perth,Australia,R,R,Seam,Australia,NaN,NaN,NaN,NaN
+7fa12533,438563.0,NaN,MS Chapman,MS Chapman,Mark Sinclair Chapman,Mark,Chapman,Mark Chapman,male,1994-06-27,Hong Kong,Hong Kong,L,L,Orthodox,New Zealand,Hong Kong,NaN,NaN,NaN
+afa7e784,230193.0,NaN,MS Wade,MS Wade,Matthew Scott Wade,Matthew,Wade,Matthew Wade,male,1987-12-26,Hobart,Australia,L,R,Seam,Australia,NaN,NaN,1.0,NaN
+f24c6701,1138316.0,NaN,M Theekshana,M Theekshana,Morawakage Maheesh Theekshana,Morawakage,Theekshana,Maheesh Theekshana,male,2000-08-01,Colombo,Sri Lanka,R,R,Offbreak,Sri Lanka,NaN,NaN,NaN,NaN
+2cffab74,926851.0,NaN,Mukesh Kumar,Mukesh Kumar,Mukesh Kumar,Mukesh,Kumar,Mukesh Kumar,male,1993-10-12,Gopalganj,India,R,R,Seam,India,NaN,NaN,NaN,NaN
+86fdf668,941795.0,NaN,Muneeba Ali,Muneeba Ali,Muneeba Ali Siddiqi,Muneeba,Siddiqi,Muneeba Ali,female,1997-08-08,Karachi,Pakistan,L,NaN,NaN,Pakistan,NaN,NaN,1.0,NaN
+712bbd92,1080264.0,NaN,Murshida Khatun,Murshida Khatun,Murshida Khatun,Murshida,Khatun,Murshida Khatun,female,1999-07-07,NaN,NaN,L,NaN,NaN,Bangladesh,NaN,NaN,NaN,NaN
+0a8fce53,330902.0,NaN,Mustafizur Rahman,Mustafizur Rahman,Mustafizur Rahman,Mustafizur,Rahman,Mustafizur Rahman,male,1995-09-06,Satkhira,Bangladesh,L,L,Seam,Bangladesh,NaN,NaN,NaN,NaN
+83d17bbc,1209190.0,NaN,MW Forde,MW Forde,Matthew Walter Forde,Matthew,Forde,Matthew Forde,male,2002-04-29,NaN,Barbados,R,R,Seam,West Indies,NaN,NaN,NaN,NaN
+a90e53ec,605575.0,NaN,MW Short,MW Short,Matthew William Short,Matthew,Short,Matthew Short,male,1995-11-08,NaN,NaN,R,R,Offbreak,Australia,NaN,NaN,NaN,NaN
+66078174,924183.0,NaN,Nahida Akter,Nahida Akter,Nahida Akter,Nahida,Akter,Nahida Akter,female,2000-03-02,NaN,NaN,R,L,Orthodox,Bangladesh,NaN,NaN,NaN,NaN
+faef39c1,1204957.0,NaN,Najiha Alvi,Najiha Alvi,Najiha Alvi,Najiha,Alvi,Najiha Alvi,female,2002-12-09,NaN,NaN,R,NaN,NaN,Pakistan,NaN,NaN,1.0,NaN
+43f4087c,1112535.0,NaN,NA Rock,NA Rock,Neil Alan Rock,Neil,Rock,Neil Rock,male,2000-09-24,NaN,NaN,L,NaN,NaN,Ireland,NaN,NaN,1.0,NaN
+9c9af282,1158088.0,NaN,Naseem Shah,Naseem Shah,Naseem Shah,Naseem,Shah,Naseem Shah,male,2003-02-15,NaN,NaN,R,R,Seam,Pakistan,NaN,NaN,NaN,NaN
+c981d3c2,941803.0,NaN,Nashra Sandhu,Nashra Sandhu,Nashra Sandhu,Nashra,Sandhu,Nashra Sandhu,female,1997-11-19,Lahore,Pakistan,R,L,Orthodox,Pakistan,NaN,NaN,NaN,NaN
+fa8a3eb0,1125059.0,NaN,Natalia Pervaiz,Natalia Pervaiz,Natalia Pervaiz,Natalia,Pervaiz,Natalia Pervaiz,female,1995-12-25,Bandala,Pakistan,R,R,Seam,Pakistan,NaN,NaN,NaN,NaN
+1274d7ab,629058.0,NaN,Nazmul Hossain Shanto,Nazmul Hossain Shanto,Najmul Hossain Shanto,Najmul,Shanto,Najmul Hossain Shanto,male,1998-08-25,Rajshahi,Bangladesh,L,R,Offbreak,Bangladesh,NaN,NaN,NaN,NaN
+465aa633,971349.0,NaN,N Burger,N Burger,Nandre Burger,Nandre,Burger,Nandre Burger,male,1995-08-11,Krugersdorp,South Africa,L,L,Seam,South Africa,NaN,NaN,NaN,NaN
+ea544967,939249.0,NaN,N de Klerk,N de Klerk,Nadine de Klerk,Nadine,Klerk,Nadine de Klerk,female,2000-01-16,NaN,NaN,R,R,Seam,South Africa,NaN,NaN,NaN,NaN
+9c2e3040,922491.0,NaN,N Gwanzura,N Gwanzura,Nyasha Gwanzura,Nyasha,Gwanzura,Nyasha Gwanzura,female,1996-01-14,NaN,NaN,R,R,Seam,Zimbabwe,NaN,NaN,NaN,NaN
+ed840f44,333355.0,NaN,Nida Dar,Nida Dar,Nida Rashid Dar,Nida,Dar,Nida Dar,female,1987-01-02,Gujranwala,Pakistan,R,R,Offbreak,Pakistan,NaN,NaN,NaN,NaN
+3827f6a2,924177.0,NaN,Nigar Sultana,Nigar Sultana,Nigar Sultana Joty,Nigar,Joty,Nigar Sultana,female,1997-08-01,NaN,NaN,R,NaN,NaN,Bangladesh,NaN,NaN,1.0,NaN
+aad0c365,1175496.0,NaN,Nithish Kumar Reddy,Nithish Kumar Reddy,Kaki Nitish Kumar Reddy,Kaki,Reddy,Nitish Kumar Reddy,male,2003-05-26,Visakhapatnam,India,R,R,Seam,India,NaN,NaN,NaN,NaN
+6fa7dcd8,578114.0,NaN,NK Crafton,NK Crafton,Nerissa Kershara Crafton,Nerissa,Crafton,Nerissa Crafton,female,1998-07-23,NaN,NaN,L,L,Seam,West Indies,NaN,NaN,NaN,NaN
+686362af,971203.0,NaN,N Mlaba,N Mlaba,Nonkululeko Mlaba,Nonkululeko,Mlaba,Nonkululeko Mlaba,female,2000-06-27,NaN,NaN,R,L,Orthodox,South Africa,NaN,NaN,NaN,NaN
+f0b4294e,557764.0,NaN,NND de Silva,NND de Silva,Nishshanka Nilakshika Damayanthi Silva,Nishshanka,Silva,Nilakshika Silva,female,1989-09-27,Panadura,Sri Lanka,R,R,Seam,Sri Lanka,NaN,NaN,NaN,NaN
+212aeedd,946483.0,NaN,N Peter,N Peter,Nqabayomzi Peter,Nqabayomzi,Peter,Nqabayomzi Peter,male,2001-12-09,NaN,NaN,R,R,Legbreak,South Africa,NaN,NaN,NaN,NaN
+3241e3fd,604302.0,NaN,N Pooran,N Pooran,Nicholas Pooran,Nicholas,Pooran,Nicholas Pooran,male,1995-10-02,NaN,Trinidad and Tobago,L,R,Offbreak,West Indies,NaN,NaN,1.0,NaN
+f3a18a0c,515905.0,NaN,NR Sciver,NR Sciver,Natalie Ruth Sciver-Brunt,Natalie,Sciver-Brunt,Nat Sciver-Brunt,female,1992-08-20,Tokyo,Japan,R,R,Seam,England,NaN,NaN,NaN,NaN
+b17a4a93,941933.0,NaN,N Shangase,N Shangase,Nondumiso Shangase,Nondumiso,Shangase,Nondumiso Shangase,female,1996-04-05,Durban,South Africa,R,R,Offbreak,South Africa,NaN,NaN,NaN,NaN
+edf62a25,1080012.0,NaN,N Sibanda,N Sibanda,Nomvelo Sibanda,Nomvelo,Sibanda,Nomvelo Sibanda,female,1996-11-21,NaN,NaN,L,L,Seam,Zimbabwe,NaN,NaN,NaN,NaN
+9eb1455b,826915.0,NaN,NT Ellis,NT Ellis,Nathan Ellis,Nathan,Ellis,Nathan Ellis,male,1994-09-22,Greenacre,Australia,R,R,Seam,Australia,NaN,NaN,NaN,NaN
+ee1b6c27,955235.0,NaN,N Thushara,N Thushara,Ilandari Dewage Nuwan Thushara,Ilandari,Thushara,Nuwan Thushara,male,1994-08-06,Thalawa,Sri Lanka,R,R,Seam,Sri Lanka,NaN,NaN,NaN,NaN
+529eb9e0,906783.0,NaN,OC McCoy,OC McCoy,Obed Christopher McCoy,Obed,McCoy,Obed McCoy,male,1997-01-04,NaN,NaN,L,L,Seam,West Indies,NaN,NaN,NaN,NaN
+6b9eb501,535353.0,NaN,OEG Baartman,OEG Baartman,Ottneil Emile Graham Baartman,Ottneil,Baartman,Ottneil Baartman,male,1993-03-18,Oudtshoorn,South Africa,R,R,Seam,South Africa,NaN,NaN,NaN,NaN
+f8e3c0f8,1126059.0,NaN,Omair Yousuf,Omair Yousuf,Omair Bin Yousuf,Omair,Yousuf,Omair Yousuf,male,1998-12-27,Karachi,Pakistan,R,NaN,NaN,Pakistan,NaN,NaN,NaN,NaN
+d8f20ba5,1150585.0,NaN,O Prendergast,O Prendergast,Orla Prendergast,Orla,Prendergast,Orla Prendergast,female,2002-06-01,NaN,NaN,R,R,Seam,Ireland,NaN,NaN,NaN,NaN
+489aaf0a,1139511.0,NaN,Parvez Hossain Emon,Parvez Hossain Emon,Mohammad Parvez Hossain Emon,Mohammad,Emon,Parvez Hossain Emon,male,2002-06-12,NaN,NaN,L,NaN,NaN,Bangladesh,NaN,NaN,1.0,NaN
+6c882e9a,342619.0,NaN,PBB Rajapaksa,PBB Rajapaksa,Pramod Bhanuka Bandara Rajapaksa,Pramod,Rajapaksa,Bhanuka Rajapaksa,male,1991-10-24,Colombo,Sri Lanka,L,R,Seam,Sri Lanka,NaN,NaN,NaN,NaN
+3d284ca3,669365.0,NaN,PD Salt,PD Salt,Philip Dean Salt,Philip,Salt,Phil Salt,male,1996-08-28,Bodelwyddan,Wales,R,R,Offbreak,England,NaN,NaN,1.0,NaN
+39181592,499560.0,NaN,PE Kruger,PE Kruger,Patrick Earl Kruger,Patrick,Kruger,Patrick Kruger,male,1995-02-03,Kimberley,South Africa,R,R,Seam,South Africa,NaN,NaN,NaN,NaN
+08548b13,784373.0,NaN,PHKD Mendis,PHKD Mendis,Pasqual Handi Kamindu Dilanka Mendis,Pasqual,Mendis,Kamindu Mendis,male,1998-09-30,Galle,Sri Lanka,L,"R, L","Offbreak, Orthodox",Sri Lanka,NaN,NaN,NaN,NaN
+ded9240e,489889.0,NaN,PJ Cummins,PJ Cummins,Patrick James Cummins,Patrick,Cummins,Pat Cummins,male,1993-05-08,Westmead,Australia,R,R,Seam,Australia,NaN,NaN,NaN,NaN
+588360ee,743647.0,NaN,PJ Scholfield,PJ Scholfield,Paige Jamie Scholfield,Paige,Scholfield,Paige Scholfield,female,1995-12-19,Amanzimtoti,South Africa,R,R,Seam,England,NaN,NaN,NaN,NaN
+4e6ef14f,1176132.0,NaN,P Litchfield,P Litchfield,Phoebe Litchfield,Phoebe,Litchfield,Phoebe Litchfield,female,2003-04-18,NaN,NaN,L,R,Legbreak,Australia,NaN,NaN,NaN,NaN
+a4f1fdd4,317139.0,NaN,P Marange,P Marange,Precious Marange,Precious,Marange,Precious Marange,female,1982-11-26,NaN,Zimbabwe,L,R,Offbreak,Zimbabwe,NaN,NaN,NaN,NaN
+a246f48f,272026.0,NaN,P Mujaji,P Mujaji,Pellagia Mujaji,Pellagia,Mujaji,Pellagia Mujaji,female,1991-10-09,Mutare,Zimbabwe,R,R,Seam,Zimbabwe,NaN,NaN,NaN,NaN
+8ee36b18,1028655.0,NaN,P Nissanka,P Nissanka,Pathum Nissanka Silva,Pathum,Silva,Pathum Nissanka,male,1998-05-18,Galle,Sri Lanka,R,NaN,NaN,Sri Lanka,NaN,NaN,NaN,NaN
+cf494ffe,303427.0,NaN,PR Stirling,PR Stirling,Paul Robert Stirling,Paul,Stirling,Paul Stirling,male,1990-09-03,Belfast,Northern Ireland,R,R,Offbreak,Ireland,NaN,NaN,NaN,NaN
+8026ea72,883413.0,NaN,P Vastrakar,P Vastrakar,Pooja Vastrakar,Pooja,Vastrakar,Pooja Vastrakar,female,1999-09-25,Bilaspur,India,R,R,Seam,India,NaN,NaN,NaN,NaN
+327b58d3,552152.0,NaN,PVD Chameera,PVD Chameera,Pathira Vasan Dushmantha Chameera,Pathira,Chameera,Dushmantha Chameera,male,1992-01-11,Ragama,Sri Lanka,R,R,Seam,Sri Lanka,NaN,NaN,NaN,NaN
+c96f6ac5,698189.0,NaN,PWA Mulder,PWA Mulder,Pieter Willem Adriaan Mulder,Pieter,Mulder,Wiaan Mulder,male,1998-02-19,Gauteng,South Africa,R,R,Seam,South Africa,NaN,NaN,NaN,NaN
+a97c8ec2,784379.0,NaN,PWH de Silva,PWH de Silva,Pinnaduwage Wanindu Hasaranga de Silva,Pinnaduwage,Silva,Wanindu Hasaranga,male,1997-07-29,Galle,Sri Lanka,R,R,Legbreak,Sri Lanka,NaN,NaN,NaN,NaN
+b6359668,1185475.0,NaN,Qasim Akram,Qasim Akram,Qasim Akram,Qasim,Akram,Qasim Akram,male,2002-12-01,NaN,NaN,R,R,Offbreak,Pakistan,NaN,NaN,NaN,NaN
+372455c4,379143.0,NaN,Q de Kock,Q de Kock,Quinton de Kock,Quinton,Kock,Quinton de Kock,male,1992-12-17,Johannesburg,South Africa,L,NaN,NaN,South Africa,NaN,NaN,1.0,NaN
+d6164dc0,769485.0,NaN,Q Joseph,Q Joseph,Qiana Joseph,Qiana,Joseph,Qiana Joseph,female,2001-01-22,NaN,NaN,L,L,Orthodox,West Indies,NaN,NaN,NaN,NaN
+aaf037b1,1204964.0,NaN,Rabeya Khan,Rabeya Khan,Rabeya Khan,Rabeya,Khan,Rabeya Khan,female,2005-03-11,Barisal,Bangladesh,R,R,Legbreak,Bangladesh,NaN,NaN,NaN,NaN
+19826516,1255629.0,NaN,Raghvi Bist,Raghvi Bist,Raghvi Anand Bist,Raghvi,Bist,Raghvi Bist,female,2004-10-11,NaN,NaN,R,R,Seam,India,NaN,NaN,NaN,NaN
+fe93fd9d,234675.0,NaN,RA Jadeja,RA Jadeja,Ravindrasinh Anirudhsinh Jadeja,Ravindrasinh,Jadeja,Ravindra Jadeja,male,1988-12-06,Navagam-Khed,India,L,L,Orthodox,India,NaN,NaN,NaN,NaN
+d5eb8b84,701751.0,NaN,RA Mair,RA Mair,Rosemary Alison Mair,Rosemary,Mair,Rosemary Mair,female,1998-11-07,Napier,New Zealand,R,R,Seam,New Zealand,NaN,NaN,NaN,NaN
+be24ead0,1079470.0,NaN,Ramandeep Singh,Ramandeep Singh,Ramandeep Singh,Ramandeep,Singh,Ramandeep Singh,male,1997-04-13,Chandigarh,India,R,R,Seam,India,NaN,NaN,NaN,NaN
+0b78b7c1,1144881.0,NaN,Rameen Shamim,Rameen Shamim,Rameen Shamim,Rameen,Shamim,Rameen Shamim,female,1996-01-19,Karachi,Pakistan,L,R,Offbreak,Pakistan,NaN,NaN,NaN,NaN
+df064e1a,1175441.0,NaN,Ravi Bishnoi,Ravi Bishnoi,Ravi Bishnoi,Ravi,Bishnoi,Ravi Bishnoi,male,2000-09-05,Jodhpur,India,R,R,Legbreak,India,NaN,NaN,NaN,NaN
+45a43fe2,1060380.0,NaN,RD Gaikwad,RD Gaikwad,Ruturaj Dashrat Gaikwad,Ruturaj,Gaikwad,Ruturaj Gaikwad,male,1997-01-31,Pune,India,R,R,Offbreak,India,NaN,NaN,NaN,NaN
+e66732f8,605661.0,NaN,RD Rickelton,RD Rickelton,Ryan David Rickelton,Ryan,Rickelton,Ryan Rickelton,male,1996-07-11,Johannesburg,South Africa,L,NaN,NaN,South Africa,NaN,NaN,1.0,NaN
+0ecb4de6,1263691.0,NaN,Rehan Ahmed,Rehan Ahmed,Rehan Ahmed,Rehan,Ahmed,Rehan Ahmed,male,2004-08-13,Nottingham,England,R,R,Legbreak,England,NaN,NaN,NaN,NaN
+7298db76,960853.0,NaN,Renuka Singh,Renuka Singh,Renuka Singh Thakur,Renuka,Thakur,Renuka Singh,female,1996-01-02,Shimla,India,R,R,Seam,India,NaN,NaN,NaN,NaN
+740742ef,34102.0,NaN,RG Sharma,RG Sharma,Rohit Gurunath Sharma,Rohit,Sharma,Rohit Sharma,male,1987-04-30,Bansod,India,R,R,Offbreak,India,NaN,NaN,NaN,NaN
+5935d694,1139523.0,NaN,Rishad Hossain,Rishad Hossain,Mohammad Rishad Hossain,Mohammad,Hossain,Rishad Hossain,male,2002-07-15,Rangpur,Bangladesh,R,R,Legbreak,Bangladesh,NaN,NaN,NaN,NaN
+ad3940a5,478808.0,NaN,Ritu Moni,Ritu Moni,MST. Ritu Moni,MST.,Moni,Ritu Moni,female,1993-02-05,Bogra,Bangladesh,R,R,Seam,Bangladesh,NaN,NaN,NaN,NaN
+8db7f47f,461632.0,NaN,RJW Topley,RJW Topley,Reece James William Topley,Reece,Topley,Reece Topley,male,1994-02-21,Ipswich,England,R,L,Seam,England,NaN,NaN,NaN,NaN
+0a509d6b,723105.0,NaN,RK Singh,RK Singh,Rinku Khanchand Singh,Rinku,Singh,Rinku Singh,male,1997-10-12,Aligarh,India,L,R,Offbreak,India,NaN,NaN,NaN,NaN
+3feda4fa,391832.0,NaN,RL Chase,RL Chase,Roston Lamar Chase,Roston,Chase,Roston Chase,male,1992-03-22,NaN,Barbados,R,R,Offbreak,West Indies,NaN,NaN,NaN,NaN
+459a7b0a,1187119.0,NaN,R MacDonald-Gay,R MacDonald-Gay,Ryana Lucelle MacDonald-Gay,Ryana,MacDonald-Gay,Ryana MacDonald-Gay,female,2004-02-12,Maidstone,England,R,R,Seam,England,NaN,NaN,NaN,NaN
+721e0199,1212830.0,NaN,RM Ghosh,RM Ghosh,Richa Manabendra Ghosh,Richa,Ghosh,Richa Ghosh,female,2003-09-28,Siliguri,India,R,R,Seam,India,NaN,NaN,1.0,NaN
+9e866b59,1290105.0,NaN,RMVD Gunaratne,RMVD Gunaratne,Rajapaksha Mudiyanselage Vishmi Dewmini Gunarathne,Rajapaksha,Gunarathne,Vishmi Gunaratne,female,2005-08-22,NaN,NaN,R,R,Seam,Sri Lanka,NaN,NaN,NaN,NaN
+6e3f5a5c,806241.0,NaN,R Ngarava,R Ngarava,Richard Ngarava,Richard,Ngarava,Richard Ngarava,male,1997-12-29,Harare,Zimbabwe,L,L,Seam,Zimbabwe,NaN,NaN,NaN,NaN
+04a418e8,1079434.0,NaN,R Parag,R Parag,Riyan Parag,Riyan,Parag,Riyan Parag,male,2001-11-10,Guwahati,India,R,R,"Offbreak, Legbreak",India,NaN,NaN,NaN,NaN
+b08252b8,495964.0,NaN,RP Burl,RP Burl,Ryan Ponsonby Burl,Ryan,Burl,Ryan Burl,male,1994-04-15,Marondera,Zimbabwe,L,R,Legbreak,Zimbabwe,NaN,NaN,NaN,NaN
+650d5e49,820351.0,NaN,R Powell,R Powell,Rovman Powell,Rovman,Powell,Rovman Powell,male,1993-07-23,NaN,Jamaica,R,R,Seam,West Indies,NaN,NaN,NaN,NaN
+6c3aef71,960737.0,NaN,RP Yadav,RP Yadav,Radha Yadav,Radha,Yadav,Radha Prakash Yadav,female,2000-04-21,Mumbai,India,R,L,Orthodox,India,NaN,NaN,NaN,NaN
+ba5e1069,959767.0,NaN,R Ravindra,R Ravindra,Rachin Ravindra,Rachin,Ravindra,Rachin Ravindra,male,1999-11-18,Wellington,New Zealand,L,L,Orthodox,New Zealand,NaN,NaN,NaN,NaN
+b8cc58c9,269280.0,NaN,RR Hendricks,RR Hendricks,Reeza Raphael Hendricks,Reeza,Hendricks,Reeza Hendricks,male,1989-08-14,Kimberley,South Africa,R,R,Offbreak,South Africa,NaN,NaN,NaN,NaN
+919a3be2,931581.0,NaN,RR Pant,RR Pant,Rishabh Rajendra Pant,Rishabh,Pant,Rishabh Pant,male,1997-10-04,Haridwar,India,L,NaN,NaN,India,NaN,NaN,1.0,NaN
+c5aef772,677077.0,NaN,R Shepherd,R Shepherd,Romario Shepherd,Romario,Shepherd,Romario Shepherd,male,1994-11-26,NaN,Guyana,R,R,Seam,West Indies,NaN,NaN,NaN,NaN
+def7b1bb,1094717.0,NaN,R Stokell,R Stokell,Rebecca Stokell,Rebecca,Stokell,Rebecca Stokell,female,2000-03-13,Dublin,Ireland,R,R,Seam,Ireland,NaN,NaN,NaN,NaN
+406de451,769427.0,NaN,RS Williams,RS Williams,Rashada Shieka Williams,Rashada,Williams,Rashada Williams,female,1997-02-23,NaN,NaN,R,NaN,NaN,West Indies,NaN,NaN,1.0,NaN
+1be67d37,629084.0,NaN,RTM Mendis,RTM Mendis,Wanigamuni Ramesh Tarinda Mendis,Wanigamuni,Mendis,Ramesh Mendis,male,1995-07-07,Ambalangoda,Sri Lanka,R,R,Offbreak,Sri Lanka,NaN,NaN,NaN,NaN
+5d095ee8,1204963.0,NaN,Rubya Haider,Rubya Haider,Rubya Haider Jhilik,Rubya,Jhilik,Rubya Haider,female,1997-07-22,NaN,NaN,L,NaN,NaN,Bangladesh,NaN,NaN,NaN,NaN
+a92763ea,343648.0,NaN,Rumana Ahmed,Rumana Ahmed,Rumana Ahmed,Rumana,Ahmed,Rumana Ahmed,female,1991-05-29,Khulna,Bangladesh,R,R,Legbreak,Bangladesh,NaN,NaN,NaN,NaN
+1a2676c5,398666.0,NaN,SA Abbott,SA Abbott,Sean Anthony Abbott,Sean,Abbott,Sean Abbott,male,1992-02-29,Windsor,Australia,R,R,Seam,Australia,NaN,NaN,NaN,NaN
+a7cd72b2,424631.0,NaN,SA Campbelle,SA Campbelle,Shemaine Altia Campbelle,Shemaine,Campbelle,Shemaine Campbelle,female,1992-10-14,Berbice,Guyana,R,R,Seam,West Indies,NaN,NaN,1.0,NaN
+f19c8dc0,1315572.0,NaN,Sadaf Shamas,Sadaf Shamas,Sadaf Shamas,Sadaf,Shamas,Sadaf Shamas,female,1998-12-30,Lahore,Pakistan,R,R,Seam,Pakistan,NaN,NaN,NaN,NaN
+53bb50f0,1204917.0,NaN,Sadia Iqbal,Sadia Iqbal,Sadia Iqbal,Sadia,Iqbal,Sadia Iqbal,female,1995-08-05,Faisalabad,Pakistan,L,L,Orthodox,Pakistan,NaN,NaN,NaN,NaN
+1aba45cd,647785.0,NaN,Sahibzada Farhan,Sahibzada Farhan,Sahibzada Farhan,Sahibzada,Farhan,Sahibzada Farhan,male,1996-03-06,Charsadda,Pakistan,R,NaN,NaN,Pakistan,NaN,NaN,NaN,NaN
+33609a8c,1161031.0,NaN,Saim Ayub,Saim Ayub,Saim Ayub,Saim,Ayub,Saim Ayub,male,2002-05-24,Karachi,Pakistan,L,R,Offbreak,Pakistan,NaN,NaN,NaN,NaN
+a6412417,1205142.0,NaN,Sanjida Akter Meghla,Sanjida Akter Meghla,Sanjida Akter Meghla,Sanjida,Meghla,Sanjida Akter Meghla,female,2001-06-04,Jessore,Bangladesh,R,L,Orthodox,Bangladesh,NaN,NaN,NaN,NaN
+77143581,550687.0,NaN,S Asha,S Asha,Asha Sobhana,Asha,Sobhana,Asha Sobhana,female,1991-03-16,Trivandrum,India,R,R,Legbreak,India,NaN,NaN,NaN,NaN
+271f83cd,446507.0,NaN,SA Yadav,SA Yadav,Suryakumar Ashok Yadav,Suryakumar,Yadav,Suryakumar Yadav,male,1990-09-14,Mumbai,India,R,R,"Seam, Offbreak",India,NaN,NaN,NaN,NaN
+afe57f7a,55870.0,NaN,SC Williams,SC Williams,Sean Colin Williams,Sean,Williams,Sean Williams,male,1986-09-26,Bulawayo,Zimbabwe,L,L,Orthodox,Zimbabwe,NaN,NaN,NaN,NaN
+1fc6ef83,581379.0,NaN,SD Hope,SD Hope,Shai Diego Hope,Shai,Hope,Shai Hope,male,1993-11-10,NaN,Barbados,R,NaN,NaN,West Indies,NaN,NaN,1.0,NaN
+a4e37e47,714451.0,NaN,S Dube,S Dube,Shivam Dube,Shivam,Dube,Shivam Dube,male,1993-06-26,Mumbai,India,L,R,Seam,India,NaN,NaN,NaN,NaN
+cdb82f1c,878039.0,NaN,S Ecclestone,S Ecclestone,Sophie Ecclestone,Sophie,Ecclestone,Sophie Ecclestone,female,1999-05-06,Chester,England,R,L,Orthodox,England,NaN,NaN,NaN,NaN
+d014d5ac,914541.0,NaN,SE Rutherford,SE Rutherford,Sherfane Eviston Rutherford,Sherfane,Rutherford,Sherfane Rutherford,male,1998-08-15,NaN,NaN,L,R,Seam,West Indies,NaN,NaN,NaN,NaN
+de69af96,231740.0,NaN,SFM Devine,SFM Devine,Sophie Frances Monique Devine,Sophie,Devine,Sophie Devine,female,1989-09-01,Wellington,New Zealand,R,R,Seam,New Zealand,NaN,NaN,NaN,NaN
+5ecfab18,1229023.0,NaN,S Forbes,S Forbes,Sarah Forbes,Sarah,Forbes,Sarah Forbes,female,2002-08-16,Dublin,Ireland,R,NaN,NaN,Ireland,NaN,NaN,NaN,NaN
+c35739a1,1199630.0,NaN,S Gajnabi,S Gajnabi,Shabika Gajnabi,Shabika,Gajnabi,Shabika Gajnabi,female,2000-07-14,Berbice,Guyana,R,R,Seam,West Indies,NaN,NaN,NaN,NaN
+11b78c67,1427037.0,NaN,S Gimhani,S Gimhani,Wellage Shashini Gimhani Wijayarathna,Wellage,Wijayarathna,Shashini Gimhani,female,2008-12-09,Mahamodara,Sri Lanka,R,L,Unorthodox,Sri Lanka,NaN,NaN,NaN,NaN
+b34e0c77,885837.0,NaN,S Glenn,S Glenn,Sarah Glenn,Sarah,Glenn,Sarah Glenn,female,1999-08-27,Derby,England,R,R,Legbreak,England,NaN,NaN,NaN,NaN
+9de62878,922943.0,NaN,Shadab Khan,Shadab Khan,Shadab Khan,Shadab,Khan,Shadab Khan,male,1998-10-04,Mianwali,Pakistan,R,R,Legbreak,Pakistan,NaN,NaN,NaN,NaN
+d8f59089,1182523.0,NaN,Shafali Verma,Shafali Verma,Shafali Verma,Shafali,Verma,Shafali Verma,female,2004-01-28,Rohtak,India,R,R,Offbreak,India,NaN,NaN,NaN,NaN
+45a7e761,1072470.0,NaN,Shaheen Shah Afridi,Shaheen Shah Afridi,Shaheen Shah Afridi,Shaheen,Afridi,Shaheen Shah Afridi,male,2000-04-06,Kyber Agency,Pakistan,L,L,Seam,Pakistan,NaN,NaN,NaN,NaN
+7dc35884,56143.0,NaN,Shakib Al Hasan,Shakib Al Hasan,Shakib Al Hasan,Shakib,Hasan,Shakib Al Hasan,male,1987-03-24,Magura,Bangladesh,L,L,Orthodox,Bangladesh,NaN,NaN,NaN,NaN
+711249d1,1161044.0,NaN,Shamim Hossain,Shamim Hossain,Shamim Hossain Patwari,Shamim,Patwari,Shamim Hossain,male,2000-09-02,Chandpur,Bangladesh,L,R,Offbreak,Bangladesh,NaN,NaN,NaN,NaN
+84fdd3cf,535868.0,NaN,Sharmin Akhter,Sharmin Akhter,Sharmin Akhter Supta,Sharmin,Supta,Sharmin Akhter,female,1995-12-31,Gaibamdha,Bangladesh,R,NaN,NaN,Bangladesh,NaN,NaN,NaN,NaN
+83c3e8e3,1123718.0,NaN,SH Johnson,SH Johnson,Spencer Henry Johnson,Spencer,Johnson,Spencer Johnson,male,1995-12-16,Adelaide,Australia,L,L,Seam,Australia,NaN,NaN,NaN,NaN
+36d2face,1405159.0,NaN,Shorifa Khatun,Shorifa Khatun,Shorifa Khatun,Shorifa,Khatun,Shorifa Khatun,female,1993-06-15,NaN,NaN,R,R,Offbreak,Bangladesh,NaN,NaN,NaN,NaN
+bb34fd31,990039.0,NaN,Shoriful Islam,Shoriful Islam,Mohammad Shoriful Islam,Mohammad,Islam,Shoriful Islam,male,2001-06-03,Panchagor,Bangladesh,L,L,Seam,Bangladesh,NaN,NaN,NaN,NaN
+89895ae1,1352206.0,NaN,Shorna Akter,Shorna Akter,Shorna Akter,Shorna,Akter,Shorna Akter,female,2007-01-01,Jamalpur,Bangladesh,R,R,Legbreak,Bangladesh,NaN,NaN,NaN,NaN
+b4b99816,1070173.0,NaN,Shubman Gill,Shubman Gill,Shubman Gill,Shubman,Gill,Shubman Gill,male,1999-09-08,"Fazilka, India",NaN,R,R,Offbreak,India,NaN,NaN,NaN,NaN
+72c9ad99,362356.0,NaN,Sidra Ameen,Sidra Ameen,Sidra Amin,Sidra,Amin,Sidra Amin,female,1992-04-07,Lahore,Pakistan,R,R,Seam,Pakistan,NaN,NaN,NaN,NaN
+26d041c4,299572.0,NaN,Sikandar Raza,Sikandar Raza,Sikandar Raza Butt,Sikandar,Butt,Sikandar Raza,male,1986-04-24,Sialkot,Pakistan,R,R,"Offbreak, Legbreak",Zimbabwe,NaN,NaN,NaN,NaN
+5838cb64,371194.0,NaN,SIP Fernando,SIP Fernando,Sirikkattuduwage Inoshi Priyadharshani Fernando,Sirikkattuduwage,Fernando,Inoshi Priyadharshani,female,1987-03-23,Colombo,Sri Lanka,R,R,Offbreak,Sri Lanka,NaN,NaN,NaN,NaN
+3a9e9cb2,885815.0,NaN,SIR Dunkley,SIR Dunkley,Sophia Ivy Rose Dunkley,Sophia,Dunkley,Sophia Dunkley,female,1998-07-16,Lambeth,England,R,R,Legbreak,England,NaN,NaN,NaN,NaN
+34304210,499254.0,NaN,S Jafta,S Jafta,Sinalo Jafta,Sinalo,Jafta,Sinalo Jafta,female,1994-12-22,East London,South Africa,R,NaN,NaN,South Africa,NaN,NaN,1.0,NaN
+97290faf,1356971.0,NaN,S Joseph,S Joseph,Shamar Joseph,Shamar,Joseph,Shamar Joseph,male,1999-08-31,NaN,NaN,L,R,Seam,West Indies,NaN,NaN,NaN,NaN
+4175d211,820689.0,NaN,SK Springer,SK Springer,Shamar Kamal Springer,Shamar,Springer,Shamar Springer,male,1997-11-26,St Michael,Barbados,R,R,Seam,West Indies,NaN,NaN,NaN,NaN
+6d76bc23,487007.0,NaN,S Luus,S Luus,Sune Luus,Sune,Luus,Sune Luus,female,1996-01-05,NaN,NaN,R,R,"Offbreak, Legbreak",South Africa,NaN,NaN,NaN,NaN
+ef2bcebf,1094720.0,NaN,S MacMahon,S MacMahon,Sophie MacMahon,Sophie,MacMahon,Sophie MacMahon,female,1997-01-29,Dublin,Ireland,R,R,Seam,Ireland,NaN,NaN,NaN,NaN
+0f6db197,643885.0,NaN,S Mahmood,S Mahmood,Saqib Mahmood,Saqib,Mahmood,Saqib Mahmood,male,1997-02-25,Birmingham,England,R,R,Seam,England,NaN,NaN,NaN,NaN
+5d2eda89,597806.0,NaN,S Mandhana,S Mandhana,Smriti Shriniwas Mandhana,Smriti,Mandhana,Smriti Mandhana,female,1996-07-18,Mumbai,India,L,R,Seam,India,NaN,NaN,NaN,NaN
+e94915e6,662973.0,NaN,SM Curran,SM Curran,Samuel Matthew Curran,Samuel,Curran,Sam Curran,male,1998-06-03,Northampton,England,L,L,Seam,England,NaN,NaN,NaN,NaN
+91d9613e,317144.0,NaN,SM Mayers,SM Mayers,Sharne Mary Mayers,Sharne,Mayers,Sharne Mayers,female,1992-07-19,Bulawayo,Zimbabwe,R,R,Offbreak,Zimbabwe,NaN,NaN,NaN,NaN
+99e23670,944373.0,NaN,S Molineux,S Molineux,Sophie Molineux,Sophie,Molineux,Sophie Molineux,female,1998-01-17,NaN,NaN,L,L,Orthodox,Australia,NaN,NaN,NaN,NaN
+94de63bf,1145089.0,NaN,S Mostary,S Mostary,Sobhana Mostary,Sobhana,Mostary,Sobhana Mostary,female,2002-02-13,Rangpur,Bangladesh,R,R,Offbreak,Bangladesh,NaN,NaN,NaN,NaN
+ff20c3ed,1331329.0,NaN,S Naidu,S Naidu,Seshnie Naidu,Seshnie,Naidu,Seshnie Naidu,female,2006-01-05,NaN,NaN,R,R,Legbreak,South Africa,NaN,NaN,NaN,NaN
+1251a339,924289.0,NaN,S Nisansala,S Nisansala,Sachini Nisansala,Sachini,Nisansala,Sachini Nisansala,female,2001-11-11,Ratgama,Sri Lanka,L,L,Orthodox,Sri Lanka,NaN,NaN,NaN,NaN
+48a1d7b7,670025.0,NaN,SO Hetmyer,SO Hetmyer,Shimron Odilon Hetmyer,Shimron,Hetmyer,Shimron Hetmyer,male,1996-12-26,Berbice,Guyana,L,NaN,NaN,West Indies,NaN,NaN,NaN,NaN
+cf33e1ce,492674.0,NaN,Song Yangyang,Song Yangyang,Kate Mariah Wilmott,Kate,Wilmott,Kate Wilmott,female,2004-08-29,NaN,NaN,R,R,Seam,West Indies,NaN,NaN,NaN,NaN
+4d9f9686,436677.0,NaN,Soumya Sarkar,Soumya Sarkar,Soumya Sarkar,Soumya,Sarkar,Soumya Sarkar,male,1993-02-25,Satkhira,Bangladesh,L,R,Seam,Bangladesh,NaN,NaN,NaN,NaN
+30a45b23,267192.0,NaN,SPD Smith,SPD Smith,Steven Peter Devereux Smith,Steven,Smith,Steven Smith,male,1989-06-02,Sydney,Australia,R,R,Legbreak,Australia,NaN,NaN,NaN,NaN
+b3f7066c,1380052.0,NaN,S Rani,S Rani,Shathi Rani,Shathi,Rani,Shathi Rani,female,1998-06-19,NaN,NaN,R,NaN,NaN,Bangladesh,NaN,NaN,NaN,NaN
+33946d69,1289948.0,NaN,SR Patil,Shreyanka Patil,Shreyanka Rajesh Patil,Shreyanka,Patil,Shreyanka Patil,female,2002-07-31,Bangalore,India,R,R,Offbreak,India,NaN,NaN,NaN,NaN
+92cf79a8,355359.0,NaN,SR Taylor,SR Taylor,Stafanie Roxann Taylor,Stafanie,Taylor,Stafanie Taylor,female,1991-06-11,Spanish Town,Jamaica,R,R,Offbreak,West Indies,NaN,NaN,NaN,NaN
+a4dcac97,960955.0,NaN,S Sajana,S Sajana,Sajeevan Sajana,Sajeevan,Sajana,Sajeevan Sajana,female,1995-01-04,Mananthavadi,India,R,R,Offbreak,India,NaN,NaN,NaN,NaN
+9ab2914d,629076.0,NaN,S Samarawickrama,S Samarawickrama,Wedagedara Sadeera Rashen Samarawickrama,Wedagedara,Samarawickrama,Sadeera Samarawickrama,male,1995-08-30,Colombo,Sri Lanka,R,NaN,NaN,Sri Lanka,NaN,NaN,1.0,NaN
+2f9a6bd1,474191.0,NaN,SS Connell,SS Connell,Shamilia Shontell Connell,Shamilia,Connell,Shamilia Connell,female,1992-07-14,NaN,NaN,R,R,Seam,West Indies,Barbados,NaN,NaN,NaN
+3247d54e,1277198.0,NaN,S Smale,S Smale,Seren Anna Smale,Seren,Smale,Seren Smale,female,2004-12-13,Wrexham,Wales,R,NaN,NaN,England,NaN,NaN,1.0,NaN
+4277234d,1329697.0,NaN,Sufiyan Muqeem,Sufiyan Muqeem,Sufiyan Muqeem,Sufiyan,Muqeem,Sufiyan Muqeem,male,1999-11-15,NaN,NaN,L,L,Unorthodox,Pakistan,NaN,NaN,NaN,NaN
+fb0c0bcc,1371855.0,NaN,Sultana Khatun,Sultana Khatun,Sultana Khatun,Sultana,Khatun,Sultana Khatun,female,1996-02-05,NaN,NaN,R,R,Offbreak,Bangladesh,NaN,NaN,NaN,NaN
+a4cc73aa,425943.0,NaN,SV Samson,SV Samson,Sanju Samson,Sanju,Samson,Sanju Samson,male,1994-11-11,"Pulluvila, India",NaN,R,R,Legbreak,India,NaN,NaN,NaN,NaN
+89bbc67a,54565.0,NaN,SW Bates,SW Bates,Suzannah Wilson Bates,Suzannah,Bates,Suzie Bates,female,1987-09-16,Dunedin,New Zealand,R,R,Seam,New Zealand,NaN,NaN,NaN,NaN
+4cf8708b,1204960.0,NaN,Syeda Aroob Shah,Syeda Aroob Shah,Syeda Aroob Shah,Syeda,Shah,Syeda Aroob Shah,female,2003-12-31,Karachi,Pakistan,R,R,Legbreak,Pakistan,NaN,NaN,NaN,NaN
+7d794fa6,1255542.0,NaN,SZ Thakor,SZ Thakor,Saima Zakirhussain Thakor,Saima,Thakor,Saima Thakor,female,1996-09-13,Mumbai,India,R,R,Seam,India,NaN,NaN,NaN,NaN
+21e5f325,440516.0,NaN,TA Blundell,TA Blundell,Thomas Ackland Blundell,Thomas,Blundell,Tom Blundell,male,1990-09-01,Wellington,New Zealand,R,R,Offbreak,New Zealand,NaN,NaN,1.0,NaN
+a818c1be,277912.0,NaN,TA Boult,TA Boult,Trent Alexander Boult,Trent,Boult,Trent Boult,male,1989-07-22,Rotorua,New Zealand,R,L,Seam,New Zealand,NaN,NaN,NaN,NaN
+426eaf06,1440554.0,NaN,Taj Nehar,Taj Nehar,Taj Nehar,Taj,Nehar,Taj Nehar,female,1997-10-03,Patuakhali,Bangladesh,R,R,Offbreak,Bangladesh,NaN,NaN,NaN,NaN
+aa467af0,932665.0,NaN,Tanvir Islam,Tanvir Islam,Tanvir Islam,Tanvir,Islam,Tanvir Islam,male,1996-10-25,Barisal,Bangladesh,L,L,Orthodox,Bangladesh,NaN,NaN,NaN,NaN
+80fe764d,990023.0,NaN,Tanzid Hasan,Tanzid Hasan,Tanzid Hasan Tamim,Tanzid,Tamim,Tanzid Hasan,male,2000-12-01,Bogra,Bangladesh,L,NaN,NaN,Bangladesh,NaN,NaN,NaN,NaN
+0b0cc297,1139520.0,NaN,Tanzim Hasan Sakib,Tanzim Hasan Sakib,Tanzim Hasan Sakib,Tanzim,Sakib,Tanzim Hasan Sakib,male,2002-10-20,Sylhet,Bangladesh,R,R,Seam,Bangladesh,NaN,NaN,NaN,NaN
+ef18b66e,538506.0,NaN,Taskin Ahmed,Taskin Ahmed,Taskin Ahmed,Taskin,Ahmed,Taskin Ahmed,male,1995-04-03,Dhaka,Bangladesh,L,R,Seam,Bangladesh,NaN,NaN,NaN,NaN
+bf350134,1405003.0,NaN,Tasmia Rubab,Tasmia Rubab,Tasmia Rubab,Tasmia,Rubab,Tasmia Rubab,female,2002-12-20,NaN,NaN,R,L,Seam,Pakistan,NaN,NaN,NaN,NaN
+431f8af4,824159.0,NaN,Tayyab Tahir,Tayyab Tahir,Tayyab Tahir,Tayyab,Tahir,Tayyab Tahir,male,1993-07-26,Gujrat,Pakistan,R,R,Legbreak,Pakistan,NaN,NaN,NaN,NaN
+06659caa,600731.0,NaN,T Brits,T Brits,Tazmin Brits,Tazmin,Brits,Tazmin Brits,female,1991-01-08,Klerksdorp,South Africa,R,NaN,NaN,South Africa,NaN,NaN,1.0,NaN
+5d664346,1290929.0,NaN,TB Robinson,TB Robinson,Timothy Blake Robinson,Timothy,Robinson,Tim Robinson,male,2002-04-28,Wellington,New Zealand,R,R,Seam,New Zealand,NaN,NaN,NaN,NaN
+13c35c9e,232364.0,NaN,TG Southee,TG Southee,Timothy Grant Southee,Timothy,Southee,Tim Southee,male,1988-12-11,Whangarei,New Zealand,R,R,Seam,New Zealand,NaN,NaN,NaN,NaN
+d1d83db3,1038205.0,NaN,T Gwandu,T Gwandu,Trevor Wesley Gwandu,Trevor,Gwandu,Trevor Gwandu,male,1998-02-24,Harare,Zimbabwe,R,R,Seam,Zimbabwe,NaN,NaN,NaN,NaN
+f1f99156,892749.0,NaN,TH David,TH David,Timothy Hays David,Timothy,David,Tim David,male,1996-03-16,Singapore,Singapore,R,R,Offbreak,Australia,Singapore,NaN,NaN,NaN
+45a62071,1152714.0,NaN,T Hinds,T Hinds,Terrance Hinds,Terrance,Hinds,Terrance Hinds,male,1992-01-23,NaN,Trinidad and Tobago,R,R,Seam,West Indies,NaN,NaN,NaN,NaN
+b0482a1d,1170265.0,NaN,Tilak Varma,Tilak Varma,Namboori Thakur Tilak Varma,Namboori,Varma,Tilak Varma,male,2002-11-08,Hyderabad,India,L,R,Offbreak,India,NaN,NaN,NaN,NaN
+ef70a34b,1071711.0,NaN,TJ Vlaeminck,TJ Vlaeminck,Tayla Jade Vlaeminck,Tayla,Vlaeminck,Tayla Vlaeminck,female,1998-10-27,Bendigo,Australia,R,R,Seam,Australia,NaN,NaN,NaN,NaN
+5bbabe59,425639.0,NaN,TL Chatara,TL Chatara,Tendai Larry Chatara,Tendai,Chatara,Tendai Chatara,male,1991-02-28,Chimanimani,Zimbabwe,R,R,Seam,Zimbabwe,NaN,NaN,NaN,NaN
+4663bd23,625964.0,NaN,TL Seifert,TL Seifert,Tim Louis Seifert,Tim,Seifert,Tim Seifert,male,1994-12-14,Wanganui,New Zealand,R,NaN,NaN,New Zealand,NaN,NaN,1.0,NaN
+3d5d51a5,946507.0,NaN,T Marumani,T Marumani,Tadiwanashe Marumani,Tadiwanashe,Marumani,Tadiwanashe Marumani,male,2002-01-02,NaN,NaN,L,R,Offbreak,Zimbabwe,NaN,NaN,NaN,NaN
+12b610c2,530011.0,NaN,TM Head,TM Head,Travis Michael Head,Travis,Head,Travis Head,male,1993-12-29,Adelaide,Australia,L,R,Offbreak,Australia,NaN,NaN,1.0,NaN
+ca5acfa4,381311.0,NaN,TM McGrath,TM McGrath,Tahlia May McGrath,Tahlia,McGrath,Tahlia McGrath,female,1995-11-10,NaN,NaN,R,R,Seam,Australia,NaN,NaN,NaN,NaN
+fbcfa528,1122853.0,NaN,T Munyonga,T Munyonga,Tony Tanaka Munyonga,Tony,Munyonga,Tony Munyonga,male,1999-01-31,Chitungwiza,Zimbabwe,R,R,Offbreak,Zimbabwe,NaN,NaN,NaN,NaN
+06fc82b8,1258606.0,NaN,T Musekiwa,T Musekiwa,Tashinga Musekiwa,Tashinga,Musekiwa,Tashinga Musekiwa,male,2000-02-10,Kadoma,Zimbabwe,R,R,Seam,Zimbabwe,NaN,NaN,NaN,NaN
+9e52a414,990031.0,NaN,Towhid Hridoy,Towhid Hridoy,Md Towhid Hridoy,Md,Hridoy,Towhid Hridoy,male,2000-12-04,Bogra,Bangladesh,R,R,Offbreak,Bangladesh,NaN,NaN,NaN,NaN
+443c122f,960847.0,NaN,TP Kanwar,TP Kanwar,Tanuja P Kanwar,Tanuja,Kanwar,Tanuja Kanwar,female,1998-01-28,Shimla,India,L,L,Orthodox,India,NaN,NaN,NaN,NaN
+25ca0573,1255407.0,NaN,TR Sadhu,TR Sadhu,Titas Ranadeep Sadhu,Titas,Sadhu,Titas Sadhu,female,2004-09-29,Chinsura,India,R,R,Seam,India,NaN,NaN,NaN,NaN
+a03bba42,379145.0,NaN,T Shamsi,T Shamsi,Tabraiz Shamsi,Tabraiz,Shamsi,Tabraiz Shamsi,male,1990-02-18,Johannesburg,South Africa,R,L,Unorthodox,South Africa,NaN,NaN,NaN,NaN
+4e1b4323,713811.0,NaN,TS Kamunhukamwe,TS Kamunhukamwe,Tinashe Stephen Kamunhukamwe,Tinashe,Kamunhukamwe,Tinashe Kamunhukamwe,male,1995-07-10,Chitungwiza,South Africa,R,R,Offbreak,Zimbabwe,NaN,NaN,NaN,NaN
+6e28e586,939229.0,NaN,TS Sekhukhune,TS Sekhukhune,Tumi Sphindile Sekhukhune,Tumi,Sekhukhune,Tumi Sekhukhune,female,1998-11-21,Johannesburg,South Africa,L,R,Seam,South Africa,NaN,NaN,NaN,NaN
+85b3fab2,595978.0,NaN,T Stubbs,T Stubbs,Tristan Stubbs,Tristan,Stubbs,Tristan Stubbs,male,2000-08-14,Cape Town,South Africa,R,R,Offbreak,South Africa,NaN,NaN,1.0,NaN
+b2664905,297074.0,NaN,TT Beaumont,TT Beaumont,Tamsin Tilley Beaumont,Tamsin,Beaumont,Tammy Beaumont,female,1991-03-11,Dover,England,R,NaN,NaN,England,NaN,NaN,1.0,NaN
+5feead83,1360042.0,NaN,TT Maposa,TT Maposa,Tinotenda Tinashe Maposa,Tinotenda,Maposa,Tinotenda Maposa,male,2003-08-29,Bulawayo,Zimbabwe,R,R,Seam,Zimbabwe,NaN,NaN,NaN,NaN
+0d56e9a5,1204959.0,NaN,Tuba Hassan,Tuba Hassan,Tuba Hassan,Tuba,Hassan,Tuba Hassan,female,2000-10-18,NaN,NaN,R,R,Legbreak,Pakistan,NaN,NaN,NaN,NaN
+46a9bea1,822553.0,NaN,TU Deshpande,TU Deshpande,Tushar Uday Deshpande,Tushar,Deshpande,Tushar Deshpande,male,1995-05-15,Mumbai,India,L,R,Seam,India,NaN,NaN,NaN,NaN
+8f8f94fd,960695.0,NaN,U Chetry,U Chetry,Uma Chetry,Uma,Chetry,Uma Chetry,female,2002-07-27,NaN,NaN,R,NaN,NaN,India,NaN,NaN,1.0,NaN
+821d7d46,941777.0,NaN,Umaima Sohail,Umaima Sohail,Omaima Sohail,Omaima,Sohail,Omaima Sohail,female,1997-07-11,Karachi,Pakistan,R,R,Offbreak,Pakistan,NaN,NaN,NaN,NaN
+1a510809,646767.0,NaN,U Raymond-Hoey,U Raymond-Hoey,Una Raymond-Hoey,Una,Raymond-Hoey,Una Raymond-Hoey,female,1996-10-28,Dublin,Ireland,R,R,Seam,Ireland,NaN,NaN,NaN,NaN
+6dd8b88c,647667.0,NaN,Usama Mir,Usama Mir,Usama Mir,Usama,Mir,Usama Mir,male,1995-12-23,Sialkot,Pakistan,R,R,Legbreak,Pakistan,NaN,NaN,NaN,NaN
+bafb9238,1123428.0,NaN,Usman Khan,Usman Khan (2),Usman Khan,Usman,Khan,Usman Khan,male,1995-05-10,Karachi,Pakistan,R,R,Offbreak,Pakistan,NaN,NaN,1.0,NaN
+ba607b88,253802.0,NaN,V Kohli,V Kohli,Virat Kohli,Virat,Kohli,Virat Kohli,male,1988-11-05,Delhi,India,R,R,Seam,India,NaN,NaN,NaN,NaN
+792d0178,941809.0,NaN,Waheeda Akhtar,Waheeda Akhtar,Waheeda Akhtar,Waheeda,Akhtar,Waheeda Akhtar,female,1995-04-10,Chiniot,Pakistan,R,R,Seam,Pakistan,NaN,NaN,NaN,NaN
+f19ccfad,719715.0,NaN,Washington Sundar,Washington Sundar,Washington Sundar,Washington,Sundar,Washington Sundar,male,1999-10-05,Chennai,India,L,R,Offbreak,India,NaN,NaN,NaN,NaN
+8afe73e2,547749.0,NaN,WA Young,WA Young,William Alexander Young,William,Young,Will Young,male,1992-11-22,New Plymouth,New Zealand,R,R,Offbreak,New Zealand,NaN,NaN,NaN,NaN
+550373ea,557731.0,NaN,WGAKK Kulasuriya,WGAKK Kulasuriya,Waliarawe Gedara Achini Kalhari Kaushalya Kulasuriya,Waliarawe,Kulasuriya,Achini Kulasuriya,female,1990-06-07,Matale,Sri Lanka,L,R,Seam,Sri Lanka,NaN,NaN,NaN,NaN
+9caf69a1,897549.0,NaN,WG Jacks,WG Jacks,William George Jacks,William,Jacks,Will Jacks,male,1998-11-21,Chertsey,England,R,R,Offbreak,England,NaN,NaN,NaN,NaN
+9550470d,784369.0,NaN,WIA Fernando,WIA Fernando,Weerahandige Inol Avishka Fernando,Weerahandige,Fernando,Avishka Fernando,male,1998-04-05,Wadduwa,Sri Lanka,R,R,Seam,Sri Lanka,NaN,NaN,NaN,NaN
+c34a15e6,923703.0,NaN,WK Dilhari,WK Dilhari,Welikonthage Kavisha Dilhari,Welikonthage,Dilhari,Kavisha Dilhari,female,2001-01-24,Rathgama,Sri Lanka,R,R,"Offbreak, Legbreak",Sri Lanka,NaN,NaN,NaN,NaN
+a879b92c,938959.0,NaN,W Madhevere,W Madhevere,Wessly Nyasha Madhevere,Wessly,Madhevere,Wessly Madhevere,male,2000-09-04,Harare,Zimbabwe,R,R,Offbreak,Zimbabwe,NaN,NaN,NaN,NaN
+cb9b8664,1211825.0,NaN,W O\\\\\\\'Rourke,W O\\\\\\\'Rourke,William Peter O\\\\\\\'Rourke,William,O\\\\\\\'Rourke,Will O’Rourke,male,2001-08-06,Kingston upon Thames,England,R,R,Seam,New Zealand,NaN,NaN,NaN,NaN
+4bc0a378,571703.0,NaN,WP Masakadza,WP Masakadza,Wellington Pedzisai Masakadza,Wellington,Masakadza,Wellington Masakadza,male,1993-10-04,Harare,Zimbabwe,L,L,Orthodox,Zimbabwe,NaN,NaN,NaN,NaN
+3b53243a,1050545.0,NaN,XC Bartlett,XC Bartlett,Xavier Colin Bartlett,Xavier,Bartlett,Xavier Bartlett,male,1998-12-17,Adelaide,Australia,R,R,Seam,Australia,NaN,NaN,NaN,NaN
+6c19c6e5,1151278.0,NaN,YBK Jaiswal,YBK Jaiswal,Yashasvi Jaiswal,Yashasvi,Jaiswal,Yashasvi Jaiswal,male,2001-12-28,"Suriyawan, India",NaN,L,R,Legbreak,India,NaN,NaN,NaN,NaN
+9c3d4e8a,960715.0,NaN,YH Bhatia,YH Bhatia,Yastika Harish Bhatia,Yastika,Bhatia,Yastika Bhatia,female,2000-11-01,Vadodara,India,L,NaN,NaN,India,NaN,NaN,1.0,NaN
+28392e11,1272475.0,NaN,Zaman Khan,Zaman Khan,Zaman Khan,Zaman,Khan,Zaman Khan,male,2001-09-10,Mirpur,Pakistan,R,R,Seam,Pakistan,NaN,NaN,NaN,NaN
+30f92334,1202098.0,NaN,ZGF Foulkes,ZGF Foulkes,Zakary Glen Foulkes,Zakary,Foulkes,Zakary Foulkes,male,2002-06-05,Christchurch,New Zealand,R,R,Seam,New Zealand,NaN,NaN,NaN,NaN
+816af623,1268281.0,NaN,Z James,Z James,Zaida Amiya James,Zaida,James,Zaida James,female,2004-10-30,NaN,Saint Lucia,L,L,Orthodox,West Indies,NaN,NaN,NaN,NaN

@@ -1,0 +1,27 @@
+format,full_name,short_name,abbreviation,nickname,sex,nation
+T20,Australia Men,,AUS-M,,male,Australia
+T20,Australia Women,,AUS-W,,female,Australia
+T20,Bangladesh Men,,BGD-M,The Tigers,male,Bangladesh
+T20,Bangladesh Women,,BGD-W,The Tigresses,female,Bangladesh
+T20,England Men,,ENG-M,,male,England
+T20,England Women,,ENG-W,,female,England
+T20,India Men,,IND-M,Men in Blue,male,India
+T20,India Women,,IND-W,Women in Blue,female,India
+T20,Ireland Men,,IRL-M,,male,Ireland
+T20,Ireland Women,,IRL-W,,female,Ireland
+T20,New Zealand Men,,NZL-M,Black Caps,male,New Zealand
+T20,New Zealand Women,,NZL-W,White Ferns,female,New Zealand
+T20,Pakistan Men,,PAK-M,,male,Pakistan
+T20,Pakistan Women,,PAK-W,,female,Pakistan
+T20,South Africa Men,,ZAF-M,Proteas,male,South Africa
+T20,South Africa Women,,ZAF-W,Proteas,female,South Africa
+T20,Sri Lanka Men,,LKA-M,The Lions,male,Sri Lanka
+T20,Sri Lanka Women,,LKA-W,,female,Sri Lanka
+T20,West Indies Men,,WI-M,Windies,male,West Indies
+T20,West Indies Women,,WI-W,Windies,female,West Indies
+T20,Zimbabwe Men,,ZWE-M,The Chevrons,male,Zimbabwe
+T20,Zimbabwe Women,,ZWE-W,Lady Chevrons,female,Zimbabwe
+T20,United Arab Emirates Men,U.A.E. Men,ARE-M,,male,United Arab Emirates
+T20,United Arab Emirates Women,U.A.E. Women,ARE-W,,female,United Arab Emirates
+T20,United States of America Men,U.S.A. Men,USA-M,,male,United States of America
+T20,United States of America Women,U.S.A. Women,USA-W,,female,United States of America

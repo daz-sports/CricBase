@@ -1,0 +1,149 @@
+alias_name,alias_city,alias_nation,venue_id
+MA Chidambaram Stadium,Chennai,India,1ind1
+Dr DY Patil Sports Academy,Navi Mumbai,India,2ind2
+Shrimant Madhavrao Scindia Cricket Stadium,Gwalior,India,3ind3
+Rajiv Gandhi International Stadium,Hyderabad,India,4ind4
+Arun Jaitley Stadium,Delhi,India,5ind5
+Sabina Park,Jamaica,Jamaica,1jam6
+Sabina Park,Kingston,Jamaica,1jam6
+Gaddafi Stadium,Lahore,Pakistan,1pak7
+National Stadium,Karachi,Pakistan,2pak8
+Southend Club Cricket Stadium,Karachi,Pakistan,3pak9
+Rawalpindi Cricket Stadium,Rawalpindi,Pakistan,4pak10
+Multan Cricket Stadium,Multan,Pakistan,5pak11
+Boland Park,Paarl,South Africa,1zaf12
+Boland Bank Park,Paarl,South Africa,1zaf12
+Diamond Oval,Kimberley,South Africa,2zaf13
+De Beers Diamond Oval,Kimberley,South Africa,2zaf13
+Mangaung Oval,Bloemfontein,South Africa,3zaf14
+OUTsurance Oval,Bloemfontein,South Africa,3zaf14
+New Wanderers Stadium,Johannesburg,South Africa,4zaf15
+The Wanderers Stadium,Johannesburg,South Africa,4zaf15
+St George's Park,Port Elizabeth,South Africa,5zaf16
+St George's Park,Gqeberha,South Africa,5zaf16
+SuperSport Park,Centurion,South Africa,6zaf17
+Senwes Park,Potchefstroom,South Africa,7zaf18
+Newlands,Cape Town,South Africa,8zaf19
+Kingsmead,Durban,South Africa,9zaf20
+Willowmoore Park,Benoni,South Africa,10zaf21
+Buffalo Park,East London,South Africa,11zaf22
+City Oval,Pietermaritzburg,South Africa,12zaf23
+Moses Mabhida Stadium,Durban,South Africa,13zaf24
+LC de Villiers Oval,Pretoria,South Africa,14zaf25
+County Ground,Brighton,England,1eng26
+County Ground,Hove,England,1eng26
+Lord's,London,England,2eng27
+The Rose Bowl,Southampton,England,3eng28
+Edgbaston,Birmingham,England,4eng29
+Trent Bridge,Nottingham,England,5eng30
+Old Trafford,Manchester,England,6eng31
+Arundel Castle Cricket Club Ground,Arundel,England,7eng32
+Riverside Ground,Chester-le-Street,England,8eng33
+The Cooper Associates County Ground,Taunton,England,9eng34
+County Ground,Taunton,England,9eng34
+Kennington Oval,London,England,10eng35
+St Lawrence Ground,Canterbury,England,11eng36
+Headingley,Leeds,England,12eng37
+Haslegrave Ground,Loughborough,England,13eng38
+County Ground,Chelmsford,England,14eng39
+County Ground,Bristol,England,15eng40
+AMI Stadium,Christchurch,New Zealand,1nzl41
+Jade Stadium,Christchurch,New Zealand,1nzl41
+Sky Stadium,Wellington,New Zealand,2nzl42
+Westpac Stadium,Wellington,New Zealand,2nzl42
+University Oval,Dunedin,New Zealand,3nzl43
+Eden Park,Auckland,New Zealand,4nzl44
+Hagley Oval,Christchurch,New Zealand,5nzl45
+McLean Park,Napier,New Zealand,6nzl46
+Bay Oval,Mount Maunganui,New Zealand,7nzl47
+Seddon Park,Hamilton,New Zealand,8nzl48
+Saxton Oval,Nelson,New Zealand,9nzl49
+Pukekura Park,New Plymouth,New Zealand,10nzl50
+White Hill Field,Hamilton,New Zealand,11nzl51
+Basin Reserve,Wellington,New Zealand,12nzl52
+John Davies Oval,Queenstown,New Zealand,13nzl53
+Zayed Cricket Stadium,Abu Dhabi,United Arab Emirates,1are54
+Sheikh Zayed Stadium,Abu Dhabi,United Arab Emirates,1are54
+ICC Academy,Dubai,United Arab Emirates,2are55
+ICC Global Cricket Academy,Dubai,United Arab Emirates,2are55
+Dubai International Cricket Stadium,Dubai,United Arab Emirates,3are56
+Sharjah Cricket Stadium,Sharjah,United Arab Emirates,4are57
+Malek Cricket Ground,Ajman,United Arab Emirates,5are58
+ICC Academy Ground No 2,Dubai,United Arab Emirates,6are59
+Tolerance Oval,Abu Dhabi,United Arab Emirates,7are60
+7he Sevens Stadium,Dubai,United Arab Emirates,8are61
+Harare Sports Club,Harare,Zimbabwe,1zwe62
+Bulawayo Athletic Club,Bulawayo,Zimbabwe,2zwe63
+Old Hararians,Harare,Zimbabwe,3zwe64
+Takashinga Sports Club,Harare,Zimbabwe,4zwe65
+Queens Sports Club,Bulawayo,Zimbabwe,5zwe66
+Arnos Vale Ground,St Vincent,Saint Vincent and the Grenadines,1vct67
+Arnos Vale Ground,Kingstown,Saint Vincent and the Grenadines,1vct67
+Coolidge Cricket Ground,Coolidge,Antigua and Barbuda,1atg68
+Coolidge Cricket Ground,Antigua,Antigua and Barbuda,1atg68
+Sir Vivian Richards Stadium,Antigua,Antigua and Barbuda,2atg69
+Sir Vivian Richards Stadium,North Sound,Antigua and Barbuda,2atg69
+Beausejour Stadium,St Lucia,Saint Lucia,1lca70
+Daren Sammy National Cricket Stadium,St Lucia,Saint Lucia,1lca70
+Daren Sammy National Cricket Stadium,Gros Islet,Saint Lucia,1lca70
+Darren Sammy National Cricket Stadium,Gros Islet,Saint Lucia,1lca70
+Kensington Oval,Barbados,Barbados,1brb71
+Kensington Oval,Bridgetown,Barbados,1brb71
+Shere Bangla National Stadium,Mirpur,Bangladesh,1bgd72
+Shere Bangla National Stadium,Dhaka,Bangladesh,1bgd72
+Sylhet International Cricket Stadium,Sylhet,Bangladesh,2bgd73
+Sylhet Stadium,Sylhet,Bangladesh,2bgd73
+Sheikh Abu Naser Stadium,Khulna,Bangladesh,3bgd74
+Zahur Ahmed Chowdhury Stadium,Chattogram,Bangladesh,4bgd75
+Khan Shaheb Osman Ali Stadium,Fatullah,Bangladesh,5bgd76
+Brian Lara Stadium,Tarouba,Trinidad and Tobago,1tto77
+Brian Lara Stadium,Trinidad,Trinidad and Tobago,1tto77
+Queen's Park Oval,Trinidad,Trinidad and Tobago,2tto78
+Simonds Stadium,Victoria,Australia,1aus79
+GMHBA Stadium,Geelong,Australia,1aus79
+W.A.C.A. Ground,Perth,Australia,2aus80
+Western Australia Cricket Association Ground,Perth,Australia,2aus80
+Tony Ireland Stadium,Townsville,Australia,3aus81
+Bellerive Oval,Hobart,Australia,4aus82
+Manuka Oval,Canberra,Australia,5aus83
+Sydney Cricket Ground,Sydney,Australia,6aus84
+Allan Border Field,Brisbane,Australia,7aus85
+Adelaide Oval,Adelaide,Australia,8aus86
+Sydney Showground Stadium,Sydney,Australia,9aus87
+Perth Stadium,Perth,Australia,10aus88
+North Sydney Oval,Sydney,Australia,11aus89
+Melbourne Cricket Ground,Melbourne,Australia,12aus90
+Stadium Australia,Sydney,Australia,13aus91
+Brisbane Cricket Ground,Brisbane,Australia,14aus92
+Kerrydale Oval,Gold Coast,Australia,15aus93
+Carrara Oval,Carrara,Australia,16aus94
+Great Barrier Reef Arena,Mackay,Australia,17aus95
+Junction Oval,Melbourne,Australia,18aus96
+R Premadasa Stadium,Colombo,Sri Lanka,1lka97
+R.Premadasa Stadium,Colombo,Sri Lanka,1lka97
+Chilaw Marians Cricket Club Ground,FTZ Sports Complex,Sri Lanka,2lka98
+Pallekele International Cricket Stadium,Kandy,Sri Lanka,3lka99
+P Sara Oval,Colombo,Sri Lanka,4lka100
+Sinhalese Sports Club Ground,Colombo,Sri Lanka,5lka101
+Rangiri Dambulla International Stadium,Dambulla,Sri Lanka,6lka102
+Galle International Stadium,Galle,Sri Lanka,7lka103
+Colts Cricket Club Ground,Colombo,Sri Lanka,8lka104
+Mahinda Rajapaksa International Cricket Stadium,Hambantota,Sri Lanka,9lka105
+Mercantile Cricket Association Ground,Colombo,Sri Lanka,10lka106
+Colombo Cricket Club Ground,Colombo,Sri Lanka,11lka107
+Nondescripts Cricket Club Ground,Colombo,Sri Lanka,12lka108
+Sophia Gardens,Cardiff,Wales,1wal109
+Woodley Cricket Field,Los Angeles,United States of America,1usa110
+Nassau County International Cricket Stadium,New York,United States of America,2usa111
+Central Broward Regional Park Stadium Turf Ground,Lauderhill,United States of America,3usa112
+Prairie View Cricket Complex,Houston,United States of America,4usa113
+Grand Prairie Stadium,Dallas,United States of America,5usa114
+Providence Stadium,Guyana,Guyana,1guy115
+Providence Stadium,Providence,Guyana,1guy115
+Malahide,Dublin,Ireland,1irl116
+The Village,Dublin,Ireland,1irl116
+YMCA Cricket Club,Dublin,Ireland,2irl117
+Castle Avenue,Dublin,Ireland,3irl118
+Pembroke Cricket Club,Dublin,Ireland,4irl119
+Sydney Parade,Dublin,Ireland,5irl120
+County Ground,Northampton,England,16eng121
