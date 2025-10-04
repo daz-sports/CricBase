@@ -1,0 +1,122 @@
+venue_id,venue_name,city,nation,nation_code,home_team_id_1,home_team_id_2
+1ind1,MA Chidambaram Stadium,Chennai,India,IND,indMT20,indFT20
+2ind2,Dr DY Patil Sports Academy,Mumbai,India,IND,indMT20,indFT20
+3ind3,Shrimant Madhavrao Scindia Cricket Stadium,Gwalior,India,IND,indMT20,indFT20
+4ind4,Rajiv Gandhi International Stadium,Hyderabad,India,IND,indMT20,indFT20
+5ind5,Arun Jaitley Stadium,Dehli,India,IND,indMT20,indFT20
+1jam6,Sabina Park,Kingston,Jamaica,JAM,wiMT20,wiFT20
+1pak7,Gaddafi Stadium,Lahore,Pakistan,PAK,pakMT20,pakFT20
+2pak8,National Stadium,Karachi,Pakistan,PAK,pakMT20,pakFT20
+3pak9,Southend Club Cricket Stadium,Karachi,Pakistan,PAK,pakMT20,pakFT20
+4pak10,Rawalpindi Cricket Stadium,Rawalpindi,Pakistan,PAK,pakMT20,pakFT20
+5pak11,Multan Cricket Stadium,Multan,Pakistan,PAK,pakMT20,pakFT20
+1zaf12,Boland Park,Paarl,South Africa,ZAF,zafMT20,zafFT20
+2zaf13,Diamond Oval,Kimberley,South Africa,ZAF,zafMT20,zafFT20
+3zaf14,Mangaung Oval,Bloemfontein,South Africa,ZAF,zafMT20,zafFT20
+4zaf15,The Wanderers Stadium,Johannesburg,South Africa,ZAF,zafMT20,zafFT20
+5zaf16,St George's Park,Gqeberha,South Africa,ZAF,zafMT20,zafFT20
+6zaf17,SuperSport Park,Centurion,South Africa,ZAF,zafMT20,zafFT20
+7zaf18,Senwes Park,Potchefstroom,South Africa,ZAF,zafMT20,zafFT20
+8zaf19,Newlands,Cape Town,South Africa,ZAF,zafMT20,zafFT20
+9zaf20,Kingsmead,Durban,South Africa,ZAF,zafMT20,zafFT20
+10zaf21,Willowmoore Park,Benoni,South Africa,ZAF,zafMT20,zafFT20
+11zaf22,Buffalo Park,East London,South Africa,ZAF,zafMT20,zafFT20
+12zaf23,City Oval,Pietermaritzburg,South Africa,ZAF,zafMT20,zafFT20
+13zaf24,Moses Mabhida Stadium,Durban,South Africa,ZAF,zafMT20,zafFT20
+14zaf25,LC de Villiers Oval,Pretoria,South Africa,ZAF,zafMT20,zafFT20
+1eng26,County Ground,Brighton & Hove,England,ENG,engMT20,engFT20
+2eng27,Lord's,London,England,ENG,engMT20,engFT20
+3eng28,The Rose Bowl,Southampton,England,ENG,engMT20,engFT20
+4eng29,Edgbaston,Birmingham,England,ENG,engMT20,engFT20
+5eng30,Trent Bridge,Nottingham,England,ENG,engMT20,engFT20
+6eng31,Old Trafford,Manchester,England,ENG,engMT20,engFT20
+7eng32,Arundel Castle Cricket Club Ground,Arundel,England,ENG,engMT20,engFT20
+8eng33,Riverside Ground,Chester-le-Street,England,ENG,engMT20,engFT20
+9eng34,The Cooper Associates County Ground,Taunton,England,ENG,engMT20,engFT20
+10eng35,Kennington Oval,London,England,ENG,engMT20,engFT20
+11eng36,St Lawrence Ground,Canterbury,England,ENG,engMT20,engFT20
+12eng37,Headingley,Leeds,England,ENG,engMT20,engFT20
+13eng38,Haslegrave Ground,Loughborough,England,ENG,engMT20,engFT20
+14eng39,County Ground,Chelmsford,England,ENG,engMT20,engFT20
+15eng40,County Ground,Bristol,England,ENG,engMT20,engFT20
+1nzl41,AMI Stadium,Christchurch,New Zealand,NZL,nzlMT20,nzlFT20
+2nzl42,Sky Stadium,Wellington,New Zealand,NZL,nzlMT20,nzlFT20
+3nzl43,University Oval,Dunedin,New Zealand,NZL,nzlMT20,nzlFT20
+4nzl44,Eden Park,Auckland,New Zealand,NZL,nzlMT20,nzlFT20
+5nzl45,Hagley Oval,Christchurch,New Zealand,NZL,nzlMT20,nzlFT20
+6nzl46,McLean Park,Napier,New Zealand,NZL,nzlMT20,nzlFT20
+7nzl47,Bay Oval,Mount Maunganui,New Zealand,NZL,nzlMT20,nzlFT20
+8nzl48,Seddon Park,Hamilton,New Zealand,NZL,nzlMT20,nzlFT20
+9nzl49,Saxton Oval,Nelson,New Zealand,NZL,nzlMT20,nzlFT20
+10nzl50,Pukekura Park,New Plymouth,New Zealand,NZL,nzlMT20,nzlFT20
+11nzl51,White Hill Field,Hamilton,New Zealand,NZL,nzlMT20,nzlFT20
+12nzl52,Basin Reserve,Wellington,New Zealand,NZL,nzlMT20,nzlFT20
+13nzl53,John Davies Oval,Queenstown,New Zealand,NZL,nzlMT20,nzlFT20
+1are54,Zayed Cricket Stadium,Abu Dhabi,United Arab Emirates,ARE,areMT20,areFT20
+2are55,ICC Academy,Dubai,United Arab Emirates,ARE,areMT20,areFT20
+3are56,Dubai International Cricket Stadium,Dubai,United Arab Emirates,ARE,areMT20,areFT20
+4are57,Sharjah Cricket Stadium,Sharjah,United Arab Emirates,ARE,areMT20,areFT20
+5are58,Malek Cricket Ground,Ajman,United Arab Emirates,ARE,areMT20,areFT20
+6are59,ICC Academy Ground No 2,Dubai,United Arab Emirates,ARE,areMT20,areFT20
+7are60,Tolerance Oval,Abu Dhabi,United Arab Emirates,ARE,areMT20,areFT20
+8are61,7he Sevens Stadium,Dubai,United Arab Emirates,ARE,areMT20,areFT20
+1zwe62,Harare Sports Club,Harare,Zimbabwe,ZWE,zweMT20,zweFT20
+2zwe63,Bulawayo Athletic Club,Bulawayo,Zimbabwe,ZWE,zweMT20,zweFT20
+3zwe64,Old Hararians,Harare,Zimbabwe,ZWE,zweMT20,zweFT20
+4zwe65,Takashinga Sports Club,Harare,Zimbabwe,ZWE,zweMT20,zweFT20
+5zwe66,Queens Sports Club,Bulawayo,Zimbabwe,ZWE,zweMT20,zweFT20
+1vct67,Arnos Vale Ground,Kingstown,Saint Vincent and the Grenadines,VCT,wiMT20,wiFT20
+1atg68,Coolidge Cricket Ground,Coolidge,Antigua and Barbuda,ATG,wiMT20,wiFT20
+2atg69,Sir Vivian Richards Stadium,North Sound,Antigua and Barbuda,ATG,wiMT20,wiFT20
+1lca70,Daren Sammy National Cricket Stadium,Gros Islet,Saint Lucia,LCA,wiMT20,wiFT20
+1brb71,Kensington Oval,Bridgetown,Barbados,BRB,wiMT20,wiFT20
+1bgd72,Shere Bangla National Stadium,Dhaka,Bangladesh,BGD,bgdMT20,bgdFT20
+2bgd73,Sylhet International Cricket Stadium,Sylhet,Bangladesh,BGD,bgdMT20,bgdFT20
+3bgd74,Sheikh Abu Naser Stadium,Khulna,Bangladesh,BGD,bgdMT20,bgdFT20
+4bgd75,Zahur Ahmed Chowdhury Stadium,Chattogram,Bangladesh,BGD,bgdMT20,bgdFT20
+5bgd76,Khan Shaheb Osman Ali Stadium,Fatullah,Bangladesh,BGD,bgdMT20,bgdFT20
+1tto77,Brian Lara Stadium,Tarouba,Trinidad and Tobago,TTO,wiMT20,wiFT20
+2tto78,Queen's Park Oval,Port of Spain,Trinidad and Tobago,TTO,wiMT20,wiFT20
+1aus79,Simonds Stadium,Geelong,Australia,AUS,ausMT20,ausFT20
+2aus80,W.A.C.A. Ground,Perth,Australia,AUS,ausMT20,ausFT20
+3aus81,Riverway Stadium,Townsville,Australia,AUS,ausMT20,ausFT20
+4aus82,Bellerive Oval,Hobart,Australia,AUS,ausMT20,ausFT20
+5aus83,Manuka Oval,Canberra,Australia,AUS,ausMT20,ausFT20
+6aus84,Sydney Cricket Ground,Sydney,Australia,AUS,ausMT20,ausFT20
+7aus85,Allan Border Field,Brisbane,Australia,AUS,ausMT20,ausFT20
+8aus86,Adelaide Oval,Adelaide,Australia,AUS,ausMT20,ausFT20
+9aus87,Sydney Showground Stadium,Sydney,Australia,AUS,ausMT20,ausFT20
+10aus88,Perth Stadium,Perth,Australia,AUS,ausMT20,ausFT20
+11aus89,North Sydney Oval,Sydney,Australia,AUS,ausMT20,ausFT20
+12aus90,Melbourne Cricket Ground,Melbourne,Australia,AUS,ausMT20,ausFT20
+13aus91,Stadium Australia,Sydney,Australia,AUS,ausMT20,ausFT20
+14aus92,Brisbane Cricket Ground,Brisbane,Australia,AUS,ausMT20,ausFT20
+15aus93,Kerrydale Oval,Gold Coast,Australia,AUS,ausMT20,ausFT20
+16aus94,Carrara Oval,Carrara,Australia,AUS,ausMT20,ausFT20
+17aus95,Great Barrier Reef Arena,Mackay,Australia,AUS,ausMT20,ausFT20
+18aus96,Junction Oval,Melbourne,Australia,AUS,ausMT20,ausFT20
+1lka97,R.Premadasa Stadium,Colombo,Sri Lanka,LKA,lkaMT20,lkaFT20
+2lka98,Chilaw Marians Cricket Club Ground,Katunayake,Sri Lanka,LKA,lkaMT20,lkaFT20
+3lka99,Pallekele International Cricket Stadium,Kandy,Sri Lanka,LKA,lkaMT20,lkaFT20
+4lka100,P Sara Oval,Colombo,Sri Lanka,LKA,lkaMT20,lkaFT20
+5lka101,Sinhalese Sports Club Ground,Colombo,Sri Lanka,LKA,lkaMT20,lkaFT20
+6lka102,Rangiri Dambulla International Stadium,Dambulla,Sri Lanka,LKA,lkaMT20,lkaFT20
+7lka103,Galle International Stadium,Galle,Sri Lanka,LKA,lkaMT20,lkaFT20
+8lka104,Colts Cricket Club Ground,Colombo,Sri Lanka,LKA,lkaMT20,lkaFT20
+9lka105,Mahinda Rajapaksa International Cricket Stadium,Hambantota,Sri Lanka,LKA,lkaMT20,lkaFT20
+10lka106,Mercantile Cricket Association Ground,Colombo,Sri Lanka,LKA,lkaMT20,lkaFT20
+11lka107,Colombo Cricket Club Ground,Colombo,Sri Lanka,LKA,lkaMT20,lkaFT20
+12lka108,Nondescripts Cricket Club Ground,Colombo,Sri Lanka,LKA,lkaMT20,lkaFT20
+1wal109,Sophia Gardens,Cardiff,Wales,WAL,engMT20,engFT20
+1usa110,Woodley Cricket Field,Los Angeles,United States of America,USA,usaMT20,usaFT20
+2usa111,Nassau County International Cricket Stadium,New York,United States of America,USA,usaMT20,usaFT20
+3usa112,Central Broward Regional Park Stadium Turf Ground,Lauderhill,United States of America,USA,usaMT20,usaFT20
+4usa113,Prairie View Cricket Complex,Houston,United States of America,USA,usaMT20,usaFT20
+5usa114,Grand Prairie Stadium,Dallas,United States of America,USA,usaMT20,usaFT20
+1guy115,Providence Stadium,Providence,Guyana,GUY,wiMT20,wiFT20
+1irl116,The Village,Dublin,Ireland,IRL,irlMT20,irlFT20
+2irl117,YMCA Cricket Club,Dublin,Ireland,IRL,irlMT20,irlFT20
+3irl118,Castle Avenue,Dublin,Ireland,IRL,irlMT20,irlFT20
+4irl119,Pembroke Cricket Club,Dublin,Ireland,IRL,irlMT20,irlFT20
+5irl120,Sydney Parade,Dublin,Ireland,IRL,irlMT20,irlFT20
+16eng121,County Ground,Northampton,England,ENG,engMT20,engFT20
