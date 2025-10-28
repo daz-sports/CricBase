@@ -1,0 +1,373 @@
+match_id,innings,pp_runs,overs,total_wickets_lost,spin_wickets_lost,pace_wickets_lost,batting_team,bowling_team,sex,sex,toss_winner,winner
+1375850,1,77,6,0,0,0,Australia,West Indies,male,male,0,1
+1375850,2,72,6,0,0,0,West Indies,Australia,male,male,0,0
+1375851,1,58,6,2,0,2,Australia,West Indies,male,male,0,1
+1375851,2,62,6,4,0,4,West Indies,Australia,male,male,0,0
+1375852,1,55,6,3,0,3,West Indies,Australia,male,male,0,1
+1375852,2,61,6,0,0,0,Australia,West Indies,male,male,0,0
+1375869,1,33,6,2,0,2,South Africa,Australia,female,female,0,0
+1375869,2,49,6,0,0,0,Australia,South Africa,female,female,0,1
+1375870,1,42,6,0,0,0,Australia,South Africa,female,female,0,0
+1375870,2,41,6,0,0,0,South Africa,Australia,female,female,0,1
+1375871,1,36,6,2,1,1,South Africa,Australia,female,female,0,0
+1375871,2,53,6,1,1,0,Australia,South Africa,female,female,0,1
+1385688,1,53,6,1,1,0,England,Pakistan,male,male,0,1
+1385688,2,55,6,2,1,1,Pakistan,England,male,male,0,0
+1385690,1,59,6,1,0,1,Pakistan,England,male,male,0,0
+1385690,2,78,6,0,0,0,England,Pakistan,male,male,0,1
+1385697,1,86,6,1,0,1,Australia,England,male,male,0,1
+1385697,2,46,6,3,0,3,England,Australia,male,male,0,0
+1385698,1,67,6,1,0,1,Australia,England,male,male,0,0
+1385698,2,65,6,2,0,2,England,Australia,male,male,0,1
+1388202,1,41,6,1,1,0,England,New Zealand,female,female,0,1
+1388202,2,44,6,1,0,1,New Zealand,England,female,female,0,0
+1388203,1,34,6,2,0,2,England,New Zealand,female,female,0,1
+1388203,2,48,6,1,1,0,New Zealand,England,female,female,0,0
+1388204,1,40,6,0,0,0,New Zealand,England,female,female,0,1
+1388204,2,60,6,0,0,0,England,New Zealand,female,female,0,0
+1388205,1,35,6,1,0,1,England,New Zealand,female,female,0,1
+1388205,2,47,6,2,1,1,New Zealand,England,female,female,0,0
+1388206,1,29,6,3,1,2,New Zealand,England,female,female,0,0
+1388206,2,33,6,1,0,1,England,New Zealand,female,female,0,1
+1388216,1,56,6,2,0,2,New Zealand,Pakistan,male,male,0,1
+1388216,2,64,6,1,0,1,Pakistan,New Zealand,male,male,0,0
+1388217,1,65,6,1,0,1,New Zealand,Pakistan,male,male,0,1
+1388217,2,61,6,2,0,2,Pakistan,New Zealand,male,male,0,0
+1388218,1,67,6,1,0,1,New Zealand,Pakistan,male,male,0,1
+1388218,2,52,6,1,0,1,Pakistan,New Zealand,male,male,0,0
+1388219,1,51,6,1,0,1,Pakistan,New Zealand,male,male,0,0
+1388219,2,38,6,3,0,3,New Zealand,Pakistan,male,male,0,1
+1388220,1,29,6,1,0,1,Pakistan,New Zealand,male,male,0,1
+1388220,2,35,6,2,1,1,New Zealand,Pakistan,male,male,0,0
+1388223,1,68,6,1,0,1,New Zealand,Australia,male,male,0,0
+1388223,2,56,6,1,0,1,Australia,New Zealand,male,male,0,1
+1388224,1,74,6,1,0,1,Australia,New Zealand,male,male,0,1
+1388224,2,27,6,3,0,3,New Zealand,Australia,male,male,0,0
+1388225,1,67,6,2,0,2,Australia,New Zealand,male,male,0,1
+1388225,2,33,3,2,1,1,New Zealand,Australia,male,male,0,0
+1398261,1,55,6,1,1,0,South Africa,Sri Lanka,female,female,0,1
+1398261,2,42,6,2,0,2,Sri Lanka,South Africa,female,female,0,0
+1398262,1,48,6,1,0,1,South Africa,Sri Lanka,female,female,0,0
+1398262,2,37,6,1,0,1,Sri Lanka,South Africa,female,female,0,1
+1398263,1,50,6,1,1,0,South Africa,Sri Lanka,female,female,0,0
+1398263,2,48,6,1,1,0,Sri Lanka,South Africa,female,female,0,1
+1398268,1,29,6,3,1,2,England,Pakistan,female,female,0,1
+1398268,2,57,6,2,1,1,Pakistan,England,female,female,0,0
+1398269,1,48,6,1,0,1,England,Pakistan,female,female,0,1
+1398269,2,41,6,3,1,2,Pakistan,England,female,female,0,0
+1398270,1,40,6,0,0,0,England,Pakistan,female,female,0,1
+1398270,2,45,6,0,0,0,Pakistan,England,female,female,0,0
+1398277,1,52,6,0,0,0,England,New Zealand,female,female,0,1
+1398277,2,45,6,0,0,0,New Zealand,England,female,female,0,0
+1398278,1,24,3,1,0,1,England,New Zealand,female,female,0,1
+1398278,2,16,3,2,0,2,New Zealand,England,female,female,0,0
+1398279,1,47,6,1,0,1,New Zealand,England,female,female,0,0
+1398279,2,50,6,1,0,1,England,New Zealand,female,female,0,1
+1398280,1,33,6,0,0,0,New Zealand,England,female,female,0,0
+1398280,2,64,6,1,0,1,England,New Zealand,female,female,0,1
+1398281,1,40,6,2,2,0,England,New Zealand,female,female,0,1
+1398281,2,31,6,2,0,2,New Zealand,England,female,female,0,0
+1406081,1,33,6,4,0,4,Australia,India,female,female,0,0
+1406081,2,59,6,0,0,0,India,Australia,female,female,0,1
+1406082,1,33,6,2,0,2,India,Australia,female,female,0,0
+1406082,2,47,6,0,0,0,Australia,India,female,female,0,1
+1406083,1,51,6,1,0,1,India,Australia,female,female,0,0
+1406083,2,54,6,0,0,0,Australia,India,female,female,0,1
+1412542,1,38,6,2,2,0,Zimbabwe,Sri Lanka,male,male,0,0
+1412542,2,43,6,3,1,2,Sri Lanka,Zimbabwe,male,male,0,1
+1412543,1,31,6,4,1,3,Sri Lanka,Zimbabwe,male,male,0,0
+1412543,2,31,6,1,0,1,Zimbabwe,Sri Lanka,male,male,0,1
+1412544,1,52,6,3,1,2,Zimbabwe,Sri Lanka,male,male,0,0
+1412544,2,50,6,0,0,0,Sri Lanka,Zimbabwe,male,male,0,1
+1415704,1,24,6,1,0,1,Sri Lanka,South Africa,male,male,0,0
+1415704,2,27,6,2,0,2,South Africa,Sri Lanka,male,male,0,1
+1415708,1,26,6,2,0,2,Ireland,India,male,male,0,0
+1415708,2,39,6,1,0,1,India,Ireland,male,male,0,1
+1415715,1,53,6,2,0,2,Sri Lanka,Bangladesh,male,male,0,0
+1415715,2,34,6,3,1,2,Bangladesh,Sri Lanka,male,male,0,1
+1415717,1,74,6,2,1,1,Australia,England,male,male,0,1
+1415717,2,54,6,0,0,0,England,Australia,male,male,0,0
+1415719,1,50,6,2,0,2,India,Pakistan,male,male,0,1
+1415719,2,35,6,1,0,1,Pakistan,India,male,male,0,0
+1415721,1,25,6,4,0,4,South Africa,Bangladesh,male,male,0,1
+1415721,2,29,6,1,0,1,Bangladesh,South Africa,male,male,0,0
+1415726,1,23,6,4,0,4,West Indies,New Zealand,male,male,0,1
+1415726,2,36,6,2,1,1,New Zealand,West Indies,male,male,0,0
+1415736,1,32,6,5,0,5,Ireland,Pakistan,male,male,0,0
+1415736,2,40,6,2,0,2,Pakistan,Ireland,male,male,0,1
+1415742,1,54,6,0,0,0,West Indies,England,male,male,0,0
+1415742,2,58,6,0,0,0,England,West Indies,male,male,0,1
+1415744,1,39,6,1,0,1,Bangladesh,Australia,male,male,0,0
+1415744,2,59,6,0,0,0,Australia,Bangladesh,male,male,0,1
+1415745,1,63,6,0,0,0,South Africa,England,male,male,0,1
+1415745,2,41,6,1,0,1,England,South Africa,male,male,0,0
+1415747,1,53,6,1,1,0,India,Bangladesh,male,male,0,1
+1415747,2,42,6,1,0,1,Bangladesh,India,male,male,0,0
+1415750,1,47,6,2,1,1,West Indies,South Africa,male,male,0,0
+1415750,2,41,5,2,0,2,South Africa,West Indies,male,male,0,1
+1415751,1,60,6,1,0,1,India,Australia,male,male,0,1
+1415751,2,65,6,1,0,1,Australia,India,male,male,0,0
+1415754,1,46,6,2,0,2,India,England,male,male,0,1
+1415754,2,39,6,3,2,1,England,India,male,male,0,0
+1415755,1,45,6,3,2,1,India,South Africa,male,male,0,1
+1415755,2,42,6,2,0,2,South Africa,India,male,male,0,0
+1415983,1,52,6,0,0,0,Ireland,Zimbabwe,female,female,0,1
+1415983,2,43,6,1,0,1,Zimbabwe,Ireland,female,female,0,0
+1415984,1,43,6,0,0,0,Ireland,Zimbabwe,female,female,0,1
+1415984,2,35,6,1,0,1,Zimbabwe,Ireland,female,female,0,0
+1415985,1,43,6,1,0,1,Ireland,Zimbabwe,female,female,0,1
+1415985,2,30,6,1,0,1,Zimbabwe,Ireland,female,female,0,0
+1415986,1,7,2,1,0,1,Zimbabwe,Ireland,female,female,0,0
+1415986,2,20,2,0,0,0,Ireland,Zimbabwe,female,female,0,1
+1415987,1,31,6,1,1,0,Ireland,Zimbabwe,female,female,0,1
+1415987,2,42,6,0,0,0,Zimbabwe,Ireland,female,female,0,0
+1419824,1,45,6,2,0,2,Sri Lanka,Bangladesh,male,male,0,1
+1419824,2,43,6,3,0,3,Bangladesh,Sri Lanka,male,male,0,0
+1419825,1,49,6,1,0,1,Sri Lanka,Bangladesh,male,male,0,0
+1419825,2,63,6,0,0,0,Bangladesh,Sri Lanka,male,male,0,1
+1419826,1,41,6,1,0,1,Sri Lanka,Bangladesh,male,male,0,1
+1419826,2,25,6,5,1,4,Bangladesh,Sri Lanka,male,male,0,0
+1420223,1,40,6,2,1,1,Zimbabwe,India,male,male,0,1
+1420223,2,28,6,4,1,3,India,Zimbabwe,male,male,0,0
+1420224,1,36,6,1,0,1,India,Zimbabwe,male,male,0,1
+1420224,2,58,6,4,0,4,Zimbabwe,India,male,male,0,0
+1420225,1,55,6,0,0,0,India,Zimbabwe,male,male,0,1
+1420225,2,37,6,3,0,3,Zimbabwe,India,male,male,0,0
+1420226,1,44,6,0,0,0,Zimbabwe,India,male,male,0,0
+1420226,2,61,6,0,0,0,India,Zimbabwe,male,male,0,1
+1420227,1,44,6,3,1,2,India,Zimbabwe,male,male,0,1
+1420227,2,47,6,2,0,2,Zimbabwe,India,male,male,0,0
+1424829,1,2,1,1,0,1,New Zealand,Pakistan,male,,0,0
+1424829,2,0,0,0,0,0,Pakistan,New Zealand,male,,0,0
+1424830,1,35,6,3,0,3,New Zealand,Pakistan,male,male,0,0
+1424830,2,48,6,2,1,1,Pakistan,New Zealand,male,male,0,1
+1424831,1,54,6,0,0,0,Pakistan,New Zealand,male,male,0,0
+1424831,2,53,6,2,0,2,New Zealand,Pakistan,male,male,0,1
+1424832,1,62,6,1,0,1,New Zealand,Pakistan,male,male,0,1
+1424832,2,48,6,3,0,3,Pakistan,New Zealand,male,male,0,0
+1424833,1,51,6,1,0,1,Pakistan,New Zealand,male,male,0,1
+1424833,2,63,6,1,0,1,New Zealand,Pakistan,male,male,0,0
+1425064,1,28,6,2,1,1,Bangladesh,Australia,female,female,0,0
+1425064,2,54,6,0,0,0,Australia,Bangladesh,female,female,0,1
+1425065,1,40,6,1,0,1,Australia,Bangladesh,female,female,0,1
+1425065,2,40,6,1,0,1,Bangladesh,Australia,female,female,0,0
+1425066,1,40,6,1,1,0,Australia,Bangladesh,female,female,0,1
+1425066,2,26,6,3,0,3,Bangladesh,Australia,female,female,0,0
+1425126,1,38,6,3,2,1,Zimbabwe,Bangladesh,male,male,0,0
+1425126,2,35,6,1,0,1,Bangladesh,Zimbabwe,male,male,0,1
+1425127,1,22,6,1,0,1,Zimbabwe,Bangladesh,male,male,0,0
+1425127,2,41,6,1,1,0,Bangladesh,Zimbabwe,male,male,0,1
+1425128,1,42,6,2,1,1,Bangladesh,Zimbabwe,male,male,0,1
+1425128,2,33,6,3,0,3,Zimbabwe,Bangladesh,male,male,0,0
+1425129,1,57,6,0,0,0,Bangladesh,Zimbabwe,male,male,0,1
+1425129,2,38,6,3,1,2,Zimbabwe,Bangladesh,male,male,0,0
+1425130,1,33,6,3,2,1,Bangladesh,Zimbabwe,male,male,0,0
+1425130,2,41,6,1,1,0,Zimbabwe,Bangladesh,male,male,0,1
+1425647,1,59,6,0,0,0,Ireland,Zimbabwe,female,female,0,1
+1425647,2,30,6,2,0,2,Zimbabwe,Ireland,female,female,0,0
+1426084,1,30,6,2,1,1,West Indies,Pakistan,female,female,0,1
+1426084,2,37,6,1,1,0,Pakistan,West Indies,female,female,0,0
+1426085,1,33,6,1,0,1,Pakistan,West Indies,female,female,0,0
+1426085,2,44,6,1,0,1,West Indies,Pakistan,female,female,0,1
+1426086,1,30,6,1,0,1,West Indies,Pakistan,female,female,0,1
+1426086,2,49,6,0,0,0,Pakistan,West Indies,female,female,0,0
+1426087,1,25,6,2,2,0,West Indies,Pakistan,female,female,0,0
+1426087,2,37,6,1,0,1,Pakistan,West Indies,female,female,0,1
+1426088,1,44,6,1,1,0,Pakistan,West Indies,female,female,0,0
+1426088,2,37,6,1,1,0,West Indies,Pakistan,female,female,0,1
+1426552,1,33,2,1,0,1,Australia,Pakistan,male,male,0,1
+1426552,2,16,2,3,0,3,Pakistan,Australia,male,male,0,0
+1426553,1,61,6,3,0,3,Australia,Pakistan,male,male,0,1
+1426553,2,30,6,2,0,2,Pakistan,Australia,male,male,0,0
+1426554,1,58,6,1,0,1,Pakistan,Australia,male,male,0,0
+1426554,2,43,6,2,0,2,Australia,Pakistan,male,male,0,1
+1426617,1,35,6,2,1,1,New Zealand,Australia,female,female,0,0
+1426617,2,44,6,2,1,1,Australia,New Zealand,female,female,0,1
+1426618,1,48,6,1,1,0,Australia,New Zealand,female,female,0,1
+1426618,2,34,6,0,0,0,New Zealand,Australia,female,female,0,0
+1426619,1,45,6,0,0,0,New Zealand,Australia,female,female,0,0
+1426619,2,46,6,1,1,0,Australia,New Zealand,female,female,0,1
+1426757,1,37,6,2,0,2,Pakistan,India,female,female,0,0
+1426757,2,57,6,0,0,0,India,Pakistan,female,female,0,1
+1426759,1,18,6,4,2,2,Bangladesh,Sri Lanka,female,female,0,0
+1426759,2,32,6,1,1,0,Sri Lanka,Bangladesh,female,female,0,1
+1426768,1,25,6,3,0,3,Bangladesh,India,female,female,0,0
+1426768,2,46,6,0,0,0,India,Bangladesh,female,female,0,1
+1426769,1,45,6,0,0,0,Pakistan,Sri Lanka,female,female,0,0
+1426769,2,35,6,2,2,0,Sri Lanka,Pakistan,female,female,0,1
+1426770,1,44,6,0,0,0,India,Sri Lanka,female,female,0,0
+1426770,2,44,6,0,0,0,Sri Lanka,India,female,female,0,1
+1426830,1,38,6,0,0,0,Pakistan,Ireland,male,male,0,0
+1426830,2,43,6,2,0,2,Ireland,Pakistan,male,male,0,1
+1426831,1,55,6,2,0,2,Ireland,Pakistan,male,male,0,0
+1426831,2,57,6,2,0,2,Pakistan,Ireland,male,male,0,1
+1426832,1,50,6,1,0,1,Ireland,Pakistan,male,male,0,0
+1426832,2,60,6,1,0,1,Pakistan,Ireland,male,male,0,1
+1429393,1,39,6,1,0,1,India,Bangladesh,female,female,0,1
+1429393,2,30,6,3,1,2,Bangladesh,India,female,female,0,0
+1429394,1,43,6,2,2,0,Bangladesh,India,female,female,0,0
+1429394,2,47,6,1,0,1,India,Bangladesh,female,female,0,1
+1429395,1,44,6,0,0,0,Bangladesh,India,female,female,0,0
+1429395,2,59,6,0,0,0,India,Bangladesh,female,female,0,1
+1429396,1,52,6,2,1,1,India,Bangladesh,female,female,0,1
+1429396,2,21,4,1,1,0,Bangladesh,India,female,female,0,0
+1429397,1,51,6,1,1,0,India,Bangladesh,female,female,0,1
+1429397,2,36,6,2,1,1,Bangladesh,India,female,female,0,0
+1430812,1,34,6,1,1,0,Ireland,Sri Lanka,female,female,0,0
+1430812,2,50,6,0,0,0,Sri Lanka,Ireland,female,female,0,1
+1430813,1,34,6,1,1,0,Ireland,Sri Lanka,female,female,0,1
+1430813,2,35,6,2,0,2,Sri Lanka,Ireland,female,female,0,0
+1430820,1,65,6,0,0,0,England,Ireland,female,female,0,1
+1430820,2,32,6,3,0,3,Ireland,England,female,female,0,0
+1430821,1,44,6,0,0,0,England,Ireland,female,female,0,0
+1430821,2,46,6,1,0,1,Ireland,England,female,female,0,1
+1431086,1,63,6,2,0,2,Ireland,South Africa,male,male,0,0
+1431086,2,58,6,0,0,0,South Africa,Ireland,male,male,0,1
+1431087,1,59,6,0,0,0,Ireland,South Africa,male,male,0,1
+1431087,2,53,6,1,0,1,South Africa,Ireland,male,male,0,0
+1432211,1,43,6,3,2,1,South Africa,Pakistan,male,male,0,1
+1432211,2,55,6,1,0,1,Pakistan,South Africa,male,male,0,0
+1432212,1,45,6,1,0,1,Pakistan,South Africa,male,male,0,0
+1432212,2,52,6,2,0,2,South Africa,Pakistan,male,male,0,1
+1432225,1,38,6,1,1,0,South Africa,England,female,female,0,0
+1432225,2,42,6,2,0,2,England,South Africa,female,female,0,1
+1432226,1,48,6,2,0,2,England,South Africa,female,female,0,1
+1432226,2,30,6,1,0,1,South Africa,England,female,female,0,0
+1432227,1,42,6,4,1,3,South Africa,England,female,female,0,0
+1432227,2,61,6,1,0,1,England,South Africa,female,female,0,1
+1432423,1,32,6,3,3,0,Pakistan,Sri Lanka,female,female,0,1
+1432423,2,26,6,2,1,1,Sri Lanka,Pakistan,female,female,0,0
+1432424,1,31,6,2,1,1,West Indies,South Africa,female,female,0,0
+1432424,2,43,6,0,0,0,South Africa,West Indies,female,female,0,1
+1432425,1,55,6,0,0,0,New Zealand,India,female,female,0,1
+1432425,2,43,6,3,2,1,India,New Zealand,female,female,0,0
+1432426,1,12,6,2,1,1,Sri Lanka,Australia,female,female,0,0
+1432426,2,35,6,2,1,1,Australia,Sri Lanka,female,female,0,1
+1432427,1,47,6,0,0,0,England,Bangladesh,female,female,0,1
+1432427,2,20,6,2,2,0,Bangladesh,England,female,female,0,0
+1432428,1,29,6,2,1,1,Pakistan,India,female,female,0,0
+1432428,2,25,6,1,1,0,India,Pakistan,female,female,0,1
+1432430,1,37,6,1,1,0,South Africa,England,female,female,0,0
+1432430,2,28,6,1,0,1,England,South Africa,female,female,0,1
+1432431,1,43,6,1,0,1,Australia,New Zealand,female,female,0,1
+1432431,2,29,6,1,0,1,New Zealand,Australia,female,female,0,0
+1432433,1,41,6,0,0,0,India,Sri Lanka,female,female,0,1
+1432433,2,28,6,3,1,2,Sri Lanka,India,female,female,0,0
+1432434,1,33,6,2,2,0,Bangladesh,West Indies,female,female,0,0
+1432434,2,48,6,0,0,0,West Indies,Bangladesh,female,female,0,1
+1432435,1,23,6,2,1,1,Pakistan,Australia,female,female,0,0
+1432435,2,46,6,1,1,0,Australia,Pakistan,female,female,0,1
+1432436,1,34,6,1,1,0,Sri Lanka,New Zealand,female,female,0,0
+1432436,2,35,6,0,0,0,New Zealand,Sri Lanka,female,female,0,1
+1432437,1,21,6,1,0,1,Bangladesh,South Africa,female,female,0,0
+1432437,2,36,6,1,1,0,South Africa,Bangladesh,female,female,0,1
+1432439,1,37,6,2,0,2,Australia,India,female,female,0,1
+1432439,2,41,6,2,2,0,India,Australia,female,female,0,0
+1432440,1,39,6,0,0,0,New Zealand,Pakistan,female,female,0,1
+1432440,2,28,6,4,2,2,Pakistan,New Zealand,female,female,0,0
+1432441,1,34,6,1,1,0,England,West Indies,female,female,0,0
+1432441,2,67,6,0,0,0,West Indies,England,female,female,0,1
+1432442,1,35,6,2,0,2,Australia,South Africa,female,female,0,0
+1432442,2,43,6,1,0,1,South Africa,Australia,female,female,0,1
+1432443,1,32,6,0,0,0,New Zealand,West Indies,female,female,0,1
+1432443,2,25,6,2,2,0,West Indies,New Zealand,female,female,0,0
+1432444,1,43,6,1,0,1,New Zealand,South Africa,female,female,0,1
+1432444,2,47,6,0,0,0,South Africa,New Zealand,female,female,0,0
+1433362,1,64,6,1,0,1,West Indies,South Africa,male,male,0,1
+1433362,2,46,6,3,1,2,South Africa,West Indies,male,male,0,0
+1433363,1,51,6,1,1,0,West Indies,South Africa,male,male,0,1
+1433363,2,85,6,2,2,0,South Africa,West Indies,male,male,0,0
+1433364,1,45,6,2,0,2,South Africa,West Indies,male,male,0,0
+1433364,2,83,6,0,0,0,West Indies,South Africa,male,male,0,1
+1433367,1,33,6,3,0,3,South Africa,West Indies,male,male,0,0
+1433367,2,75,6,0,0,0,West Indies,South Africa,male,male,0,1
+1433368,1,43,6,1,0,1,West Indies,South Africa,male,male,0,1
+1433368,2,71,6,2,0,2,South Africa,West Indies,male,male,0,0
+1433369,1,17,4,0,0,0,South Africa,West Indies,male,male,0,0
+1433369,2,60,4,2,1,1,West Indies,South Africa,male,male,0,1
+1433373,1,58,6,3,0,3,West Indies,England,male,male,0,0
+1433373,2,73,6,1,1,0,England,West Indies,male,male,0,1
+1433374,1,44,6,3,0,3,West Indies,England,male,male,0,0
+1433374,2,56,6,1,1,0,England,West Indies,male,male,0,1
+1433375,1,39,6,4,0,4,West Indies,England,male,male,0,0
+1433375,2,42,6,3,2,1,England,West Indies,male,male,0,1
+1433376,1,63,6,1,0,1,England,West Indies,male,male,0,0
+1433376,2,69,6,0,0,0,West Indies,England,male,male,0,1
+1433377,1,44,5,0,0,0,West Indies,England,male,,0,0
+1433377,2,0,0,0,0,0,England,West Indies,male,,0,0
+1433383,1,32,6,3,3,0,Bangladesh,West Indies,male,male,0,1
+1433383,2,36,6,3,2,1,West Indies,Bangladesh,male,male,0,0
+1433384,1,29,6,2,2,0,Bangladesh,West Indies,male,male,0,1
+1433384,2,32,6,4,2,2,West Indies,Bangladesh,male,male,0,0
+1433385,1,54,6,2,0,2,Bangladesh,West Indies,male,male,0,1
+1433385,2,45,6,3,2,1,West Indies,Bangladesh,male,male,0,0
+1434291,1,44,6,0,0,0,South Africa,India,female,female,0,1
+1434291,2,61,6,1,0,1,India,South Africa,female,female,0,0
+1434292,1,66,6,1,0,1,South Africa,India,female,,0,0
+1434292,2,0,0,0,0,0,India,South Africa,female,,0,0
+1434293,1,39,6,2,1,1,South Africa,India,female,female,0,0
+1434293,2,40,6,0,0,0,India,South Africa,female,female,0,1
+1436889,1,34,6,0,0,0,West Indies,Sri Lanka,female,female,0,0
+1436889,2,43,6,1,1,0,Sri Lanka,West Indies,female,female,0,1
+1436890,1,36,6,0,0,0,Sri Lanka,West Indies,female,female,0,0
+1436890,2,35,5,0,0,0,West Indies,Sri Lanka,female,female,0,1
+1436891,1,30,6,1,0,1,Sri Lanka,West Indies,female,female,0,0
+1436891,2,47,6,0,0,0,West Indies,Sri Lanka,female,female,0,1
+1439893,1,39,6,2,0,2,Bangladesh,India,male,male,0,0
+1439893,2,71,6,1,0,1,India,Bangladesh,male,male,0,1
+1439894,1,45,6,3,0,3,India,Bangladesh,male,male,0,1
+1439894,2,43,6,3,2,1,Bangladesh,India,male,male,0,0
+1439895,1,82,6,1,0,1,India,Bangladesh,male,male,0,1
+1439895,2,59,6,3,2,1,Bangladesh,India,male,male,0,0
+1442987,1,74,6,1,0,1,India,Sri Lanka,male,male,0,1
+1442987,2,55,6,0,0,0,Sri Lanka,India,male,male,0,0
+1442988,1,54,6,1,0,1,Sri Lanka,India,male,male,0,0
+1442988,2,14,2,1,1,0,India,Sri Lanka,male,male,0,1
+1442989,1,30,6,4,2,2,India,Sri Lanka,male,male,0,1
+1442989,2,35,6,0,0,0,Sri Lanka,India,male,male,0,0
+1443543,1,32,6,2,0,2,New Zealand,Sri Lanka,male,male,0,1
+1443543,2,56,6,0,0,0,Sri Lanka,New Zealand,male,male,0,0
+1443544,1,48,6,1,0,1,New Zealand,Sri Lanka,male,male,0,1
+1443544,2,44,6,1,1,0,Sri Lanka,New Zealand,male,male,0,0
+1444652,1,52,6,1,0,1,Pakistan,Zimbabwe,male,male,0,1
+1444652,2,60,6,2,2,0,Zimbabwe,Pakistan,male,male,0,0
+1444653,1,40,6,2,0,2,Zimbabwe,Pakistan,male,male,0,0
+1444653,2,61,6,0,0,0,Pakistan,Zimbabwe,male,male,0,1
+1444654,1,42,6,3,1,2,Pakistan,Zimbabwe,male,male,0,0
+1444654,2,56,6,1,1,0,Zimbabwe,Pakistan,male,male,0,1
+1449011,1,37,6,2,2,0,South Africa,Pakistan,female,female,0,1
+1449011,2,18,6,3,0,3,Pakistan,South Africa,female,female,0,0
+1449012,1,45,6,1,0,1,Pakistan,South Africa,female,female,0,1
+1449012,2,36,6,1,1,0,South Africa,Pakistan,female,female,0,0
+1449013,1,49,6,0,0,0,Pakistan,South Africa,female,female,0,0
+1449013,2,57,6,1,1,0,South Africa,Pakistan,female,female,0,1
+1449301,1,56,6,1,0,1,India,South Africa,male,male,0,1
+1449301,2,49,6,3,1,2,South Africa,India,male,male,0,0
+1449302,1,34,6,3,0,3,India,South Africa,male,male,0,0
+1449302,2,34,6,2,1,1,South Africa,India,male,male,0,1
+1449303,1,70,6,1,0,1,India,South Africa,male,male,0,1
+1449303,2,55,6,2,1,1,South Africa,India,male,male,0,0
+1449304,1,73,6,1,0,1,India,South Africa,male,male,0,1
+1449304,2,30,6,4,0,4,South Africa,India,male,male,0,0
+1451814,1,54,6,2,0,2,Sri Lanka,West Indies,male,male,0,0
+1451814,2,74,6,0,0,0,West Indies,Sri Lanka,male,male,0,1
+1451815,1,52,6,0,0,0,Sri Lanka,West Indies,male,male,0,1
+1451815,2,21,6,3,3,0,West Indies,Sri Lanka,male,male,0,0
+1451816,1,42,6,2,2,0,West Indies,Sri Lanka,male,male,0,0
+1451816,2,67,6,1,1,0,Sri Lanka,West Indies,male,male,0,1
+1456441,1,31,6,3,2,1,New Zealand,Sri Lanka,male,male,0,0
+1456441,2,49,6,2,1,1,Sri Lanka,New Zealand,male,male,0,1
+1456442,1,33,6,2,0,2,New Zealand,Sri Lanka,male,male,0,1
+1456442,2,24,6,2,1,1,Sri Lanka,New Zealand,male,male,0,0
+1458414,1,35,6,1,0,1,Ireland,Bangladesh,female,female,0,1
+1458414,2,56,6,0,0,0,Bangladesh,Ireland,female,female,0,0
+1458415,1,34,6,1,1,0,Ireland,Bangladesh,female,female,0,1
+1458415,2,22,6,4,0,4,Bangladesh,Ireland,female,female,0,0
+1458416,1,49,6,1,0,1,Bangladesh,Ireland,female,female,0,0
+1458416,2,47,6,0,0,0,Ireland,Bangladesh,female,female,0,1
+1459891,1,50,6,0,0,0,India,West Indies,female,female,0,1
+1459891,2,35,6,1,0,1,West Indies,India,female,female,0,0
+1459892,1,35,6,2,1,1,India,West Indies,female,female,0,0
+1459892,2,65,6,0,0,0,West Indies,India,female,female,0,1
+1459893,1,61,6,1,0,1,India,West Indies,female,female,0,1
+1459893,2,46,6,1,1,0,West Indies,India,female,female,0,0
