@@ -23,4 +23,8 @@ Tools used:
       - seaborn
  - SQLite
 
+To view the analysis notebooks in interactive form:
+
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/git/https%3A%2F%2Fgithub.com%2Fdaz-sports%2FCricBase%2F/main?urlpath=%2Fdoc%2Ftree%2Fbowling_effectiveness_by_phase.ipynb)
+
 The Cricsheet data is made available under the [Open Data Commons Attribution License (ODC-By) v1.0](https://opendatacommons.org/licenses/by/1-0/)
