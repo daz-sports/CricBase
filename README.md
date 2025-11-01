@@ -7,7 +7,7 @@ I've focused on ICC-sanctioned men's and women's T20 international cricket becau
 
 Tools used:
  - Python
-      Standard library packages:
+   - Standard library packages:
       - contextlib
       - dataclasses
       - datetime
@@ -16,7 +16,7 @@ Tools used:
       - os
       - sqlite3
       - typing
-      Third-party packages:
+   - Third-party packages:
       - matplotlib
       - numpy
       - pandas
