@@ -6,7 +6,21 @@ Equipped with a love of sabermetrics and all things sport, there was only so muc
 I've focused on ICC-sanctioned men's and women's T20 international cricket because of the uniformity in rules across matches (no subs, funky powerplay changes etc.). I do anticipate expansion over time. Cricsheet (quite admirably) don't include Afghanistan matches in their available database due to their ongoing treatment of their women's team; however, I do intend to add their information at some point for completeness. But for similar reasons to Cricsheet, it's not a priority for me.
 
 Tools used:
- - Python (Including packages: pandas, sqlite3, requests,...)
- - SQL
+ - Python
+      Standard library packages:
+      - contextlib
+      - dataclasses
+      - datetime
+      - json
+      - logging
+      - os
+      - sqlite3
+      - typing
+      Third-party packages:
+      - matplotlib
+      - numpy
+      - pandas
+      - seaborn
+ - SQLite
 
 The Cricsheet data is made available under the [Open Data Commons Attribution License (ODC-By) v1.0](https://opendatacommons.org/licenses/by/1-0/)
