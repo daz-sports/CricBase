@@ -25,7 +25,6 @@ Tools used:
 
 To view the analysis notebooks in interactive form:
 
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/daz-sports/CricBase/HEAD)
-
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/daz-sports/CricBase/main?urlpath=lab/tree/notebooks)
 
 The Cricsheet data is made available under the [Open Data Commons Attribution License (ODC-By) v1.0](https://opendatacommons.org/licenses/by/1-0/)
