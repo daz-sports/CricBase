@@ -1,0 +1,1131 @@
+match_id,bowler_id,bowler_type,sex,over_1,over_1_phase,runs_total_1,runs_batter_1,wickets_1,extra_ball_count_1,runs_other3,wickets_other3,venue_id
+1375850,4d7f517e,Spin,male,1,Powerplay,7,7,0,0,35,0,4aus82
+1375850,b0946605,Seam,male,4,Powerplay,11,10,0,0,36,2,4aus82
+1375850,bbd41817,Seam,male,5,Powerplay,12,12,0,0,30,3,4aus82
+1375850,c5aef772,Seam,male,7,Middle Overs,8,6,0,1,31,1,4aus82
+1375850,03806cf8,Seam,male,2,Powerplay,7,7,0,0,37,0,4aus82
+1375850,1a2676c5,Seam,male,6,Middle Overs,10,10,0,0,32,1,4aus82
+1375850,14f96089,Spin,male,7,Middle Overs,9,9,0,0,18,3,4aus82
+1375851,0f721006,Seam,male,2,Powerplay,4,4,1,0,38,1,8aus86
+1375851,b0946605,Seam,male,3,Powerplay,9,5,0,1,29,1,8aus86
+1375851,bbd41817,Seam,male,4,Powerplay,13,12,0,1,46,0,8aus86
+1375851,c5aef772,Seam,male,7,Middle Overs,10,5,1,1,42,0,8aus86
+1375851,4933f499,Seam,male,1,Powerplay,11,11,0,0,44,1,8aus86
+1375851,03806cf8,Seam,male,2,Powerplay,1,0,1,0,32,1,8aus86
+1375851,83c3e8e3,Seam,male,5,Powerplay,14,8,1,1,28,1,8aus86
+1375851,d9273ee7,Seam,male,6,Middle Overs,6,4,2,1,32,1,8aus86
+1375851,14f96089,Spin,male,8,Middle Overs,4,4,0,0,35,1,8aus86
+1375852,3b53243a,Seam,male,1,Powerplay,4,4,1,0,33,1,10aus88
+1375852,4933f499,Seam,male,2,Powerplay,3,3,1,0,28,0,10aus88
+1375852,83c3e8e3,Seam,male,6,Middle Overs,10,10,0,0,39,1,10aus88
+1375852,d405c0d5,Seam,male,7,Middle Overs,7,5,0,1,31,1,10aus88
+1375852,14f96089,Spin,male,8,Middle Overs,11,11,1,0,54,0,10aus88
+1375852,b0946605,Seam,male,1,Powerplay,6,6,0,0,32,0,10aus88
+1375852,0f721006,Seam,male,2,Powerplay,5,5,0,0,45,0,10aus88
+1375852,c5aef772,Seam,male,5,Powerplay,10,10,0,0,21,2,10aus88
+1375852,3feda4fa,Spin,male,8,Middle Overs,7,7,0,0,13,2,10aus88
+1375869,17608a6f,Seam,female,1,Powerplay,10,10,0,0,16,0,5aus83
+1375869,bc969efb,Spin,female,2,Powerplay,0,0,0,0,31,1,5aus83
+1375869,63e3b6b3,Seam,female,2,Powerplay,3,2,0,1,22,1,5aus83
+1375869,0d518f89,Seam,female,3,Powerplay,9,9,0,0,21,0,5aus83
+1375869,ea544967,Seam,female,8,Middle Overs,7,7,1,0,18,0,5aus83
+1375870,63e3b6b3,Seam,female,1,Powerplay,2,1,0,1,20,1,5aus83
+1375870,0d518f89,Seam,female,2,Powerplay,13,10,0,3,37,0,5aus83
+1375870,ea544967,Seam,female,5,Powerplay,2,2,0,0,23,1,5aus83
+1375870,17608a6f,Seam,female,1,Powerplay,7,7,0,0,20,1,5aus83
+1375870,bc969efb,Spin,female,2,Powerplay,9,9,0,0,18,2,5aus83
+1375871,bc969efb,Spin,female,1,Powerplay,1,1,1,0,34,1,4aus82
+1375871,17608a6f,Seam,female,2,Powerplay,8,8,0,0,23,2,4aus82
+1375871,65d9b6b6,Seam,female,3,Powerplay,6,6,0,0,21,1,4aus82
+1375871,f0b4e47d,Spin,female,8,Middle Overs,1,1,0,0,24,1,4aus82
+1375871,63e3b6b3,Seam,female,1,Powerplay,6,6,0,0,31,0,4aus82
+1375871,4d4605e6,Spin,female,7,Middle Overs,4,4,1,0,19,0,4aus82
+1375871,ea544967,Seam,female,11,Middle Overs,10,10,0,0,23,1,4aus82
+1385688,45a7e761,Seam,male,1,Powerplay,8,8,0,0,32,3,4eng29
+1385688,e174dadd,Seam,male,2,Powerplay,4,4,0,0,31,0,4eng29
+1385688,9cb8d7a6,Spin,male,4,Powerplay,2,2,1,0,17,1,4eng29
+1385688,24bb1c2f,Seam,male,5,Powerplay,17,17,0,0,17,2,4eng29
+1385688,9de62878,Spin,male,7,Middle Overs,14,14,0,0,41,0,4eng29
+1385688,bb351c23,Spin,male,1,Powerplay,1,1,1,0,25,1,4eng29
+1385688,8db7f47f,Seam,male,2,Powerplay,9,9,0,0,32,3,4eng29
+1385688,5574750c,Seam,male,6,Middle Overs,15,15,0,0,13,2,4eng29
+1385688,ffe699c0,Seam,male,7,Middle Overs,9,8,0,1,22,1,4eng29
+1385690,8d92a2c3,Seam,male,1,Powerplay,8,8,0,0,27,2,10eng35
+1385690,5574750c,Seam,male,2,Powerplay,5,4,0,1,26,2,10eng35
+1385690,249d60c9,Spin,male,7,Middle Overs,7,7,1,0,20,1,10eng35
+1385690,9c9af282,Seam,male,2,Powerplay,8,8,0,0,43,0,10eng35
+1385690,24bb1c2f,Seam,male,7,Middle Overs,13,13,1,0,25,2,10eng35
+1385697,5574750c,Seam,male,1,Powerplay,8,8,0,0,23,3,3eng28
+1385697,249d60c9,Spin,male,7,Middle Overs,5,5,1,0,18,0,3eng28
+1385697,3b53243a,Seam,male,1,Powerplay,11,10,0,1,15,1,3eng28
+1385697,03806cf8,Seam,male,2,Powerplay,3,3,1,0,30,1,3eng28
+1385697,1a2676c5,Seam,male,6,Middle Overs,1,1,1,0,27,2,3eng28
+1385697,14f96089,Spin,male,8,Middle Overs,4,4,1,0,16,1,3eng28
+1385698,cad40f5e,Seam,male,5,Powerplay,2,1,1,0,25,1,1wal109
+1385698,249d60c9,Spin,male,7,Middle Overs,3,3,0,0,32,1,1wal109
+1385698,1a2676c5,Seam,male,4,Powerplay,1,0,2,1,36,0,1wal109
+1385698,14f96089,Spin,male,8,Middle Overs,4,4,0,0,33,0,1wal109
+1388202,9af58032,Seam,female,1,Powerplay,6,6,0,0,20,1,3nzl43
+1388202,d5eb8b84,Seam,female,4,Powerplay,5,4,0,1,25,1,3nzl43
+1388202,6df697a9,Spin,female,5,Powerplay,5,5,1,0,25,0,3nzl43
+1388202,60471339,Seam,female,8,Middle Overs,6,6,1,0,30,0,3nzl43
+1388202,38b4583c,Seam,female,1,Powerplay,4,3,1,1,25,1,3nzl43
+1388202,d2763568,Seam,female,2,Powerplay,9,8,0,0,25,0,3nzl43
+1388202,c6625a26,Spin,female,4,Powerplay,4,4,0,0,17,2,3nzl43
+1388202,b34e0c77,Spin,female,7,Middle Overs,2,2,0,0,15,1,3nzl43
+1388203,9af58032,Seam,female,1,Powerplay,3,3,0,0,17,0,9nzl49
+1388203,d5eb8b84,Seam,female,5,Powerplay,5,4,0,0,21,2,9nzl49
+1388203,6df697a9,Spin,female,7,Middle Overs,3,3,0,0,23,1,9nzl49
+1388203,38b4583c,Seam,female,1,Powerplay,8,6,0,2,21,2,9nzl49
+1388203,c6625a26,Spin,female,4,Powerplay,11,11,0,0,17,2,9nzl49
+1388203,340202b0,Spin,female,5,Powerplay,6,6,1,0,19,0,9nzl49
+1388203,b34e0c77,Spin,female,7,Middle Overs,4,4,0,0,17,1,9nzl49
+1388204,38b4583c,Seam,female,1,Powerplay,6,6,0,0,34,0,9nzl49
+1388204,d2763568,Seam,female,2,Powerplay,7,7,0,0,15,2,9nzl49
+1388204,c6625a26,Spin,female,4,Powerplay,1,1,0,0,26,0,9nzl49
+1388204,340202b0,Spin,female,5,Powerplay,12,12,0,0,27,0,9nzl49
+1388204,d5eb8b84,Seam,female,1,Powerplay,1,1,0,0,39,1,9nzl49
+1388204,6df697a9,Spin,female,3,Powerplay,3,2,0,1,15,0,9nzl49
+1388204,7673c908,Spin,female,8,Middle Overs,3,3,0,0,26,1,9nzl49
+1388205,d5eb8b84,Seam,female,1,Powerplay,6,5,0,0,23,1,12nzl52
+1388205,9af58032,Seam,female,2,Powerplay,2,2,0,0,28,0,12nzl52
+1388205,6df697a9,Spin,female,6,Middle Overs,4,4,0,0,35,1,12nzl52
+1388205,7673c908,Spin,female,8,Middle Overs,11,11,0,0,31,1,12nzl52
+1388205,38b4583c,Seam,female,1,Powerplay,5,5,1,0,20,0,12nzl52
+1388205,f3a18a0c,Seam,female,2,Powerplay,5,5,0,0,26,0,12nzl52
+1388205,c6625a26,Spin,female,5,Powerplay,13,8,1,1,13,3,12nzl52
+1388205,cdb82f1c,Spin,female,7,Middle Overs,3,3,0,0,17,1,12nzl52
+1388206,f3a18a0c,Seam,female,1,Powerplay,5,4,1,1,19,1,12nzl52
+1388206,31adb911,Seam,female,2,Powerplay,4,4,0,0,18,0,12nzl52
+1388206,c6625a26,Spin,female,6,Middle Overs,7,7,1,0,25,0,12nzl52
+1388206,cdb82f1c,Spin,female,7,Middle Overs,3,3,1,0,27,2,12nzl52
+1388206,d2763568,Seam,female,8,Middle Overs,5,5,0,0,23,0,12nzl52
+1388206,d5eb8b84,Seam,female,1,Powerplay,1,1,0,0,27,1,12nzl52
+1388206,9af58032,Seam,female,2,Powerplay,8,8,0,0,18,0,12nzl52
+1388206,60471339,Seam,female,3,Powerplay,7,7,1,0,19,0,12nzl52
+1388206,7673c908,Spin,female,8,Middle Overs,7,7,1,0,27,2,12nzl52
+1388216,45a7e761,Seam,male,1,Powerplay,1,1,1,0,49,2,4nzl44
+1388216,24bb1c2f,Seam,male,2,Powerplay,5,5,0,0,29,2,4nzl44
+1388216,a8e54ef4,Seam,male,4,Powerplay,13,9,0,2,44,0,4nzl44
+1388216,2cec2a92,Seam,male,5,Powerplay,8,8,1,0,26,2,4nzl44
+1388216,6dd8b88c,Spin,male,8,Middle Overs,9,9,0,0,42,0,4nzl44
+1388216,13c35c9e,Seam,male,1,Powerplay,12,12,0,0,13,4,4nzl44
+1388216,350bb1b1,Seam,male,3,Powerplay,12,12,1,0,38,2,4nzl44
+1388216,e1891e00,Seam,male,8,Middle Overs,13,13,0,0,30,2,4nzl44
+1388217,45a7e761,Seam,male,1,Powerplay,3,3,0,0,28,1,8nzl48
+1388217,24bb1c2f,Seam,male,2,Powerplay,12,12,0,0,27,3,8nzl48
+1388217,2cec2a92,Seam,male,5,Powerplay,11,9,0,2,32,2,8nzl48
+1388217,a8e54ef4,Seam,male,6,Middle Overs,6,6,1,0,36,1,8nzl48
+1388217,6dd8b88c,Spin,male,7,Middle Overs,11,10,0,1,28,1,8nzl48
+1388217,13c35c9e,Seam,male,1,Powerplay,10,10,1,0,21,1,8nzl48
+1388217,350bb1b1,Seam,male,2,Powerplay,1,0,1,1,32,3,8nzl48
+1388217,e4a0deae,Spin,male,5,Powerplay,13,13,0,0,34,0,8nzl48
+1388217,e1891e00,Seam,male,6,Middle Overs,13,13,0,0,15,2,8nzl48
+1388217,641ac5ff,Spin,male,7,Middle Overs,19,19,0,0,15,2,8nzl48
+1388218,45a7e761,Seam,male,1,Powerplay,6,6,0,0,38,2,3nzl43
+1388218,28392e11,Seam,male,2,Powerplay,7,7,0,0,30,1,3nzl43
+1388218,24bb1c2f,Seam,male,4,Powerplay,2,2,1,0,58,1,3nzl43
+1388218,3086f7a4,Spin,male,7,Middle Overs,4,4,0,0,40,1,3nzl43
+1388218,9e9af5f2,Seam,male,8,Middle Overs,4,2,0,0,35,1,3nzl43
+1388218,13c35c9e,Seam,male,1,Powerplay,3,2,0,0,29,2,3nzl43
+1388218,e84ac20c,Seam,male,2,Powerplay,8,8,0,0,43,1,3nzl43
+1388218,2f9d0389,Seam,male,3,Powerplay,12,8,0,0,19,2,3nzl43
+1388218,e4a0deae,Spin,male,5,Powerplay,9,8,0,1,18,1,3nzl43
+1388218,641ac5ff,Spin,male,7,Middle Overs,8,8,0,0,30,1,3nzl43
+1388219,13c35c9e,Seam,male,1,Powerplay,4,4,0,0,32,0,5nzl45
+1388219,e84ac20c,Seam,male,2,Powerplay,1,1,1,0,21,1,5nzl45
+1388219,350bb1b1,Seam,male,3,Powerplay,11,11,0,0,38,1,5nzl45
+1388219,2f9d0389,Seam,male,6,Middle Overs,15,15,0,0,13,2,5nzl45
+1388219,e4a0deae,Spin,male,8,Middle Overs,5,5,0,0,18,0,5nzl45
+1388219,45a7e761,Seam,male,1,Powerplay,10,8,2,1,25,1,5nzl45
+1388219,28392e11,Seam,male,2,Powerplay,6,4,0,2,24,0,5nzl45
+1388219,24bb1c2f,Seam,male,4,Powerplay,5,5,0,0,24,0,5nzl45
+1388219,3086f7a4,Spin,male,8,Middle Overs,9,9,0,0,32,0,5nzl45
+1388220,13c35c9e,Seam,male,1,Powerplay,0,0,1,0,19,1,5nzl45
+1388220,e84ac20c,Seam,male,2,Powerplay,2,2,0,0,32,2,5nzl45
+1388220,e4a0deae,Spin,male,4,Powerplay,11,11,0,0,19,0,5nzl45
+1388220,2f9d0389,Seam,male,5,Powerplay,5,5,0,0,22,2,5nzl45
+1388220,641ac5ff,Spin,male,8,Middle Overs,6,4,0,0,18,2,5nzl45
+1388220,45a7e761,Seam,male,1,Powerplay,4,4,0,0,16,2,5nzl45
+1388220,3086f7a4,Spin,male,2,Powerplay,9,9,1,0,9,1,5nzl45
+1388220,6dd8b88c,Spin,male,7,Middle Overs,5,5,0,0,16,1,5nzl45
+1388220,29e253dd,Spin,male,11,Middle Overs,4,4,1,0,20,3,5nzl45
+1388223,3fb19989,Seam,male,1,Powerplay,3,2,0,1,36,1,2nzl42
+1388223,03806cf8,Seam,male,2,Powerplay,13,13,0,0,24,0,2nzl42
+1388223,ded9240e,Seam,male,4,Powerplay,15,15,0,0,28,1,2nzl42
+1388223,13c35c9e,Seam,male,1,Powerplay,4,4,0,0,50,0,2nzl42
+1388223,350bb1b1,Seam,male,2,Powerplay,9,9,0,0,45,1,2nzl42
+1388223,2f9d0389,Seam,male,3,Powerplay,8,8,0,0,16,1,2nzl42
+1388223,e4a0deae,Spin,male,7,Middle Overs,13,13,1,0,29,1,2nzl42
+1388223,641ac5ff,Spin,male,8,Middle Overs,15,15,0,0,27,0,2nzl42
+1388224,a818c1be,Seam,male,1,Powerplay,20,16,0,0,33,0,4nzl44
+1388224,350bb1b1,Seam,male,2,Powerplay,12,11,0,1,28,2,4nzl44
+1388224,2f9d0389,Seam,male,3,Powerplay,2,1,1,0,11,3,4nzl44
+1388224,e1891e00,Seam,male,7,Middle Overs,11,11,1,0,22,1,4nzl44
+1388224,e4a0deae,Spin,male,8,Middle Overs,18,14,0,3,17,2,4nzl44
+1388224,03806cf8,Seam,male,1,Powerplay,6,6,1,0,7,0,4nzl44
+1388224,14f96089,Spin,male,8,Middle Overs,13,13,0,0,21,4,4nzl44
+1398261,550373ea,Seam,female,4,Powerplay,3,3,0,0,36,3,10zaf21
+1398261,a61850e6,Spin,female,5,Powerplay,13,13,0,0,26,1,10zaf21
+1398261,d2b1f515,Seam,female,7,Middle Overs,6,6,0,0,9,2,10zaf21
+1398262,a0fdf513,Seam,female,1,Powerplay,6,5,0,0,19,1,7zaf18
+1398262,550373ea,Seam,female,4,Powerplay,0,0,1,0,26,1,7zaf18
+1398262,ac56b5a7,Spin,female,5,Powerplay,9,9,0,0,9,2,7zaf18
+1398263,b55fb828,Spin,female,1,Powerplay,12,12,0,0,12,3,11zaf22
+1398263,5838cb64,Spin,female,2,Powerplay,3,3,0,0,15,1,11zaf22
+1398263,a0fdf513,Seam,female,3,Powerplay,10,9,0,1,39,1,11zaf22
+1398263,c34a15e6,Spin,female,9,Middle Overs,3,3,1,0,19,0,11zaf22
+1398263,63e3b6b3,Seam,female,1,Powerplay,5,5,0,0,19,1,11zaf22
+1398263,0d518f89,Seam,female,4,Powerplay,8,8,0,0,20,0,11zaf22
+1398263,ea544967,Seam,female,7,Middle Overs,7,7,0,0,20,2,11zaf22
+1398268,792d0178,Seam,female,1,Powerplay,8,8,1,0,12,2,4eng29
+1398268,53bb50f0,Spin,female,2,Powerplay,3,2,1,1,27,1,4eng29
+1398268,ea9c54de,Seam,female,6,Middle Overs,8,5,0,2,31,0,4eng29
+1398268,38b4583c,Seam,female,1,Powerplay,12,10,0,2,10,3,4eng29
+1398268,c6625a26,Spin,female,3,Powerplay,8,8,1,0,21,1,4eng29
+1398268,cdb82f1c,Spin,female,7,Middle Overs,6,6,0,0,11,1,4eng29
+1398268,b34e0c77,Spin,female,8,Middle Overs,4,4,1,0,8,3,4eng29
+1398269,a51e6c6e,Seam,female,2,Powerplay,7,7,0,0,18,1,16eng121
+1398269,53bb50f0,Spin,female,4,Powerplay,5,5,0,0,15,1,16eng121
+1398269,ed840f44,Spin,female,12,Middle Overs,4,4,1,0,29,1,16eng121
+1398270,a51e6c6e,Seam,female,1,Powerplay,4,4,0,0,26,4,12eng37
+1398270,792d0178,Seam,female,2,Powerplay,12,11,0,1,27,0,12eng37
+1398270,53bb50f0,Spin,female,4,Powerplay,6,6,0,0,27,1,12eng37
+1398270,ea9c54de,Seam,female,5,Powerplay,5,5,0,0,24,1,12eng37
+1398270,ed840f44,Spin,female,9,Middle Overs,8,8,1,0,37,3,12eng37
+1398270,c6625a26,Spin,female,1,Powerplay,7,7,0,0,39,1,12eng37
+1398270,31adb911,Seam,female,2,Powerplay,7,5,0,1,19,1,12eng37
+1398270,b34e0c77,Spin,female,5,Powerplay,6,6,0,0,15,0,12eng37
+1398270,cdb82f1c,Spin,female,6,Middle Overs,5,5,0,0,14,1,12eng37
+1398270,d2763568,Seam,female,7,Middle Overs,7,7,0,0,23,1,12eng37
+1398277,60471339,Seam,female,4,Powerplay,7,7,0,0,26,2,3eng28
+1398277,7673c908,Spin,female,7,Middle Overs,6,6,0,0,28,0,3eng28
+1398277,abc9f8a4,Seam,female,2,Powerplay,7,7,1,0,23,1,3eng28
+1398277,340202b0,Spin,female,3,Powerplay,8,8,0,0,18,1,3eng28
+1398277,b34e0c77,Spin,female,8,Middle Overs,4,4,0,0,12,3,3eng28
+1398279,b34e0c77,Spin,female,7,Middle Overs,6,6,0,0,8,1,11eng36
+1398279,cdb82f1c,Spin,female,8,Middle Overs,9,9,2,0,16,2,11eng36
+1398279,6df697a9,Spin,female,2,Powerplay,2,2,0,0,22,2,11eng36
+1398279,de69af96,Seam,female,4,Powerplay,8,7,0,0,27,0,11eng36
+1398279,7673c908,Spin,female,8,Middle Overs,5,5,0,0,25,1,11eng36
+1398279,9b73d523,Spin,female,12,Middle Overs,4,4,0,0,21,0,11eng36
+1398280,340202b0,Spin,female,5,Powerplay,4,4,0,0,21,1,10eng35
+1398280,cdb82f1c,Spin,female,6,Middle Overs,4,3,0,0,13,2,10eng35
+1398280,b34e0c77,Spin,female,7,Middle Overs,6,5,2,1,13,2,10eng35
+1398281,6df697a9,Spin,female,1,Powerplay,3,2,1,1,19,3,2eng27
+1398281,7673c908,Spin,female,2,Powerplay,8,8,0,0,24,0,2eng27
+1398281,9af58032,Seam,female,3,Powerplay,3,2,0,1,24,1,2eng27
+1398281,7693851c,Spin,female,10,Middle Overs,5,5,1,0,30,1,2eng27
+1398281,38b4583c,Seam,female,1,Powerplay,5,5,0,0,16,3,2eng27
+1398281,31adb911,Seam,female,2,Powerplay,4,4,0,0,18,1,2eng27
+1398281,abc9f8a4,Seam,female,4,Powerplay,6,5,0,0,26,2,2eng27
+1398281,c6625a26,Spin,female,5,Powerplay,7,7,0,0,22,2,2eng27
+1398281,cdb82f1c,Spin,female,7,Middle Overs,5,5,0,0,26,0,2eng27
+1406081,7298db76,Seam,female,1,Powerplay,6,3,0,2,23,1,2ind2
+1406081,25ca0573,Seam,female,4,Powerplay,2,2,1,0,16,3,2ind2
+1406081,33946d69,Spin,female,9,Middle Overs,5,5,0,0,14,2,2ind2
+1406081,201fef33,Spin,female,12,Middle Overs,12,12,0,0,12,2,2ind2
+1406081,17608a6f,Seam,female,2,Powerplay,5,5,0,0,21,0,2ind2
+1406081,bc969efb,Spin,female,7,Middle Overs,4,4,0,0,20,0,2ind2
+1406081,f0b4e47d,Spin,female,11,Middle Overs,5,5,0,0,15,1,2ind2
+1406082,17608a6f,Seam,female,1,Powerplay,3,2,0,1,28,1,2ind2
+1406082,0b69a844,Seam,female,2,Powerplay,5,5,1,0,22,1,2ind2
+1406082,bc969efb,Spin,female,5,Powerplay,5,4,0,1,28,1,2ind2
+1406082,65d9b6b6,Seam,female,8,Middle Overs,10,6,1,0,12,1,2ind2
+1406082,f0b4e47d,Spin,female,9,Middle Overs,4,4,0,0,13,2,2ind2
+1406082,7298db76,Seam,female,1,Powerplay,4,3,0,1,19,0,2ind2
+1406082,33946d69,Spin,female,4,Powerplay,7,6,0,1,33,1,2ind2
+1406082,201fef33,Spin,female,8,Middle Overs,2,2,1,0,20,1,2ind2
+1406083,17608a6f,Seam,female,1,Powerplay,7,6,0,1,29,1,2ind2
+1406083,0b69a844,Seam,female,2,Powerplay,7,7,0,0,24,0,2ind2
+1406083,bc969efb,Spin,female,3,Powerplay,6,2,0,0,38,1,2ind2
+1406083,65d9b6b6,Seam,female,8,Middle Overs,3,3,1,0,9,1,2ind2
+1406083,f0b4e47d,Spin,female,9,Middle Overs,4,4,1,0,20,1,2ind2
+1406083,7298db76,Seam,female,1,Powerplay,9,8,0,1,26,0,2ind2
+1406083,33946d69,Spin,female,6,Middle Overs,7,6,0,0,25,0,2ind2
+1406083,8026ea72,Seam,female,7,Middle Overs,6,6,0,0,20,2,2ind2
+1406083,201fef33,Spin,female,8,Middle Overs,10,10,0,0,22,1,2ind2
+1412542,ee1b6c27,Seam,male,2,Powerplay,4,4,0,0,39,0,1lka97
+1412542,f24c6701,Spin,male,4,Powerplay,4,4,0,0,12,2,1lka97
+1412542,327b58d3,Seam,male,7,Middle Overs,4,4,0,0,34,1,1lka97
+1412542,a97c8ec2,Spin,male,8,Middle Overs,3,3,0,0,16,2,1lka97
+1412542,6e3f5a5c,Seam,male,1,Powerplay,2,2,1,0,32,0,1lka97
+1412542,449f4e3c,Seam,male,2,Powerplay,2,1,0,0,32,2,1lka97
+1412542,4bc0a378,Spin,male,5,Powerplay,6,6,1,0,15,0,1lka97
+1412542,26d041c4,Spin,male,8,Middle Overs,1,1,1,0,12,2,1lka97
+1412543,6e3f5a5c,Seam,male,1,Powerplay,1,1,0,0,29,1,1lka97
+1412543,449f4e3c,Seam,male,2,Powerplay,1,1,2,0,36,0,1lka97
+1412543,26d041c4,Spin,male,8,Middle Overs,9,9,0,0,16,0,1lka97
+1412543,de7d833e,Seam,male,1,Powerplay,4,4,0,0,20,1,1lka97
+1412543,f24c6701,Spin,male,2,Powerplay,6,5,0,1,19,2,1lka97
+1412543,327b58d3,Seam,male,3,Powerplay,9,8,0,1,21,2,1lka97
+1412543,a97c8ec2,Spin,male,8,Middle Overs,9,9,0,0,34,1,1lka97
+1412544,f24c6701,Spin,male,4,Powerplay,2,2,0,0,12,2,1lka97
+1412544,a97c8ec2,Spin,male,8,Middle Overs,6,6,0,0,9,4,1lka97
+1415704,81c36ee9,Seam,male,1,Powerplay,2,2,0,0,13,1,2usa111
+1415704,e62dd25d,Seam,male,2,Powerplay,7,6,0,1,14,2,2usa111
+1415704,6b9eb501,Seam,male,4,Powerplay,1,0,1,0,9,0,2usa111
+1415704,0b60eb09,Spin,male,7,Middle Overs,6,6,0,0,16,2,2usa111
+1415704,acdc62f5,Seam,male,8,Middle Overs,1,1,1,0,8,3,2usa111
+1415704,a97c8ec2,Spin,male,11,Middle Overs,5,5,1,0,17,1,2usa111
+1415708,244048f6,Seam,male,1,Powerplay,3,3,0,0,32,3,2usa111
+1415708,dbe50b21,Seam,male,7,Middle Overs,6,5,1,0,22,2,2usa111
+1415708,fc55ec67,Seam,male,1,Powerplay,7,6,0,1,20,2,2usa111
+1415708,9061a703,Seam,male,2,Powerplay,15,13,0,2,27,0,2usa111
+1415715,0b0cc297,Seam,male,1,Powerplay,5,5,0,0,20,1,5usa114
+1415715,ef18b66e,Seam,male,3,Powerplay,12,12,1,0,13,1,5usa114
+1415715,0a8fce53,Seam,male,6,Middle Overs,5,5,1,0,13,2,5usa114
+1415715,5935d694,Spin,male,8,Middle Overs,7,7,0,0,15,3,5usa114
+1415715,ee1b6c27,Seam,male,2,Powerplay,5,3,1,2,13,3,5usa114
+1415715,f24c6701,Spin,male,3,Powerplay,8,6,0,1,18,0,5usa114
+1415715,a97c8ec2,Spin,male,7,Middle Overs,3,3,0,0,29,2,5usa114
+1415715,64839cb3,Seam,male,8,Middle Overs,12,10,0,2,15,1,5usa114
+1415717,5574750c,Seam,male,3,Powerplay,8,7,0,1,21,1,1brb71
+1415717,249d60c9,Spin,male,7,Middle Overs,8,8,0,0,33,1,1brb71
+1415717,ffe699c0,Seam,male,10,Middle Overs,5,5,0,0,39,3,1brb71
+1415717,03806cf8,Seam,male,2,Powerplay,12,12,0,0,17,1,1brb71
+1415717,ded9240e,Seam,male,5,Powerplay,8,8,0,0,15,2,1brb71
+1415717,14f96089,Spin,male,8,Middle Overs,3,3,1,0,25,1,1brb71
+1415719,45a7e761,Seam,male,1,Powerplay,8,8,0,0,21,2,2usa111
+1415719,9c9af282,Seam,male,2,Powerplay,11,9,1,1,10,2,2usa111
+1415719,e174dadd,Seam,male,4,Powerplay,4,4,0,0,19,2,2usa111
+1415719,244048f6,Seam,male,1,Powerplay,9,7,0,1,24,1,2usa111
+1415719,2f49c897,Seam,male,2,Powerplay,6,6,0,0,14,0,2usa111
+1415719,462411b3,Seam,male,3,Powerplay,4,4,0,0,11,3,2usa111
+1415719,dbe50b21,Seam,male,6,Middle Overs,9,8,0,1,15,2,2usa111
+1415721,0b0cc297,Seam,male,1,Powerplay,11,11,1,0,8,2,2usa111
+1415721,ef18b66e,Seam,male,2,Powerplay,7,7,0,0,12,2,2usa111
+1415721,0a8fce53,Seam,male,6,Middle Overs,1,1,0,0,18,0,2usa111
+1415721,5935d694,Spin,male,7,Middle Overs,6,6,0,0,26,1,2usa111
+1415721,81c36ee9,Seam,male,1,Powerplay,1,1,0,0,17,0,2usa111
+1415721,e62dd25d,Seam,male,2,Powerplay,8,8,1,0,11,1,2usa111
+1415721,6b9eb501,Seam,male,4,Powerplay,6,6,0,0,21,0,2usa111
+1415721,0b60eb09,Spin,male,7,Middle Overs,6,5,1,1,22,2,2usa111
+1415721,acdc62f5,Seam,male,8,Middle Overs,5,5,1,0,12,1,2usa111
+1415726,a818c1be,Seam,male,1,Powerplay,1,0,1,0,16,2,1tto77
+1415726,13c35c9e,Seam,male,2,Powerplay,2,2,0,0,19,2,1tto77
+1415726,2f9d0389,Seam,male,5,Powerplay,2,2,1,0,25,1,1tto77
+1415726,9219eff0,Seam,male,7,Middle Overs,9,9,1,0,18,0,1tto77
+1415726,4d7f517e,Spin,male,1,Powerplay,3,3,0,0,18,1,1tto77
+1415726,bbd41817,Seam,male,4,Powerplay,5,5,0,0,26,1,1tto77
+1415726,b0946605,Seam,male,6,Middle Overs,4,4,1,0,15,3,1tto77
+1415726,97bdec3d,Spin,male,7,Middle Overs,9,9,1,0,16,2,1tto77
+1415736,45a7e761,Seam,male,1,Powerplay,2,2,2,0,24,1,3usa112
+1415736,e174dadd,Seam,male,2,Powerplay,6,5,1,0,6,1,3usa112
+1415736,24bb1c2f,Seam,male,7,Middle Overs,1,1,1,0,16,0,3usa112
+1415736,9cb8d7a6,Spin,male,12,Middle Overs,1,1,1,0,7,2,3usa112
+1415736,fc55ec67,Seam,male,1,Powerplay,4,4,0,0,20,1,3usa112
+1415736,3766056b,Seam,male,6,Middle Overs,9,8,1,1,6,2,3usa112
+1415736,478a63e7,Seam,male,9,Middle Overs,5,5,1,0,19,1,3usa112
+1415742,5574750c,Seam,male,4,Powerplay,11,11,0,0,26,1,1lca70
+1415742,249d60c9,Spin,male,9,Middle Overs,3,3,0,0,18,1,1lca70
+1415742,4d7f517e,Spin,male,1,Powerplay,5,5,0,0,30,0,1lca70
+1415742,97bdec3d,Spin,male,7,Middle Overs,6,6,0,0,26,0,1lca70
+1415744,3fb19989,Seam,male,1,Powerplay,4,4,1,0,19,0,2atg69
+1415744,03806cf8,Seam,male,2,Powerplay,0,0,0,0,25,0,2atg69
+1415744,ded9240e,Seam,male,6,Middle Overs,12,6,0,2,17,3,2atg69
+1415744,14f96089,Spin,male,7,Middle Overs,8,7,0,0,17,2,2atg69
+1415744,9dad0f2e,Spin,male,1,Powerplay,5,5,0,0,18,0,2atg69
+1415745,8db7f47f,Seam,male,1,Powerplay,2,2,0,0,21,0,1lca70
+1415745,5574750c,Seam,male,4,Powerplay,21,21,0,0,19,3,1lca70
+1415745,249d60c9,Spin,male,7,Middle Overs,6,6,0,0,15,1,1lca70
+1415745,81c36ee9,Seam,male,1,Powerplay,8,8,0,0,23,0,1lca70
+1415745,e62dd25d,Seam,male,2,Powerplay,8,6,1,2,24,1,1lca70
+1415745,0b60eb09,Spin,male,5,Powerplay,8,8,0,0,17,2,1lca70
+1415745,acdc62f5,Seam,male,8,Middle Overs,7,7,0,0,28,1,1lca70
+1415747,9dad0f2e,Spin,male,1,Powerplay,8,8,0,0,20,0,2atg69
+1415747,0b0cc297,Seam,male,3,Powerplay,6,6,0,0,26,2,2atg69
+1415747,0a8fce53,Seam,male,6,Middle Overs,11,11,0,0,37,0,2atg69
+1415747,244048f6,Seam,male,1,Powerplay,5,5,0,0,25,2,2atg69
+1415747,462411b3,Seam,male,2,Powerplay,2,2,0,0,11,2,2atg69
+1415747,8d2c70ad,Spin,male,8,Middle Overs,3,3,0,0,16,3,2atg69
+1415750,6a26221c,Spin,male,2,Powerplay,5,5,1,0,23,0,2atg69
+1415750,0b60eb09,Spin,male,5,Powerplay,11,11,0,0,13,1,2atg69
+1415750,acdc62f5,Seam,male,9,Middle Overs,3,3,0,0,24,0,2atg69
+1415750,a03bba42,Spin,male,10,Middle Overs,3,3,0,0,24,3,2atg69
+1415750,bbd41817,Seam,male,2,Powerplay,3,3,2,0,16,0,2atg69
+1415750,b0946605,Seam,male,6,Middle Overs,9,4,1,1,16,1,2atg69
+1415751,3fb19989,Seam,male,1,Powerplay,5,5,0,0,40,2,1lca70
+1415751,03806cf8,Seam,male,2,Powerplay,1,1,1,0,14,0,1lca70
+1415751,ded9240e,Seam,male,5,Powerplay,15,15,0,0,33,0,1lca70
+1415751,14f96089,Spin,male,7,Middle Overs,16,16,0,0,25,0,1lca70
+1415751,d9273ee7,Seam,male,8,Middle Overs,17,17,1,0,39,1,1lca70
+1415751,244048f6,Seam,male,1,Powerplay,6,6,1,0,35,2,1lca70
+1415751,462411b3,Seam,male,2,Powerplay,2,1,0,0,29,1,1lca70
+1415751,dbe50b21,Seam,male,6,Middle Overs,17,16,0,1,30,0,1lca70
+1415751,8d2c70ad,Spin,male,7,Middle Overs,4,4,0,0,20,2,1lca70
+1415754,5574750c,Seam,male,2,Powerplay,5,5,0,0,28,1,1guy115
+1415754,249d60c9,Spin,male,7,Middle Overs,9,9,0,0,16,1,1guy115
+1415754,50c6bc2b,Spin,male,9,Middle Overs,4,4,0,0,20,0,1guy115
+1415754,2e171977,Spin,male,4,Powerplay,7,7,1,0,16,3,1guy115
+1415754,8d2c70ad,Spin,male,7,Middle Overs,7,7,0,0,12,3,1guy115
+1415755,81c36ee9,Seam,male,1,Powerplay,15,15,0,0,34,1,1brb71
+1415755,e62dd25d,Seam,male,3,Powerplay,3,3,0,0,33,2,1brb71
+1415755,acdc62f5,Seam,male,7,Middle Overs,4,4,0,0,22,2,1brb71
+1415755,244048f6,Seam,male,1,Powerplay,6,5,0,0,15,2,1brb71
+1415755,462411b3,Seam,male,2,Powerplay,5,4,1,0,14,1,1brb71
+1415755,2e171977,Spin,male,5,Powerplay,10,10,0,0,40,1,1brb71
+1415755,8d2c70ad,Spin,male,6,Middle Overs,10,10,0,0,35,0,1brb71
+1415983,edf62a25,Seam,female,1,Powerplay,1,1,0,0,22,0,1zwe62
+1415983,5f311f1a,Seam,female,2,Powerplay,11,9,0,2,35,2,1zwe62
+1415983,8d25271a,Spin,female,5,Powerplay,11,11,0,0,33,0,1zwe62
+1415983,66498395,Seam,female,2,Powerplay,5,5,0,0,15,2,1zwe62
+1415983,5a50471c,Spin,female,7,Middle Overs,5,2,0,3,23,1,1zwe62
+1415983,940feccc,Seam,female,13,Middle Overs,4,4,0,0,22,2,1zwe62
+1415984,a4f1fdd4,Spin,female,7,Middle Overs,1,1,0,0,25,1,1zwe62
+1415984,f281dd00,Seam,female,11,Middle Overs,7,7,0,0,18,1,1zwe62
+1415984,fa6e2cb3,Spin,female,1,Powerplay,8,7,0,1,19,0,1zwe62
+1415984,5a50471c,Spin,female,7,Middle Overs,13,10,0,3,14,2,1zwe62
+1415984,b4f73b44,Seam,female,14,Middle Overs,2,1,2,1,14,2,1zwe62
+1415985,edf62a25,Seam,female,1,Powerplay,1,1,1,0,29,0,1zwe62
+1415985,f281dd00,Seam,female,8,Middle Overs,7,7,0,0,22,1,1zwe62
+1415985,fa6e2cb3,Spin,female,1,Powerplay,7,6,0,1,13,1,1zwe62
+1415985,66498395,Seam,female,2,Powerplay,10,10,0,0,16,0,1zwe62
+1415987,a4f1fdd4,Spin,female,2,Powerplay,3,3,0,0,24,2,1zwe62
+1415987,8d25271a,Spin,female,3,Powerplay,1,1,1,0,23,2,1zwe62
+1415987,f281dd00,Seam,female,7,Middle Overs,9,9,0,0,21,0,1zwe62
+1415987,d8f20ba5,Seam,female,2,Powerplay,10,10,0,0,14,3,1zwe62
+1415987,397369e0,Seam,female,5,Powerplay,4,4,0,0,22,0,1zwe62
+1415987,b4f73b44,Seam,female,10,Middle Overs,4,4,0,0,13,4,1zwe62
+1419824,bb34fd31,Seam,male,1,Powerplay,4,4,1,0,44,0,2bgd73
+1419824,ef18b66e,Seam,male,2,Powerplay,5,4,0,1,35,1,2bgd73
+1419824,0a8fce53,Seam,male,6,Middle Overs,5,5,0,0,43,0,2bgd73
+1419824,5935d694,Spin,male,7,Middle Overs,3,3,0,0,29,1,2bgd73
+1419824,dabbd0ae,Seam,male,2,Powerplay,11,10,0,0,31,2,2bgd73
+1419824,f24c6701,Spin,male,6,Middle Overs,6,6,0,0,26,1,2bgd73
+1419824,64839cb3,Seam,male,9,Middle Overs,2,1,1,1,54,0,2bgd73
+1419825,bb34fd31,Seam,male,1,Powerplay,0,0,0,0,20,0,2bgd73
+1419825,ef18b66e,Seam,male,2,Powerplay,5,5,1,0,33,0,2bgd73
+1419825,9dad0f2e,Spin,male,5,Powerplay,9,9,0,0,30,1,2bgd73
+1419825,0a8fce53,Seam,male,6,Middle Overs,15,15,0,0,27,1,2bgd73
+1419825,de7d833e,Seam,male,2,Powerplay,8,8,0,0,30,0,2bgd73
+1419825,f24c6701,Spin,male,5,Powerplay,8,8,0,0,28,0,2bgd73
+1419825,64839cb3,Seam,male,7,Middle Overs,7,4,1,2,25,1,2bgd73
+1419826,bb34fd31,Seam,male,1,Powerplay,2,2,0,0,27,1,2bgd73
+1419826,ef18b66e,Seam,male,2,Powerplay,6,6,0,0,23,2,2bgd73
+1419826,0a8fce53,Seam,male,6,Middle Overs,6,6,0,0,42,2,2bgd73
+1419826,5935d694,Spin,male,8,Middle Overs,10,10,1,0,25,1,2bgd73
+1419826,dabbd0ae,Seam,male,2,Powerplay,8,7,0,0,32,0,2bgd73
+1419826,ee1b6c27,Seam,male,4,Powerplay,0,0,3,0,20,2,2bgd73
+1419826,a97c8ec2,Spin,male,7,Middle Overs,3,3,0,0,29,2,2bgd73
+1419826,f24c6701,Spin,male,8,Middle Overs,4,4,0,0,32,1,2bgd73
+1420223,df064e1a,Spin,male,6,Middle Overs,0,0,1,0,13,3,1zwe62
+1420223,eef2536f,Seam,male,10,Middle Overs,9,9,0,0,20,2,1zwe62
+1420223,f19ccfad,Spin,male,11,Middle Overs,4,4,0,0,7,2,1zwe62
+1420223,5bbabe59,Seam,male,3,Powerplay,8,8,0,0,8,3,1zwe62
+1420223,449f4e3c,Seam,male,4,Powerplay,4,4,1,0,14,0,1zwe62
+1420223,b8704508,Seam,male,10,Middle Overs,7,7,1,0,21,0,1zwe62
+1420223,26d041c4,Spin,male,11,Middle Overs,10,10,1,0,15,2,1zwe62
+1420224,449f4e3c,Seam,male,2,Powerplay,0,0,1,0,30,0,1zwe62
+1420224,5bbabe59,Seam,male,4,Powerplay,6,6,0,0,32,0,1zwe62
+1420224,b8704508,Seam,male,8,Middle Overs,9,9,0,0,44,0,1zwe62
+1420224,2cffab74,Seam,male,1,Powerplay,5,5,1,0,33,2,1zwe62
+1420224,df064e1a,Spin,male,7,Middle Overs,1,1,0,0,10,2,1zwe62
+1420224,f19ccfad,Spin,male,8,Middle Overs,8,8,0,0,20,2,1zwe62
+1420225,6e3f5a5c,Seam,male,2,Powerplay,14,14,0,0,25,0,1zwe62
+1420225,449f4e3c,Seam,male,4,Powerplay,8,8,0,0,18,2,1zwe62
+1420225,26d041c4,Spin,male,7,Middle Overs,4,4,0,0,24,2,1zwe62
+1420225,a2f46292,Seam,male,1,Powerplay,9,9,0,0,7,1,1zwe62
+1420225,eef2536f,Seam,male,2,Powerplay,6,5,1,0,35,1,1zwe62
+1420225,df064e1a,Spin,male,6,Middle Overs,6,6,0,0,31,0,1zwe62
+1420225,f19ccfad,Spin,male,7,Middle Overs,2,2,2,0,13,1,1zwe62
+1420226,a2f46292,Seam,male,1,Powerplay,4,4,0,0,33,2,1zwe62
+1420226,df064e1a,Spin,male,5,Powerplay,4,4,0,0,18,1,1zwe62
+1420226,f19ccfad,Spin,male,6,Middle Overs,5,5,0,0,27,1,1zwe62
+1420226,449f4e3c,Seam,male,2,Powerplay,12,12,0,0,13,0,1zwe62
+1420226,38214163,Seam,male,4,Powerplay,10,10,0,0,31,0,1zwe62
+1420227,26d041c4,Spin,male,1,Powerplay,15,14,1,1,22,0,1zwe62
+1420227,6e3f5a5c,Seam,male,2,Powerplay,2,2,0,0,27,1,1zwe62
+1420227,38214163,Seam,male,3,Powerplay,16,16,0,0,27,1,1zwe62
+1420227,449f4e3c,Seam,male,4,Powerplay,5,5,1,0,14,1,1zwe62
+1420227,dadb9703,Spin,male,7,Middle Overs,5,5,0,0,34,1,1zwe62
+1420227,2cffab74,Seam,male,1,Powerplay,2,1,1,1,20,3,1zwe62
+1420227,a4e37e47,Seam,male,11,Middle Overs,6,6,0,0,19,2,1zwe62
+1424830,45a7e761,Seam,male,1,Powerplay,5,5,0,0,8,3,4pak10
+1424830,9c9af282,Seam,male,2,Powerplay,11,11,0,0,16,1,4pak10
+1424830,abb7c76c,Spin,male,7,Middle Overs,7,7,0,0,8,2,4pak10
+1424831,30f92334,Seam,male,1,Powerplay,6,6,0,0,33,0,4pak10
+1424831,dadbdb68,Seam,male,2,Powerplay,16,15,0,0,24,1,4pak10
+1424831,e38bce7a,Spin,male,4,Powerplay,6,6,0,0,34,1,4pak10
+1424831,cb9b8664,Seam,male,5,Powerplay,7,7,0,0,27,0,4pak10
+1424831,641ac5ff,Spin,male,7,Middle Overs,7,7,1,0,18,2,4pak10
+1424831,45a7e761,Seam,male,1,Powerplay,4,3,0,1,33,0,4pak10
+1424831,abb7c76c,Spin,male,4,Powerplay,6,6,0,0,25,0,4pak10
+1424832,9cb8d7a6,Spin,male,1,Powerplay,14,11,0,3,18,0,1pak7
+1424832,e174dadd,Seam,male,2,Powerplay,8,8,0,0,24,1,1pak7
+1424832,6dd8b88c,Spin,male,7,Middle Overs,9,9,0,0,34,1,1pak7
+1424832,dadbdb68,Seam,male,1,Powerplay,6,5,0,1,36,1,1pak7
+1424832,cb9b8664,Seam,male,2,Powerplay,7,6,1,0,22,2,1pak7
+1424832,e1891e00,Seam,male,4,Powerplay,7,7,0,0,20,2,1pak7
+1424832,e38bce7a,Spin,male,8,Middle Overs,7,6,0,1,27,1,1pak7
+1424833,30f92334,Seam,male,1,Powerplay,8,5,0,3,27,1,1pak7
+1424833,cb9b8664,Seam,male,2,Powerplay,2,2,1,0,24,0,1pak7
+1424833,e1891e00,Seam,male,4,Powerplay,15,15,0,0,31,1,1pak7
+1424833,641ac5ff,Spin,male,7,Middle Overs,9,9,0,0,21,1,1pak7
+1424833,45a7e761,Seam,male,1,Powerplay,9,8,1,0,22,3,1pak7
+1424833,e174dadd,Seam,male,4,Powerplay,15,15,0,0,27,2,1pak7
+1424833,6dd8b88c,Spin,male,7,Middle Overs,3,3,0,0,18,2,1pak7
+1425064,99e23670,Spin,female,1,Powerplay,0,0,1,0,25,1,1bgd72
+1425064,ef70a34b,Seam,female,2,Powerplay,2,1,1,1,28,0,1bgd72
+1425064,bc969efb,Spin,female,3,Powerplay,3,3,0,0,18,0,1bgd72
+1425064,f0b4e47d,Spin,female,7,Middle Overs,5,5,0,0,14,1,1bgd72
+1425065,7b51bfa4,Seam,female,1,Powerplay,3,3,0,0,16,4,1bgd72
+1425065,66078174,Spin,female,4,Powerplay,4,4,0,0,17,2,1bgd72
+1425065,558cdd64,Spin,female,10,Middle Overs,10,10,0,0,24,2,1bgd72
+1425065,bc969efb,Spin,female,3,Powerplay,5,5,0,0,12,3,1bgd72
+1425065,99e23670,Spin,female,4,Powerplay,3,3,0,0,7,3,1bgd72
+1425065,f0b4e47d,Spin,female,8,Middle Overs,0,0,0,0,24,1,1bgd72
+1425066,7b51bfa4,Seam,female,3,Powerplay,9,9,0,0,31,1,1bgd72
+1425066,66078174,Spin,female,8,Middle Overs,9,9,1,0,22,2,1bgd72
+1425066,aaf037b1,Spin,female,9,Middle Overs,5,5,0,0,14,1,1bgd72
+1425066,ef70a34b,Seam,female,2,Powerplay,2,2,0,0,14,3,1bgd72
+1425066,99e23670,Spin,female,10,Middle Overs,2,2,0,0,13,1,1bgd72
+1425066,65d9b6b6,Seam,female,12,Middle Overs,3,3,0,0,18,1,1bgd72
+1425126,bb34fd31,Seam,male,1,Powerplay,8,8,0,0,31,0,4bgd75
+1425126,9dad0f2e,Spin,male,2,Powerplay,5,5,1,0,11,2,4bgd75
+1425126,ef18b66e,Seam,male,4,Powerplay,5,3,0,0,11,3,4bgd75
+1425126,b3a28446,Seam,male,5,Powerplay,5,5,1,0,11,3,4bgd75
+1425126,5935d694,Spin,male,10,Middle Overs,6,5,0,1,31,0,4bgd75
+1425126,6e3f5a5c,Seam,male,1,Powerplay,5,3,0,1,20,0,4bgd75
+1425126,449f4e3c,Seam,male,2,Powerplay,3,3,1,0,28,0,4bgd75
+1425126,26d041c4,Spin,male,5,Powerplay,7,6,0,1,24,0,4bgd75
+1425127,bb34fd31,Seam,male,1,Powerplay,2,2,0,0,25,1,4bgd75
+1425127,9dad0f2e,Spin,male,2,Powerplay,1,1,0,0,17,1,4bgd75
+1425127,ef18b66e,Seam,male,4,Powerplay,8,3,1,1,15,1,4bgd75
+1425127,b3a28446,Seam,male,6,Middle Overs,4,4,0,0,33,1,4bgd75
+1425127,5935d694,Spin,male,7,Middle Overs,8,8,0,0,25,2,4bgd75
+1425127,6e3f5a5c,Seam,male,1,Powerplay,9,7,0,1,23,1,4bgd75
+1425127,449f4e3c,Seam,male,2,Powerplay,9,9,0,0,10,0,4bgd75
+1425127,26d041c4,Spin,male,7,Middle Overs,3,3,0,0,28,0,4bgd75
+1425127,b8704508,Seam,male,8,Middle Overs,4,4,0,0,31,2,4bgd75
+1425128,38214163,Seam,male,1,Powerplay,10,9,0,1,34,1,4bgd75
+1425128,449f4e3c,Seam,male,2,Powerplay,2,1,0,0,14,3,4bgd75
+1425128,26d041c4,Spin,male,5,Powerplay,8,8,1,0,30,0,4bgd75
+1425128,4bc0a378,Spin,male,6,Middle Overs,11,11,0,0,23,0,4bgd75
+1425128,b8704508,Seam,male,8,Middle Overs,4,4,0,0,29,0,4bgd75
+1425128,aa467af0,Spin,male,1,Powerplay,4,4,0,0,22,1,4bgd75
+1425128,ef18b66e,Seam,male,2,Powerplay,8,8,0,0,14,1,4bgd75
+1425128,b3a28446,Seam,male,3,Powerplay,9,9,1,0,34,2,4bgd75
+1425128,0b0cc297,Seam,male,5,Powerplay,5,5,1,0,21,0,4bgd75
+1425129,26d041c4,Spin,male,1,Powerplay,3,3,0,0,21,1,1bgd72
+1425129,449f4e3c,Seam,male,2,Powerplay,7,6,0,1,23,1,1bgd72
+1425129,6e3f5a5c,Seam,male,4,Powerplay,11,11,0,0,21,3,1bgd72
+1425129,ef18b66e,Seam,male,1,Powerplay,4,4,1,0,16,1,1bgd72
+1425129,0b0cc297,Seam,male,2,Powerplay,14,13,0,1,29,0,1bgd72
+1425129,7dc35884,Spin,male,3,Powerplay,8,8,0,0,27,4,1bgd72
+1425129,0a8fce53,Seam,male,6,Middle Overs,5,5,0,0,15,3,1bgd72
+1425130,26d041c4,Spin,male,1,Powerplay,9,9,0,0,17,0,1bgd72
+1425130,449f4e3c,Seam,male,2,Powerplay,0,0,1,0,23,1,1bgd72
+1425130,b8704508,Seam,male,11,Middle Overs,3,3,0,0,30,1,1bgd72
+1425130,7dc35884,Spin,male,2,Powerplay,1,1,0,0,9,1,1bgd72
+1425130,b3a28446,Seam,male,4,Powerplay,11,10,0,1,44,1,1bgd72
+1425130,5935d694,Spin,male,7,Middle Overs,4,4,0,0,29,0,1bgd72
+1425647,36dfa62e,Seam,female,1,Powerplay,13,13,0,0,24,1,1are54
+1425647,8d25271a,Spin,female,2,Powerplay,10,8,0,1,23,1,1are54
+1425647,09a58e2d,Seam,female,4,Powerplay,7,7,0,0,27,1,1are54
+1425647,5a50471c,Spin,female,7,Middle Overs,8,8,0,0,21,2,1are54
+1425647,50ee0500,Spin,female,8,Middle Overs,5,5,0,0,16,1,1are54
+1426084,53bb50f0,Spin,female,1,Powerplay,6,5,1,1,18,1,2pak8
+1426084,a51e6c6e,Seam,female,2,Powerplay,1,0,0,0,19,1,2pak8
+1426084,ed840f44,Spin,female,5,Powerplay,8,8,0,0,15,1,2pak8
+1426084,ea9c54de,Seam,female,7,Middle Overs,4,3,0,0,23,3,2pak8
+1426084,0d56e9a5,Spin,female,11,Middle Overs,4,4,0,0,24,2,2pak8
+1426084,d6164dc0,Spin,female,3,Powerplay,3,3,0,0,20,1,2pak8
+1426084,d32cf49a,Spin,female,4,Powerplay,5,5,0,0,11,1,2pak8
+1426084,42d9dd09,Spin,female,7,Middle Overs,4,4,1,0,23,0,2pak8
+1426084,321c980e,Spin,female,10,Middle Overs,5,5,1,0,10,3,2pak8
+1426085,d6164dc0,Spin,female,5,Powerplay,5,5,0,0,17,0,2pak8
+1426085,d32cf49a,Spin,female,8,Middle Overs,8,8,0,0,18,4,2pak8
+1426085,42d9dd09,Spin,female,9,Middle Overs,5,4,0,0,19,1,2pak8
+1426085,53bb50f0,Spin,female,1,Powerplay,5,3,0,2,23,1,2pak8
+1426085,c981d3c2,Spin,female,5,Powerplay,11,11,0,0,17,0,2pak8
+1426085,ed840f44,Spin,female,6,Middle Overs,6,6,0,0,14,0,2pak8
+1426085,0d56e9a5,Spin,female,9,Middle Overs,9,9,0,0,17,1,2pak8
+1426086,53bb50f0,Spin,female,1,Powerplay,1,1,0,0,18,0,2pak8
+1426086,ea9c54de,Seam,female,2,Powerplay,3,3,0,0,20,3,2pak8
+1426086,0b78b7c1,Spin,female,6,Middle Overs,6,5,0,1,22,0,2pak8
+1426086,0d56e9a5,Spin,female,7,Middle Overs,13,13,0,0,19,1,2pak8
+1426086,ed840f44,Spin,female,10,Middle Overs,6,5,0,1,24,1,2pak8
+1426086,d32cf49a,Spin,female,4,Powerplay,8,8,0,0,14,3,2pak8
+1426086,4b0e3049,Seam,female,5,Powerplay,3,3,0,0,16,1,2pak8
+1426086,321c980e,Spin,female,8,Middle Overs,6,6,0,0,22,0,2pak8
+1426086,42d9dd09,Spin,female,9,Middle Overs,5,4,1,1,16,2,2pak8
+1426087,53bb50f0,Spin,female,1,Powerplay,7,6,1,1,11,2,2pak8
+1426087,ea9c54de,Seam,female,2,Powerplay,0,0,0,0,12,0,2pak8
+1426087,c981d3c2,Spin,female,7,Middle Overs,5,5,0,0,9,2,2pak8
+1426087,0b78b7c1,Spin,female,8,Middle Overs,4,4,0,0,17,1,2pak8
+1426087,ed840f44,Spin,female,12,Middle Overs,8,5,1,1,11,2,2pak8
+1426088,4b0e3049,Seam,female,3,Powerplay,9,9,0,0,24,2,2pak8
+1426088,d6164dc0,Spin,female,5,Powerplay,4,3,1,0,23,1,2pak8
+1426088,d32cf49a,Spin,female,6,Middle Overs,6,5,0,1,18,1,2pak8
+1426088,42d9dd09,Spin,female,9,Middle Overs,6,6,0,0,11,3,2pak8
+1426088,53bb50f0,Spin,female,1,Powerplay,5,5,0,0,19,1,2pak8
+1426088,0b78b7c1,Spin,female,4,Powerplay,0,0,0,0,22,0,2pak8
+1426088,c981d3c2,Spin,female,7,Middle Overs,9,9,0,0,19,1,2pak8
+1426088,ed840f44,Spin,female,8,Middle Overs,8,8,0,0,29,0,2pak8
+1426553,45a7e761,Seam,male,1,Powerplay,21,21,0,0,20,0,6aus84
+1426553,9c9af282,Seam,male,2,Powerplay,16,15,0,1,29,0,6aus84
+1426553,24bb1c2f,Seam,male,4,Powerplay,4,3,2,1,18,2,6aus84
+1426553,2cec2a92,Seam,male,5,Powerplay,4,4,1,0,14,2,6aus84
+1426553,4277234d,Spin,male,8,Middle Overs,7,7,0,0,14,2,6aus84
+1426553,83c3e8e3,Seam,male,1,Powerplay,12,6,0,2,14,5,6aus84
+1426553,3b53243a,Seam,male,2,Powerplay,3,3,1,0,16,0,6aus84
+1426553,14f96089,Spin,male,7,Middle Overs,3,3,0,0,17,2,6aus84
+1426553,9eb1455b,Seam,male,8,Middle Overs,3,3,0,0,28,1,6aus84
+1426554,83c3e8e3,Seam,male,2,Powerplay,8,8,1,0,16,1,4aus82
+1426554,14f96089,Spin,male,7,Middle Overs,4,4,1,0,7,1,4aus82
+1426554,d405c0d5,Seam,male,8,Middle Overs,4,4,1,0,17,3,4aus82
+1426617,17608a6f,Seam,female,1,Powerplay,6,6,0,0,17,2,17aus95
+1426617,ef70a34b,Seam,female,2,Powerplay,7,7,0,0,29,1,17aus95
+1426617,99e23670,Spin,female,5,Powerplay,2,2,1,0,25,0,17aus95
+1426617,645b2a2f,Seam,female,2,Powerplay,4,4,0,0,20,2,17aus95
+1426617,9b73d523,Spin,female,6,Middle Overs,3,3,1,0,29,0,17aus95
+1426617,7673c908,Spin,female,8,Middle Overs,5,5,0,0,22,0,17aus95
+1426618,7693851c,Spin,female,2,Powerplay,8,8,0,0,18,1,17aus95
+1426618,6df697a9,Spin,female,3,Powerplay,5,5,1,0,27,0,17aus95
+1426618,60471339,Seam,female,4,Powerplay,6,6,0,0,21,1,17aus95
+1426618,7673c908,Spin,female,8,Middle Overs,8,8,0,0,12,5,17aus95
+1426618,65d9b6b6,Seam,female,8,Middle Overs,3,3,0,0,15,2,17aus95
+1426618,bc969efb,Spin,female,10,Middle Overs,4,4,1,0,13,2,17aus95
+1426619,99e23670,Spin,female,4,Powerplay,5,5,0,0,29,1,7aus85
+1426619,f0b4e47d,Spin,female,7,Middle Overs,4,4,1,0,17,1,7aus85
+1426619,bc969efb,Spin,female,8,Middle Overs,3,3,0,0,24,1,7aus85
+1426619,d5eb8b84,Seam,female,1,Powerplay,5,3,0,2,14,0,7aus85
+1426619,6df697a9,Spin,female,2,Powerplay,7,7,0,0,20,1,7aus85
+1426619,7693851c,Spin,female,4,Powerplay,2,1,1,0,28,1,7aus85
+1426619,7673c908,Spin,female,7,Middle Overs,4,4,1,0,27,0,7aus85
+1426757,7298db76,Seam,female,1,Powerplay,4,3,0,0,11,2,6lka102
+1426757,8026ea72,Seam,female,2,Powerplay,6,6,1,0,25,1,6lka102
+1426757,201fef33,Spin,female,6,Middle Overs,10,10,0,0,11,4,6lka102
+1426757,6c3aef71,Spin,female,7,Middle Overs,3,2,0,1,24,0,6lka102
+1426757,33946d69,Spin,female,8,Middle Overs,1,1,1,0,13,1,6lka102
+1426757,c981d3c2,Spin,female,7,Middle Overs,1,1,0,0,20,1,6lka102
+1426759,a0fdf513,Seam,female,1,Powerplay,6,6,2,0,14,0,6lka102
+1426759,5838cb64,Spin,female,2,Powerplay,2,2,1,0,15,1,6lka102
+1426759,b55fb828,Spin,female,5,Powerplay,6,4,0,1,13,2,6lka102
+1426759,a50797a4,Seam,female,1,Powerplay,1,1,0,0,14,0,6lka102
+1426759,66078174,Spin,female,4,Powerplay,11,7,0,0,5,3,6lka102
+1426768,7298db76,Seam,female,1,Powerplay,7,6,1,1,3,2,6lka102
+1426768,8026ea72,Seam,female,2,Powerplay,9,9,0,0,16,1,6lka102
+1426768,443c122f,Spin,female,4,Powerplay,2,1,0,1,15,0,6lka102
+1426768,201fef33,Spin,female,8,Middle Overs,3,3,0,0,11,1,6lka102
+1426768,6c3aef71,Spin,female,10,Middle Overs,2,2,1,0,12,2,6lka102
+1426769,5838cb64,Spin,female,1,Powerplay,2,2,0,0,22,0,6lka102
+1426769,a0fdf513,Seam,female,2,Powerplay,4,4,0,0,20,2,6lka102
+1426769,b55fb828,Spin,female,4,Powerplay,5,5,0,0,11,0,6lka102
+1426769,c34a15e6,Spin,female,9,Middle Overs,8,8,0,0,22,2,6lka102
+1426769,53bb50f0,Spin,female,1,Powerplay,1,1,1,0,15,3,6lka102
+1426769,c981d3c2,Spin,female,7,Middle Overs,2,2,0,0,37,0,6lka102
+1426770,5838cb64,Spin,female,1,Powerplay,6,5,0,1,25,0,6lka102
+1426770,b55fb828,Spin,female,4,Powerplay,3,3,0,0,20,0,6lka102
+1426770,c34a15e6,Spin,female,5,Powerplay,7,7,0,0,29,3,6lka102
+1426770,8026ea72,Seam,female,2,Powerplay,2,1,1,0,28,0,6lka102
+1426770,201fef33,Spin,female,4,Powerplay,6,6,0,0,26,1,6lka102
+1426770,443c122f,Spin,female,6,Middle Overs,16,16,0,0,19,0,6lka102
+1426770,6c3aef71,Spin,female,7,Middle Overs,9,9,0,0,38,0,6lka102
+1426830,fc55ec67,Seam,male,1,Powerplay,3,3,0,0,37,1,3irl118
+1426830,3766056b,Seam,male,2,Powerplay,8,8,1,0,31,1,3irl118
+1426830,bd0a4a7d,Seam,male,5,Powerplay,8,8,0,0,21,2,3irl118
+1426830,45a7e761,Seam,male,1,Powerplay,4,4,0,0,22,1,3irl118
+1426830,9c9af282,Seam,male,2,Powerplay,10,8,1,2,27,0,3irl118
+1426830,9cb8d7a6,Spin,male,4,Powerplay,8,8,0,0,20,1,3irl118
+1426830,2cec2a92,Seam,male,5,Powerplay,6,5,1,0,32,1,3irl118
+1426830,9de62878,Spin,male,7,Middle Overs,9,9,0,0,45,0,3irl118
+1426831,45a7e761,Seam,male,1,Powerplay,8,8,0,0,41,3,3irl118
+1426831,e174dadd,Seam,male,2,Powerplay,11,9,0,1,34,1,3irl118
+1426831,9c9af282,Seam,male,3,Powerplay,8,8,0,0,28,1,3irl118
+1426831,2cec2a92,Seam,male,7,Middle Overs,13,13,0,0,22,2,3irl118
+1426831,fc55ec67,Seam,male,1,Powerplay,6,6,1,0,37,0,3irl118
+1426831,1a448be0,Spin,male,8,Middle Overs,5,4,0,0,35,1,3irl118
+1426832,45a7e761,Seam,male,1,Powerplay,8,8,0,0,6,3,3irl118
+1426832,e174dadd,Seam,male,2,Powerplay,7,7,0,0,26,1,3irl118
+1426832,2cec2a92,Seam,male,6,Middle Overs,8,7,0,0,36,2,3irl118
+1426832,fc55ec67,Seam,male,1,Powerplay,4,4,0,0,24,3,3irl118
+1426832,bd0a4a7d,Seam,male,5,Powerplay,18,18,0,0,31,1,3irl118
+1429393,aaf037b1,Spin,female,9,Middle Overs,3,3,1,0,20,2,2bgd73
+1429393,558cdd64,Spin,female,12,Middle Overs,8,8,0,0,23,1,2bgd73
+1429393,7298db76,Seam,female,1,Powerplay,6,6,1,0,12,2,2bgd73
+1429393,8026ea72,Seam,female,2,Powerplay,9,9,0,0,16,2,2bgd73
+1429393,33946d69,Spin,female,4,Powerplay,4,4,0,0,20,1,2bgd73
+1429393,201fef33,Spin,female,6,Middle Overs,1,1,1,0,14,0,2bgd73
+1429393,6c3aef71,Spin,female,8,Middle Overs,2,2,0,0,17,1,2bgd73
+1429394,7298db76,Seam,female,1,Powerplay,11,9,0,1,29,0,2bgd73
+1429394,201fef33,Spin,female,2,Powerplay,3,3,1,0,11,1,2bgd73
+1429394,8026ea72,Seam,female,5,Powerplay,9,9,0,0,12,2,2bgd73
+1429394,33946d69,Spin,female,6,Middle Overs,5,5,1,0,20,1,2bgd73
+1429394,6c3aef71,Spin,female,8,Middle Overs,3,3,0,0,16,4,2bgd73
+1429395,7298db76,Seam,female,1,Powerplay,4,4,0,0,21,1,2bgd73
+1429395,8026ea72,Seam,female,2,Powerplay,8,8,0,0,19,2,2bgd73
+1429395,201fef33,Spin,female,4,Powerplay,10,10,0,0,8,0,2bgd73
+1429395,33946d69,Spin,female,6,Middle Overs,6,5,0,0,19,2,2bgd73
+1429395,6c3aef71,Spin,female,7,Middle Overs,5,4,1,1,17,2,2bgd73
+1429395,66078174,Spin,female,6,Middle Overs,13,13,0,0,11,1,2bgd73
+1429395,aaf037b1,Spin,female,7,Middle Overs,4,4,0,0,20,1,2bgd73
+1429397,aaf037b1,Spin,female,7,Middle Overs,8,8,0,0,20,2,2bgd73
+1429397,66078174,Spin,female,8,Middle Overs,3,3,1,0,24,1,2bgd73
+1429397,25ca0573,Seam,female,1,Powerplay,2,2,0,0,25,1,2bgd73
+1429397,6c3aef71,Spin,female,4,Powerplay,3,2,1,1,21,2,2bgd73
+1429397,77143581,Spin,female,8,Middle Overs,7,7,0,0,18,2,2bgd73
+1430812,a0fdf513,Seam,female,1,Powerplay,1,1,0,0,20,2,4irl119
+1430812,5838cb64,Spin,female,2,Powerplay,12,12,0,0,23,2,4irl119
+1430812,b55fb828,Spin,female,3,Powerplay,4,4,0,0,19,2,4irl119
+1430812,550373ea,Seam,female,4,Powerplay,7,7,0,0,19,0,4irl119
+1430812,fa6e2cb3,Spin,female,1,Powerplay,7,7,0,0,20,1,4irl119
+1430812,d8f20ba5,Seam,female,3,Powerplay,9,9,0,0,28,0,4irl119
+1430813,550373ea,Seam,female,2,Powerplay,5,5,0,0,31,2,4irl119
+1430813,4ac6664d,Seam,female,4,Powerplay,1,1,0,0,31,0,4irl119
+1430813,fa6e2cb3,Spin,female,1,Powerplay,9,9,0,0,27,2,4irl119
+1430813,d8f20ba5,Seam,female,2,Powerplay,3,2,1,1,25,1,4irl119
+1430813,1b1c23bb,Seam,female,3,Powerplay,8,8,0,0,18,2,4irl119
+1430813,397369e0,Seam,female,8,Middle Overs,15,15,0,0,35,0,4irl119
+1430820,fa6e2cb3,Spin,female,1,Powerplay,8,8,0,0,22,4,3irl118
+1430820,ffd5fcd8,Seam,female,2,Powerplay,9,7,0,1,27,0,3irl118
+1430820,f888a374,Spin,female,8,Middle Overs,6,6,0,0,24,3,3irl118
+1430820,1b1c23bb,Seam,female,12,Middle Overs,4,4,1,0,22,2,3irl118
+1430820,e5b17517,Seam,female,4,Powerplay,2,2,1,0,12,1,3irl118
+1430820,907e5f6c,Spin,female,7,Middle Overs,6,5,1,0,15,3,3irl118
+1430821,d8f20ba5,Seam,female,1,Powerplay,6,5,0,1,25,2,3irl118
+1430821,397369e0,Seam,female,5,Powerplay,4,3,0,0,19,4,3irl118
+1430821,f888a374,Spin,female,8,Middle Overs,8,4,0,2,24,2,3irl118
+1430821,1ade138e,Seam,female,1,Powerplay,2,2,1,0,27,1,3irl118
+1430821,907e5f6c,Spin,female,3,Powerplay,8,4,0,0,31,0,3irl118
+1430821,cd62f670,Spin,female,7,Middle Overs,6,6,0,0,25,2,3irl118
+1431086,9a2fc964,Spin,male,7,Middle Overs,2,2,1,0,27,0,1are54
+1431086,39181592,Seam,male,8,Middle Overs,2,2,0,0,27,4,1are54
+1431086,2c54c49b,Spin,male,1,Powerplay,3,3,0,0,26,0,1are54
+1431086,fc55ec67,Seam,male,2,Powerplay,9,9,0,0,23,1,1are54
+1431087,f834dcfc,Seam,male,1,Powerplay,6,5,0,1,17,1,1are54
+1431087,a1d95bd8,Seam,male,2,Powerplay,7,7,0,0,28,1,1are54
+1431087,c96f6ac5,Seam,male,3,Powerplay,14,14,0,0,38,2,1are54
+1431087,39181592,Seam,male,8,Middle Overs,11,10,0,1,20,2,1are54
+1431087,fc55ec67,Seam,male,1,Powerplay,2,2,0,0,29,4,1are54
+1431087,2c54c49b,Spin,male,2,Powerplay,10,10,0,0,20,1,1are54
+1431087,25550d06,Seam,male,3,Powerplay,9,8,0,1,16,3,1are54
+1431087,1a448be0,Spin,male,7,Middle Overs,9,9,0,0,36,1,1are54
+1432211,45a7e761,Seam,male,1,Powerplay,4,4,1,0,18,2,9zaf20
+1432211,abb7c76c,Spin,male,2,Powerplay,12,11,1,1,25,2,9zaf20
+1432211,24bb1c2f,Seam,male,5,Powerplay,8,8,0,0,33,0,9zaf20
+1432211,2cec2a92,Seam,male,6,Middle Overs,7,7,0,0,23,2,9zaf20
+1432211,4277234d,Spin,male,8,Middle Overs,15,15,0,0,38,1,9zaf20
+1432211,107c26fb,Seam,male,1,Powerplay,9,5,0,0,34,2,9zaf20
+1432211,6b9eb501,Seam,male,2,Powerplay,6,1,0,1,24,1,9zaf20
+1432211,ebb74564,Seam,male,4,Powerplay,13,13,0,0,31,1,9zaf20
+1432211,212aeedd,Spin,male,6,Middle Overs,15,15,0,0,18,0,9zaf20
+1432211,e5437608,Spin,male,8,Middle Overs,3,3,0,0,19,4,9zaf20
+1432212,47c449c5,Seam,male,1,Powerplay,3,3,0,0,18,2,6zaf17
+1432212,6b9eb501,Seam,male,4,Powerplay,10,10,1,0,41,1,6zaf17
+1432212,e5437608,Spin,male,10,Middle Overs,7,7,0,0,21,1,6zaf17
+1432212,45a7e761,Seam,male,1,Powerplay,4,4,0,0,33,0,6zaf17
+1432212,22d73540,Seam,male,2,Powerplay,8,8,1,0,32,1,6zaf17
+1432212,24bb1c2f,Seam,male,5,Powerplay,14,14,0,0,43,0,6zaf17
+1432212,2cec2a92,Seam,male,7,Middle Overs,9,9,0,0,37,1,6zaf17
+1432212,abb7c76c,Spin,male,8,Middle Overs,9,8,0,1,21,0,6zaf17
+1432225,38b4583c,Seam,female,2,Powerplay,10,9,0,1,36,0,11zaf22
+1432225,cdb82f1c,Spin,female,3,Powerplay,5,5,0,0,14,1,11zaf22
+1432225,c6625a26,Spin,female,4,Powerplay,6,6,0,0,15,2,11zaf22
+1432225,be592751,Seam,female,3,Powerplay,7,7,0,0,13,3,11zaf22
+1432225,ea544967,Seam,female,4,Powerplay,1,1,1,0,19,1,11zaf22
+1432225,686362af,Spin,female,6,Middle Overs,6,5,0,1,21,0,11zaf22
+1432226,be592751,Seam,female,1,Powerplay,6,5,0,1,33,0,10zaf21
+1432226,ea544967,Seam,female,3,Powerplay,10,10,0,0,26,2,10zaf21
+1432226,4d4605e6,Spin,female,6,Middle Overs,5,4,0,1,32,0,10zaf21
+1432226,686362af,Spin,female,8,Middle Overs,17,17,0,0,27,0,10zaf21
+1432226,f3a18a0c,Seam,female,1,Powerplay,2,2,1,0,30,0,10zaf21
+1432226,31adb911,Seam,female,2,Powerplay,7,2,0,1,23,0,10zaf21
+1432226,cdb82f1c,Spin,female,7,Middle Overs,10,10,0,0,31,0,10zaf21
+1432226,b34e0c77,Spin,female,8,Middle Overs,4,4,1,0,20,3,10zaf21
+1432227,31adb911,Seam,female,1,Powerplay,2,2,1,0,27,1,6zaf17
+1432227,38b4583c,Seam,female,2,Powerplay,1,1,1,0,23,2,6zaf17
+1432227,abc9f8a4,Seam,female,5,Powerplay,5,5,0,0,24,1,6zaf17
+1432227,c6625a26,Spin,female,6,Middle Overs,12,12,1,0,14,2,6zaf17
+1432227,cdb82f1c,Spin,female,7,Middle Overs,3,3,0,0,13,1,6zaf17
+1432423,a0fdf513,Seam,female,1,Powerplay,4,4,0,0,16,3,4are57
+1432423,b55fb828,Spin,female,2,Powerplay,2,2,1,0,17,2,4are57
+1432423,ac56b5a7,Spin,female,6,Middle Overs,3,3,1,0,15,2,4are57
+1432423,1251a339,Spin,female,9,Middle Overs,2,2,0,0,25,0,4are57
+1432423,53bb50f0,Spin,female,2,Powerplay,5,5,0,0,14,3,4are57
+1432423,821d7d46,Spin,female,6,Middle Overs,3,3,1,0,14,1,4are57
+1432423,c981d3c2,Spin,female,9,Middle Overs,4,4,0,0,11,2,4are57
+1432424,63e3b6b3,Seam,female,1,Powerplay,6,6,0,0,8,2,3are56
+1432424,686362af,Spin,female,5,Powerplay,8,8,1,0,21,3,3are56
+1432424,4d4605e6,Spin,female,6,Middle Overs,8,8,0,0,15,0,3are56
+1432424,d32cf49a,Spin,female,4,Powerplay,5,3,0,0,19,0,3are56
+1432424,321c980e,Spin,female,5,Powerplay,5,5,0,0,17,0,3are56
+1432425,7298db76,Seam,female,2,Powerplay,4,4,0,0,27,2,3are56
+1432425,201fef33,Spin,female,3,Powerplay,16,14,0,2,29,0,3are56
+1432425,eadc8924,Seam,female,6,Middle Overs,12,12,0,0,16,1,3are56
+1432425,77143581,Spin,female,7,Middle Overs,6,6,0,0,16,1,3are56
+1432425,7693851c,Spin,female,2,Powerplay,4,4,1,0,30,1,3are56
+1432425,d5eb8b84,Seam,female,3,Powerplay,4,4,0,0,15,4,3are56
+1432425,7673c908,Spin,female,8,Middle Overs,7,7,0,0,12,1,3are56
+1432425,60471339,Seam,female,9,Middle Overs,3,2,1,1,12,2,3are56
+1432426,17608a6f,Seam,female,1,Powerplay,0,0,0,0,12,3,4are57
+1432426,bc969efb,Spin,female,2,Powerplay,1,0,0,0,15,1,4are57
+1432426,99e23670,Spin,female,7,Middle Overs,4,4,1,0,16,1,4are57
+1432426,f0b4e47d,Spin,female,9,Middle Overs,5,5,0,0,18,1,4are57
+1432427,66078174,Spin,female,2,Powerplay,7,7,0,0,25,2,4are57
+1432427,558cdd64,Spin,female,4,Powerplay,9,9,0,0,9,2,4are57
+1432427,aaf037b1,Spin,female,7,Middle Overs,3,3,1,0,12,0,4are57
+1432427,ad3940a5,Seam,female,9,Middle Overs,5,5,0,0,19,2,4are57
+1432427,f3a18a0c,Seam,female,1,Powerplay,3,2,0,1,18,1,4are57
+1432427,340202b0,Spin,female,2,Powerplay,4,2,0,1,7,2,4are57
+1432427,c6625a26,Spin,female,4,Powerplay,1,0,1,1,21,1,4are57
+1432427,cdb82f1c,Spin,female,6,Middle Overs,3,3,0,0,18,1,4are57
+1432427,b34e0c77,Spin,female,7,Middle Overs,4,4,0,0,18,1,4are57
+1432428,7298db76,Seam,female,1,Powerplay,1,1,1,0,22,0,3are56
+1432428,201fef33,Spin,female,2,Powerplay,4,4,0,0,20,1,3are56
+1432428,eadc8924,Seam,female,4,Powerplay,1,1,0,0,19,3,3are56
+1432428,33946d69,Spin,female,6,Middle Overs,4,4,0,0,10,2,3are56
+1432428,77143581,Spin,female,9,Middle Overs,4,4,0,0,20,1,3are56
+1432428,ea9c54de,Seam,female,1,Powerplay,4,4,0,0,19,2,3are56
+1432428,53bb50f0,Spin,female,2,Powerplay,4,4,0,0,19,1,3are56
+1432428,c981d3c2,Spin,female,7,Middle Overs,6,6,0,0,15,0,3are56
+1432430,f3a18a0c,Seam,female,1,Powerplay,6,5,0,1,28,1,4are57
+1432430,340202b0,Spin,female,2,Powerplay,8,8,0,0,24,1,4are57
+1432430,c6625a26,Spin,female,3,Powerplay,6,6,0,0,19,1,4are57
+1432430,cdb82f1c,Spin,female,7,Middle Overs,5,5,0,0,10,2,4are57
+1432430,b34e0c77,Spin,female,8,Middle Overs,3,3,0,0,15,1,4are57
+1432430,63e3b6b3,Seam,female,1,Powerplay,0,0,0,0,17,1,4are57
+1432430,0d518f89,Seam,female,2,Powerplay,3,3,0,0,19,0,4are57
+1432430,686362af,Spin,female,7,Middle Overs,5,4,0,0,18,1,4are57
+1432430,ea544967,Seam,female,9,Middle Overs,11,7,1,0,17,0,4are57
+1432431,d5eb8b84,Seam,female,1,Powerplay,2,2,0,0,20,2,4are57
+1432431,7693851c,Spin,female,2,Powerplay,7,7,0,0,29,0,4are57
+1432431,7673c908,Spin,female,8,Middle Overs,5,5,0,0,21,4,4are57
+1432431,17608a6f,Seam,female,1,Powerplay,2,0,0,0,3,3,4are57
+1432431,99e23670,Spin,female,2,Powerplay,5,5,0,0,10,2,4are57
+1432431,65d9b6b6,Seam,female,5,Powerplay,6,6,0,0,15,3,4are57
+1432431,f0b4e47d,Spin,female,7,Middle Overs,3,3,0,0,18,1,4are57
+1432433,ac56b5a7,Spin,female,9,Middle Overs,10,10,0,0,24,2,3are56
+1432433,7298db76,Seam,female,1,Powerplay,3,3,1,0,17,1,3are56
+1432433,33946d69,Spin,female,2,Powerplay,2,2,1,0,14,0,3are56
+1432433,201fef33,Spin,female,6,Middle Overs,7,7,0,0,9,1,3are56
+1432433,eadc8924,Seam,female,7,Middle Overs,12,12,0,0,7,3,3are56
+1432433,77143581,Spin,female,8,Middle Overs,3,3,1,0,16,2,3are56
+1432434,d32cf49a,Spin,female,2,Powerplay,7,7,0,0,13,2,4are57
+1432434,321c980e,Spin,female,4,Powerplay,4,4,1,0,13,3,4are57
+1432434,42d9dd09,Spin,female,7,Middle Overs,2,2,0,0,23,2,4are57
+1432434,a811cb83,Spin,female,8,Middle Overs,5,5,0,0,15,0,4are57
+1432435,bc969efb,Spin,female,2,Powerplay,7,7,0,0,14,4,3are56
+1432435,99e23670,Spin,female,4,Powerplay,4,4,1,0,15,0,3are56
+1432435,f0b4e47d,Spin,female,8,Middle Overs,3,3,1,0,13,1,3are56
+1432436,d5eb8b84,Seam,female,1,Powerplay,10,3,0,3,12,0,4are57
+1432436,7693851c,Spin,female,2,Powerplay,6,6,0,0,14,1,4are57
+1432436,9b73d523,Spin,female,7,Middle Overs,8,8,0,0,19,2,4are57
+1432436,7673c908,Spin,female,8,Middle Overs,4,4,0,0,9,2,4are57
+1432436,b55fb828,Spin,female,1,Powerplay,3,3,0,0,20,0,4are57
+1432436,1251a339,Spin,female,8,Middle Overs,3,3,1,0,21,0,4are57
+1432437,63e3b6b3,Seam,female,1,Powerplay,1,1,1,0,9,0,3are56
+1432437,0d518f89,Seam,female,2,Powerplay,3,2,0,1,22,0,3are56
+1432437,686362af,Spin,female,10,Middle Overs,2,0,0,1,9,1,3are56
+1432437,66078174,Spin,female,2,Powerplay,9,9,0,0,17,0,3are56
+1432437,558cdd64,Spin,female,3,Powerplay,6,6,1,0,13,1,3are56
+1432437,aaf037b1,Spin,female,6,Middle Overs,9,9,0,0,14,0,3are56
+1432439,7298db76,Seam,female,1,Powerplay,7,6,0,1,21,2,4are57
+1432439,33946d69,Spin,female,2,Powerplay,2,2,0,0,33,2,4are57
+1432439,201fef33,Spin,female,10,Middle Overs,5,5,0,0,23,2,4are57
+1432439,17608a6f,Seam,female,1,Powerplay,5,5,0,0,20,2,4are57
+1432439,bc969efb,Spin,female,2,Powerplay,8,8,0,0,24,1,4are57
+1432439,65d9b6b6,Seam,female,5,Powerplay,10,9,0,0,13,4,4are57
+1432439,99e23670,Spin,female,6,Middle Overs,2,2,1,0,30,1,4are57
+1432440,53bb50f0,Spin,female,2,Powerplay,3,3,0,0,20,1,3are56
+1432440,ed840f44,Spin,female,5,Powerplay,7,7,0,0,19,1,3are56
+1432440,821d7d46,Spin,female,6,Middle Overs,5,5,0,0,10,1,3are56
+1432440,c981d3c2,Spin,female,7,Middle Overs,2,2,1,0,16,2,3are56
+1432441,d32cf49a,Spin,female,4,Powerplay,8,8,1,0,28,1,3are56
+1432441,42d9dd09,Spin,female,7,Middle Overs,4,4,1,0,17,2,3are56
+1432441,f3a18a0c,Seam,female,2,Powerplay,12,12,0,0,21,2,3are56
+1432441,c6625a26,Spin,female,3,Powerplay,10,10,0,0,36,0,3are56
+1432441,cdb82f1c,Spin,female,4,Powerplay,8,8,0,0,15,1,3are56
+1432442,63e3b6b3,Seam,female,1,Powerplay,7,3,0,0,21,2,3are56
+1432442,0d518f89,Seam,female,2,Powerplay,3,2,1,1,21,1,3are56
+1432442,686362af,Spin,female,6,Middle Overs,8,8,0,0,23,1,3are56
+1432442,4d4605e6,Spin,female,8,Middle Overs,3,3,0,0,23,0,3are56
+1432442,17608a6f,Seam,female,1,Powerplay,2,2,0,0,23,0,3are56
+1432442,65d9b6b6,Seam,female,5,Powerplay,8,7,1,1,18,1,3are56
+1432443,75820733,Seam,female,1,Powerplay,5,5,0,0,19,0,4are57
+1432443,4b0e3049,Seam,female,10,Middle Overs,4,4,0,0,27,2,4are57
+1432443,53bee17f,Seam,female,12,Middle Overs,6,6,1,0,16,3,4are57
+1432443,d5eb8b84,Seam,female,1,Powerplay,4,4,0,0,12,0,4are57
+1432443,6df697a9,Spin,female,2,Powerplay,4,3,0,1,17,1,4are57
+1432443,7693851c,Spin,female,3,Powerplay,8,8,1,0,21,2,4are57
+1432443,7673c908,Spin,female,8,Middle Overs,3,3,0,0,11,2,4are57
+1432444,63e3b6b3,Seam,female,1,Powerplay,9,9,0,0,17,0,3are56
+1432444,0d518f89,Seam,female,2,Powerplay,11,11,1,0,33,0,3are56
+1432444,4d4605e6,Spin,female,5,Powerplay,2,2,0,0,21,1,3are56
+1432444,686362af,Spin,female,6,Middle Overs,7,7,0,0,24,2,3are56
+1432444,d5eb8b84,Seam,female,1,Powerplay,7,4,0,3,18,3,3are56
+1432444,7693851c,Spin,female,2,Powerplay,7,7,0,0,15,1,3are56
+1432444,6df697a9,Spin,female,3,Powerplay,10,10,0,0,18,1,3are56
+1432444,7673c908,Spin,female,8,Middle Overs,6,6,0,0,20,3,3are56
+1433362,f834dcfc,Seam,male,2,Powerplay,12,11,0,1,29,1,1jam6
+1433362,3204c99f,Seam,male,3,Powerplay,17,12,0,1,17,1,1jam6
+1433362,6b9eb501,Seam,male,4,Powerplay,6,6,1,0,20,2,1jam6
+1433362,ab6b1c45,Seam,male,5,Powerplay,13,13,0,0,19,3,1jam6
+1433362,b52ffbbd,Spin,male,6,Middle Overs,10,10,0,0,22,0,1jam6
+1433362,97bdec3d,Spin,male,8,Middle Overs,8,8,0,0,18,3,1jam6
+1433363,f834dcfc,Seam,male,1,Powerplay,9,9,0,0,32,2,1jam6
+1433363,9a2fc964,Spin,male,2,Powerplay,3,3,0,0,18,1,1jam6
+1433363,acdc62f5,Seam,male,3,Powerplay,13,13,0,0,34,0,1jam6
+1433363,212aeedd,Spin,male,7,Middle Overs,5,5,1,0,27,1,1jam6
+1433363,3feda4fa,Spin,male,2,Powerplay,11,9,0,2,15,2,1jam6
+1433363,97bdec3d,Spin,male,9,Middle Overs,5,5,0,0,19,3,1jam6
+1433363,c5aef772,Seam,male,12,Middle Overs,5,4,1,0,20,0,1jam6
+1433364,4d7f517e,Spin,male,1,Powerplay,4,4,0,0,27,0,1jam6
+1433364,97290faf,Seam,male,2,Powerplay,6,5,1,1,23,1,1jam6
+1433364,529eb9e0,Seam,male,6,Middle Overs,7,7,1,0,32,2,1jam6
+1433367,4d7f517e,Spin,male,1,Powerplay,3,3,0,0,19,1,1tto77
+1433367,83d17bbc,Seam,male,2,Powerplay,6,6,1,0,22,2,1tto77
+1433367,97290faf,Seam,male,5,Powerplay,3,3,1,0,37,1,1tto77
+1433367,97bdec3d,Spin,male,11,Middle Overs,4,4,0,0,27,0,1tto77
+1433367,107c26fb,Seam,male,3,Powerplay,9,7,0,2,16,1,1tto77
+1433367,6b9eb501,Seam,male,4,Powerplay,14,13,0,0,17,2,1tto77
+1433368,a1d95bd8,Seam,male,2,Powerplay,7,7,0,0,30,3,1tto77
+1433368,107c26fb,Seam,male,4,Powerplay,6,6,0,0,23,0,1tto77
+1433368,6b9eb501,Seam,male,5,Powerplay,9,9,0,0,23,1,1tto77
+1433368,4d7f517e,Spin,male,1,Powerplay,7,7,0,0,18,2,1tto77
+1433368,97290faf,Seam,male,5,Powerplay,10,10,1,0,22,2,1tto77
+1433368,c5aef772,Seam,male,6,Middle Overs,4,4,1,0,12,2,1tto77
+1433368,97bdec3d,Spin,male,9,Middle Overs,9,9,0,0,19,1,1tto77
+1433373,0f6db197,Seam,male,2,Powerplay,7,7,1,0,29,3,1brb71
+1433373,59559bc2,Seam,male,5,Powerplay,0,0,0,0,28,1,1brb71
+1433373,249d60c9,Spin,male,7,Middle Overs,3,3,1,0,30,2,1brb71
+1433373,4d7f517e,Spin,male,1,Powerplay,6,6,0,0,14,0,1brb71
+1433373,97bdec3d,Spin,male,6,Middle Overs,19,19,1,0,26,0,1brb71
+1433373,c5aef772,Seam,male,7,Middle Overs,4,4,1,0,41,0,1brb71
+1433374,5574750c,Seam,male,1,Powerplay,6,5,0,1,25,1,1brb71
+1433374,249d60c9,Spin,male,7,Middle Overs,10,9,0,1,26,1,1brb71
+1433374,876dbe2d,Spin,male,12,Middle Overs,1,1,0,0,29,2,1brb71
+1433374,4d7f517e,Spin,male,1,Powerplay,2,2,1,0,22,0,1brb71
+1433375,5574750c,Seam,male,1,Powerplay,11,11,1,0,14,1,1lca70
+1433375,0f6db197,Seam,male,2,Powerplay,2,2,1,0,16,2,1lca70
+1433375,59559bc2,Seam,male,8,Middle Overs,4,3,0,0,17,3,1lca70
+1433375,b0946605,Seam,male,2,Powerplay,4,4,0,0,34,1,1lca70
+1433375,4d7f517e,Spin,male,3,Powerplay,6,6,1,0,16,3,1lca70
+1433375,97bdec3d,Spin,male,9,Middle Overs,6,6,0,0,21,1,1lca70
+1433376,529eb9e0,Seam,male,1,Powerplay,12,8,0,0,33,1,1lca70
+1433376,b0946605,Seam,male,2,Powerplay,3,3,0,0,32,1,1lca70
+1433376,97bdec3d,Spin,male,7,Middle Overs,14,14,0,0,26,2,1lca70
+1433376,3feda4fa,Spin,male,10,Middle Overs,4,4,1,0,43,0,1lca70
+1433376,cdd875d9,Seam,male,1,Powerplay,5,4,0,1,37,1,1lca70
+1433376,0f6db197,Seam,male,2,Powerplay,0,0,0,0,29,0,1lca70
+1433376,0ecb4de6,Spin,male,7,Middle Overs,14,14,0,0,29,4,1lca70
+1433383,4d7f517e,Spin,male,1,Powerplay,6,6,0,0,7,2,1vct67
+1433383,529eb9e0,Seam,male,2,Powerplay,9,8,0,1,22,2,1vct67
+1433383,b0946605,Seam,male,4,Powerplay,1,1,0,0,25,0,1vct67
+1433383,3feda4fa,Spin,male,6,Middle Overs,11,10,1,1,18,0,1vct67
+1433383,80ad39ac,Seam,male,1,Powerplay,1,1,0,0,18,2,1vct67
+1433383,ef18b66e,Seam,male,2,Powerplay,1,1,1,0,28,1,1vct67
+1433383,9dad0f2e,Spin,male,3,Powerplay,1,1,1,0,12,3,1vct67
+1433383,0b0cc297,Seam,male,4,Powerplay,25,18,0,2,22,1,1vct67
+1433383,5935d694,Spin,male,10,Middle Overs,6,6,0,0,26,1,1vct67
+1433384,4d7f517e,Spin,male,1,Powerplay,1,1,0,0,15,1,1vct67
+1433384,b0946605,Seam,male,8,Middle Overs,5,5,0,0,17,1,1vct67
+1433384,97bdec3d,Spin,male,9,Middle Overs,4,4,1,0,21,2,1vct67
+1433384,9dad0f2e,Spin,male,2,Powerplay,12,11,0,1,8,2,1vct67
+1433384,ef18b66e,Seam,male,3,Powerplay,4,4,2,0,12,1,1vct67
+1433384,0b0cc297,Seam,male,7,Middle Overs,9,8,0,1,14,2,1vct67
+1433385,c5aef772,Seam,male,2,Powerplay,10,9,0,0,22,2,1vct67
+1433385,b0946605,Seam,male,4,Powerplay,12,12,0,0,47,1,1vct67
+1433385,3feda4fa,Spin,male,7,Middle Overs,5,5,0,0,10,3,1vct67
+1433385,ef18b66e,Seam,male,1,Powerplay,5,5,1,0,25,1,1vct67
+1433385,5935d694,Spin,male,8,Middle Overs,3,3,0,0,22,3,1vct67
+1434291,7298db76,Seam,female,1,Powerplay,5,5,0,0,37,0,1ind1
+1434291,8026ea72,Seam,female,2,Powerplay,1,1,0,0,22,2,1ind1
+1434291,6c3aef71,Spin,female,5,Powerplay,8,7,0,1,32,2,1ind1
+1434291,201fef33,Spin,female,6,Middle Overs,12,12,0,0,33,0,1ind1
+1434291,77143581,Spin,female,7,Middle Overs,6,6,0,0,33,0,1ind1
+1434291,0d518f89,Seam,female,1,Powerplay,8,8,0,0,31,1,1ind1
+1434291,4d4605e6,Spin,female,2,Powerplay,10,10,0,0,22,1,1ind1
+1434291,ea544967,Seam,female,4,Powerplay,15,14,0,1,15,1,1ind1
+1434291,686362af,Spin,female,7,Middle Overs,5,5,0,0,27,1,1ind1
+1434292,8026ea72,Seam,female,1,Powerplay,6,6,0,0,31,2,1ind1
+1434292,eadc8924,Seam,female,3,Powerplay,16,16,0,0,22,0,1ind1
+1434292,33946d69,Spin,female,4,Powerplay,8,8,0,0,30,1,1ind1
+1434292,201fef33,Spin,female,7,Middle Overs,4,4,0,0,16,2,1ind1
+1434293,8026ea72,Seam,female,1,Powerplay,6,6,0,0,7,4,1ind1
+1434293,201fef33,Spin,female,8,Middle Overs,3,3,1,0,18,0,1ind1
+1436889,ac56b5a7,Spin,female,1,Powerplay,7,5,0,1,23,4,9lka105
+1436889,b55fb828,Spin,female,3,Powerplay,1,0,0,1,29,0,9lka105
+1436889,5838cb64,Spin,female,4,Powerplay,8,8,0,0,20,3,9lka105
+1436889,321c980e,Spin,female,4,Powerplay,7,7,0,0,23,1,9lka105
+1436889,42d9dd09,Spin,female,8,Middle Overs,6,6,0,0,23,2,9lka105
+1436890,321c980e,Spin,female,5,Powerplay,5,5,0,0,19,0,9lka105
+1436890,42d9dd09,Spin,female,8,Middle Overs,7,7,1,0,16,3,9lka105
+1436891,4b0e3049,Seam,female,6,Middle Overs,7,5,0,2,20,2,9lka105
+1436891,42d9dd09,Spin,female,8,Middle Overs,6,6,0,0,19,2,9lka105
+1436891,b55fb828,Spin,female,1,Powerplay,5,4,0,0,20,1,9lka105
+1436891,2fa916b3,Seam,female,2,Powerplay,11,11,0,0,16,2,9lka105
+1439893,244048f6,Seam,male,1,Powerplay,6,6,1,0,12,2,3ind3
+1439893,dbe50b21,Seam,male,2,Powerplay,8,8,0,0,20,2,3ind3
+1439893,5b7ab5a9,Spin,male,5,Powerplay,15,15,0,0,16,3,3ind3
+1439893,b1ad996b,Seam,male,6,Middle Overs,0,0,0,0,21,1,3ind3
+1439894,ef18b66e,Seam,male,2,Powerplay,2,2,1,0,15,1,5ind5
+1439894,0b0cc297,Seam,male,3,Powerplay,8,8,1,0,42,1,5ind5
+1439894,0a8fce53,Seam,male,6,Middle Overs,9,9,1,0,27,1,5ind5
+1439894,5935d694,Spin,male,8,Middle Overs,11,11,0,0,45,3,5ind5
+1439894,aad0c365,Seam,male,2,Powerplay,6,6,0,0,22,2,5ind5
+1439894,5b7ab5a9,Spin,male,6,Middle Overs,1,1,1,0,18,1,5ind5
+1439894,b1ad996b,Seam,male,10,Middle Overs,9,7,0,2,21,1,5ind5
+1439895,9dad0f2e,Spin,male,1,Powerplay,7,7,0,0,38,0,4ind4
+1439895,ef18b66e,Seam,male,2,Powerplay,16,16,0,0,44,1,4ind4
+1439895,0b0cc297,Seam,male,3,Powerplay,12,11,1,0,55,2,4ind4
+1439895,0a8fce53,Seam,male,4,Powerplay,12,12,0,0,41,1,4ind4
+1439895,b1ad996b,Seam,male,1,Powerplay,5,5,1,0,31,1,4ind4
+1439895,df064e1a,Spin,male,6,Middle Overs,0,0,1,0,30,2,4ind4
+1439895,5b7ab5a9,Spin,male,7,Middle Overs,5,5,0,0,18,0,4ind4
+1442987,de3d549a,Seam,male,2,Powerplay,9,9,0,0,38,1,3lka99
+1442987,f24c6701,Spin,male,3,Powerplay,14,14,0,0,30,0,3lka99
+1442987,a97c8ec2,Spin,male,7,Middle Overs,7,7,1,0,21,0,3lka99
+1442987,64839cb3,Seam,male,12,Middle Overs,13,11,0,2,27,4,3lka99
+1442987,2e171977,Spin,male,3,Powerplay,12,11,0,1,26,2,3lka99
+1442987,df064e1a,Spin,male,5,Powerplay,11,11,0,0,26,1,3lka99
+1442987,dbe50b21,Seam,male,8,Middle Overs,12,12,0,0,31,0,3lka99
+1442988,2e171977,Spin,male,6,Middle Overs,9,9,0,0,21,2,3lka99
+1442988,df064e1a,Spin,male,7,Middle Overs,9,9,0,0,17,3,3lka99
+1442988,04a418e8,Spin,male,9,Middle Overs,6,6,0,0,24,0,3lka99
+1442989,a5c48ed1,Seam,male,1,Powerplay,3,3,0,0,14,1,3lka99
+1442989,f24c6701,Spin,male,2,Powerplay,8,8,1,0,21,3,3lka99
+1442989,a97c8ec2,Spin,male,10,Middle Overs,6,6,0,0,24,2,3lka99
+1442989,f19ccfad,Spin,male,5,Powerplay,7,6,0,0,17,2,3lka99
+1442989,df064e1a,Spin,male,7,Middle Overs,10,10,0,0,28,2,3lka99
+1442989,04a418e8,Spin,male,8,Middle Overs,5,5,0,0,22,0,3lka99
+1443543,ee1b6c27,Seam,male,1,Powerplay,5,4,0,1,23,0,7nzl47
+1443543,dabbd0ae,Seam,male,2,Powerplay,4,4,0,0,18,2,7nzl47
+1443543,f24c6701,Spin,male,3,Powerplay,10,10,0,0,19,3,7nzl47
+1443543,64839cb3,Seam,male,7,Middle Overs,10,10,1,0,50,0,7nzl47
+1443543,a97c8ec2,Spin,male,8,Middle Overs,5,5,0,0,28,2,7nzl47
+1443543,e84ac20c,Seam,male,1,Powerplay,6,5,0,0,23,2,7nzl47
+1443543,dadbdb68,Seam,male,2,Powerplay,5,5,0,0,16,3,7nzl47
+1443543,30f92334,Seam,male,4,Powerplay,18,16,0,1,25,3,7nzl47
+1443543,e4a0deae,Spin,male,7,Middle Overs,9,9,0,0,18,0,7nzl47
+1443544,ee1b6c27,Seam,male,1,Powerplay,7,7,0,0,19,1,7nzl47
+1443544,dabbd0ae,Seam,male,2,Powerplay,4,3,0,0,35,1,7nzl47
+1443544,f24c6701,Spin,male,5,Powerplay,11,11,0,0,42,0,7nzl47
+1443544,64839cb3,Seam,male,6,Middle Overs,12,9,0,2,26,1,7nzl47
+1443544,a97c8ec2,Spin,male,8,Middle Overs,6,5,0,0,24,2,7nzl47
+1443544,e84ac20c,Seam,male,1,Powerplay,2,2,0,0,29,2,7nzl47
+1443544,dadbdb68,Seam,male,2,Powerplay,6,4,0,2,10,4,7nzl47
+1443544,30f92334,Seam,male,4,Powerplay,8,7,0,1,19,1,7nzl47
+1443544,e4a0deae,Spin,male,5,Powerplay,2,2,1,0,20,1,7nzl47
+1444652,6e3f5a5c,Seam,male,1,Powerplay,3,3,0,0,38,1,5zwe66
+1444652,449f4e3c,Seam,male,2,Powerplay,13,13,0,0,32,0,5zwe66
+1444652,26d041c4,Spin,male,7,Middle Overs,3,3,0,0,11,1,5zwe66
+1444652,abb7c76c,Spin,male,1,Powerplay,7,7,0,0,21,3,5zwe66
+1444652,4277234d,Spin,male,8,Middle Overs,5,4,0,1,15,3,5zwe66
+1444654,4bc0a378,Spin,male,1,Powerplay,4,4,0,0,20,1,5zwe66
+1444654,449f4e3c,Seam,male,2,Powerplay,5,4,1,1,22,1,5zwe66
+1444654,26d041c4,Spin,male,7,Middle Overs,4,4,0,0,20,1,5zwe66
+1444654,f2e8b37c,Spin,male,5,Powerplay,8,8,0,0,9,0,5zwe66
+1444654,4277234d,Spin,male,8,Middle Overs,7,7,0,0,12,1,5zwe66
+1444654,2cec2a92,Seam,male,11,Middle Overs,2,2,1,0,22,2,5zwe66
+1449011,53bb50f0,Spin,female,1,Powerplay,5,3,0,2,29,3,5pak11
+1449011,ed840f44,Spin,female,4,Powerplay,3,3,0,0,8,1,5pak11
+1449011,0d56e9a5,Spin,female,7,Middle Overs,3,3,0,0,22,0,5pak11
+1449011,c981d3c2,Spin,female,11,Middle Overs,6,6,0,0,19,0,5pak11
+1449011,63e3b6b3,Seam,female,1,Powerplay,0,0,1,0,22,1,5pak11
+1449011,0d518f89,Seam,female,2,Powerplay,1,1,0,0,26,0,5pak11
+1449012,4d4605e6,Spin,female,1,Powerplay,7,5,0,1,20,0,5pak11
+1449012,53bb50f0,Spin,female,1,Powerplay,9,7,0,1,19,2,5pak11
+1449012,c981d3c2,Spin,female,7,Middle Overs,5,5,0,0,15,2,5pak11
+1449012,bf350134,Seam,female,14,Middle Overs,10,10,0,0,35,0,5pak11
+1449013,4d4605e6,Spin,female,1,Powerplay,8,8,0,0,15,1,5pak11
+1449013,686362af,Spin,female,5,Powerplay,15,15,0,0,20,1,5pak11
+1449013,6d76bc23,Spin,female,7,Middle Overs,1,1,1,0,18,1,5pak11
+1449013,53bb50f0,Spin,female,1,Powerplay,8,8,1,0,26,0,5pak11
+1449013,c981d3c2,Spin,female,7,Middle Overs,6,6,0,0,15,0,5pak11
+1449013,0d56e9a5,Spin,female,8,Middle Overs,5,5,0,0,21,2,5pak11
+1449301,81c36ee9,Seam,male,1,Powerplay,2,2,0,0,22,2,9zaf20
+1449301,0b60eb09,Spin,male,3,Powerplay,12,12,0,0,22,1,9zaf20
+1449301,3204c99f,Seam,male,4,Powerplay,10,10,1,0,27,2,9zaf20
+1449301,5b7ab5a9,Spin,male,6,Middle Overs,5,4,1,1,20,2,9zaf20
+1449301,df064e1a,Spin,male,9,Middle Overs,8,8,0,0,20,3,9zaf20
+1449302,81c36ee9,Seam,male,1,Powerplay,0,0,1,0,25,0,5zaf16
+1449302,3204c99f,Seam,male,2,Powerplay,6,5,1,1,20,0,5zaf16
+1449302,0b60eb09,Spin,male,7,Middle Overs,7,7,0,0,18,0,5zaf16
+1449302,212aeedd,Spin,male,10,Middle Overs,10,6,0,0,14,2,5zaf16
+1449302,244048f6,Seam,male,1,Powerplay,7,7,0,0,34,1,5zaf16
+1449302,5b7ab5a9,Spin,male,6,Middle Overs,1,1,1,0,16,4,5zaf16
+1449302,df064e1a,Spin,male,9,Middle Overs,10,7,0,1,13,1,5zaf16
+1449303,81c36ee9,Seam,male,1,Powerplay,12,12,1,0,20,1,6zaf17
+1449303,f892fcf9,Seam,male,4,Powerplay,7,7,0,0,39,0,6zaf17
+1449303,0b60eb09,Spin,male,9,Middle Overs,8,8,1,0,28,1,6zaf17
+1449303,244048f6,Seam,male,1,Powerplay,7,7,0,0,31,3,6zaf17
+1449303,dbe50b21,Seam,male,2,Powerplay,10,9,0,1,40,1,6zaf17
+1449303,2e171977,Spin,male,5,Powerplay,14,14,0,0,15,1,6zaf17
+1449303,5b7ab5a9,Spin,male,6,Middle Overs,9,9,1,0,45,1,6zaf17
+1449303,df064e1a,Spin,male,11,Middle Overs,7,7,0,0,30,0,6zaf17
+1449304,81c36ee9,Seam,male,1,Powerplay,4,3,0,1,38,0,4zaf15
+1449304,f892fcf9,Seam,male,4,Powerplay,14,14,0,0,44,1,4zaf15
+1449304,be24ead0,Seam,male,7,Middle Overs,10,9,0,1,32,1,4zaf15
+1449304,5b7ab5a9,Spin,male,8,Middle Overs,3,3,0,0,39,2,4zaf15
+1451814,b0946605,Seam,male,1,Powerplay,6,4,0,1,35,1,6lka102
+1451814,97290faf,Seam,male,2,Powerplay,5,3,0,1,23,1,6lka102
+1451814,c5aef772,Seam,male,3,Powerplay,15,15,1,0,24,2,6lka102
+1451814,3feda4fa,Spin,male,7,Middle Overs,4,4,0,0,26,0,6lka102
+1451814,de3d549a,Seam,male,2,Powerplay,14,13,0,1,23,0,6lka102
+1451814,f24c6701,Spin,male,3,Powerplay,11,9,0,1,21,1,6lka102
+1451814,a97c8ec2,Spin,male,7,Middle Overs,8,8,0,0,34,1,6lka102
+1451814,64839cb3,Seam,male,8,Middle Overs,12,11,0,0,16,2,6lka102
+1451815,b0946605,Seam,male,1,Powerplay,3,3,0,0,32,1,6lka102
+1451815,97bdec3d,Spin,male,3,Powerplay,2,1,0,0,12,0,6lka102
+1451815,3feda4fa,Spin,male,11,Middle Overs,2,2,0,0,24,0,6lka102
+1451815,f24c6701,Spin,male,1,Powerplay,2,1,0,0,7,2,6lka102
+1451815,736123bb,Spin,male,3,Powerplay,1,1,1,0,9,2,6lka102
+1451816,736123bb,Spin,male,3,Powerplay,5,5,0,0,35,0,6lka102
+1451816,a97c8ec2,Spin,male,8,Middle Overs,3,3,0,0,21,2,6lka102
+1451816,97bdec3d,Spin,male,4,Powerplay,8,7,0,1,23,1,6lka102
+1451816,3feda4fa,Spin,male,8,Middle Overs,4,4,0,0,20,0,6lka102
+1456441,f24c6701,Spin,male,1,Powerplay,12,8,0,0,13,1,6lka102
+1456441,736123bb,Spin,male,3,Powerplay,2,2,1,0,18,2,6lka102
+1456441,a97c8ec2,Spin,male,7,Middle Overs,3,2,0,0,18,2,6lka102
+1456441,dadbdb68,Seam,male,1,Powerplay,2,1,0,1,27,0,6lka102
+1456441,e4a0deae,Spin,male,2,Powerplay,1,1,1,0,29,0,6lka102
+1456441,e38bce7a,Spin,male,5,Powerplay,13,13,0,0,18,1,6lka102
+1456442,ee1b6c27,Seam,male,1,Powerplay,2,2,1,0,20,1,6lka102
+1456442,f24c6701,Spin,male,2,Powerplay,4,4,0,0,16,1,6lka102
+1456442,736123bb,Spin,male,4,Powerplay,7,7,0,0,24,0,6lka102
+1456442,a97c8ec2,Spin,male,7,Middle Overs,4,0,2,0,17,2,6lka102
+1456442,64839cb3,Seam,male,10,Middle Overs,2,0,0,0,12,3,6lka102
+1456442,e4a0deae,Spin,male,1,Powerplay,1,1,0,0,13,1,6lka102
+1456442,30f92334,Seam,male,2,Powerplay,5,4,0,1,18,1,6lka102
+1456442,641ac5ff,Spin,male,7,Middle Overs,10,6,0,0,20,0,6lka102
+1456442,e38bce7a,Spin,male,10,Middle Overs,10,10,0,0,13,2,6lka102
+1458414,752183c1,Seam,female,1,Powerplay,3,3,0,0,32,2,2bgd73
+1458414,7b51bfa4,Seam,female,2,Powerplay,9,5,0,0,27,1,2bgd73
+1458414,fa948618,Spin,female,4,Powerplay,4,4,0,0,36,1,2bgd73
+1458414,66078174,Spin,female,6,Middle Overs,1,1,0,0,19,1,2bgd73
+1458414,d8f20ba5,Seam,female,1,Powerplay,9,8,0,1,15,3,2bgd73
+1458414,397369e0,Seam,female,4,Powerplay,6,6,0,0,16,3,2bgd73
+1458414,b4f73b44,Seam,female,8,Middle Overs,6,6,0,0,33,0,2bgd73
+1458414,f888a374,Spin,female,11,Middle Overs,3,3,0,0,21,1,2bgd73
+1458415,752183c1,Seam,female,1,Powerplay,4,4,0,0,21,1,2bgd73
+1458415,a6412417,Spin,female,2,Powerplay,6,6,0,0,21,0,2bgd73
+1458415,fa948618,Spin,female,4,Powerplay,9,9,0,0,20,1,2bgd73
+1458415,66078174,Spin,female,6,Middle Overs,1,1,1,0,19,1,2bgd73
+1458415,558cdd64,Spin,female,8,Middle Overs,6,5,0,0,27,1,2bgd73
+1458415,fa6e2cb3,Spin,female,1,Powerplay,3,3,0,0,18,0,2bgd73
+1458415,d8f20ba5,Seam,female,2,Powerplay,8,8,1,0,5,3,2bgd73
+1458416,fa6e2cb3,Spin,female,1,Powerplay,6,6,0,0,15,0,2bgd73
+1458416,d8f20ba5,Seam,female,2,Powerplay,6,6,0,0,16,5,2bgd73
+1458416,397369e0,Seam,female,6,Middle Overs,3,3,0,0,15,0,2bgd73
+1458416,f888a374,Spin,female,7,Middle Overs,4,4,0,0,21,2,2bgd73
+1458416,a6412417,Spin,female,2,Powerplay,11,11,0,0,10,0,2bgd73
+1458416,66078174,Spin,female,4,Powerplay,9,8,0,0,18,1,2bgd73
+1458416,aaf037b1,Spin,female,7,Middle Overs,4,4,0,0,13,2,2bgd73
+1459891,321c980e,Spin,female,5,Powerplay,1,1,0,0,17,2,2ind2
+1459891,53bee17f,Seam,female,9,Middle Overs,12,11,0,1,25,1,2ind2
+1459891,7298db76,Seam,female,1,Powerplay,2,1,0,1,23,0,2ind2
+1459891,25ca0573,Seam,female,2,Powerplay,6,6,1,0,31,2,2ind2
+1459891,201fef33,Spin,female,5,Powerplay,3,3,0,0,18,2,2ind2
+1459891,7d794fa6,Seam,female,6,Middle Overs,3,2,0,1,32,0,2ind2
+1459891,6c3aef71,Spin,female,9,Middle Overs,10,10,0,0,18,2,2ind2
+1459892,75820733,Seam,female,1,Powerplay,6,6,0,0,31,2,2ind2
+1459892,53bee17f,Seam,female,2,Powerplay,6,6,1,0,8,2,2ind2
+1459892,d32cf49a,Spin,female,6,Middle Overs,2,2,1,0,34,1,2ind2
+1459893,53bee17f,Seam,female,2,Powerplay,6,6,0,0,48,1,2ind2
+1459893,d32cf49a,Spin,female,5,Powerplay,5,5,0,0,29,0,2ind2
+1459893,4b0e3049,Seam,female,8,Middle Overs,12,12,0,0,34,1,2ind2
+1459893,7d794fa6,Seam,female,5,Powerplay,12,12,0,0,21,0,2ind2
+1459893,6c3aef71,Spin,female,8,Middle Overs,5,4,1,1,25,4,2ind2
+1459893,201fef33,Spin,female,12,Middle Overs,4,4,1,0,27,0,2ind2
