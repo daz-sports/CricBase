@@ -295,7 +295,7 @@ class CricketDatabase:
                        )
                        """,
         "check_correct_team_players": """
-                                      CREATE TRIGGER check_correct_team_players
+                                      CREATE TRIGGER IF NOT EXISTS check_correct_team_players
                                           BEFORE INSERT
                                           ON match_players
                                           FOR EACH ROW
@@ -313,7 +313,7 @@ class CricketDatabase:
                                       END;
                                       """,
         "check_review_by_team": """
-                       CREATE TRIGGER check_review_by_team
+                       CREATE TRIGGER IF NOT EXISTS check_review_by_team
                            BEFORE INSERT
                            ON deliveries
                            FOR EACH ROW
@@ -332,7 +332,7 @@ class CricketDatabase:
                        END;
                        """,
         "check_review_ump_official": """
-                       CREATE TRIGGER check_review_ump_official
+                       CREATE TRIGGER IF NOT EXISTS check_review_ump_official
                            BEFORE INSERT
                            ON deliveries
                            FOR EACH ROW
