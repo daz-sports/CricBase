@@ -6,7 +6,8 @@ class Config:
     # --- Database Settings ---
     DB_NAME: str = "CricBase_v1.db"
     BACKUP_DIR: str = "path/to/your/backup_directory"
-    
+    SCHEMA_VERSION: str = "1.0.0"
+
     # --- Input Data Paths ---
     CRICSHEET_JSON_DIR: str = "path/to/cricsheet_json_files"
     REGISTRY_CSV_PATH: str = "path/to/registry_100725.csv"
