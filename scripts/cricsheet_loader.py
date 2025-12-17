@@ -5,7 +5,7 @@ import logging
 import pandas as pd
 from typing import Dict, List, Tuple
 from utils import BuildError, db_connection
-from cricsheet_extract_transform import MatchesExtractor, MatchPlayersExtractor, DeliveriesExtractor
+from cricsheet_extract_transform import MatchesExtractor, MetadataExtractor, MatchPlayersExtractor, DeliveriesExtractor
 
 class BaseLoader:
     """A base class for loaders to share common functionality."""
@@ -94,6 +94,15 @@ class MatchesLoader(BaseLoader):
         sql = f"INSERT INTO matches ({', '.join(db_columns)}) VALUES ({', '.join(['?'] * len(db_columns))})"
         self._execute_many(sql, [match_tuple], 'matches')
 
+class MetadataLoader(BaseLoader):
+    """Loads data for the metadata table."""
+
+    def load_metadata(self, df: pd.DataFrame):
+        db_columns = ['match_id', 'data_version', 'cricsheet_created', 'revision']
+        md_to_insert = [tuple(row.get(col) for col in db_columns) for _, row in df.iterrows()]
+
+        sql = f"INSERT INTO match_metadata ({', '.join(db_columns)}) VALUES ({', '.join(['?'] * len(db_columns))})"
+        self._execute_many(sql, md_to_insert, 'match_metadata')
 
 class MatchPlayersLoader(BaseLoader):
     """Loads data for the match_players table."""
@@ -160,10 +169,12 @@ def load_all_cricsheet_data(db_name: str, cricsheet_dir: str):
     logging.info("Successfully pre-loaded mapping tables from database.")
 
     matches_ext = MatchesExtractor()
+    md_ext = MetadataExtractor()
     players_ext = MatchPlayersExtractor()
     deliveries_ext = DeliveriesExtractor()
 
     matches_loader = MatchesLoader(db_name)
+    metadata_loader = MetadataLoader(db_name)
     players_loader = MatchPlayersLoader(db_name)
     deliveries_loader = DeliveriesLoader(db_name)
 
@@ -184,11 +195,15 @@ def load_all_cricsheet_data(db_name: str, cricsheet_dir: str):
             matches_df = matches_ext.generate_df(match_data, match_id)
             matches_loader.load_match(matches_df, maps)
 
-            # 2. Load Match Players
+            # 2. Load Match Metadata
+            metadata_df = md_ext.generate_df(match_data, match_id)
+            metadata_loader.load_metadata(metadata_df)
+
+            # 3. Load Match Players
             players_df = players_ext.generate_df(match_data, match_id)
             players_loader.load_players(players_df, maps)
 
-            # 3. Load Deliveries
+            # 4. Load Deliveries
             deliveries_df = deliveries_ext.generate_df(match_data, match_id)
             deliveries_loader.load_deliveries(deliveries_df, maps)
 

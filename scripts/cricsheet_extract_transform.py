@@ -114,6 +114,22 @@ class MatchesExtractor:
         self._extract_other(match_data, df)
         return df
 
+class MetadataExtractor:
+    """Extracts and transforms the Cricsheet json files for the metadata table."""
+
+    def __init__(self):
+        self.column_map = {
+            'meta.data_version': 'data_version',
+            'meta.created': 'cricsheet_created',
+            'meta.revision': 'revision'
+        }
+
+    def generate_df(self, match_data: Dict, match_id: str) -> pd.DataFrame:
+        df = pd.DataFrame(index=[0])
+        df.loc[0, 'match_id'] = match_id
+        for json_path, col_name in self.column_map.items():
+            df.loc[0, col_name] = get_nested_value(match_data, json_path)
+        return df
 
 class MatchPlayersExtractor:
     """Extracts and transforms the Cricsheet json files for the match_players table."""

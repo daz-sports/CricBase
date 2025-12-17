@@ -141,6 +141,18 @@ class CricketDatabase:
                            CHECK (team1_id != team2_id)
                        )
                        """,
+        "match_metadata": """
+                          CREATE TABLE IF NOT EXISTS match_metadata
+                          (
+                              match_id          TEXT PRIMARY KEY,
+                              data_version      TEXT    NOT NULL,
+                              cricsheet_created DATE    NOT NULL,
+                              revision          INTEGER NOT NULL,
+                              created_at        TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+                              updated_at        TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+                              FOREIGN KEY (match_id) REFERENCES matches (match_id)
+                          )
+                          """,
         "match_players": """
                        CREATE TABLE IF NOT EXISTS match_players
                        (
@@ -455,6 +467,16 @@ class CricketDatabase:
                            WHERE match_id = NEW.match_id;
                        END;
                        """,
+        "update_match_metadata_timestamp": """
+                                           CREATE TRIGGER IF NOT EXISTS update_match_metadata_timestamp
+                                               AFTER UPDATE
+                                               ON match_metadata
+                                           BEGIN
+                                               UPDATE match_metadata
+                                               SET updated_at = CURRENT_TIMESTAMP
+                                               WHERE match_id = NEW.match_id;
+                                           END;
+                                           """,
         "update_match_players_timestamp": """
                        CREATE TRIGGER IF NOT EXISTS update_match_players_timestamp
                            AFTER UPDATE
@@ -705,7 +727,7 @@ class CricketDatabase:
                            )
                            """)
 
-            # Check if schema needs to be initialized
+            # Check if the schema needs to be initialised
             cursor.execute("SELECT version FROM schema_version ORDER BY applied_at DESC LIMIT 1")
             result = cursor.fetchone()
 
@@ -744,16 +766,22 @@ class CricketDatabase:
         objects_to_drop = {
             "view": ["batting_stats", "bowling_stats", "match_summary"],
             "trigger": [
-                "update_registry_timestamp", "update_teams_timestamp", "update_venues_timestamp", "update_venue_aliases_timestamp",
-                "update_matches_timestamp", "update_match_players_timestamp", "update_players_timestamp", "update_officials_timestamp",
-                "update_deliveries_timestamp", "check_review_by_team", "check_correct_team_players", "check_review_ump_official"
+                "update_registry_timestamp", "update_teams_timestamp", "update_venues_timestamp",
+                "update_venue_aliases_timestamp",
+                "update_matches_timestamp", "update_match_metadata_timestamp", "update_match_players_timestamp",
+                "update_players_timestamp", "update_officials_timestamp",
+                "update_deliveries_timestamp", "check_review_by_team", "check_correct_team_players",
+                "check_review_ump_official"
             ],
             "table": [
-                "deliveries", "match_players", "matches", "venue_aliases", "venues", "players", "officials", "teams", "registry", "schema_version"
+                "deliveries", "match_players", "matches", "match_metadata", "venue_aliases", "venues", "players",
+                "officials", "teams", "registry", "schema_version"
             ],
             "index": [
-                "idx_matches_date", "idx_matches_team", "idx_deliveries_match_innings", "idx_deliveries_batter", "idx_deliveries_bowler",
-                "idx_deliveries_dismissal", "idx_registry_unique_name", "idx_matches_venue", "idx_match_players_match", "idx_match_players_identifier",
+                "idx_matches_date", "idx_matches_team", "idx_deliveries_match_innings", "idx_deliveries_batter",
+                "idx_deliveries_bowler",
+                "idx_deliveries_dismissal", "idx_registry_unique_name", "idx_matches_venue", "idx_match_players_match",
+                "idx_match_players_identifier",
                 "idx_deliveries_match_batter", "idx_deliveries_match_bowler", "idx_deliveries_fielder1"
             ]
         }
@@ -771,7 +799,6 @@ class CricketDatabase:
             logging.info("Database reset complete. Re-initializing schema...")
             self._init_database()
             logging.info("Database schema re-initialized successfully.")
-
 
     def verify_data_integrity(self):
         with db_connection(self.db_name) as conn:
@@ -805,6 +832,20 @@ class CricketDatabase:
                 unique_ids = len(set([row[0] for row in orphaned_match_deliveries]))
                 integrity_issues.append(
                     f"Found {unique_ids} unique match_ids in deliveries with no associated matches entry.")
+
+            # Check for match_metadata with no associated match
+            cursor.execute("""
+                           SELECT mm.match_id
+                           FROM match_metadata mm
+                                    LEFT JOIN matches m ON mm.match_id = m.match_id
+                           WHERE m.match_id IS NULL
+                           """)
+            orphaned_metadata = cursor.fetchall()
+            if orphaned_metadata:
+                unique_ids = len(set([row[0] for row in orphaned_metadata]))
+                integrity_issues.append(
+                    f"Found {unique_ids} unique match_ids in match_metadata with no associated matches entry."
+                )
 
             # Check for match_players with no associated match
             cursor.execute("""
@@ -870,12 +911,12 @@ class CricketDatabase:
                            SELECT DISTINCT match_id
                            FROM match_players mp
                            WHERE team_id NOT IN (SELECT team1_id
-                                              FROM matches m
-                                              WHERE m.match_id = mp.match_id
-                                              UNION
-                                              SELECT team2_id
-                                              FROM matches m
-                                              WHERE m.match_id = mp.match_id)
+                                                 FROM matches m
+                                                 WHERE m.match_id = mp.match_id
+                                                 UNION
+                                                 SELECT team2_id
+                                                 FROM matches m
+                                                 WHERE m.match_id = mp.match_id)
                            """)
             invalid_teams = cursor.fetchall()
             if invalid_teams:
