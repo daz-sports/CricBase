@@ -11,7 +11,7 @@ The 'notebooks' folder contains a selection of analyses possible with this sampl
 
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/daz-sports/CricBase/main?urlpath=lab/tree/notebooks)
 
-*Note* I am taking a break from producing modelling output to focus on increasing the size and complexity of the database. This expansion will enable me to utilise more advanced modelling and machine learning techniques to study aspects such as the expected run value of wickets or principal component analysis to classify batter and bowler types.
+*Note:* I am taking a break from producing modelling output to focus on increasing the size and complexity of the database. This expansion will enable me to utilise more advanced modelling and machine learning techniques to study aspects such as the expected run value of wickets or principal component analysis to classify batter and bowler types.
 
 Tools used:
  - Python
