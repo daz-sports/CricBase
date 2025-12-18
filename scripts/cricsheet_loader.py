@@ -61,7 +61,7 @@ class MatchesLoader(BaseLoader):
                     f"Mapping failed! Venue '{failed_venue}' in city '{failed_city}' not found in your venues.csv data.")
 
         numeric_cols = ['overs', 'balls_per_over', 'team1_prepostpens', 'team2_prepostpens', 'by_runs',
-                        'by_wickets', 'by_other', 'no_result', 'tie', 'super_over', 'bowl_out', 'DLS',
+                        'by_wickets', 'by_other', 'no_result', 'tie', 'super_over_pld', 'bowl_out', 'DLS',
                         'event_match_number']
         existing_numeric_cols = [col for col in numeric_cols if col in df.columns]
         for col in existing_numeric_cols:
@@ -79,7 +79,7 @@ class MatchesLoader(BaseLoader):
             'end_date', 'season', 'team1_id', 'team2_id', 'umpire1_id', 'umpire2_id', 'tv_umpire_id',
             'match_referee_id', 'reserve_umpire_id', 'toss_winner_id', 'toss_decision', 'team1_prepostpens',
             'team2_prepostpens', 'winner_id', 'by_runs', 'victory_margin_runs', 'by_wickets',
-            'victory_margin_wickets', 'by_other', 'victory_margin_other', 'no_result', 'tie', 'super_over',
+            'victory_margin_wickets', 'by_other', 'victory_margin_other', 'no_result', 'tie', 'super_over_pld',
             'bowl_out', 'DLS', 'player_of_match_id', 'event_name', 'event_match_number', 'venue_id'
             ]
 
@@ -133,7 +133,8 @@ class DeliveriesLoader(BaseLoader):
             'player_out_id', 'how_out', 'fielder1_id', 'fielder2_id', 'fielder3_id', 'wickets2',
             'player_out2_id', 'how_out2', 'extras_byes', 'extras_legbyes', 'extras_noballs',
             'extras_penalty', 'extras_wides', 'review', 'ump_decision', 'review_by_id',
-            'review_ump_id', 'review_batter_id', 'review_result', 'umpires_call'
+            'review_ump_id', 'review_batter_id', 'review_result', 'umpires_call', 'powerplay',
+            'super_over'
         ]
 
         numeric_cols = ['innings', 'overs', 'balls', 'runs_batter', 'runs_extras', 'runs_total',
@@ -145,6 +146,8 @@ class DeliveriesLoader(BaseLoader):
         df['runs_batter_non_boundary'] = pd.to_numeric(df['runs_batter_non_boundary'], errors='coerce')
         df['review'] = pd.to_numeric(df['review'], errors='coerce')
         df['umpires_call'] = pd.to_numeric(df['umpires_call'], errors='coerce')
+        df['powerplay'] = pd.to_numeric(df['powerplay'], errors='coerce')
+        df['super_over'] = pd.to_numeric(df['super_over'], errors='coerce')
 
         df_for_db = df.where(pd.notna(df), None)
 

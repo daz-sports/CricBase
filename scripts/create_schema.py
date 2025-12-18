@@ -127,7 +127,7 @@ class CricketDatabase:
                            victory_margin_other      TEXT,
                            no_result                 INTEGER   DEFAULT 0 CHECK (no_result IN (0, 1)),
                            tie                       INTEGER   DEFAULT 0 CHECK (tie IN (0, 1)),
-                           super_over                INTEGER   DEFAULT 0 CHECK (super_over IN (0, 1)),
+                           super_over_pld            INTEGER   DEFAULT 0 CHECK (super_over_pld IN (0, 1)),
                            bowl_out                  INTEGER   DEFAULT 0 CHECK (bowl_out IN (0, 1)),
                            DLS                       INTEGER   DEFAULT 0 CHECK (DLS IN (0, 1)),
                            player_of_match_id        TEXT REFERENCES registry (identifier),
@@ -263,6 +263,8 @@ class CricketDatabase:
                            review_batter_id         TEXT REFERENCES registry (identifier),
                            review_result            TEXT CHECK (review_result IN ('out', 'not out')),
                            umpires_call             INTEGER   DEFAULT 0 CHECK (umpires_call IS NULL OR (umpires_call IN (0, 1) AND review = 1)),
+                           powerplay                INTEGER   DEFAULT 0 CHECK (powerplay IN (0, 1)),
+                           super_over               INTEGER   DEFAULT 0 CHECK (super_over IN (0, 1)),
                            created_at               TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
                            updated_at               TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
                            FOREIGN KEY (match_id) REFERENCES matches (match_id),
@@ -529,7 +531,12 @@ class CricketDatabase:
                                SUM(CASE WHEN innings = 1 THEN runs_total ELSE 0 END) AS runs_1st_raw,
                                SUM(CASE WHEN innings = 2 THEN runs_total ELSE 0 END) AS runs_2nd_raw,
                                SUM(CASE WHEN innings = 1 THEN wickets ELSE 0 END)    AS wickets_1st,
-                               SUM(CASE WHEN innings = 2 THEN wickets ELSE 0 END)    AS wickets_2nd
+                               SUM(CASE WHEN innings = 2 THEN wickets ELSE 0 END)    AS wickets_2nd,
+                               
+                               SUM(CASE WHEN innings = 1 AND powerplay = 1 THEN runs_total ELSE 0 END) AS runs_1st_pp,
+                               SUM(CASE WHEN innings = 1 AND powerplay = 1 THEN wickets ELSE 0 END)    AS wickets_1st_pp,
+                               SUM(CASE WHEN innings = 2 AND powerplay = 1 THEN runs_total ELSE 0 END) AS runs_2nd_pp,
+                               SUM(CASE WHEN innings = 2 AND powerplay = 1 THEN wickets ELSE 0 END)    AS wickets_2nd_pp
                            FROM deliveries
                            GROUP BY match_id
                        )
@@ -538,7 +545,6 @@ class CricketDatabase:
                            m.start_date,
                            m.season,
                            m.event_name,
-                           -- Replace IDs with full names
                            t1.full_name AS team1,
                            t2.full_name AS team2,
                            -- Innings scores including penalties
@@ -546,11 +552,14 @@ class CricketDatabase:
                            COALESCE(ds.wickets_1st, 0) AS wickets_1st_innings,
                            COALESCE(ds.runs_2nd_raw, 0) + m.team2_prepostpens AS runs_2nd_innings,
                            COALESCE(ds.wickets_2nd, 0) AS wickets_2nd_innings,
+                           -- Powerplay runs/wickets (doesn't include any pre-innings penalties)
+                           COALESCE(ds.runs_1st_pp, 0) || '-' || COALESCE(ds.wickets_1st_pp, 0) AS score_1st_pp,
+                           COALESCE(ds.runs_2nd_pp, 0) || '-' || COALESCE(ds.wickets_2nd_pp, 0) AS score_2nd_pp,
                            -- Toss Information
                            toss_winner.full_name || ' won the toss and chose to ' || m.toss_decision AS toss_result,
                            CASE
                                WHEN m.no_result = 1 THEN 'No Result'
-                               WHEN m.tie = 1 AND m.super_over = 1 THEN 'Tie (' || winner.full_name || ' won the Super Over)'
+                               WHEN m.tie = 1 AND m.super_over_pld = 1 THEN 'Tie (' || winner.full_name || ' won the Super Over)'
                                WHEN m.tie = 1 THEN 'Match Tied'
                                WHEN m.by_runs = 1 THEN winner.full_name || ' won by ' || m.victory_margin_runs || ' runs'
                                WHEN m.by_wickets = 1 THEN winner.full_name || ' won by ' || m.victory_margin_wickets || ' wickets'
@@ -597,74 +606,84 @@ class CricketDatabase:
                                 match_id,
                                 batter_id AS player_id
                             FROM deliveries
-                            WHERE batter_id IS NOT NULL
+                            WHERE batter_id IS NOT NULL AND super_over = 0
                             UNION
                             SELECT DISTINCT
                                 match_id,
                                 non_striker_id AS player_id
                             FROM deliveries
-                            WHERE non_striker_id IS NOT NULL
+                            WHERE non_striker_id IS NOT NULL AND super_over = 0
                         ),
                              PlayerInningsOutcomes AS (
                                  SELECT 
                                      pmp.match_id,
                                      pmp.player_id,
                                      MAX(CASE
-                                             WHEN d.player_out_id = pmp.player_id AND d.how_out NOT IN ('retired hurt', 'retired not out') THEN 1
-                                             WHEN d.player_out2_id = pmp.player_id AND d.how_out2 NOT IN ('retired hurt', 'retired not out') THEN 1
+                                             WHEN d.player_out_id = pmp.player_id AND d.how_out NOT IN ('retired hurt', 'retired not out') AND d.super_over = 0 THEN 1
+                                             WHEN d.player_out2_id = pmp.player_id AND d.how_out2 NOT IN ('retired hurt', 'retired not out') AND d.super_over = 0 THEN 1
                                              ELSE 0 
                                          END) AS was_out
                                  FROM PlayerMatchParticipation pmp
                                           LEFT JOIN deliveries d ON pmp.match_id = d.match_id AND (d.player_out_id = pmp.player_id OR d.player_out2_id = pmp.player_id)
                                  GROUP BY pmp.match_id, pmp.player_id
-                             )
+                             ),
+                            WicketsTotals AS (
+                                SELECT player_id, SUM(was_out) as total_outs, COUNT(match_id) as total_innings
+                                FROM PlayerInningsOutcomes
+                                GROUP BY player_id
+                            )
                         SELECT
                             p.unique_name AS uniqueName,
                             p.identifier AS playerId,
                             p.bat_hand AS batHand,
-                            NULL AS batType,
                             -- Innings and Games Calculations
-                            COUNT(DISTINCT pio.match_id) AS batGames,
-                            SUM(pio.was_out) AS batInnings,
-                            COUNT(pio.match_id) - SUM(pio.was_out) AS batNotOuts,
-                            SUM(pio.was_out) AS batWickets,
+                            wt.total_innings AS batGames,
+                            wt.total_outs AS batWickets,
+                            (wt.total_innings - wt.total_outs) AS batNotOuts,
                             -- Runs and Balls Calculations
-                            SUM(CASE WHEN d.batter_id = p.identifier THEN d.runs_batter ELSE 0 END) AS batRuns,
-                            SUM(CASE WHEN d.batter_id = p.identifier AND d.extras_wides = 0 THEN 1 ELSE 0 END) AS ballsFaced,
-                            SUM(CASE WHEN d.batter_id = p.identifier THEN 1 ELSE 0 END) AS ballsOnStrike,
-                            SUM(CASE WHEN d.batter_id = p.identifier OR d.non_striker_id = p.identifier THEN 1 ELSE 0 END) AS ballsSeen,
+                            SUM(CASE WHEN d.batter_id = p.identifier AND d.super_over = 0 THEN d.runs_batter ELSE 0 END) AS batRuns,
+                            SUM(CASE WHEN d.batter_id = p.identifier AND d.extras_wides = 0 AND d.super_over = 0 THEN 1 ELSE 0 END) AS ballsFaced,
+                            SUM(CASE WHEN d.batter_id = p.identifier AND d.super_over = 0 THEN 1 ELSE 0 END) AS ballsOnStrike,
+                            SUM(CASE WHEN (d.batter_id = p.identifier OR d.non_striker_id = p.identifier) AND d.super_over = 0 THEN 1 ELSE 0 END) AS ballsSeen,
                             -- Scoring Shot Calculations
-                            SUM(CASE WHEN d.batter_id = p.identifier AND d.runs_batter = 0 AND d.extras_wides = 0 AND d.extras_noballs = 0 THEN 1 ELSE 0 END) AS zeros,
-                            SUM(CASE WHEN d.batter_id = p.identifier AND d.runs_batter = 1 THEN 1 ELSE 0 END) AS singles,
-                            SUM(CASE WHEN d.batter_id = p.identifier AND d.runs_batter = 2 THEN 1 ELSE 0 END) AS doubles,
-                            SUM(CASE WHEN d.batter_id = p.identifier AND d.runs_batter = 3 THEN 1 ELSE 0 END) AS triples,
-                            SUM(CASE WHEN d.batter_id = p.identifier AND d.runs_batter = 4 AND d.runs_batter_non_boundary = 1 THEN 1 ELSE 0 END) AS quadruples,
-                            SUM(CASE WHEN d.batter_id = p.identifier AND d.runs_batter = 5 THEN 1 ELSE 0 END) AS quintuples,
-                            SUM(CASE WHEN d.batter_id = p.identifier AND d.runs_batter = 6 AND d.runs_batter_non_boundary = 1 THEN 1 ELSE 0 END) AS sextuples,
-                            SUM(CASE WHEN d.batter_id = p.identifier AND d.runs_batter = 7 THEN 1 ELSE 0 END) AS septuples,
-                            SUM(CASE WHEN d.batter_id = p.identifier AND d.runs_batter = 4 AND d.runs_batter_non_boundary = 0 THEN 1 ELSE 0 END) AS fours,
-                            SUM(CASE WHEN d.batter_id = p.identifier AND d.runs_batter = 6 AND d.runs_batter_non_boundary = 0 THEN 1 ELSE 0 END) AS sixes,
+                            SUM(CASE WHEN d.batter_id = p.identifier AND d.runs_batter = 0 AND d.extras_wides = 0 AND d.extras_noballs = 0 AND d.super_over = 0 THEN 1 ELSE 0 END) AS zeros,
+                            SUM(CASE WHEN d.batter_id = p.identifier AND d.runs_batter = 1 AND d.super_over = 0 THEN 1 ELSE 0 END) AS singles,
+                            SUM(CASE WHEN d.batter_id = p.identifier AND d.runs_batter = 2 AND d.super_over = 0 THEN 1 ELSE 0 END) AS doubles,
+                            SUM(CASE WHEN d.batter_id = p.identifier AND d.runs_batter = 3 AND d.super_over = 0 THEN 1 ELSE 0 END) AS triples,
+                            SUM(CASE WHEN d.batter_id = p.identifier AND d.runs_batter = 4 AND d.runs_batter_non_boundary = 1 AND d.super_over = 0 THEN 1 ELSE 0 END) AS quadruples,
+                            SUM(CASE WHEN d.batter_id = p.identifier AND d.runs_batter = 5 AND d.super_over = 0 THEN 1 ELSE 0 END) AS quintuples,
+                            SUM(CASE WHEN d.batter_id = p.identifier AND d.runs_batter = 6 AND d.runs_batter_non_boundary = 1 AND d.super_over = 0 THEN 1 ELSE 0 END) AS sextuples,
+                            SUM(CASE WHEN d.batter_id = p.identifier AND d.runs_batter = 7 AND d.super_over = 0 THEN 1 ELSE 0 END) AS septuples,
+                            SUM(CASE WHEN d.batter_id = p.identifier AND d.runs_batter = 4 AND d.runs_batter_non_boundary = 0 AND d.super_over = 0 THEN 1 ELSE 0 END) AS fours,
+                            SUM(CASE WHEN d.batter_id = p.identifier AND d.runs_batter = 6 AND d.runs_batter_non_boundary = 0 AND d.super_over = 0 THEN 1 ELSE 0 END) AS sixes,
                             -- Extras Faced
-                            SUM(CASE WHEN d.batter_id = p.identifier AND d.extras_wides > 0 THEN 1 ELSE 0 END) AS widesFaced,
-                            SUM(CASE WHEN d.batter_id = p.identifier AND d.extras_noballs > 0 THEN 1 ELSE 0 END) AS noBallsFaced,
+                            SUM(CASE WHEN d.batter_id = p.identifier AND d.extras_wides > 0 AND d.super_over = 0 THEN 1 ELSE 0 END) AS widesFaced,
+                            SUM(CASE WHEN d.batter_id = p.identifier AND d.extras_noballs > 0 AND d.super_over = 0 THEN 1 ELSE 0 END) AS noBallsFaced,
                             -- Dismissal Calculations
-                            SUM(CASE WHEN p.identifier = d.player_out_id AND d.how_out = 'bowled' THEN 1 ELSE 0 END) AS bowled,
-                            SUM(CASE WHEN p.identifier = d.player_out_id AND d.how_out = 'caught' THEN 1 ELSE 0 END) AS caught,
-                            SUM(CASE WHEN p.identifier = d.player_out_id AND d.how_out = 'caught and bowled' THEN 1 ELSE 0 END) AS caughtAndBowled,
-                            SUM(CASE WHEN p.identifier = d.player_out_id AND d.how_out = 'lbw' THEN 1 ELSE 0 END) AS lbw,
-                            SUM(CASE WHEN p.identifier = d.player_out_id AND d.how_out = 'stumped' THEN 1 ELSE 0 END) AS stumped,
-                            SUM(CASE WHEN p.identifier IN (d.player_out_id, d.player_out2_id) AND (d.how_out = 'run out' OR d.how_out2 = 'run out') THEN 1 ELSE 0 END) AS runOut,
-                            SUM(CASE WHEN p.identifier = d.player_out_id AND d.how_out = 'hit wicket' THEN 1 ELSE 0 END) AS hitWicket,
-                            SUM(CASE WHEN p.identifier = d.player_out_id AND d.how_out = 'obstructing the field' THEN 1 ELSE 0 END) AS obstructingTheField,
-                            SUM(CASE WHEN p.identifier = d.player_out_id AND d.how_out = 'hit the ball twice' THEN 1 ELSE 0 END) AS hitTheBallTwice,
-                            SUM(CASE WHEN p.identifier = d.player_out_id AND d.how_out = 'handled the ball' THEN 1 ELSE 0 END) AS handledTheBall,
-                            SUM(CASE WHEN p.identifier IN (d.player_out_id, d.player_out2_id) AND (d.how_out = 'timed out' OR d.how_out2 = 'timed out') THEN 1 ELSE 0 END) AS timedOut,
-                            SUM(CASE WHEN p.identifier IN (d.player_out_id, d.player_out2_id) AND (d.how_out = 'retired out' OR d.how_out2 = 'retired out') THEN 1 ELSE 0 END) AS retiredOut
+                            SUM(CASE WHEN p.identifier = d.player_out_id AND d.how_out = 'bowled' AND d.super_over = 0 THEN 1 ELSE 0 END) AS bowled,
+                            SUM(CASE WHEN p.identifier = d.player_out_id AND d.how_out = 'caught' AND d.super_over = 0 THEN 1 ELSE 0 END) AS caught,
+                            SUM(CASE WHEN p.identifier = d.player_out_id AND d.how_out = 'caught and bowled' AND d.super_over = 0 THEN 1 ELSE 0 END) AS caughtAndBowled,
+                            SUM(CASE WHEN p.identifier = d.player_out_id AND d.how_out = 'lbw' AND d.super_over = 0 THEN 1 ELSE 0 END) AS lbw,
+                            SUM(CASE WHEN p.identifier = d.player_out_id AND d.how_out = 'stumped' AND d.super_over = 0 THEN 1 ELSE 0 END) AS stumped,
+                            SUM(CASE WHEN p.identifier IN (d.player_out_id, d.player_out2_id) AND (d.how_out = 'run out' OR d.how_out2 = 'run out') AND d.super_over = 0 THEN 1 ELSE 0 END) AS runOut,
+                            SUM(CASE WHEN p.identifier = d.player_out_id AND d.how_out = 'hit wicket' AND d.super_over = 0 THEN 1 ELSE 0 END) AS hitWicket,
+                            SUM(CASE WHEN p.identifier = d.player_out_id AND d.how_out = 'obstructing the field' AND d.super_over = 0 THEN 1 ELSE 0 END) AS obstructingTheField,
+                            SUM(CASE WHEN p.identifier = d.player_out_id AND d.how_out = 'hit the ball twice' AND d.super_over = 0 THEN 1 ELSE 0 END) AS hitTheBallTwice,
+                            SUM(CASE WHEN p.identifier = d.player_out_id AND d.how_out = 'handled the ball' AND d.super_over = 0 THEN 1 ELSE 0 END) AS handledTheBall,
+                            SUM(CASE WHEN p.identifier IN (d.player_out_id, d.player_out2_id) AND (d.how_out = 'timed out' OR d.how_out2 = 'timed out') AND d.super_over = 0 THEN 1 ELSE 0 END) AS timedOut,
+                            SUM(CASE WHEN p.identifier IN (d.player_out_id, d.player_out2_id) AND (d.how_out = 'retired out' OR d.how_out2 = 'retired out') AND d.super_over = 0 THEN 1 ELSE 0 END) AS retiredOut,
+                            -- Powerplay Specific Stats
+                            SUM(CASE WHEN d.batter_id = p.identifier AND d.powerplay = 1 THEN d.runs_batter ELSE 0 END) AS ppRuns,
+                            SUM(CASE WHEN d.batter_id = p.identifier AND d.extras_wides = 0 AND d.powerplay = 1 THEN 1 ELSE 0 END) AS ppBallsFaced,
+                            SUM(CASE WHEN (d.player_out_id = p.identifier OR d.player_out2_id = p.identifier) AND d.powerplay = 1 THEN 1 ELSE 0 END) AS ppOuts,
+                            -- Super Over Career Stats (Separated)
+                            SUM(CASE WHEN d.batter_id = p.identifier AND d.super_over = 1 THEN d.runs_batter ELSE 0 END) AS superOverRuns,
+                            SUM(CASE WHEN d.batter_id = p.identifier AND d.extras_wides = 0 AND d.super_over = 1 THEN 1 ELSE 0 END) AS superOverBallsFaced,
+                            SUM(CASE WHEN (d.player_out_id = p.identifier OR d.player_out2_id = p.identifier) AND d.super_over = 1 THEN 1 ELSE 0 END) AS superOverOuts
                         FROM players p
-                                 JOIN PlayerInningsOutcomes pio ON p.identifier = pio.player_id
-                                 LEFT JOIN deliveries d ON pio.match_id = d.match_id
-                        GROUP BY
-                            p.identifier;
+                                 JOIN WicketsTotals wt ON p.identifier = wt.player_id
+                                 LEFT JOIN deliveries d ON (p.identifier = d.batter_id OR p.identifier = d.non_striker_id)
+                            GROUP BY p.identifier;
                         """,
         "bowling_stats": """
                          CREATE VIEW IF NOT EXISTS bowling_stats AS
@@ -674,39 +693,49 @@ class CricketDatabase:
                              p.bowl_hand AS bowlHand,
                              p.bowl_style AS bowlType,
                              -- Games Bowled
-                             COUNT(DISTINCT d.match_id) AS bowlGames,
+                             COUNT(DISTINCT CASE WHEN d.super_over = 0 THEN d.match_id END) AS bowlGames,
                              -- Wickets (only those attributable to the bowler)
-                             SUM(CASE WHEN d.how_out IN ('bowled', 'caught', 'caught and bowled', 'lbw', 'stumped', 'hit wicket') THEN 1 ELSE 0 END) AS bowlWickets,
-                            -- Runs Conceded
-                            SUM(d.runs_batter) + SUM(d.extras_wides) + SUM(d.extras_noballs) AS bowlRuns,
-                            SUM(d.runs_batter) AS bowlRunsBat,
-                            -- Balls and Overs
-                            COUNT(d.balls) AS ballsBowled,
-                            SUM(CASE WHEN d.extras_wides = 0 AND d.extras_noballs = 0 THEN 1 ELSE 0 END) AS ballsBowledLegal,
-                            CAST(SUM(CASE WHEN d.extras_wides = 0 AND d.extras_noballs = 0 THEN 1 ELSE 0 END) / 6 AS TEXT) || '.' || CAST(SUM(CASE WHEN d.extras_wides = 0 AND d.extras_noballs = 0 THEN 1 ELSE 0 END) % 6 AS TEXT) AS overs,
-                            -- Runs conceded breakdown
-                            SUM(CASE WHEN d.runs_batter = 0 AND d.extras_wides = 0 AND d.extras_noballs = 0 THEN 1 ELSE 0 END) AS zeros,
-                            SUM(CASE WHEN d.runs_batter = 1 THEN 1 ELSE 0 END) AS singles,
-                            SUM(CASE WHEN d.runs_batter = 2 THEN 1 ELSE 0 END) AS doubles,
-                            SUM(CASE WHEN d.runs_batter = 3 THEN 1 ELSE 0 END) AS triples,
-                            SUM(CASE WHEN d.runs_batter = 4 AND d.runs_batter_non_boundary = 1 THEN 1 ELSE 0 END) AS quadruples,
-                            SUM(CASE WHEN d.runs_batter = 5 THEN 1 ELSE 0 END) AS quintuples,
-                            SUM(CASE WHEN d.runs_batter = 6 AND d.runs_batter_non_boundary = 1 THEN 1 ELSE 0 END) AS sextuples,
-                            SUM(CASE WHEN d.runs_batter = 7 THEN 1 ELSE 0 END) AS septuples,
-                            SUM(CASE WHEN d.runs_batter = 4 AND d.runs_batter_non_boundary = 0 THEN 1 ELSE 0 END) AS fours,
-                            SUM(CASE WHEN d.runs_batter = 6 AND d.runs_batter_non_boundary = 0 THEN 1 ELSE 0 END) AS sixes,
-                            -- Extras Bowled
-                            SUM(d.extras_wides) AS widesBowled,
-                            SUM(d.extras_noballs) AS noBallsBowled,
-                            SUM(CASE WHEN d.extras_legbyes > 0 THEN 1 ELSE 0 END) AS legByesCount,
-                            SUM(d.extras_legbyes) AS legByesRuns,
-                            -- Dismissal types for wickets taken
-                            SUM(CASE WHEN d.how_out = 'bowled' THEN 1 ELSE 0 END) AS bowled,
-                            SUM(CASE WHEN d.how_out = 'caught' THEN 1 ELSE 0 END) AS caught,
-                            SUM(CASE WHEN d.how_out = 'caught and bowled' THEN 1 ELSE 0 END) AS caughtAndBowled,
-                            SUM(CASE WHEN d.how_out = 'lbw' THEN 1 ELSE 0 END) AS lbw,
-                            SUM(CASE WHEN d.how_out = 'stumped' THEN 1 ELSE 0 END) AS stumped,
-                            SUM(CASE WHEN d.how_out = 'hit wicket' THEN 1 ELSE 0 END) AS hitWicket
+                             SUM(CASE WHEN d.super_over = 0  AND d.how_out IN ('bowled', 'caught', 'caught and bowled', 'lbw', 'stumped', 'hit wicket') THEN 1 ELSE 0 END) AS bowlWickets,
+                             -- Runs Conceded
+                             SUM(CASE WHEN d.super_over = 0 THEN (d.runs_batter + d.extras_wides + d.extras_noballs) ELSE 0 END) AS bowlRuns,                            
+                             SUM(CASE WHEN d.super_over = 0 THEN d.runs_batter ELSE 0 END) AS bowlRunsBat,
+                             -- Balls and Overs
+                             COUNT(CASE WHEN d.super_over = 0 THEN d.balls ELSE 0 END) AS ballsBowled,
+                             SUM(CASE WHEN d.super_over = 0 AND d.extras_wides = 0 AND d.extras_noballs = 0 THEN 1 ELSE 0 END) AS ballsBowledLegal,
+                             CAST(SUM(CASE WHEN d.super_over = 0 AND d.extras_wides = 0 AND d.extras_noballs = 0 THEN 1 ELSE 0 END) / 6 AS TEXT) || '.' || CAST(SUM(CASE WHEN d.super_over = 0 AND d.extras_wides = 0 AND d.extras_noballs = 0 THEN 1 ELSE 0 END) % 6 AS TEXT) AS overs,
+                             -- Runs conceded breakdown
+                             SUM(CASE WHEN d.super_over = 0 AND d.runs_batter = 0 AND d.extras_wides = 0 AND d.extras_noballs = 0 THEN 1 ELSE 0 END) AS zeros,
+                             SUM(CASE WHEN d.super_over = 0 AND d.runs_batter = 1 THEN 1 ELSE 0 END) AS singles,
+                             SUM(CASE WHEN d.super_over = 0 AND d.runs_batter = 2 THEN 1 ELSE 0 END) AS doubles,
+                             SUM(CASE WHEN d.super_over = 0 AND d.runs_batter = 3 THEN 1 ELSE 0 END) AS triples,
+                             SUM(CASE WHEN d.super_over = 0 AND d.runs_batter = 4 AND d.runs_batter_non_boundary = 1 THEN 1 ELSE 0 END) AS quadruples,
+                             SUM(CASE WHEN d.super_over = 0 AND d.runs_batter = 5 THEN 1 ELSE 0 END) AS quintuples,
+                             SUM(CASE WHEN d.super_over = 0 AND d.runs_batter = 6 AND d.runs_batter_non_boundary = 1 THEN 1 ELSE 0 END) AS sextuples,
+                             SUM(CASE WHEN d.super_over = 0 AND d.runs_batter = 7 THEN 1 ELSE 0 END) AS septuples,
+                             SUM(CASE WHEN d.super_over = 0 AND d.runs_batter = 4 AND d.runs_batter_non_boundary = 0 THEN 1 ELSE 0 END) AS fours,
+                             SUM(CASE WHEN d.super_over = 0 AND d.runs_batter = 6 AND d.runs_batter_non_boundary = 0 THEN 1 ELSE 0 END) AS sixes,
+                             -- Extras Bowled
+                             SUM(CASE WHEN d.super_over = 0 THEN d.extras_wides ELSE 0 END) AS widesBowled,
+                             SUM(CASE WHEN d.super_over = 0 THEN d.extras_noballs ELSE 0 END) AS noBallsBowled,
+                             SUM(CASE WHEN d.super_over = 0 AND d.extras_legbyes > 0 THEN 1 ELSE 0 END) AS legByesCount,
+                             SUM(CASE WHEN d.super_over = 0 THEN d.extras_legbyes ELSE 0 END) AS legByesRuns,
+                             -- Dismissal types for wickets taken
+                             SUM(CASE WHEN d.super_over = 0 AND d.how_out = 'bowled' THEN 1 ELSE 0 END) AS bowled,
+                             SUM(CASE WHEN d.super_over = 0 AND d.how_out = 'caught' THEN 1 ELSE 0 END) AS caught,
+                             SUM(CASE WHEN d.super_over = 0 AND d.how_out = 'caught and bowled' THEN 1 ELSE 0 END) AS caughtAndBowled,
+                             SUM(CASE WHEN d.super_over = 0 AND d.how_out = 'lbw' THEN 1 ELSE 0 END) AS lbw,
+                             SUM(CASE WHEN d.super_over = 0 AND d.how_out = 'stumped' THEN 1 ELSE 0 END) AS stumped,
+                             SUM(CASE WHEN d.super_over = 0 AND d.how_out = 'hit wicket' THEN 1 ELSE 0 END) AS hitWicket,
+                             -- Powerplay Specific Stats
+                             CAST(SUM(CASE WHEN d.powerplay = 1 AND d.extras_wides = 0 AND d.extras_noballs = 0 THEN 1 ELSE 0 END) / 6 AS TEXT) || '.' || CAST(SUM(CASE WHEN d.powerplay = 1 AND d.extras_wides = 0 AND d.extras_noballs = 0 THEN 1 ELSE 0 END) % 6 AS TEXT) AS ppOvers,
+                             SUM(CASE WHEN d.powerplay = 1 AND d.extras_wides = 0 AND d.extras_noballs = 0 THEN 1 ELSE 0 END) AS ppBallsBowledLegal,
+                             SUM(CASE WHEN d.powerplay = 1 AND d.how_out IN ('bowled', 'caught', 'caught and bowled', 'lbw', 'stumped', 'hit wicket') THEN 1 ELSE 0 END) AS ppWickets,
+                             SUM(CASE WHEN d.powerplay = 1 THEN (d.runs_batter + d.extras_wides + d.extras_noballs) ELSE 0 END) AS ppRunsConceded,
+                             -- Super Over Career Stats
+                             CAST(SUM(CASE WHEN d.super_over = 1 AND d.extras_wides = 0 AND d.extras_noballs = 0 THEN 1 ELSE 0 END) / 6 AS TEXT) || '.' || CAST(SUM(CASE WHEN d.super_over = 1 AND d.extras_wides = 0 AND d.extras_noballs = 0 THEN 1 ELSE 0 END) % 6 AS TEXT) AS superOvers,
+                             SUM(CASE WHEN d.super_over = 1 THEN (d.runs_batter + d.extras_wides + d.extras_noballs) ELSE 0 END) AS superOverRunsConceded,
+                             SUM(CASE WHEN d.super_over = 1 AND d.extras_wides = 0 AND d.extras_noballs = 0 THEN 1 ELSE 0 END) AS superOverBallsBowledLegal,
+                             SUM(CASE WHEN d.super_over = 1 AND d.how_out IN ('bowled', 'caught', 'caught and bowled', 'lbw', 'stumped', 'hit wicket') THEN 1 ELSE 0 END) AS superOverWickets
                          FROM players p
                                   JOIN deliveries d ON p.identifier = d.bowler_id
                          GROUP BY p.identifier;
@@ -774,7 +803,7 @@ class CricketDatabase:
                 "check_review_ump_official"
             ],
             "table": [
-                "deliveries", "match_players", "matches", "match_metadata", "venue_aliases", "venues", "players",
+                "deliveries", "match_players", "match_metadata", "matches", "venue_aliases", "venues", "players",
                 "officials", "teams", "registry", "schema_version"
             ],
             "index": [

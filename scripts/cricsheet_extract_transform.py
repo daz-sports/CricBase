@@ -64,7 +64,7 @@ class MatchesExtractor:
         df.loc[0, 'by_wickets'] = 1 if 'wickets' in outcome.get('by', {}) else 0
         df.loc[0, 'no_result'] = 1 if outcome.get('result') == 'no result' else 0
         df.loc[0, 'tie'] = 1 if outcome.get('result') == 'tie' else 0
-        df.loc[0, 'super_over'] = 1 if 'eliminator' in outcome else 0
+        df.loc[0, 'super_over_pld'] = 1 if 'eliminator' in outcome else 0
         df.loc[0, 'bowl_out'] = 1 if 'bowl_out' in outcome else 0
         df.loc[0, 'DLS'] = 1 if outcome.get('method') == 'D/L' else 0
         df.loc[0, 'by_other'] = 1 if outcome.get('method') not in [None, 'D/L'] else 0
@@ -183,12 +183,32 @@ class DeliveriesExtractor:
         review_info['umpires_call'] = 1 if review.get('umpires_call') else 0
         return review_info
 
+    def _powerplay(self, inning: Dict, innings_idx: int, match_id: str) -> tuple:
+        """Helper to determine if the delivery is a powerplay."""
+        if innings_idx >= 2:
+            return 0, 0
+
+        raw_val = get_nested_value(inning, 'powerplays.0.to')
+        if raw_val is None:
+            raise KeyError(f"Powerplay data missing for Inning {innings_idx + 1} in match {match_id}")
+
+        pp_end_val = str(raw_val)
+        if '.' not in pp_end_val:
+            raise ValueError(f"Invalid PP format '{pp_end_val}' in match {match_id}")
+
+        pp_end_over, pp_end_ball = map(int, pp_end_val.split('.'))
+        return pp_end_over, pp_end_ball
+
     def generate_df(self, match_data: Dict, match_id: str) -> pd.DataFrame:
         deliveries_list = []
         registry = get_nested_value(match_data, 'info.registry.people', {})
 
         for i, inning in enumerate(get_nested_value(match_data, 'innings', [])):
             batting_team = inning.get('team')
+
+            # Powerplay start/end, done by innings for efficiency
+            pp_end_over, pp_end_ball = self._powerplay(inning, i, match_id)
+
             for j, over in enumerate(get_nested_value(inning, 'overs', [])):
                 for k, delivery in enumerate(get_nested_value(over, 'deliveries', [])):
                     runs_batter = get_nested_value(delivery, 'runs.batter', 0)
@@ -226,6 +246,8 @@ class DeliveriesExtractor:
                         'review_batter': None,
                         'review_result': None,
                         'umpires_call': None,
+                        'powerplay': 1 if (j < pp_end_over or (j == pp_end_over and k + 1 <= pp_end_ball)) else 0,
+                        'super_over': 1 if i >= 2 else 0,
                         'sex': get_nested_value(match_data, 'info.gender')
                     }
 
