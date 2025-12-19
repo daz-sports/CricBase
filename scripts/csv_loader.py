@@ -54,7 +54,7 @@ class RegistryLoader:
             cursor = conn.cursor()
             try:
                 sql = f"""
-                    INSERT OR IGNORE INTO registry ({', '.join(db_columns)})
+                    INSERT INTO registry ({', '.join(db_columns)})
                     VALUES ({', '.join(['?'] * len(db_columns))})
                 """
                 cursor.executemany(sql, people_to_insert)
@@ -120,7 +120,7 @@ class TeamsLoader:
             cursor = conn.cursor()
             try:
                 sql = f"""
-                    INSERT OR IGNORE INTO teams ({', '.join(db_columns)})
+                    INSERT INTO teams ({', '.join(db_columns)})
                     VALUES ({', '.join(['?'] * len(db_columns))})
                 """
                 cursor.executemany(sql, teams_to_insert)
@@ -168,7 +168,7 @@ class VenuesLoader:
 
         db_columns = [
             'venue_id', 'venue_name', 'city', 'nation',
-            'nation_code', 'home_team_1_id', 'home_team_2_id'
+            'nation_code', 'home_team_id_1', 'home_team_id_2'
         ]
 
         venues_to_insert: List[Tuple] = []
@@ -185,7 +185,7 @@ class VenuesLoader:
             cursor = conn.cursor()
             try:
                 sql = f"""
-                    INSERT OR IGNORE INTO venues ({', '.join(db_columns)})
+                    INSERT INTO venues ({', '.join(db_columns)})
                     VALUES ({', '.join(['?'] * len(db_columns))})
                 """
                 cursor.executemany(sql, venues_to_insert)
@@ -242,7 +242,7 @@ class VenueAliasesLoader:
             cursor = conn.cursor()
             try:
                 sql = f"""
-                    INSERT OR IGNORE INTO venue_aliases ({', '.join(db_columns)})
+                    INSERT INTO venue_aliases ({', '.join(db_columns)})
                     VALUES ({', '.join(['?'] * len(db_columns))})
                 """
                 cursor.executemany(sql, venue_aliases_to_insert)
@@ -438,7 +438,7 @@ class OfficialsLoader:
             cursor = conn.cursor()
             try:
                 sql = f"""
-                    INSERT OR IGNORE INTO officials ({', '.join(db_columns)})
+                    INSERT INTO officials ({', '.join(db_columns)})
                     VALUES ({', '.join(['?'] * len(db_columns))})
                 """
                 cursor.executemany(sql, officials_to_insert)

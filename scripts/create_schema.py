@@ -71,8 +71,8 @@ class CricketDatabase:
                         city               TEXT NOT NULL,
                         nation             TEXT NOT NULL,
                         nation_code        TEXT NOT NULL,
-                        home_team_1_id     TEXT REFERENCES teams (team_id),
-                        home_team_2_id     TEXT REFERENCES teams (team_id),
+                        home_team_id_1     TEXT REFERENCES teams (team_id),
+                        home_team_id_2     TEXT REFERENCES teams (team_id),
                         created_at         TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
                         updated_at         TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
                         UNIQUE (venue_name, city, nation)
@@ -561,8 +561,10 @@ class CricketDatabase:
                                WHEN m.no_result = 1 THEN 'No Result'
                                WHEN m.tie = 1 AND m.super_over_pld = 1 THEN 'Tie (' || winner.full_name || ' won the Super Over)'
                                WHEN m.tie = 1 THEN 'Match Tied'
-                               WHEN m.by_runs = 1 THEN winner.full_name || ' won by ' || m.victory_margin_runs || ' runs'
-                               WHEN m.by_wickets = 1 THEN winner.full_name || ' won by ' || m.victory_margin_wickets || ' wickets'
+                               WHEN m.by_runs = 1 AND m.DLS = 0 THEN winner.full_name || ' won by ' || m.victory_margin_runs || ' runs'
+                               WHEN m.by_wickets = 1 AND m.DLS = 0 THEN winner.full_name || ' won by ' || m.victory_margin_wickets || ' wickets'
+                               WHEN m.by_runs = 1 AND m.DLS = 1 THEN winner.full_name || ' won by ' || m.victory_margin_runs || ' runs (DLS method)'
+                               WHEN m.by_wickets = 1 AND m.DLS = 1 THEN winner.full_name || ' won by ' || m.victory_margin_wickets || ' wickets (DLS method)'
                                ELSE winner.full_name || ' won'
                            END AS match_result,
                            v.venue_name,
