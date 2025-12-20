@@ -557,15 +557,24 @@ class CricketDatabase:
                            COALESCE(ds.runs_2nd_pp, 0) || '-' || COALESCE(ds.wickets_2nd_pp, 0) AS score_2nd_pp,
                            -- Toss Information
                            toss_winner.full_name || ' won the toss and chose to ' || m.toss_decision AS toss_result,
-                           CASE
+                           CASE 
                                WHEN m.no_result = 1 THEN 'No Result'
                                WHEN m.tie = 1 AND m.super_over_pld = 1 THEN 'Tie (' || winner.full_name || ' won the Super Over)'
                                WHEN m.tie = 1 THEN 'Match Tied'
-                               WHEN m.by_runs = 1 AND m.DLS = 0 THEN winner.full_name || ' won by ' || m.victory_margin_runs || ' runs'
-                               WHEN m.by_wickets = 1 AND m.DLS = 0 THEN winner.full_name || ' won by ' || m.victory_margin_wickets || ' wickets'
-                               WHEN m.by_runs = 1 AND m.DLS = 1 THEN winner.full_name || ' won by ' || m.victory_margin_runs || ' runs (DLS method)'
-                               WHEN m.by_wickets = 1 AND m.DLS = 1 THEN winner.full_name || ' won by ' || m.victory_margin_wickets || ' wickets (DLS method)'
-                               ELSE winner.full_name || ' won'
+                               ELSE 
+                                   winner.full_name || ' won' ||
+                                   CASE 
+                                       WHEN m.by_runs = 1 AND m.victory_margin_runs > 1 THEN ' by ' || m.victory_margin_runs || ' runs' 
+                                       WHEN m.by_runs = 1 AND m.victory_margin_runs = 1 THEN ' by ' || m.victory_margin_runs || ' run' 
+                                       WHEN m.by_wickets = 1 AND m.victory_margin_wickets > 1 THEN ' by ' || m.victory_margin_wickets || ' wickets'
+                                       WHEN m.by_wickets = 1 AND m.victory_margin_wickets = 1 THEN ' by ' || m.victory_margin_wickets || ' wicket'
+                                       ELSE '' 
+                                   END ||
+                                   CASE 
+                                       WHEN m.DLS = 1 AND m.start_date >= '2014-11-01' THEN ' (DLS method)' 
+                                       WHEN m.DLS = 1 AND m.start_date < '2014-11-01' THEN ' (D/L method)'
+                                       ELSE '' 
+                                   END
                            END AS match_result,
                            v.venue_name,
                            v.city,
