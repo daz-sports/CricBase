@@ -95,7 +95,6 @@ class CricketDatabase:
                        (
                            match_id                  TEXT PRIMARY KEY,
                            match_type                TEXT NOT NULL CHECK (match_type IN ('T20')),
-                           match_type_number         INTEGER CHECK (match_type_number > 0),
                            overs                     INTEGER,
                            balls_per_over            INTEGER,
                            powerplay_starti1         TEXT,

@@ -8,7 +8,6 @@ class MatchesExtractor:
     def __init__(self):
         self.column_map = {
             'info.match_type': 'match_type',
-            'info.match_type_number': 'match_type_number',
             'info.overs': 'overs',
             'info.balls_per_over': 'balls_per_over',
             'info.team_type': 'team_type',

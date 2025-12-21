@@ -74,7 +74,7 @@ class MatchesLoader(BaseLoader):
         df['end_date'] = df['end_date'].dt.strftime('%Y-%m-%d').where(df['end_date'].notna(), None)
 
         db_columns = [
-            'match_id', 'match_type', 'match_type_number', 'overs', 'balls_per_over', 'powerplay_starti1',
+            'match_id', 'match_type', 'overs', 'balls_per_over', 'powerplay_starti1',
             'powerplay_endi1', 'powerplay_starti2', 'powerplay_endi2', 'team_type', 'sex', 'start_date',
             'end_date', 'season', 'team1_id', 'team2_id', 'umpire1_id', 'umpire2_id', 'tv_umpire_id',
             'match_referee_id', 'reserve_umpire_id', 'toss_winner_id', 'toss_decision', 'team1_prepostpens',
