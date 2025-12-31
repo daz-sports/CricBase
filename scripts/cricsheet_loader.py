@@ -174,6 +174,35 @@ class DeliveriesLoader(BaseLoader):
         sql = f"INSERT INTO deliveries ({', '.join(db_columns)}) VALUES ({', '.join(['?'] * len(db_columns))})"
         self._execute_many(sql, deliveries_to_insert, 'deliveries')
 
+class MissingMatchesLoader(BaseLoader):
+    """Loads missing matches into the database."""
+
+    def update_missing_matches(self, start_y: int, start_m: int, end_y: int, end_m: int):
+        logging.info("--- Starting Missing Matches Check ---")
+
+        icc_df = self.scraper.scrape_period(start_y, start_m, end_y, end_m)
+        logging.info(f"Total ICC Matches Scraped: {len(icc_df)}")
+
+        if icc_df.empty:
+            logging.warning("No data found from ICC. Skipping comparison.")
+            return
+
+        logging.info("Checking for missing venue_nation...")
+
+        icc_df = self._handle_icc_duplicates(icc_df)
+        icc_df['match_teams_key'] = icc_df.apply(lambda x: tuple(sorted([str(x['team1']), str(x['team2'])])), axis=1)
+
+        db_df = self._fetch_existing_matches()
+        logging.info(f"Total Matches in DB: {len(db_df)}")
+
+        missing_matches = self._identify_missing_matches(icc_df, db_df)
+
+        if missing_matches.empty:
+            logging.info("No missing matches found. Database is fully up-to-date with the ICC.")
+            return
+
+        self._insert_missing_matches(missing_matches)
+
 def load_all_cricsheet_data(db_name: str, cricsheet_dir: str):
     """
     Orchestrates the loading process for a directory of Cricsheet files.
