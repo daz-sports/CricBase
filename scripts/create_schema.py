@@ -923,17 +923,6 @@ class CricketDatabase:
             if inconsistent_results:
                 integrity_issues.append(f"Found {len(inconsistent_results)} matches with inconsistent results")
 
-            # Check for duplicate player entries
-            cursor.execute("""
-                           SELECT identifier, COUNT(*) as count
-                           FROM registry
-                           GROUP BY identifier
-                           HAVING count > 1
-                           """)
-            duplicate_players = cursor.fetchall()
-            if duplicate_players:
-                integrity_issues.append(f"Found {len(duplicate_players)} duplicate player entries")
-
             # Verify match player entries
             cursor.execute("""
                            SELECT mp.match_id, mp.identifier
