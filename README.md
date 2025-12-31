@@ -5,7 +5,7 @@ Equipped with a love of sabermetrics and all things sport, there was only so muc
 
 I've focused on ICC-sanctioned men's and women's T20 international cricket because of the uniformity in rules across matches (no subs, funky powerplay changes, etc.). I do anticipate expansion over time. Cricsheet (quite admirably) don't include Afghanistan matches in their available database due to their ongoing treatment of their women's team; however, I do intend to add their information at some point for completeness. But for similar reasons to Cricsheet, it's not a priority for me.
 
-The code required to build the database is in the 'scripts' folder, and the sample data is in the 'data' folder. The 'data' folder contains the JSON files provided by Cricsheet for all T20 matches played between full member nations (excluding Afghanistan) in 2024 (male and female), along with the relevant venue, player, officials, and team profiles required to create a complete sample of the database.
+The code required to build the database is in the 'scripts' folder, and the sample data is in the 'data' folder. The 'data' folder contains the JSON files provided by Cricsheet for all T20 matches played between full member nations (excluding Afghanistan) in 2024 (male and female), along with the relevant venue, player, officials, and team profiles required to create a complete sample of the database. Also provided is the relevant code to add more Cricsheet T20 international matches should you wish.
 
 The 'notebooks' folder contains a selection of analyses possible with this sample of the database. Below is the link to view these Jupyter notebooks in interactive form (previews available in the 'notebooks' folder):
 
@@ -16,6 +16,7 @@ The 'notebooks' folder contains a selection of analyses possible with this sampl
 Tools used:
  - Python
    - Standard library packages:
+      - calendar
       - contextlib
       - dataclasses
       - datetime
@@ -24,10 +25,13 @@ Tools used:
       - os
       - sqlite3
       - typing
+      - urllib
+      - webbrowser
    - Third-party packages:
       - matplotlib
       - numpy
       - pandas
+      - requests
       - seaborn
       - statsmodels
  - SQLite
