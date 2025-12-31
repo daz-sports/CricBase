@@ -213,6 +213,7 @@ __marimo__/
 # Ignore the folder containing all raw JSON files
 /non_git/
 /Backups/
+test_config.py
 
 # SQLite temporary files
 *.db-shm
