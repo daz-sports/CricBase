@@ -203,6 +203,113 @@ class MissingMatchesLoader(BaseLoader):
 
         self._insert_missing_matches(missing_matches)
 
+    def _handle_icc_duplicates(self, df: pd.DataFrame) -> pd.DataFrame:
+        """Handles multi-month game duplication due to the ICC use of IST."""
+
+        if not df.empty and 'icc_id' in df.columns:
+            duplicated_mask = df.duplicated(subset=['icc_id'], keep=False)
+            duplicates = df[duplicated_mask].sort_values(by='icc_id')
+
+            if not duplicates.empty:
+                logging.warning(f"Found {len(duplicates)} rows with duplicate ICC IDs due to month crossover.")
+                for icc_id, group in duplicates.groupby('icc_id'):
+                    logging.info(
+                        f"   [DUPLICATE DETECTED] ID: {icc_id} | {group.iloc[0]['team1']} vs {group.iloc[0]['team2']} on {group.iloc[0]['start_date']}")
+                    for _, row in group.iterrows():
+                        logging.info(
+                            f"      Row detail: Month Scraped context - Result: {row['match_result']} | Toss result: {row['toss_result']} | Venue: {row['venue_name']}")
+                        open_icc_url(row)
+                    logging.warning(f"   >> Action: Dropping extra instance of ICC ID {icc_id}")
+
+                return df.drop_duplicates(subset=['icc_id'], keep='first')
+        return df
+
+    def _fetch_existing_matches(self) -> pd.DataFrame:
+        """Retrieves existing matches from the database."""
+
+        with db_connection(self.db_name) as conn:
+            query = "SELECT start_date, team1, team2, toss_result, match_result, venue_nation FROM match_summary"
+            df = pd.read_sql(query, conn)
+
+        if not df.empty:
+            df['match_teams_key'] = df.apply(lambda x: tuple(sorted([str(x['team1']), str(x['team2'])])), axis=1)
+        return df
+
+    def _identify_missing_matches(self, icc_df: pd.DataFrame, db_df: pd.DataFrame) -> pd.DataFrame:
+        """Compares ICC data against DB data and performs diagnostic logging."""
+
+        if db_df.empty:
+            logging.info("DB is empty. All scraped matches are considered missing.")
+            return icc_df.drop(columns=['match_teams_key'])
+
+        join_keys = ['start_date', 'match_teams_key', 'match_result', 'toss_result', 'venue_nation']
+
+        merged_diag = pd.merge(icc_df, db_df, on=join_keys, how='right', indicator=True)
+        unmatched_db = merged_diag[merged_diag['_merge'] == 'right_only'].copy()
+
+        if not unmatched_db.empty:
+            self._log_diagnostics(unmatched_db, icc_df)
+
+        merged = pd.merge(icc_df, db_df[join_keys], how='left', on=join_keys, indicator=True)
+
+        exact_matches = merged[merged['_merge'] == 'both']
+        logging.info(f"Exact Matches Found (Present in both ICC & DB): {len(exact_matches)}")
+
+        missing_matches = merged[merged['_merge'] == 'left_only'].drop(columns=['_merge'])
+
+        self._check_nation_mismatches(missing_matches, db_df)
+
+        return missing_matches.drop(columns=['match_teams_key'])
+
+    def _log_diagnostics(self, unmatched_db: pd.DataFrame, icc_df: pd.DataFrame):
+        """Runs the 3 specific mismatch tests for logging purposes."""
+
+        logging.info(f"DIAGNOSTIC: Analyzing {len(unmatched_db)} DB matches that failed exact match...")
+
+        # Test 1: Result Mismatch
+        res_mismatch = pd.merge(unmatched_db, icc_df, on=['start_date', 'match_teams_key', 'venue_nation'],
+                                suffixes=('_db', '_icc'))
+        for _, row in res_mismatch.iterrows():
+            logging.warning(
+                f"   [RESULT MISMATCH]: {row['match_teams_key']} on {row['start_date']}. DB Result: '{row['match_result_db']}' | ICC Result: '{row['match_result_icc']}'")
+
+        # Test 2: Date Mismatch
+        date_mismatch = pd.merge(unmatched_db, icc_df, on=['match_teams_key', 'match_result'], suffixes=('_db', '_icc'))
+        for _, row in date_mismatch.iterrows():
+            if row['start_date_db'] != row['start_date_icc']:
+                logging.warning(
+                    f"   [DATE MISMATCH]: {row['match_teams_key']}. DB Date: {row['start_date_db']} | ICC Date: {row['start_date_icc']}")
+
+        # Test 3: Toss Mismatch
+        toss_mismatch = pd.merge(unmatched_db, icc_df, on=['start_date', 'match_teams_key', 'match_result'],
+                                 suffixes=('_db', '_icc'))
+        for _, row in toss_mismatch.iterrows():
+            if row['toss_result_db'] != row['toss_result_icc']:
+                logging.warning(
+                    f"   [TOSS MISMATCH]: {row['match_teams_key']} on {row['start_date']}. DB Toss: '{row['toss_result_db']}' | ICC Toss: '{row['toss_result_icc']}'")
+
+    def _check_nation_mismatches(self, missing_matches: pd.DataFrame, db_df: pd.DataFrame):
+        """Test 4: Specifically logs matches where only the Venue Nation differs."""
+        partial_check_keys = ['start_date', 'match_teams_key', 'match_result', 'toss_result']
+        partial_merged = pd.merge(missing_matches, db_df, how='inner', on=partial_check_keys, suffixes=('_icc', '_db'))
+
+        if not partial_merged.empty:
+            logging.warning(
+                f"Found {len(partial_merged)} matches with matching Date/Teams/Result/Toss but DIFFERENT Venue Nation.")
+            for _, row in partial_merged.iterrows():
+                logging.warning(
+                    f"   >> Mismatch: {row['team1_icc']} vs {row['team2_icc']} on {row['start_date']}. ICC Nation: '{row['venue_nation_icc']}' | DB Nation: '{row['venue_nation_db']}'")
+
+    def _insert_missing_matches(self, missing_matches: pd.DataFrame):
+        """Final DB insertion logic."""
+        logging.info(f"Found {len(missing_matches)} truly missing matches. Inserting into database...")
+        db_columns = ['icc_id', 'start_date', 'team1', 'team2', 'venue_name', 'city', 'venue_nation', 'match_result',
+                      'toss_result']
+        data_to_insert = [tuple(row) for row in missing_matches[db_columns].itertuples(index=False)]
+
+        sql = f"INSERT INTO missing_matches ({', '.join(db_columns)}) VALUES ({', '.join(['?'] * len(db_columns))})"
+        self._execute_many(sql, data_to_insert, 'missing_matches')
+
 def load_all_cricsheet_data(db_name: str, cricsheet_dir: str):
     """
     Orchestrates the loading process for a directory of Cricsheet files.
