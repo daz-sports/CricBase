@@ -35,9 +35,27 @@ class MatchesLoader(BaseLoader):
         if df.empty:
             raise BuildError("Empty DataFrame provided to load_match")
 
-        active_team_map = maps['teams_women'] if df.loc[0, 'sex'] == 'female' else maps['teams_men']
-        df['team1_id'] = df['team1'].map(active_team_map)
-        df['team2_id'] = df['team2'].map(active_team_map)
+        sex = str(df.loc[0, 'sex'])
+        active_team_map = maps['teams_women'] if sex == 'female' else maps['teams_men']
+
+        for col in ['team1', 'team2']:
+            team_name = df.loc[0, col]
+            if team_name not in active_team_map:
+                new_id = self.input_manager.resolve_missing_team(team_name, sex)
+                active_team_map[team_name] = new_id
+
+            df.loc[0, f'{col}_id'] = active_team_map[team_name]
+
+        raw_venue = df.loc[0, 'venue'].split(',')[0].strip()
+        city = df.loc[0, 'city']
+        lookup_key = f"{raw_venue} | {city or ''}"
+
+        if lookup_key not in maps['venues']:
+            venue_id = self.input_manager.resolve_missing_venue(raw_venue, city)
+            maps['venues'][lookup_key] = venue_id
+
+        df.loc[0, 'venue_id'] = maps['venues'][lookup_key]
+
         df['toss_winner_id'] = df['toss_winner'].map(active_team_map)
         df['winner_id'] = df['winner'].map(active_team_map)
         df['venue'] = df['venue'].str.split(',').str[0].str.strip()
