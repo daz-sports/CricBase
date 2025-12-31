@@ -209,7 +209,7 @@ class MissingMatchesLoader(BaseLoader):
             duplicates = df[duplicated_mask].sort_values(by='icc_id')
 
             if not duplicates.empty:
-                logging.warning(f"Found {len(duplicates)} rows with duplicate ICC IDs due to month crossover.")
+                logging.warning(f"Found {len(duplicates)} rows with duplicate ICC IDs due to month crossover (Gibraltar vs Serbia on 2024-09-30 should appear).")
                 for icc_id, group in duplicates.groupby('icc_id'):
                     logging.info(
                         f"   [DUPLICATE DETECTED] ID: {icc_id} | {group.iloc[0]['team1']} vs {group.iloc[0]['team2']} on {group.iloc[0]['start_date']}")
