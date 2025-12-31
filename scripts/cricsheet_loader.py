@@ -4,14 +4,17 @@ import sqlite3
 import logging
 import pandas as pd
 from typing import Dict, List, Tuple
-from utils import BuildError, db_connection
+from utils import BuildError, db_connection, open_icc_url, get_files_to_process
 from cricsheet_extract_transform import MatchesExtractor, MetadataExtractor, MatchPlayersExtractor, DeliveriesExtractor
+from scraper import ICCScraper
+from interactive_utils import InputManager
 
 class BaseLoader:
     """A base class for loaders to share common functionality."""
 
     def __init__(self, db_name: str):
         self.db_name = db_name
+        self.scraper = ICCScraper()
 
     def _execute_many(self, sql: str, data: List[Tuple], table_name: str):
         if not data:
@@ -30,6 +33,10 @@ class BaseLoader:
 
 class MatchesLoader(BaseLoader):
     """Loads data for a single match into the matches table."""
+
+    def __init__(self, db_name: str):
+        super().__init__(db_name)
+        self.input_manager = InputManager(db_name)
 
     def load_match(self, df: pd.DataFrame, maps: Dict):
         if df.empty:
@@ -58,25 +65,6 @@ class MatchesLoader(BaseLoader):
 
         df['toss_winner_id'] = df['toss_winner'].map(active_team_map)
         df['winner_id'] = df['winner'].map(active_team_map)
-        df['venue'] = df['venue'].str.split(',').str[0].str.strip()
-        df['venue_lookup_key'] = df['venue'] + " | " + df['city'].fillna('')
-        df['venue_id'] = df['venue_lookup_key'].map(maps['venues'])
-
-        required_id_columns = ['team1_id', 'team2_id', 'venue_id']
-        if df[required_id_columns].isnull().values.any():
-            if df['team1_id'].isnull().any():
-                failed_team = df[df['team1_id'].isnull()]['team1'].iloc[0]
-                raise BuildError(
-                    f"Mapping failed! Team name '{failed_team}' not found in your teams.csv data.")
-            if df['team2_id'].isnull().any():
-                failed_team = df[df['team2_id'].isnull()]['team2'].iloc[0]
-                raise BuildError(
-                    f"Mapping failed! Team name '{failed_team}' not found in your teams.csv data.")
-            if df['venue_id'].isnull().any():
-                failed_venue = df[df['venue_id'].isnull()]['venue'].iloc[0]
-                failed_city = df[df['venue_id'].isnull()]['city'].iloc[0]
-                raise BuildError(
-                    f"Mapping failed! Venue '{failed_venue}' in city '{failed_city}' not found in your venues.csv data.")
 
         numeric_cols = ['overs', 'balls_per_over', 'team1_prepostpens', 'team2_prepostpens', 'by_runs',
                         'by_wickets', 'by_other', 'no_result', 'tie', 'super_over_pld', 'bowl_out', 'DLS',
@@ -126,6 +114,11 @@ class MatchPlayersLoader(BaseLoader):
     """Loads data for the match_players table."""
 
     def load_players(self, df: pd.DataFrame, maps: Dict):
+
+        if df.empty:
+            logging.info("No players recorded for this match. Skipping player load.")
+            return
+
         active_team_map = maps['teams_women'] if df.loc[0, 'sex'] == 'female' else maps['teams_men']
 
         df['team_id'] = df['team_name'].map(active_team_map)
@@ -141,6 +134,11 @@ class DeliveriesLoader(BaseLoader):
     """Loads ball-by-ball data for a match into the deliveries table."""
 
     def load_deliveries(self, df: pd.DataFrame, maps: Dict):
+
+        if df.empty:
+            logging.info("No players recorded for this match. Skipping player load.")
+            return
+
         active_team_map = maps['teams_women'] if df.loc[0, 'sex'] == 'female' else maps['teams_men']
         df['review_by_id'] = df['review_by'].map(active_team_map)
         df.drop('sex', axis=1, inplace=True)
@@ -310,7 +308,7 @@ class MissingMatchesLoader(BaseLoader):
         sql = f"INSERT INTO missing_matches ({', '.join(db_columns)}) VALUES ({', '.join(['?'] * len(db_columns))})"
         self._execute_many(sql, data_to_insert, 'missing_matches')
 
-def load_all_cricsheet_data(db_name: str, cricsheet_dir: str):
+def load_all_cricsheet_data(db_name: str, cricsheet_dir: str, additional_dir: str, start_y: int, start_m: int, end_y: int, end_m: int):
     """
     Orchestrates the loading process for a directory of Cricsheet files.
     """
@@ -335,37 +333,50 @@ def load_all_cricsheet_data(db_name: str, cricsheet_dir: str):
     players_loader = MatchPlayersLoader(db_name)
     deliveries_loader = DeliveriesLoader(db_name)
 
-    json_files = [f for f in os.listdir(cricsheet_dir) if f.endswith('.json')]
-    logging.info(f"Found {len(json_files)} JSON files to process.")
+    all_files = []
+    for directory in [cricsheet_dir, additional_dir]:
+        if os.path.exists(directory):
+            all_files.extend([(f, os.path.join(directory, f))
+                              for f in os.listdir(directory) if f.endswith('.json')])
 
-    for filename in json_files:
-        match_id = os.path.splitext(filename)[0]
-        file_path = os.path.join(cricsheet_dir, filename)
+    logging.info(f"Found {len(all_files)} total JSON files in directories.")
 
-        try:
-            with open(file_path, 'r', encoding='utf-8') as f:
-                match_data = json.load(f)
+    all_files = get_files_to_process(db_name, all_files)
 
-            logging.info(f"--- Processing Match ID: {match_id} ---")
+    if not all_files:
+        logging.info("No new matches to process.")
+    else:
+        for filename, file_path in all_files:
+            match_id = os.path.splitext(filename)[0]
 
-            # 1. Load Match Info
-            matches_df = matches_ext.generate_df(match_data, match_id)
-            matches_loader.load_match(matches_df, maps)
+            try:
+                with open(file_path, 'r', encoding='utf-8') as f:
+                    match_data = json.load(f)
 
-            # 2. Load Match Metadata
-            metadata_df = md_ext.generate_df(match_data, match_id)
-            metadata_loader.load_metadata(metadata_df)
+                logging.info(f"--- Processing Match ID: {match_id} ---")
 
-            # 3. Load Match Players
-            players_df = players_ext.generate_df(match_data, match_id)
-            players_loader.load_players(players_df, maps)
+                # 1. Load Match Info
+                matches_df = matches_ext.generate_df(match_data, match_id)
+                matches_loader.load_match(matches_df, maps)
 
-            # 4. Load Deliveries
-            deliveries_df = deliveries_ext.generate_df(match_data, match_id)
-            deliveries_loader.load_deliveries(deliveries_df, maps)
+                # 2. Load Match Metadata
+                metadata_df = md_ext.generate_df(match_data, match_id)
+                metadata_loader.load_metadata(metadata_df)
 
-        except (json.JSONDecodeError, BuildError) as e:
-            logging.error(f"Failed to process {filename}. Error: {e}. Skipping file.")
-            continue
+                # 3. Load Match Players
+                players_df = players_ext.generate_df(match_data, match_id)
+                players_loader.load_players(players_df, maps)
 
-    logging.info("All Cricsheet data loading tasks complete.")
+                # 4. Load Deliveries
+                deliveries_df = deliveries_ext.generate_df(match_data, match_id)
+                deliveries_loader.load_deliveries(deliveries_df, maps)
+
+            except (json.JSONDecodeError, BuildError) as e:
+                logging.error(f"Failed to process {filename}. Error: {e}. Skipping file.")
+                continue
+
+        logging.info("All Cricsheet data loading tasks complete.")
+
+        # Run the Missing Matches Check
+        missing_loader = MissingMatchesLoader(db_name)
+        missing_loader.update_missing_matches(start_y, start_m, end_y, end_m)
