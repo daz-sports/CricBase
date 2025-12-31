@@ -1,4 +1,4 @@
-identifier,cricsheet_name,unique_name,full_name,sex,birth_date,birth_place,birth_nation,death_date
+key_cricsheet,cricsheet_name,unique_name,full_name,sex,birth_date,birth_place,birth_nation,death_date
 00d07580,Andrew Crozier,Andrew R Crozier,Andrew Crozier,male,1974-02-14,,,
 02ba88e3,LB Gcuma,Lubabalo Babalo Gcuma,Lubabalo Gcuma,male,1976-05-13,Durban,South Africa,
 039923bd,S Dambanevana,Sarah Dambanevana,Sarah Dambanevana,female,1990-05-26,,,
