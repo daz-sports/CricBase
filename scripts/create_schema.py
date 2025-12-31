@@ -26,6 +26,8 @@ class CricketDatabase:
                            identifier           TEXT PRIMARY KEY,
                            name                 TEXT NOT NULL,
                            unique_name          TEXT NOT NULL UNIQUE,
+                           key_cricinfo         TEXT NOT NULL,
+                           key_cricinfo_2       TEXT,
                            key_bcci             TEXT,
                            key_bcci_2           TEXT,
                            key_bigbash          TEXT,
@@ -167,8 +169,6 @@ class CricketDatabase:
                    CREATE TABLE IF NOT EXISTS players
                        (
                            identifier     TEXT PRIMARY KEY REFERENCES registry (identifier),
-                           key_cricinfo   TEXT NOT NULL,
-                           key_cricinfo_2 TEXT,
                            unique_name    TEXT NOT NULL UNIQUE,
                            full_name      TEXT NOT NULL,
                            display_name   TEXT,
@@ -194,8 +194,6 @@ class CricketDatabase:
                      CREATE TABLE IF NOT EXISTS officials 
                      (
                          identifier     TEXT PRIMARY KEY REFERENCES registry (identifier),
-                         key_cricinfo   TEXT NOT NULL,
-                         key_cricinfo_2 TEXT,
                          unique_name    TEXT NOT NULL UNIQUE,
                          full_name      TEXT NOT NULL,
                          display_name   TEXT,
@@ -307,6 +305,22 @@ class CricketDatabase:
                                   (wickets2 = 0 AND player_out2_id IS NULL AND how_out2 IS NULL))
                        )
                        """,
+        "missing_matches": """
+                           CREATE TABLE IF NOT EXISTS missing_matches
+                           (
+                               icc_id       INTEGER PRIMARY KEY,
+                               start_date   DATE NOT NULL,
+                               team1        TEXT NOT NULL,
+                               team2        TEXT NOT NULL,
+                               venue_name   TEXT NOT NULL,
+                               city         TEXT,
+                               venue_nation TEXT NOT NULL,
+                               match_result TEXT NOT NULL,
+                               toss_result  TEXT NOT NULL,
+                               created_at   TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+                               updated_at   TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+                           )
+                           """,
         "check_correct_team_players": """
                                       CREATE TRIGGER IF NOT EXISTS check_correct_team_players
                                           BEFORE INSERT
@@ -522,6 +536,16 @@ class CricketDatabase:
                              AND balls = NEW.balls;
                        END;
                        """,
+        "update_missing_matches_timestamp": """
+                                            CREATE TRIGGER IF NOT EXISTS update_missing_matches_timestamp
+                                                AFTER UPDATE
+                                                ON missing_matches
+                                            BEGIN
+                                                UPDATE missing_matches
+                                                SET updated_at = CURRENT_TIMESTAMP
+                                                WHERE icc_id = NEW.icc_id;
+                                            END;
+                                            """,
         "match_summary": """
                        CREATE VIEW IF NOT EXISTS match_summary AS
                        WITH delivery_summary AS ( 
@@ -555,7 +579,7 @@ class CricketDatabase:
                            COALESCE(ds.runs_1st_pp, 0) || '-' || COALESCE(ds.wickets_1st_pp, 0) AS score_1st_pp,
                            COALESCE(ds.runs_2nd_pp, 0) || '-' || COALESCE(ds.wickets_2nd_pp, 0) AS score_2nd_pp,
                            -- Toss Information
-                           toss_winner.full_name || ' won the toss and chose to ' || m.toss_decision AS toss_result,
+                           COALESCE(toss_winner.full_name || ' won the toss and chose to ' || m.toss_decision, 'Toss Info Missing/No Toss') AS toss_result,                           
                            CASE 
                                WHEN m.no_result = 1 THEN 'No Result'
                                WHEN m.tie = 1 AND m.super_over_pld = 1 THEN 'Tie (' || winner.full_name || ' won the Super Over)'
@@ -809,12 +833,12 @@ class CricketDatabase:
                 "update_venue_aliases_timestamp",
                 "update_matches_timestamp", "update_match_metadata_timestamp", "update_match_players_timestamp",
                 "update_players_timestamp", "update_officials_timestamp",
-                "update_deliveries_timestamp", "check_review_by_team", "check_correct_team_players",
-                "check_review_ump_official"
+                "update_deliveries_timestamp", "update_missing_matches_timestamp", "check_review_by_team",
+                "check_correct_team_players", "check_review_ump_official"
             ],
             "table": [
-                "deliveries", "match_players", "match_metadata", "matches", "venue_aliases", "venues", "players",
-                "officials", "teams", "registry", "schema_version"
+                "missing_matches", "deliveries", "match_players", "match_metadata", "matches", "venue_aliases",
+                "venues", "players", "officials", "teams", "registry", "schema_version"
             ],
             "index": [
                 "idx_matches_date", "idx_matches_team", "idx_deliveries_match_innings", "idx_deliveries_batter",
@@ -838,6 +862,19 @@ class CricketDatabase:
             logging.info("Database reset complete. Re-initializing schema...")
             self._init_database()
             logging.info("Database schema re-initialized successfully.")
+
+    def prepare_for_update(self):
+        with db_connection(self.db_name) as conn:
+            cursor = conn.cursor()
+            logging.info("Preparing for database reset...")
+            cursor.execute("BEGIN TRANSACTION")
+            try:
+                cursor.execute(f"DELETE FROM missing_matches")
+                conn.commit()
+                logging.info(f"missing_matches table cleared.")
+            except sqlite3.Error as e:
+                conn.rollback()
+                logging.error(f"Could not clear missing_matches: {e}")
 
     def verify_data_integrity(self):
         with db_connection(self.db_name) as conn:
