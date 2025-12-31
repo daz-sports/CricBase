@@ -954,7 +954,7 @@ class CricketDatabase:
                            FROM matches
                            WHERE (by_runs > 0 AND by_wickets > 0)
                               OR (winner_id IS NOT NULL AND no_result = 1)
-                              OR (winner_id IS NOT NULL AND tie = 1 AND super_over = 0)
+                              OR (winner_id IS NOT NULL AND tie = 1 AND super_over_pld = 0)
                            """)
             inconsistent_results = cursor.fetchall()
             if inconsistent_results:
