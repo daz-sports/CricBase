@@ -34,7 +34,7 @@ class RegistryLoader:
             raise BuildError("Registry CSV validation failed.")
 
         db_columns = [
-            'identifier', 'name', 'unique_name', 'key_bcci', 'key_bcci_2', 'key_bigbash',
+            'identifier', 'name', 'unique_name', 'key_cricinfo', 'key_cricinfo_2', 'key_bcci', 'key_bcci_2', 'key_bigbash',
             'key_cricbuzz', 'key_cricheroes', 'key_crichq', 'key_cricingif', 'key_cricketarchive',
             'key_cricketarchive_2', 'key_cricketworld', 'key_nvplay', 'key_nvplay_2', 'key_opta',
             'key_opta_2', 'key_pulse', 'key_pulse_2'
@@ -54,7 +54,7 @@ class RegistryLoader:
             cursor = conn.cursor()
             try:
                 sql = f"""
-                    INSERT INTO registry ({', '.join(db_columns)})
+                    INSERT OR IGNORE INTO registry ({', '.join(db_columns)})
                     VALUES ({', '.join(['?'] * len(db_columns))})
                 """
                 cursor.executemany(sql, people_to_insert)
@@ -66,7 +66,10 @@ class RegistryLoader:
                 raise BuildError(e)
 
 class TeamsLoader:
-    """Handles loading the teams table into the database."""
+    """
+    Handles loading the teams table into the database for easy startup.
+    There is the functionality to add new teams included elsewhere.
+    """
 
     def __init__(self, db_name: str):
         self.db_name = db_name
@@ -120,7 +123,7 @@ class TeamsLoader:
             cursor = conn.cursor()
             try:
                 sql = f"""
-                    INSERT INTO teams ({', '.join(db_columns)})
+                    INSERT OR IGNORE INTO teams ({', '.join(db_columns)})
                     VALUES ({', '.join(['?'] * len(db_columns))})
                 """
                 cursor.executemany(sql, teams_to_insert)
@@ -135,9 +138,9 @@ class VenuesLoader:
     """
     Handles loading venue data into the database.
 
-    For ease of replication, csv files for both venues and venue_aliases tables are provided that include
-    the venue_id, though ordinarily they are generated at this point. This prevents the user from having to
-    do any work to link unknown stadiums to their canonical venue.
+    For ease of initial startup, csv files for both venues and venue_aliases tables are provided that include
+    the venue_id. This prevents the user from having to do any work to link unknown stadiums to their canonical venue.
+    However, the functionality to add new venues is also built in to be used.
 
     """
     def __init__(self, db_name: str):
@@ -185,7 +188,7 @@ class VenuesLoader:
             cursor = conn.cursor()
             try:
                 sql = f"""
-                    INSERT INTO venues ({', '.join(db_columns)})
+                    INSERT OR IGNORE INTO venues ({', '.join(db_columns)})
                     VALUES ({', '.join(['?'] * len(db_columns))})
                 """
                 cursor.executemany(sql, venues_to_insert)
@@ -242,7 +245,7 @@ class VenueAliasesLoader:
             cursor = conn.cursor()
             try:
                 sql = f"""
-                    INSERT INTO venue_aliases ({', '.join(db_columns)})
+                    INSERT OR IGNORE INTO venue_aliases ({', '.join(db_columns)})
                     VALUES ({', '.join(['?'] * len(db_columns))})
                 """
                 cursor.executemany(sql, venue_aliases_to_insert)
@@ -259,13 +262,15 @@ class PlayersLoader:
 
     The usual process involves this table being populated with players from match_players and then
     the user being prompted for the player's information (e.g. birth_date etc.) for new players.
-    To speed up the replication process, that data is provided in a CSV file for the relevant players.
+    To speed up the replication process, that data is provided in a CSV file for initial database creation.
+    The functionality to add new players is coming shortly (all full-member nation T20 players up to 2024
+    are already in the database).
     """
     def __init__(self, db_name: str):
         self.db_name = db_name
 
     def _validate_player_data(self, df: pd.DataFrame) -> bool:
-        required_columns = ['key_cricsheet', 'key_cricinfo','unique_name', 'full_name', 'sex', 'current_nation']
+        required_columns = ['key_cricsheet','unique_name', 'full_name', 'sex', 'current_nation']
         if not all(column in df.columns for column in required_columns):
             logging.error(f"Players CSV is missing required columns. Required: {required_columns}")
             return False
@@ -294,18 +299,11 @@ class PlayersLoader:
     def load_players_from_csv(self, csv_path: str):
         logging.info("Starting to load the players...")
         try:
-            df = pd.read_csv(
-                csv_path,
-                na_filter=False,
-                dtype=str,
-                parse_dates=['birth_date', 'death_date']
-            )
-            df['birth_date'] = pd.to_datetime(df['birth_date'], format='%Y-%m-%d', errors='coerce')
-            df['death_date'] = pd.to_datetime(df['death_date'], format='%Y-%m-%d', errors='coerce')
+            df = pd.read_csv(csv_path)
 
             for col in ['birth_date', 'death_date']:
-                if pd.api.types.is_datetime64_any_dtype(df[col]):
-                    df[col] = df[col].dt.strftime('%Y-%m-%d')
+                temp_dates = pd.to_datetime(df[col], errors='coerce')
+                df[col] = temp_dates.apply(lambda x: x.strftime('%Y-%m-%d') if pd.notnull(x) else None)
 
             nullable_string_cols = [
                 'birth_place', 'birth_nation', 'bat_hand', 'bowl_hand', 'bowl_style',
@@ -316,10 +314,6 @@ class PlayersLoader:
                     df[col] = df[col].replace(['', 'NaN'], None)
 
             df['wicketkeeper'] = pd.to_numeric(df['wicketkeeper'], errors='coerce')
-            df['key_cricinfo'] = pd.to_numeric(df['key_cricinfo'], errors='coerce').astype('Int64').astype(str).replace(
-                '<NA>', '')
-            df['key_cricinfo_2'] = pd.to_numeric(df['key_cricinfo_2'], errors='coerce').astype('Int64').astype(
-                str).replace('<NA>', '')
 
         except FileNotFoundError as e:
             logging.critical(f"Failed to read {csv_path}: {e}")
@@ -331,7 +325,7 @@ class PlayersLoader:
         df.rename(columns={'key_cricsheet': 'identifier'}, inplace=True)
 
         db_columns = [
-            'identifier', 'key_cricinfo', 'key_cricinfo_2', 'unique_name', 'full_name',
+            'identifier', 'unique_name', 'full_name',
             'display_name', 'sex', 'birth_date', 'birth_place', 'birth_nation', 'bat_hand',
             'bowl_hand', 'bowl_style', 'current_nation', 'previous_nation_1', 'previous_nation_2',
             'wicketkeeper', 'death_date'
@@ -349,7 +343,7 @@ class PlayersLoader:
             cursor = conn.cursor()
             try:
                 sql = f"""
-                    INSERT INTO players ({', '.join(db_columns)})
+                    INSERT OR IGNORE INTO players ({', '.join(db_columns)})
                     VALUES ({', '.join(['?'] * len(db_columns))})
                 """
                 cursor.executemany(sql, players_to_insert)
@@ -366,14 +360,15 @@ class OfficialsLoader:
 
     The usual process involves this table being populated with officials from matches table and then
     the user being prompted for the official's information (e.g. birth_date etc.) for new officials.
-    To speed up the replication process, that data is provided in a CSV file for the relevant officials.
+    To speed up the replication process, that data is provided in a CSV file for initial database creation.
+    The functionality to add new officials is also built in to be used.
     """
 
     def __init__(self, db_name: str):
         self.db_name = db_name
 
     def _validate_officials_data(self, df: pd.DataFrame) -> bool:
-        required_columns = ['key_cricsheet', 'key_cricinfo', 'unique_name', 'full_name', 'sex']
+        required_columns = ['key_cricsheet', 'unique_name', 'full_name', 'sex']
         if not all(column in df.columns for column in required_columns):
             logging.error(f"Officials CSV is missing required columns. Required: {required_columns}")
             return False
@@ -393,24 +388,15 @@ class OfficialsLoader:
     def load_officials_from_csv(self, csv_path: str):
         logging.info("Starting to load the officials...")
         try:
-            df = pd.read_csv(
-                csv_path,
-                na_filter=False,
-                dtype=str,
-                parse_dates=['birth_date', 'death_date'],
-            )
-            df['birth_date'] = pd.to_datetime(df['birth_date'], format='%Y-%m-%d', errors='coerce')
-            df['death_date'] = pd.to_datetime(df['death_date'], format='%Y-%m-%d', errors='coerce')
+            df = pd.read_csv(csv_path)
+
+            for col in ['birth_date', 'death_date']:
+                temp_dates = pd.to_datetime(df[col], errors='coerce')
+                df[col] = temp_dates.apply(lambda x: x.strftime('%Y-%m-%d') if pd.notnull(x) else None)
 
             for col in ['birth_date', 'death_date']:
                 if pd.api.types.is_datetime64_any_dtype(df[col]):
                     df[col] = df[col].dt.strftime('%Y-%m-%d')
-
-            df['key_cricinfo'] = pd.to_numeric(df['key_cricinfo'], errors='coerce').astype('Int64').astype(str).replace(
-                '<NA>', '')
-            df['key_cricinfo_2'] = pd.to_numeric(df['key_cricinfo_2'], errors='coerce').astype('Int64').astype(
-                str).replace('<NA>', '')
-
 
         except FileNotFoundError as e:
             logging.critical(f"Failed to read {csv_path}: {e}")
@@ -422,8 +408,8 @@ class OfficialsLoader:
         df.rename(columns={'key_cricsheet': 'identifier'}, inplace=True)
 
         db_columns = [
-            'identifier', 'key_cricinfo', 'key_cricinfo_2', 'unique_name', 'full_name',
-            'display_name', 'sex', 'birth_date', 'birth_place', 'birth_nation', 'death_date'
+            'identifier', 'unique_name', 'full_name', 'display_name', 'sex', 'birth_date',
+            'birth_place', 'birth_nation', 'death_date'
         ]
 
         df_for_db = df.astype(object).where(pd.notna(df), None)
@@ -438,7 +424,7 @@ class OfficialsLoader:
             cursor = conn.cursor()
             try:
                 sql = f"""
-                    INSERT INTO officials ({', '.join(db_columns)})
+                    INSERT OR IGNORE INTO officials ({', '.join(db_columns)})
                     VALUES ({', '.join(['?'] * len(db_columns))})
                 """
                 cursor.executemany(sql, officials_to_insert)
