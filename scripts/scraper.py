@@ -2,13 +2,20 @@ import requests
 import pandas as pd
 import calendar
 import logging
+import time
+import random
 from typing import Dict, List, Tuple
+from config import Config
 
 class ICCScraper:
     """Handles scraping the ICC website for T20I matches."""
 
-    def __init__(self):
+    def __init__(self, config: Config):
         self.team_map = {}
+        self.session = requests.Session()
+        self.session.headers.update({
+            "User-Agent": config.USER_AGENT
+        })
 
     def _create_months_list(self, start_year, start_month, end_year, end_month) -> List[Tuple[int, int]]:
         months = []
@@ -51,7 +58,10 @@ class ICCScraper:
                f"&is_deleted=false&pagination=true&page_number=1&page_size=400"
                f"&is_upcoming=false&is_live=false&is_recent=true")
 
-        response = requests.get(url)
+        response = self.session.get(url, timeout=15)
+
+        # Ethical delay:
+        time.sleep(random.uniform(1.0, 3.0))
         data = response.json()
         return pd.DataFrame(data.get('data', {}).get('matches', []))
 
