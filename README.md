@@ -40,6 +40,13 @@ Tools used:
       - statsmodels
  - SQLite
 
+#### Database Construction Instructions
+1. Clone this repository.
+2. Install the required packages listed above.
+3. Fill in the 'config.py' file.
+3. Run the 'running.py' script in the 'scripts' folder. Split screen your IDE with a web browser if possible.
+4. Explore the database!
+
 The Cricsheet data is made available under the [Open Data Commons Attribution License (ODC-By) v1.0](https://opendatacommons.org/licenses/by/1-0/)
 Missing matches discovery assisted by public record data from the ICC schedule.
 
