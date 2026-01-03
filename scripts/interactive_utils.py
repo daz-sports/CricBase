@@ -2,16 +2,26 @@ import logging
 import sqlite3
 import urllib.parse
 import webbrowser
-from typing import Optional, Dict, Any
+import requests
+import country_converter as coco
+import reverse_geocoder as rg
+from geopy.geocoders import Nominatim
+from geopy.exc import GeocoderTimedOut, GeocoderServiceError
+from typing import Optional, Dict, Any, Tuple
 from utils import db_connection
+from config import Config
+
 
 class InputManager:
     """
         Handles interactive user prompts for missing data.
     """
 
-    def __init__(self, db_name: str):
+    def __init__(self, db_name: str, config: Config):
         self.db_name = db_name
+        self.geolocator = Nominatim(user_agent=config.USER_AGENT)
+        self.session = requests.Session()
+        self.cc = coco.CountryConverter()
 
     def _get_input(self, prompt_text: str, required: bool = True, default: str = None) -> Optional[str]:
         """Helper to get and validate CLI input."""
@@ -38,9 +48,123 @@ class InputManager:
 
         print("\n  --- Review Entry ---")
         for k, v in details.items():
-            print(f"  {k}: {v}")
+            if isinstance(v, float):
+                val_str = f"{v:.4f}"
+            else:
+                val_str = v
+            print(f"  {k}: {val_str}")
+
         choice = input("\n  Save this entry? (y/n/retry): ").lower()
         return choice == 'y'
+
+    def _get_lat_long(self, venue: str, city: str, nation: str) -> Tuple[Optional[float], Optional[float]]:
+        """
+        Interactive loop to determine lat/long coordinates for a venue using Nominatim or manual input.
+        """
+        query_text = f"{venue}, {city}, {nation}"
+        print(f"\n [GIS] Searching coordinates for: {query_text}...")
+
+        lat, lon = None, None
+        api_match = False
+
+        try:
+            location = self.geolocator.geocode(query_text, timeout=10)
+            if location:
+                print(f" > API Found: {location.address}")
+                lat, lon = location.latitude, location.longitude
+                api_match = True
+                url = f"https://www.google.com/maps/search/?api=1&query={lat},{lon}"
+            else:
+                print(" > API Failed. No direct match found.")
+                url = f"https://www.google.com/maps/search/?api=1&query={urllib.parse.quote(query_text)}"
+
+        except (GeocoderTimedOut, GeocoderServiceError) as e:
+            logging.error(f"Geocoding API error: {e}")
+            print(" > API Error. Opening manual search.")
+            url = f"https://www.google.com/maps/search/?api=1&query={urllib.parse.quote(query_text)}"
+
+        print(f" > Verifying on Google Maps: {url}")
+        webbrowser.open(url)
+
+        print("\n Coordinate Options:")
+        if api_match:
+            print(f" [ENTER] Accept API Result ({lat}, {lon})")
+        print(" [lat, long] Type coordinates manually to override")
+        print(" [skip] Leave coordinates blank")
+
+        while True:
+            user_input = input("  >> ").strip().lower()
+
+            if not user_input and api_match:
+                logging.info("  [GIS] User accepted API coordinates.")
+                return lat, lon
+
+            if user_input == 'skip' or (not user_input and not api_match):
+                logging.warning(f"  [GIS] Coordinates skipped for {venue}.")
+                return None, None
+
+            if ',' in user_input:
+                try:
+                    parts = user_input.split(',')
+                    manual_lat = float(parts[0].strip())
+                    manual_lon = float(parts[1].strip())
+                    logging.info("  [GIS] User provided manual coordinates.")
+                    return manual_lat, manual_lon
+                except ValueError:
+                    print("  [!] Invalid format. Example: 51.380338, -2.353638")
+                    continue
+
+            print("  [!] Invalid input.")
+
+    def _get_gis_data(self, lat: float, lon: float) -> Dict[str, Any]:
+        """
+        Automated gis based on Lat/Long (Continent, Timezone, Elevation, Administrative Divisions).
+        """
+        if lat is None or lon is None: return {}
+
+        gis = {}
+
+        gis['hemisphere'] = 'N' if lat >= 0 else 'S'
+
+        try:
+            res = rg.search((lat, lon), verbose=False)[0]
+            gis['continent'] = self.cc.convert(res['cc'], to='continent')
+            gis['admin_area_1'] = res.get('admin1', 'Unknown')
+            gis['admin_area_2'] = res.get('admin2', 'Unknown')
+        except Exception as e:
+            logging.warning(f"GIS Mapping Error: {e}")
+            gis['continent'] = 'Unknown'
+            gis['admin_area_1'] = 'Unknown'
+            gis['admin_area_2'] = 'Unknown'
+
+        try:
+            url = f"https://api.open-meteo.com/v1/forecast?latitude={lat}&longitude={lon}&current_weather=true&timezone=auto"
+            response = self.session.get(url, timeout=5).json()
+
+            gis['timezone'] = response.get('timezone')
+
+            offset_sec = response.get('utc_offset_seconds', 0)
+            hours = int(offset_sec // 3600)
+            minutes = int((abs(offset_sec) % 3600) / 60)
+            sign = "+" if offset_sec >= 0 else "-"
+            gis['utc_offset_str'] = f"{sign}{abs(hours):02}:{minutes:02}"
+
+        except Exception as e:
+            logging.error(f"GIS Timezone Error: {e}")
+            gis['timezone'] = None
+            gis['utc_offset_str'] = None
+
+        try:
+            url = f"https://api.opentopodata.org/v1/srtm30m?locations={lat},{lon}"
+            response = self.session.get(url, timeout=5).json()
+            if 'results' in response and response['results']:
+                gis['elevation'] = response['results'][0]['elevation']
+        except Exception as e:
+            logging.warning(f"GIS Elevation Error: {e}")
+            gis['elevation'] = None
+
+        logging.info(f"  [GIS] Enriched: {gis.get('continent')}, {gis.get('timezone')}")
+        return gis
 
     def resolve_missing_team(self, team_name: str, sex: str) -> str | None:
         """Prompts the user to create a new team entry."""
@@ -95,6 +219,7 @@ class InputManager:
                         continue
 
             count += 1
+
     def resolve_missing_venue(self, venue_name: str, city: str) -> str | None | Any:
         """Prompts the user to select a venue from the list of aliases."""
 
@@ -145,12 +270,15 @@ class InputManager:
 
             elif choice == '2':
                 print("\n --- New Venue Details ---")
-                webbrowser.open_new(f"https://www.google.com/search?q={urllib.parse.urlencode(venue_name)}")
+                webbrowser.open_new(f"https://www.google.com/search?q={urllib.parse.quote_plus(venue_name)}")
                 new_nation = self._get_input("Nation", required=True)
                 if count == 0:
                     webbrowser.open_new(f"https://www.iban.com/country-codes")
                 iso_code = self._get_input("Nation ISO Alpha-3 Code", required=True).upper()
                 new_city = self._get_input("City", required=True)
+
+                lat, lon = self._get_lat_long(venue_name, city, new_nation)
+                gis_data = self._get_gis_data(lat, lon)
 
                 with db_connection(self.db_name) as conn:
                     cursor = conn.cursor()
@@ -161,8 +289,9 @@ class InputManager:
                     count_total = cursor.fetchone()[0]
 
                     cursor.execute("SELECT team_id FROM teams WHERE nation = ?", (new_nation,))
-                    home_team_id_1 = cursor.fetchone()[0]
-                    home_team_id_2 = cursor.fetchone()[1]
+                    teams = cursor.fetchall()
+                    home_team_id_1 = teams[0][0] if len(teams) > 0 else None
+                    home_team_id_2 = teams[1][0] if len(teams) > 1 else None
 
                 next_nation_rank = count_nation + 1
                 next_total_rank = count_total + 1
@@ -172,17 +301,32 @@ class InputManager:
                     'venue_id': venue_id,
                     'venue_name': venue_name,
                     'city': new_city,
+                    'admin_area_1': gis_data.get('admin_area_1', 'Unknown'),
+                    'admin_area_2': gis_data.get('admin_area_2', 'Unknown'),
                     'nation': new_nation,
                     'nation_code': iso_code,
+                    'continent': gis_data.get('continent', 'Unknown'),
+                    'hemisphere': gis_data.get('hemisphere'),
                     'home_team_id_1': home_team_id_1,
-                    'home_team_id_2': home_team_id_2
+                    'home_team_id_2': home_team_id_2,
+                    'latitude': lat,
+                    'longitude': lon,
+                    'elevation': gis_data.get('elevation'),
+                    'timezone': gis_data.get('timezone'),
+                    'utc_offset_str': gis_data.get('utc_offset_str')
                 }
 
                 if self._confirm_entry(details):
                     with db_connection(self.db_name) as conn:
                         conn.execute("""
-                                     INSERT INTO venues (venue_id, venue_name, city, nation, nation_code, home_team_id_1, home_team_id_2)
-                                     VALUES (:venue_id, :venue_name, :city, :nation, :nation_code, :home_team_id_1, :home_team_id_2)
+                                     INSERT INTO venues (venue_id, venue_name, city, admin_area_1, admin_area_2, 
+                                                         nation, nation_code, continent, hemisphere, home_team_id_1, 
+                                                         home_team_id_2, latitude, longitude, elevation, timezone, 
+                                                         utc_offset_str
+                                                        )
+                                     VALUES (:venue_id, :venue_name, :city, :admin_area_1, :admin_area_2, :nation, 
+                                             :nation_code, :continent, :hemisphere, :home_team_id_1, :home_team_id_2,
+                                             :latitude, :longitude, :elevation, :timezone, :utc_offset_str)
                                      """, details)
                         conn.commit()
                         self._add_venue_alias(venue_name, city, new_nation, venue_id)
