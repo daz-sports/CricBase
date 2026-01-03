@@ -1,122 +1,122 @@
-venue_id,venue_name,city,nation,nation_code,home_team_id_1,home_team_id_2
-1ind1,MA Chidambaram Stadium,Chennai,India,IND,indMT20,indFT20
-2ind2,Dr DY Patil Sports Academy,Mumbai,India,IND,indMT20,indFT20
-3ind3,Shrimant Madhavrao Scindia Cricket Stadium,Gwalior,India,IND,indMT20,indFT20
-4ind4,Rajiv Gandhi International Stadium,Hyderabad,India,IND,indMT20,indFT20
-5ind5,Arun Jaitley Stadium,Dehli,India,IND,indMT20,indFT20
-1jam6,Sabina Park,Kingston,Jamaica,JAM,wiMT20,wiFT20
-1pak7,Gaddafi Stadium,Lahore,Pakistan,PAK,pakMT20,pakFT20
-2pak8,National Stadium,Karachi,Pakistan,PAK,pakMT20,pakFT20
-3pak9,Southend Club Cricket Stadium,Karachi,Pakistan,PAK,pakMT20,pakFT20
-4pak10,Rawalpindi Cricket Stadium,Rawalpindi,Pakistan,PAK,pakMT20,pakFT20
-5pak11,Multan Cricket Stadium,Multan,Pakistan,PAK,pakMT20,pakFT20
-1zaf12,Boland Park,Paarl,South Africa,ZAF,zafMT20,zafFT20
-2zaf13,Diamond Oval,Kimberley,South Africa,ZAF,zafMT20,zafFT20
-3zaf14,Mangaung Oval,Bloemfontein,South Africa,ZAF,zafMT20,zafFT20
-4zaf15,The Wanderers Stadium,Johannesburg,South Africa,ZAF,zafMT20,zafFT20
-5zaf16,St George's Park,Gqeberha,South Africa,ZAF,zafMT20,zafFT20
-6zaf17,SuperSport Park,Centurion,South Africa,ZAF,zafMT20,zafFT20
-7zaf18,Senwes Park,Potchefstroom,South Africa,ZAF,zafMT20,zafFT20
-8zaf19,Newlands,Cape Town,South Africa,ZAF,zafMT20,zafFT20
-9zaf20,Kingsmead,Durban,South Africa,ZAF,zafMT20,zafFT20
-10zaf21,Willowmoore Park,Benoni,South Africa,ZAF,zafMT20,zafFT20
-11zaf22,Buffalo Park,East London,South Africa,ZAF,zafMT20,zafFT20
-12zaf23,City Oval,Pietermaritzburg,South Africa,ZAF,zafMT20,zafFT20
-13zaf24,Moses Mabhida Stadium,Durban,South Africa,ZAF,zafMT20,zafFT20
-14zaf25,LC de Villiers Oval,Pretoria,South Africa,ZAF,zafMT20,zafFT20
-1eng26,County Ground,Brighton & Hove,England,ENG,engMT20,engFT20
-2eng27,Lord's,London,England,ENG,engMT20,engFT20
-3eng28,The Rose Bowl,Southampton,England,ENG,engMT20,engFT20
-4eng29,Edgbaston,Birmingham,England,ENG,engMT20,engFT20
-5eng30,Trent Bridge,Nottingham,England,ENG,engMT20,engFT20
-6eng31,Old Trafford,Manchester,England,ENG,engMT20,engFT20
-7eng32,Arundel Castle Cricket Club Ground,Arundel,England,ENG,engMT20,engFT20
-8eng33,Riverside Ground,Chester-le-Street,England,ENG,engMT20,engFT20
-9eng34,The Cooper Associates County Ground,Taunton,England,ENG,engMT20,engFT20
-10eng35,Kennington Oval,London,England,ENG,engMT20,engFT20
-11eng36,St Lawrence Ground,Canterbury,England,ENG,engMT20,engFT20
-12eng37,Headingley,Leeds,England,ENG,engMT20,engFT20
-13eng38,Haslegrave Ground,Loughborough,England,ENG,engMT20,engFT20
-14eng39,County Ground,Chelmsford,England,ENG,engMT20,engFT20
-15eng40,County Ground,Bristol,England,ENG,engMT20,engFT20
-1nzl41,AMI Stadium,Christchurch,New Zealand,NZL,nzlMT20,nzlFT20
-2nzl42,Sky Stadium,Wellington,New Zealand,NZL,nzlMT20,nzlFT20
-3nzl43,University Oval,Dunedin,New Zealand,NZL,nzlMT20,nzlFT20
-4nzl44,Eden Park,Auckland,New Zealand,NZL,nzlMT20,nzlFT20
-5nzl45,Hagley Oval,Christchurch,New Zealand,NZL,nzlMT20,nzlFT20
-6nzl46,McLean Park,Napier,New Zealand,NZL,nzlMT20,nzlFT20
-7nzl47,Bay Oval,Mount Maunganui,New Zealand,NZL,nzlMT20,nzlFT20
-8nzl48,Seddon Park,Hamilton,New Zealand,NZL,nzlMT20,nzlFT20
-9nzl49,Saxton Oval,Nelson,New Zealand,NZL,nzlMT20,nzlFT20
-10nzl50,Pukekura Park,New Plymouth,New Zealand,NZL,nzlMT20,nzlFT20
-11nzl51,White Hill Field,Hamilton,New Zealand,NZL,nzlMT20,nzlFT20
-12nzl52,Basin Reserve,Wellington,New Zealand,NZL,nzlMT20,nzlFT20
-13nzl53,John Davies Oval,Queenstown,New Zealand,NZL,nzlMT20,nzlFT20
-1are54,Zayed Cricket Stadium,Abu Dhabi,United Arab Emirates,ARE,areMT20,areFT20
-2are55,ICC Academy,Dubai,United Arab Emirates,ARE,areMT20,areFT20
-3are56,Dubai International Cricket Stadium,Dubai,United Arab Emirates,ARE,areMT20,areFT20
-4are57,Sharjah Cricket Stadium,Sharjah,United Arab Emirates,ARE,areMT20,areFT20
-5are58,Malek Cricket Ground,Ajman,United Arab Emirates,ARE,areMT20,areFT20
-6are59,ICC Academy Ground No 2,Dubai,United Arab Emirates,ARE,areMT20,areFT20
-7are60,Tolerance Oval,Abu Dhabi,United Arab Emirates,ARE,areMT20,areFT20
-8are61,7he Sevens Stadium,Dubai,United Arab Emirates,ARE,areMT20,areFT20
-1zwe62,Harare Sports Club,Harare,Zimbabwe,ZWE,zweMT20,zweFT20
-2zwe63,Bulawayo Athletic Club,Bulawayo,Zimbabwe,ZWE,zweMT20,zweFT20
-3zwe64,Old Hararians,Harare,Zimbabwe,ZWE,zweMT20,zweFT20
-4zwe65,Takashinga Sports Club,Harare,Zimbabwe,ZWE,zweMT20,zweFT20
-5zwe66,Queens Sports Club,Bulawayo,Zimbabwe,ZWE,zweMT20,zweFT20
-1vct67,Arnos Vale Ground,Kingstown,Saint Vincent and the Grenadines,VCT,wiMT20,wiFT20
-1atg68,Coolidge Cricket Ground,Coolidge,Antigua and Barbuda,ATG,wiMT20,wiFT20
-2atg69,Sir Vivian Richards Stadium,North Sound,Antigua and Barbuda,ATG,wiMT20,wiFT20
-1lca70,Daren Sammy National Cricket Stadium,Gros Islet,Saint Lucia,LCA,wiMT20,wiFT20
-1brb71,Kensington Oval,Bridgetown,Barbados,BRB,wiMT20,wiFT20
-1bgd72,Shere Bangla National Stadium,Dhaka,Bangladesh,BGD,bgdMT20,bgdFT20
-2bgd73,Sylhet International Cricket Stadium,Sylhet,Bangladesh,BGD,bgdMT20,bgdFT20
-3bgd74,Sheikh Abu Naser Stadium,Khulna,Bangladesh,BGD,bgdMT20,bgdFT20
-4bgd75,Zahur Ahmed Chowdhury Stadium,Chattogram,Bangladesh,BGD,bgdMT20,bgdFT20
-5bgd76,Khan Shaheb Osman Ali Stadium,Fatullah,Bangladesh,BGD,bgdMT20,bgdFT20
-1tto77,Brian Lara Stadium,Tarouba,Trinidad and Tobago,TTO,wiMT20,wiFT20
-2tto78,Queen's Park Oval,Port of Spain,Trinidad and Tobago,TTO,wiMT20,wiFT20
-1aus79,Simonds Stadium,Geelong,Australia,AUS,ausMT20,ausFT20
-2aus80,W.A.C.A. Ground,Perth,Australia,AUS,ausMT20,ausFT20
-3aus81,Riverway Stadium,Townsville,Australia,AUS,ausMT20,ausFT20
-4aus82,Bellerive Oval,Hobart,Australia,AUS,ausMT20,ausFT20
-5aus83,Manuka Oval,Canberra,Australia,AUS,ausMT20,ausFT20
-6aus84,Sydney Cricket Ground,Sydney,Australia,AUS,ausMT20,ausFT20
-7aus85,Allan Border Field,Brisbane,Australia,AUS,ausMT20,ausFT20
-8aus86,Adelaide Oval,Adelaide,Australia,AUS,ausMT20,ausFT20
-9aus87,Sydney Showground Stadium,Sydney,Australia,AUS,ausMT20,ausFT20
-10aus88,Perth Stadium,Perth,Australia,AUS,ausMT20,ausFT20
-11aus89,North Sydney Oval,Sydney,Australia,AUS,ausMT20,ausFT20
-12aus90,Melbourne Cricket Ground,Melbourne,Australia,AUS,ausMT20,ausFT20
-13aus91,Stadium Australia,Sydney,Australia,AUS,ausMT20,ausFT20
-14aus92,Brisbane Cricket Ground,Brisbane,Australia,AUS,ausMT20,ausFT20
-15aus93,Kerrydale Oval,Gold Coast,Australia,AUS,ausMT20,ausFT20
-16aus94,Carrara Oval,Carrara,Australia,AUS,ausMT20,ausFT20
-17aus95,Great Barrier Reef Arena,Mackay,Australia,AUS,ausMT20,ausFT20
-18aus96,Junction Oval,Melbourne,Australia,AUS,ausMT20,ausFT20
-1lka97,R.Premadasa Stadium,Colombo,Sri Lanka,LKA,lkaMT20,lkaFT20
-2lka98,Chilaw Marians Cricket Club Ground,Katunayake,Sri Lanka,LKA,lkaMT20,lkaFT20
-3lka99,Pallekele International Cricket Stadium,Kandy,Sri Lanka,LKA,lkaMT20,lkaFT20
-4lka100,P Sara Oval,Colombo,Sri Lanka,LKA,lkaMT20,lkaFT20
-5lka101,Sinhalese Sports Club Ground,Colombo,Sri Lanka,LKA,lkaMT20,lkaFT20
-6lka102,Rangiri Dambulla International Stadium,Dambulla,Sri Lanka,LKA,lkaMT20,lkaFT20
-7lka103,Galle International Stadium,Galle,Sri Lanka,LKA,lkaMT20,lkaFT20
-8lka104,Colts Cricket Club Ground,Colombo,Sri Lanka,LKA,lkaMT20,lkaFT20
-9lka105,Mahinda Rajapaksa International Cricket Stadium,Hambantota,Sri Lanka,LKA,lkaMT20,lkaFT20
-10lka106,Mercantile Cricket Association Ground,Colombo,Sri Lanka,LKA,lkaMT20,lkaFT20
-11lka107,Colombo Cricket Club Ground,Colombo,Sri Lanka,LKA,lkaMT20,lkaFT20
-12lka108,Nondescripts Cricket Club Ground,Colombo,Sri Lanka,LKA,lkaMT20,lkaFT20
-1wal109,Sophia Gardens,Cardiff,Wales,WAL,engMT20,engFT20
-1usa110,Woodley Cricket Field,Los Angeles,United States of America,USA,usaMT20,usaFT20
-2usa111,Nassau County International Cricket Stadium,New York,United States of America,USA,usaMT20,usaFT20
-3usa112,Central Broward Regional Park Stadium Turf Ground,Lauderhill,United States of America,USA,usaMT20,usaFT20
-4usa113,Prairie View Cricket Complex,Houston,United States of America,USA,usaMT20,usaFT20
-5usa114,Grand Prairie Stadium,Dallas,United States of America,USA,usaMT20,usaFT20
-1guy115,Providence Stadium,Providence,Guyana,GUY,wiMT20,wiFT20
-1irl116,The Village,Dublin,Ireland,IRL,irlMT20,irlFT20
-2irl117,YMCA Cricket Club,Dublin,Ireland,IRL,irlMT20,irlFT20
-3irl118,Castle Avenue,Dublin,Ireland,IRL,irlMT20,irlFT20
-4irl119,Pembroke Cricket Club,Dublin,Ireland,IRL,irlMT20,irlFT20
-5irl120,Sydney Parade,Dublin,Ireland,IRL,irlMT20,irlFT20
-16eng121,County Ground,Northampton,England,ENG,engMT20,engFT20
+venue_id,venue_name,city,nation,nation_code,home_team_id_1,home_team_id_2,latitude,longitude,timezone,utc_offset_str,elevation,hemisphere,continent,admin_area_1,admin_area_2
+1ind1,MA Chidambaram Stadium,Chennai,India,IND,indMT20,indFT20,13.0627521,80.2784304,Asia/Kolkata,+05:30,9.0,N,Asia,Tamil Nadu,Chennai
+2ind2,Dr DY Patil Sports Academy,Mumbai,India,IND,indMT20,indFT20,19.0412987,73.0263854,Asia/Kolkata,+05:30,10.0,N,Asia,Maharashtra,Thane
+3ind3,Shrimant Madhavrao Scindia Cricket Stadium,Gwalior,India,IND,indMT20,indFT20,26.2347456,78.1254686,Asia/Kolkata,+05:30,214.0,N,Asia,Madhya Pradesh,Gwalior
+4ind4,Rajiv Gandhi International Stadium,Hyderabad,India,IND,indMT20,indFT20,17.4059481,78.5505638,Asia/Kolkata,+05:30,501.0,N,Asia,Telangana,Rangareddi
+5ind5,Arun Jaitley Stadium,Delhi,India,IND,indMT20,indFT20,28.6377017,77.2431069,Asia/Kolkata,+05:30,210.0,N,Asia,NCT,New Delhi
+1jam6,Sabina Park,Kingston,Jamaica,JAM,wiMT20,wiFT20,17.9779974,-76.7825867,America/Jamaica,-05:00,35.0,N,America,Kingston,
+1pak7,Gaddafi Stadium,Lahore,Pakistan,PAK,pakMT20,pakFT20,31.5133615,74.3334644,Asia/Karachi,+05:00,211.0,N,Asia,Punjab,
+2pak8,National Stadium,Karachi,Pakistan,PAK,pakMT20,pakFT20,24.8952212,67.0816725,Asia/Karachi,+05:00,49.0,N,Asia,Sindh,Karachi District
+3pak9,Southend Club Cricket Stadium,Karachi,Pakistan,PAK,pakMT20,pakFT20,24.795818,67.056391,Asia/Karachi,+05:00,5.0,N,Asia,Sindh,Karachi District
+4pak10,Rawalpindi Cricket Stadium,Rawalpindi,Pakistan,PAK,pakMT20,pakFT20,33.6511816,73.07598,Asia/Karachi,+05:00,505.0,N,Asia,Punjab,
+5pak11,Multan Cricket Stadium,Multan,Pakistan,PAK,pakMT20,pakFT20,30.170783,71.5247746,Asia/Karachi,+05:00,124.0,N,Asia,Punjab,
+1zaf12,Boland Park,Paarl,South Africa,ZAF,zafMT20,zafFT20,-33.7406522,18.9974819,Africa/Johannesburg,+02:00,151.0,S,Africa,Western Cape,Cape Winelands District Municipality
+2zaf13,Diamond Oval,Kimberley,South Africa,ZAF,zafMT20,zafFT20,-28.7426421,24.7967746,Africa/Johannesburg,+02:00,1217.0,S,Africa,Northern Cape,Frances Baard District Municipality
+3zaf14,Mangaung Oval,Bloemfontein,South Africa,ZAF,zafMT20,zafFT20,-29.116718,26.2052381,Africa/Johannesburg,+02:00,1401.0,S,Africa,Orange Free State,Mangaung Metropolitan Municipality
+4zaf15,The Wanderers Stadium,Johannesburg,South Africa,ZAF,zafMT20,zafFT20,-26.1311637,28.0574107,Africa/Johannesburg,+02:00,1626.0,S,Africa,Gauteng,City of Johannesburg Metropolitan Municipality
+5zaf16,St George's Park,Gqeberha,South Africa,ZAF,zafMT20,zafFT20,-33.966541,25.610185,Africa/Johannesburg,+02:00,73.0,S,Africa,Eastern Cape,Nelson Mandela Bay Metropolitan Municipality
+6zaf17,SuperSport Park,Centurion,South Africa,ZAF,zafMT20,zafFT20,-25.8596238,28.1956445,Africa/Johannesburg,+02:00,1421.0,S,Africa,Gauteng,City of Tshwane Metropolitan Municipality
+7zaf18,Senwes Park,Potchefstroom,South Africa,ZAF,zafMT20,zafFT20,-26.6954244,27.1002894,Africa/Johannesburg,+02:00,1340.0,S,Africa,North-West,Dr Kenneth Kaunda District Municipality
+8zaf19,Newlands,Cape Town,South Africa,ZAF,zafMT20,zafFT20,-33.9738546,18.4678094,Africa/Johannesburg,+02:00,28.0,S,Africa,Western Cape,City of Cape Town
+9zaf20,Kingsmead,Durban,South Africa,ZAF,zafMT20,zafFT20,-29.8495671,31.0277475,Africa/Johannesburg,+02:00,10.0,S,Africa,KwaZulu-Natal,eThekwini Metropolitan Municipality
+10zaf21,Willowmoore Park,Benoni,South Africa,ZAF,zafMT20,zafFT20,-26.1961933,28.317979,Africa/Johannesburg,+02:00,1646.0,S,Africa,Gauteng,Ekurhuleni Metropolitan Municipality
+11zaf22,Buffalo Park,East London,South Africa,ZAF,zafMT20,zafFT20,-33.0068371,27.9195264,Africa/Johannesburg,+02:00,34.0,S,Africa,Eastern Cape,Buffalo City Metropolitan Municipality
+12zaf23,City Oval,Pietermaritzburg,South Africa,ZAF,zafMT20,zafFT20,-29.610316,30.380784,Africa/Johannesburg,+02:00,634.0,S,Africa,KwaZulu-Natal,uMgungundlovu District Municipality
+13zaf24,Moses Mabhida Stadium,Durban,South Africa,ZAF,zafMT20,zafFT20,-29.8303371,31.0295691,Africa/Johannesburg,+02:00,11.0,S,Africa,KwaZulu-Natal,eThekwini Metropolitan Municipality
+14zaf25,LC de Villiers Oval,Pretoria,South Africa,ZAF,zafMT20,zafFT20,-25.750805,28.247086,Africa/Johannesburg,+02:00,1360.0,S,Africa,Gauteng,City of Tshwane Metropolitan Municipality
+1eng26,County Ground,Brighton & Hove,England,ENG,engMT20,engFT20,50.8310035,-0.1635398,Europe/London,+00:00,23.0,N,Europe,England,Brighton and Hove
+2eng27,Lord's,London,England,ENG,engMT20,engFT20,51.529432,-0.172859,Europe/London,+00:00,44.0,N,Europe,England,Greater London
+3eng28,The Rose Bowl,Southampton,England,ENG,engMT20,engFT20,50.924128,-1.322034,Europe/London,+00:00,46.0,N,Europe,England,Hampshire
+4eng29,Edgbaston,Birmingham,England,ENG,engMT20,engFT20,52.455857,-1.902529,Europe/London,+00:00,111.0,N,Europe,England,City and Borough of Birmingham
+5eng30,Trent Bridge,Nottingham,England,ENG,engMT20,engFT20,52.936887,-1.132121,Europe/London,+00:00,30.0,N,Europe,England,Nottinghamshire
+6eng31,Old Trafford,Manchester,England,ENG,engMT20,engFT20,53.456357,-2.286808,Europe/London,+00:00,30.0,N,Europe,England,Trafford
+7eng32,Arundel Castle Cricket Club Ground,Arundel,England,ENG,engMT20,engFT20,50.858572,-0.557736,Europe/London,+00:00,40.0,N,Europe,England,West Sussex
+8eng33,Riverside Ground,Chester-le-Street,England,ENG,engMT20,engFT20,54.8496667,-1.5609563,Europe/London,+00:00,10.0,N,Europe,England,County Durham
+9eng34,The Cooper Associates County Ground,Taunton,England,ENG,engMT20,engFT20,51.018911,-3.100876,Europe/London,+00:00,15.0,N,Europe,England,Somerset
+10eng35,Kennington Oval,London,England,ENG,engMT20,engFT20,51.483728,-0.114911,Europe/London,+00:00,13.0,N,Europe,England,Greater London
+11eng36,St Lawrence Ground,Canterbury,England,ENG,engMT20,engFT20,51.267457,1.091631,Europe/London,+00:00,36.0,N,Europe,England,Kent
+12eng37,Headingley,Leeds,England,ENG,engMT20,engFT20,53.817671,-1.582084,Europe/London,+00:00,76.0,N,Europe,England,City and Borough of Leeds
+13eng38,Haslegrave Ground,Loughborough,England,ENG,engMT20,engFT20,52.7673311,-1.2301281,Europe/London,+00:00,55.0,N,Europe,England,Leicestershire
+14eng39,County Ground,Chelmsford,England,ENG,engMT20,engFT20,51.7315576,0.4689649,Europe/London,+00:00,24.0,N,Europe,England,Essex
+15eng40,County Ground,Bristol,England,ENG,engMT20,engFT20,51.4770612,-2.5843087,Europe/London,+00:00,55.0,N,Europe,England,Bristol
+1nzl41,AMI Stadium,Christchurch,New Zealand,NZL,nzlMT20,nzlFT20,-43.542261,172.654193,Pacific/Auckland,+13:00,3.0,S,Oceania,Canterbury,Christchurch City
+2nzl42,Sky Stadium,Wellington,New Zealand,NZL,nzlMT20,nzlFT20,-41.2730528,174.7858728,Pacific/Auckland,+13:00,10.0,S,Oceania,Wellington,Wellington City
+3nzl43,University Oval,Dunedin,New Zealand,NZL,nzlMT20,nzlFT20,-45.8657341,170.5255193,Pacific/Auckland,+13:00,9.0,S,Oceania,Otago,Dunedin City
+4nzl44,Eden Park,Auckland,New Zealand,NZL,nzlMT20,nzlFT20,-36.874985,174.744775,Pacific/Auckland,+13:00,38.0,S,Oceania,Auckland,Auckland
+5nzl45,Hagley Oval,Christchurch,New Zealand,NZL,nzlMT20,nzlFT20,-43.5344119,172.618646,Pacific/Auckland,+13:00,4.0,S,Oceania,Canterbury,Christchurch City
+6nzl46,McLean Park,Napier,New Zealand,NZL,nzlMT20,nzlFT20,-39.5018431,176.9125267,Pacific/Auckland,+13:00,13.0,S,Oceania,Hawke's Bay,Napier City
+7nzl47,Bay Oval,Mount Maunganui,New Zealand,NZL,nzlMT20,nzlFT20,-37.6528558,176.1907126,Pacific/Auckland,+13:00,10.0,S,Oceania,Bay of Plenty,Tauranga City
+8nzl48,Seddon Park,Hamilton,New Zealand,NZL,nzlMT20,nzlFT20,-37.7867613,175.2742998,Pacific/Auckland,+13:00,46.0,S,Oceania,Waikato,Hamilton City
+9nzl49,Saxton Oval,Nelson,New Zealand,NZL,nzlMT20,nzlFT20,-41.3309414,173.2128396,Pacific/Auckland,+13:00,14.0,S,Oceania,Tasman,Tasman District
+10nzl50,Pukekura Park,New Plymouth,New Zealand,NZL,nzlMT20,nzlFT20,-39.062777,174.079292,Pacific/Auckland,+13:00,36.0,S,Oceania,Taranaki,New Plymouth District
+1bmu51,White Hill Field,Hog Bay,Bermuda,BMU,bmuMT20,bmuFT20,32.271763,-64.873785,Atlantic/Bermuda,-04:00,20.0,N,America,Hamilton city,
+11nzl52,Basin Reserve,Wellington,New Zealand,NZL,nzlMT20,nzlFT20,-41.3003599,174.7802545,Pacific/Auckland,+13:00,12.0,S,Oceania,Wellington,Wellington City
+12nzl53,John Davies Oval,Queenstown,New Zealand,NZL,nzlMT20,nzlFT20,-45.0160798,168.7385342,Pacific/Auckland,+13:00,358.0,S,Oceania,Otago,Queenstown-Lakes District
+1are54,Zayed Cricket Stadium,Abu Dhabi,United Arab Emirates,ARE,areMT20,areFT20,24.39656,54.540737,Asia/Dubai,+04:00,3.0,N,Asia,Abu Dhabi,
+2are55,ICC Academy Ground No 1,Dubai,United Arab Emirates,ARE,areMT20,areFT20,25.036574,55.227627,Asia/Dubai,+04:00,19.0,N,Asia,Dubai,
+3are56,Dubai International Cricket Stadium,Dubai,United Arab Emirates,ARE,areMT20,areFT20,25.0467384,55.219007,Asia/Dubai,+04:00,28.0,N,Asia,Dubai,
+4are57,Sharjah Cricket Stadium,Sharjah,United Arab Emirates,ARE,areMT20,areFT20,25.3308493,55.4208718,Asia/Dubai,+04:00,13.0,N,Asia,Ash Shariqah,
+5are58,Malek Cricket Ground,Ajman,United Arab Emirates,ARE,areMT20,areFT20,25.402684,55.560217,Asia/Dubai,+04:00,25.0,N,Asia,Ajman,
+6are59,ICC Academy Ground No 2,Dubai,United Arab Emirates,ARE,areMT20,areFT20,25.037763,55.228455,Asia/Dubai,+04:00,18.0,N,Asia,Dubai,
+7are60,Tolerance Oval,Abu Dhabi,United Arab Emirates,ARE,areMT20,areFT20,24.39701,54.5384896,Asia/Dubai,+04:00,3.0,N,Asia,Abu Dhabi,
+8are61,7he Sevens Stadium,Dubai,United Arab Emirates,ARE,areMT20,areFT20,24.998626,55.466277,Asia/Dubai,+04:00,84.0,N,Asia,Dubai,
+1zwe62,Harare Sports Club,Harare,Zimbabwe,ZWE,zweMT20,zweFT20,-17.81406,31.050903,Africa/Harare,+02:00,1497.0,S,Africa,Harare,
+2zwe63,Bulawayo Athletic Club,Bulawayo,Zimbabwe,ZWE,zweMT20,zweFT20,-20.164832,28.593515,Africa/Harare,+02:00,1346.0,S,Africa,Bulawayo,
+3zwe64,Old Hararians,Harare,Zimbabwe,ZWE,zweMT20,zweFT20,-17.814752,31.027965,Africa/Harare,+02:00,1472.0,S,Africa,Harare,
+4zwe65,Takashinga Sports Club,Harare,Zimbabwe,ZWE,zweMT20,zweFT20,-17.8876142,30.9904688,Africa/Harare,+02:00,1438.0,S,Africa,Harare,
+5zwe66,Queens Sports Club,Bulawayo,Zimbabwe,ZWE,zweMT20,zweFT20,-20.145104,28.58898,Africa/Harare,+02:00,1342.0,S,Africa,Bulawayo,
+1vct67,Arnos Vale Ground,Kingstown,Saint Vincent and the Grenadines,VCT,wiMT20,wiFT20,13.141858,-61.211822,America/St_Vincent,-04:00,4.0,N,America,Saint George,
+1atg68,Coolidge Cricket Ground,Coolidge,Antigua and Barbuda,ATG,wiMT20,wiFT20,17.140955,-61.794785,America/Antigua,-04:00,19.0,N,America,Saint George,
+2atg69,Sir Vivian Richards Stadium,North Sound,Antigua and Barbuda,ATG,wiMT20,wiFT20,17.103277,-61.784919,America/Antigua,-04:00,7.0,N,America,Saint Peter,
+1lca70,Daren Sammy National Cricket Stadium,Gros Islet,Saint Lucia,LCA,wiMT20,wiFT20,14.070506,-60.931718,America/St_Lucia,-04:00,12.0,N,America,Gros-Islet,
+1brb71,Kensington Oval,Bridgetown,Barbados,BRB,wiMT20,wiFT20,13.105027,-59.622529,America/Barbados,-04:00,5.0,N,America,Saint Michael,
+1bgd72,Shere Bangla National Stadium,Dhaka,Bangladesh,BGD,bgdMT20,bgdFT20,23.806924,90.363594,Asia/Dhaka,+06:00,13.0,N,Asia,Dhaka,
+2bgd73,Sylhet International Cricket Stadium,Sylhet,Bangladesh,BGD,bgdMT20,bgdFT20,24.9209101,91.8685606,Asia/Dhaka,+06:00,37.0,N,Asia,Sylhet,
+3bgd74,Sheikh Abu Naser Stadium,Khulna,Bangladesh,BGD,bgdMT20,bgdFT20,22.8445371,89.5373893,Asia/Dhaka,+06:00,5.0,N,Asia,Khulna,
+4bgd75,Zahur Ahmed Chowdhury Stadium,Chattogram,Bangladesh,BGD,bgdMT20,bgdFT20,22.35585,91.767739,Asia/Dhaka,+06:00,9.0,N,Asia,Chittagong,
+5bgd76,Khan Shaheb Osman Ali Stadium,Fatullah,Bangladesh,BGD,bgdMT20,bgdFT20,23.6502114,90.488824,Asia/Dhaka,+06:00,6.0,N,Asia,Dhaka,
+1tto77,Brian Lara Stadium,Tarouba,Trinidad and Tobago,TTO,wiMT20,wiFT20,10.296167,-61.431155,America/Caracas,-04:00,28.0,N,America,City of San Fernando,
+2tto78,Queen's Park Oval,Port of Spain,Trinidad and Tobago,TTO,wiMT20,wiFT20,10.667411,-61.5237463,America/Grenada,-04:00,17.0,N,America,City of Port of Spain,
+1aus79,Simonds Stadium,Geelong,Australia,AUS,ausMT20,ausFT20,-38.158141,144.354596,Australia/Melbourne,+11:00,26.0,S,Oceania,Victoria,Greater Geelong
+2aus80,W.A.C.A. Ground,Perth,Australia,AUS,ausMT20,ausFT20,-31.959849,115.879628,Australia/Perth,+08:00,18.0,S,Oceania,Western Australia,City of Perth
+3aus81,Riverway Stadium,Townsville,Australia,AUS,ausMT20,ausFT20,-19.3176159,146.7318618,Australia/Brisbane,+10:00,19.0,S,Oceania,Queensland,Townsville
+4aus82,Bellerive Oval,Hobart,Australia,AUS,ausMT20,ausFT20,-42.8772952,147.3736444,Australia/Hobart,+11:00,16.0,S,Oceania,Tasmania,Clarence
+5aus83,Manuka Oval,Canberra,Australia,AUS,ausMT20,ausFT20,-35.3179533,149.1347561,Australia/Sydney,+11:00,576.0,S,Oceania,Australian Capital Territory,
+6aus84,Sydney Cricket Ground,Sydney,Australia,AUS,ausMT20,ausFT20,-33.8914241,151.2247484,Australia/Sydney,+11:00,48.0,S,Oceania,New South Wales,Woollahra
+7aus85,Allan Border Field,Brisbane,Australia,AUS,ausMT20,ausFT20,-27.4351989,153.0462885,Australia/Brisbane,+10:00,12.0,S,Oceania,Queensland,Brisbane
+8aus86,Adelaide Oval,Adelaide,Australia,AUS,ausMT20,ausFT20,-34.9155596,138.5962772,Australia/Adelaide,+10:30,26.0,S,Oceania,South Australia,Adelaide
+9aus87,Sydney Showground Stadium,Sydney,Australia,AUS,ausMT20,ausFT20,-33.8431422,151.0676444,Australia/Sydney,+11:00,19.0,S,Oceania,New South Wales,Canada Bay
+10aus88,Perth Stadium,Perth,Australia,AUS,ausMT20,ausFT20,-31.951137,115.889005,Australia/Perth,+08:00,7.0,S,Oceania,Western Australia,Belmont
+11aus89,North Sydney Oval,Sydney,Australia,AUS,ausMT20,ausFT20,-33.831888,151.2093253,Australia/Sydney,+11:00,90.0,S,Oceania,New South Wales,North Sydney
+12aus90,Melbourne Cricket Ground,Melbourne,Australia,AUS,ausMT20,ausFT20,-37.819909,144.983225,Australia/Melbourne,+11:00,9.0,S,Oceania,Victoria,Melbourne
+13aus91,Stadium Australia,Sydney,Australia,AUS,ausMT20,ausFT20,-33.8471082,151.0633848,Australia/Sydney,+11:00,30.0,S,Oceania,New South Wales,Canada Bay
+14aus92,Brisbane Cricket Ground,Brisbane,Australia,AUS,ausMT20,ausFT20,-27.485885,153.0379847,Australia/Brisbane,+10:00,6.0,S,Oceania,Queensland,Brisbane
+15aus93,Kerrydale Oval,Gold Coast,Australia,AUS,ausMT20,ausFT20,-28.0754674,153.3886916,Australia/Brisbane,+10:00,5.0,S,Oceania,Queensland,Gold Coast
+16aus94,Carrara Oval,Carrara,Australia,AUS,ausMT20,ausFT20,-28.00632,153.367092,Australia/Brisbane,+10:00,1.0,S,Oceania,Queensland,Gold Coast
+17aus95,Great Barrier Reef Arena,Mackay,Australia,AUS,ausMT20,ausFT20,-21.159464,149.186285,Australia/Brisbane,+10:00,0.0,S,Oceania,Queensland,Mackay
+18aus96,Junction Oval,Melbourne,Australia,AUS,ausMT20,ausFT20,-37.8559903,144.9801966,Australia/Melbourne,+11:00,21.0,S,Oceania,Victoria,Port Phillip
+1lka97,R.Premadasa Stadium,Colombo,Sri Lanka,LKA,lkaMT20,lkaFT20,6.9399983,79.8722901,Asia/Colombo,+05:30,3.0,N,Asia,Western,
+2lka98,Chilaw Marians Cricket Club Ground,Katunayake,Sri Lanka,LKA,lkaMT20,lkaFT20,7.164952,79.888161,Asia/Colombo,+05:30,15.0,N,Asia,Western,
+3lka99,Pallekele International Cricket Stadium,Kandy,Sri Lanka,LKA,lkaMT20,lkaFT20,7.2806408,80.7224634,Asia/Colombo,+05:30,452.0,N,Asia,Central,
+4lka100,P Sara Oval,Colombo,Sri Lanka,LKA,lkaMT20,lkaFT20,6.918937,79.884169,Asia/Colombo,+05:30,10.0,N,Asia,Western,
+5lka101,Sinhalese Sports Club Ground,Colombo,Sri Lanka,LKA,lkaMT20,lkaFT20,6.905885,79.869431,Asia/Colombo,+05:30,9.0,N,Asia,Western,
+6lka102,Rangiri Dambulla International Stadium,Dambulla,Sri Lanka,LKA,lkaMT20,lkaFT20,7.859524,80.63403,Asia/Colombo,+05:30,169.0,N,Asia,Central,
+7lka103,Galle International Stadium,Galle,Sri Lanka,LKA,lkaMT20,lkaFT20,6.0315586,80.2160326,Asia/Colombo,+05:30,6.0,N,Asia,Southern,
+8lka104,Colts Cricket Club Ground,Colombo,Sri Lanka,LKA,lkaMT20,lkaFT20,6.8862978,79.8675971,Asia/Colombo,+05:30,4.0,N,Asia,Western,
+9lka105,Mahinda Rajapaksa International Cricket Stadium,Hambantota,Sri Lanka,LKA,lkaMT20,lkaFT20,6.353582,81.026869,Asia/Colombo,+05:30,82.0,N,Asia,Southern,
+10lka106,Mercantile Cricket Association Ground,Colombo,Sri Lanka,LKA,lkaMT20,lkaFT20,6.907864,79.870342,Asia/Colombo,+05:30,11.0,N,Asia,Western,
+11lka107,Colombo Cricket Club Ground,Colombo,Sri Lanka,LKA,lkaMT20,lkaFT20,6.8862978,79.8675971,Asia/Colombo,+05:30,4.0,N,Asia,Western,
+12lka108,Nondescripts Cricket Club Ground,Colombo,Sri Lanka,LKA,lkaMT20,lkaFT20,6.907838,79.867817,Asia/Colombo,+05:30,5.0,N,Asia,Western,
+1wal109,Sophia Gardens,Cardiff,Wales,WAL,engMT20,engFT20,51.487354,-3.191429,Europe/London,+00:00,10.0,N,Europe,Wales,Cardiff
+1usa110,Woodley Cricket Field,Los Angeles,United States of America,USA,usaMT20,usaFT20,34.177951,-118.475685,America/Los_Angeles,-08:00,216.0,N,America,California,Los Angeles County
+2usa111,Nassau County International Cricket Stadium,New York,United States of America,USA,usaMT20,usaFT20,40.730129,-73.575472,America/New_York,-05:00,24.0,N,America,New York,Nassau County
+3usa112,Central Broward Regional Park Stadium Turf Ground,Lauderhill,United States of America,USA,usaMT20,usaFT20,26.14006,-80.198673,America/New_York,-05:00,7.0,N,America,Florida,Broward County
+4usa113,Prairie View Cricket Complex,Houston,United States of America,USA,usaMT20,usaFT20,30.087393,-96.007753,America/Chicago,-06:00,76.0,N,America,Texas,Waller County
+5usa114,Grand Prairie Stadium,Dallas,United States of America,USA,usaMT20,usaFT20,32.7683435,-96.9860041,America/Chicago,-06:00,132.0,N,America,Texas,Dallas County
+1guy115,Providence Stadium,Providence,Guyana,GUY,wiMT20,wiFT20,6.7577816,-58.1778885,America/Guyana,-04:00,1.0,N,America,Demerara-Mahaica,
+1irl116,The Village,Dublin,Ireland,IRL,irlMT20,irlFT20,53.448784,-6.160269,Europe/Dublin,+00:00,16.0,N,Europe,Leinster,
+2irl117,YMCA Cricket Club,Dublin,Ireland,IRL,irlMT20,irlFT20,53.330196,-6.219898,Europe/Dublin,+00:00,3.0,N,Europe,Leinster,
+3irl118,Castle Avenue,Dublin,Ireland,IRL,irlMT20,irlFT20,53.368061,-6.207158,Europe/Dublin,+00:00,17.0,N,Europe,Leinster,
+4irl119,Pembroke Cricket Club,Dublin,Ireland,IRL,irlMT20,irlFT20,53.325001,-6.215088,Europe/Dublin,+00:00,0.0,N,Europe,Leinster,
+5irl120,Sydney Parade,Dublin,Ireland,IRL,irlMT20,irlFT20,53.324942,-6.215126,Europe/Dublin,+00:00,-1.0,N,Europe,Leinster,
+16eng121,County Ground,Northampton,England,ENG,engMT20,engFT20,52.2483484,-0.8711225,Europe/London,+00:00,97.0,N,Europe,England,Northamptonshire

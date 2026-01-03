@@ -18,7 +18,7 @@ class Config:
     PLAYERS_CSV_PATH: str = "path/to/players_info_sample.csv"
     OFFICIALS_CSV_PATH: str = "path/to/officials_sample.csv"
 
-    # --- ICC Scraper Settings ---
+    # --- Scraper/API Settings ---
     USER_AGENT: str = "give-yourself-user-agent"
     SCRAPE_START_YEAR: int = 2024
     SCRAPE_START_MONTH: int = 1
