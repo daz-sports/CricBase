@@ -42,6 +42,9 @@ Tools used:
       - seaborn
       - statsmodels
  - SQLite
+ - Jupyter Notebooks
+ - APIs: [open-meteo](https://open-meteo.com/en/docs) and [opentopography](https://opentopography.org/)
+
 
 #### Database Construction Instructions
 1. Clone this repository.
