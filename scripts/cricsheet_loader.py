@@ -14,7 +14,6 @@ class BaseLoader:
 
     def __init__(self, db_name: str):
         self.db_name = db_name
-        self.scraper = ICCScraper()
 
     def _execute_many(self, sql: str, data: List[Tuple], table_name: str):
         if not data:
@@ -34,9 +33,9 @@ class BaseLoader:
 class MatchesLoader(BaseLoader):
     """Loads data for a single match into the matches table."""
 
-    def __init__(self, db_name: str):
+    def __init__(self, db_name: str, config):
         super().__init__(db_name)
-        self.input_manager = InputManager(db_name)
+        self.input_manager = InputManager(db_name, config)
 
     def load_match(self, df: pd.DataFrame, maps: Dict):
         if df.empty:
@@ -175,6 +174,10 @@ class DeliveriesLoader(BaseLoader):
 class MissingMatchesLoader(BaseLoader):
     """Loads missing matches into the database."""
 
+    def __init__(self, db_name: str, user_agent: str):
+        super().__init__(db_name)
+        self.scraper = ICCScraper(user_agent)
+
     def update_missing_matches(self, start_y: int, start_m: int, end_y: int, end_m: int):
         logging.info("--- Starting Missing Matches Check ---")
 
@@ -308,7 +311,7 @@ class MissingMatchesLoader(BaseLoader):
         sql = f"INSERT INTO missing_matches ({', '.join(db_columns)}) VALUES ({', '.join(['?'] * len(db_columns))})"
         self._execute_many(sql, data_to_insert, 'missing_matches')
 
-def load_all_cricsheet_data(db_name: str, cricsheet_dir: str, additional_dir: str, start_y: int, start_m: int, end_y: int, end_m: int):
+def load_all_cricsheet_data(config, db_name: str, cricsheet_dir: str, additional_dir: str, start_y: int, start_m: int, end_y: int, end_m: int, user_agent: str):
     """
     Orchestrates the loading process for a directory of Cricsheet files.
     """
@@ -328,7 +331,7 @@ def load_all_cricsheet_data(db_name: str, cricsheet_dir: str, additional_dir: st
     players_ext = MatchPlayersExtractor()
     deliveries_ext = DeliveriesExtractor()
 
-    matches_loader = MatchesLoader(db_name)
+    matches_loader = MatchesLoader(db_name, config)
     metadata_loader = MetadataLoader(db_name)
     players_loader = MatchPlayersLoader(db_name)
     deliveries_loader = DeliveriesLoader(db_name)
@@ -378,5 +381,5 @@ def load_all_cricsheet_data(db_name: str, cricsheet_dir: str, additional_dir: st
         logging.info("All Cricsheet data loading tasks complete.")
 
         # Run the Missing Matches Check
-        missing_loader = MissingMatchesLoader(db_name)
+        missing_loader = MissingMatchesLoader(db_name, user_agent)
         missing_loader.update_missing_matches(start_y, start_m, end_y, end_m)
