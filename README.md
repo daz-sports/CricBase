@@ -50,8 +50,7 @@ Tools used:
 3. Run the 'running.py' script in the 'scripts' folder. Split screen your IDE with a web browser if possible.
 4. Explore the database!
 
-The Cricsheet data is made available under the [Open Data Commons Attribution Licence (ODC-By) v1.0](https://opendatacommons.org/licenses/by/1-0/)
-Missing matches discovery assisted by public record data from the ICC schedule.
+The Cricsheet data is made available under the [Open Data Commons Attribution Licence (ODC-By) v1.0](https://opendatacommons.org/licenses/by/1-0/). Missing matches discovery assisted by public record data from the ICC schedule.
 
 *Note on the ICC scraper*:
 This tool is intended for research and educational purposes only. It uses publicly available API endpoints to find data gaps in the database. Please respect the ICC's infrastructure by maintaining a reasonable rate limit.
