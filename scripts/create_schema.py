@@ -71,10 +71,19 @@ class CricketDatabase:
                         venue_id           TEXT PRIMARY KEY,
                         venue_name         TEXT NOT NULL,
                         city               TEXT NOT NULL,
+                        admin_area_1       TEXT,
+                        admin_area_2       TEXT,
                         nation             TEXT NOT NULL,
                         nation_code        TEXT NOT NULL,
+                        continent          TEXT NOT NULL,
+                        hemisphere         TEXT CHECK (hemisphere IN ('N', 'S')),
                         home_team_id_1     TEXT REFERENCES teams (team_id),
                         home_team_id_2     TEXT REFERENCES teams (team_id),
+                        latitude           REAL,
+                        longitude          REAL,
+                        elevation          INTEGER,
+                        timezone           TEXT,
+                        utc_offset_str     TEXT,
                         created_at         TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
                         updated_at         TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
                         UNIQUE (venue_name, city, nation)
@@ -777,7 +786,7 @@ class CricketDatabase:
     }
 
     def _init_database(self):
-        """Initialize database with schema version tracking"""
+        """Initialise database with schema version tracking"""
         with db_connection(self.db_name) as conn:
             cursor = conn.cursor()
 
