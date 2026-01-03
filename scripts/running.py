@@ -42,13 +42,15 @@ def main(config: Config, full_reset: bool = False):
             raise BuildError(f"Cricsheet directory not found at: {config.CRICSHEET_JSON_DIR}")
 
         load_all_cricsheet_data(
+            config,
             config.DB_NAME,
             config.CRICSHEET_JSON_DIR,
             config.ADDITIONAL_JSON_DIR,
             config.SCRAPE_START_YEAR,
             config.SCRAPE_START_MONTH,
             config.SCRAPE_END_YEAR,
-            config.SCRAPE_END_MONTH
+            config.SCRAPE_END_MONTH,
+            config.USER_AGENT
         )
 
         logging.info("Cricsheet data loaded successfully.")
