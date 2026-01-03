@@ -5,16 +5,15 @@ import logging
 import time
 import random
 from typing import Dict, List, Tuple
-from config import Config
 
 class ICCScraper:
     """Handles scraping the ICC website for T20I matches."""
 
-    def __init__(self, config: Config):
+    def __init__(self, user_agent: str = None):
         self.team_map = {}
         self.session = requests.Session()
         self.session.headers.update({
-            "User-Agent": config.USER_AGENT
+            "User-Agent": user_agent
         })
 
     def _create_months_list(self, start_year, start_month, end_year, end_month) -> List[Tuple[int, int]]:
