@@ -15,7 +15,7 @@ The 'notebooks' folder contains a selection of analyses possible with this sampl
 
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/daz-sports/CricBase/main?urlpath=lab/tree/notebooks)
 
-The database contains match information, ball-by-ball data for each innings, and players for each match. This is supplemented by player, match official, venue, and team profiles (data collected manually from espncricinfo.com). It also contains a record of official T20 international matches not included in the database. Finally, it includes some metadata-related tables.
+The database contains match information, ball-by-ball data for each innings, and players for each match (from Cricsheet). This is supplemented by player, match official, venue, and team profiles (data collected manually from espncricinfo.com and geospatial packages). It also contains a record of official T20 international matches not included in the database. Finally, it includes some metadata-related tables.
 
 Tools used:
  - Python
@@ -32,10 +32,13 @@ Tools used:
       - urllib
       - webbrowser
    - Third-party packages:
+      - country_converter
+      - geopy
       - matplotlib
       - numpy
       - pandas
       - requests
+      - reverse_geocoder
       - seaborn
       - statsmodels
  - SQLite
