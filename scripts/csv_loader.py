@@ -147,7 +147,7 @@ class VenuesLoader:
         self.db_name = db_name
 
     def _validate_venues_data(self, df: pd.DataFrame) -> bool:
-        required_columns = ['venue_id', 'venue_name', 'city', 'nation', 'nation_code']
+        required_columns = ['venue_id', 'venue_name', 'city', 'nation', 'continent', 'nation_code']
         if not all(column in df.columns for column in required_columns):
             logging.error(f"Venues CSV is missing required columns. Found: {list(df.columns)}, Required: {required_columns}")
             return False
@@ -162,6 +162,16 @@ class VenuesLoader:
         logging.info("Starting to load venue data...")
         try:
             df = pd.read_csv(csv_path, na_filter=False, dtype=str)
+
+            nullable_string_cols = [
+                'admin_area_1', 'admin_area_2', 'hemisphere', 'home_team_id_1', 'home_team_id_2', 'latitude',
+                'longitude', 'elevation', 'timezone', 'utc_offset_str'
+            ]
+
+            for col in nullable_string_cols:
+                if col in df.columns:
+                    df[col] = df[col].replace(['', 'NaN'], None)
+
         except FileNotFoundError as e:
             logging.critical(f"Failed to read {csv_path}: {e}")
             raise BuildError(e)
@@ -170,8 +180,9 @@ class VenuesLoader:
             raise BuildError("Venues CSV validation failed.")
 
         db_columns = [
-            'venue_id', 'venue_name', 'city', 'nation',
-            'nation_code', 'home_team_id_1', 'home_team_id_2'
+            'venue_id', 'venue_name', 'city', 'admin_area_1', 'admin_area_2', 'nation', 'nation_code', 'continent',
+            'hemisphere', 'home_team_id_1', 'home_team_id_2', 'latitude', 'longitude', 'elevation', 'timezone',
+            'utc_offset_str'
         ]
 
         venues_to_insert: List[Tuple] = []
@@ -309,6 +320,7 @@ class PlayersLoader:
                 'birth_place', 'birth_nation', 'bat_hand', 'bowl_hand', 'bowl_style',
                 'previous_nation_1', 'previous_nation_2'
             ]
+
             for col in nullable_string_cols:
                 if col in df.columns:
                     df[col] = df[col].replace(['', 'NaN'], None)
