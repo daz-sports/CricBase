@@ -8,6 +8,7 @@ from cricsheet_loader import load_all_cricsheet_data
 def main(config: Config, full_reset: bool = False):
     """
     Runs the database build process.
+    :param config: The build configuration object.
     :param full_reset: If True, wipes the DB and starts fresh (or builds it if it doesn't exist).
     If False, updates existing DB.
     """
@@ -54,7 +55,7 @@ def main(config: Config, full_reset: bool = False):
         )
 
         logging.info("Cricsheet data loaded successfully.")
-
+        db_manager.update_player_nations()
         logging.info("[STEP 4/4] Verifying database integrity...")
         db_manager.verify_data_integrity()
         logging.info("Database integrity verified.")
