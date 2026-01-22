@@ -65,6 +65,10 @@ class MatchesLoader(BaseLoader):
         df['toss_winner_id'] = df['toss_winner'].map(active_team_map)
         df['winner_id'] = df['winner'].map(active_team_map)
 
+        for col in ['umpire1_id', 'umpire2_id', 'tv_umpire_id', 'match_referee_id', 'reserve_umpire_id']:
+            if col in df.columns:
+                self.input_manager.verifying_official(df.loc[0, col])
+
         numeric_cols = ['overs', 'balls_per_over', 'team1_prepostpens', 'team2_prepostpens', 'by_runs',
                         'by_wickets', 'by_other', 'no_result', 'tie', 'super_over_pld', 'bowl_out', 'DLS',
                         'event_match_number']
@@ -112,11 +116,18 @@ class MetadataLoader(BaseLoader):
 class MatchPlayersLoader(BaseLoader):
     """Loads data for the match_players table."""
 
+    def __init__(self, db_name: str, config):
+        super().__init__(db_name)
+        self.input_manager = InputManager(db_name, config)
+
     def load_players(self, df: pd.DataFrame, maps: Dict):
 
         if df.empty:
             logging.info("No players recorded for this match. Skipping player load.")
             return
+
+        for identifier in df['identifier'].tolist():
+            self.input_manager.verifying_player(identifier)
 
         active_team_map = maps['teams_women'] if df.loc[0, 'sex'] == 'female' else maps['teams_men']
 
@@ -135,7 +146,7 @@ class DeliveriesLoader(BaseLoader):
     def load_deliveries(self, df: pd.DataFrame, maps: Dict):
 
         if df.empty:
-            logging.info("No players recorded for this match. Skipping player load.")
+            logging.info("No deliveries recorded for this match. Skipping delivery load.")
             return
 
         active_team_map = maps['teams_women'] if df.loc[0, 'sex'] == 'female' else maps['teams_men']
