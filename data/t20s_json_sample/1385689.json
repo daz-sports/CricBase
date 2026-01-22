@@ -1,0 +1,64 @@
+{
+  "meta": {
+    "data_version": "1.1.0",
+    "created": "2025-12-21",
+    "revision": 1
+  },
+  "info": {
+    "balls_per_over": 6,
+    "city": "Cardiff",
+    "dates": [
+      "2024-05-28"
+    ],
+    "event": {
+      "name": "Pakistan tour of England",
+      "match_number": 3
+    },
+    "gender": "male",
+    "match_type": "T20",
+    "match_type_number": "?",
+    "officials": {
+      "match_referees": [
+        "BC Broad"
+      ],
+      "reserve_umpires": [
+        "GD Lloyd"
+      ],
+      "tv_umpires": [
+        "MJ Saggers"
+      ],
+      "umpires": [
+        "M Burns",
+        "RJ Warren"
+      ]
+    },
+    "outcome": {
+      "result": "no result"
+    },
+    "overs": 20,
+    "player_of_match": [],
+    "players": {
+      "England": [],
+      "Pakistan": []
+    },
+    "registry": {
+      "people": {
+        "BC Broad": "d6a7dd38",
+        "GD Lloyd": "36e0770d",
+        "MJ Saggers": "402d5937",
+        "M Burns": "b3bd0666",
+        "RJ Warren": "9d1c62d7"
+      }
+    },
+    "season": "2024",
+    "team_type": "international",
+    "teams": [
+      "England",
+      "Pakistan"
+    ],
+    "toss": {},
+    "venue": "Sophia Gardens, Cardiff"
+  },
+  "innings": [],
+  "powerplays": []
+}

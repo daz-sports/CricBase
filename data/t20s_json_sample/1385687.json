@@ -1,0 +1,64 @@
+{
+  "meta": {
+    "data_version": "1.1.0",
+    "created": "2025-12-20",
+    "revision": 1
+  },
+  "info": {
+    "balls_per_over": 6,
+    "city": "Leeds",
+    "dates": [
+      "2024-05-22"
+    ],
+    "event": {
+      "name": "Pakistan tour of England",
+      "match_number": 1
+    },
+    "gender": "male",
+    "match_type": "T20",
+    "match_type_number": "?",
+    "officials": {
+      "match_referees": [
+        "BC Broad"
+      ],
+      "reserve_umpires": [
+        "MJ Saggers"
+      ],
+      "tv_umpires": [
+        "M Burns"
+      ],
+      "umpires": [
+        "AG Wharf",
+        "RJ Warren"
+      ]
+    },
+    "outcome": {
+      "result": "no result"
+    },
+    "overs": 20,
+    "player_of_match": [],
+    "players": {
+      "England": [],
+      "Pakistan": []
+    },
+    "registry": {
+      "people": {
+        "AG Wharf": "2e0fcc58",
+        "BC Broad": "d6a7dd38",
+        "MJ Saggers": "402d5937",
+        "M Burns": "b3bd0666",
+        "RJ Warren": "9d1c62d7"
+      }
+    },
+    "season": "2024",
+    "team_type": "international",
+    "teams": [
+      "England",
+      "Pakistan"
+    ],
+    "toss": {},
+    "venue": "Headingley, Leeds"
+  },
+  "innings": [],
+  "powerplays": []
+}
