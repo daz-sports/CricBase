@@ -217,7 +217,7 @@ class VenueAliasesLoader:
         self.db_name = db_name
 
     def _validate_venue_aliases_data(self, df: pd.DataFrame) -> bool:
-        required_columns = ['alias_name', 'alias_city', 'alias_nation', 'venue_id']
+        required_columns = ['alias_name', 'alias_city', 'venue_id']
         if not all(column in df.columns for column in required_columns):
             logging.error(f"Venue Aliases CSV is missing required columns. Found: {list(df.columns)}, Required: {required_columns}")
             return False
@@ -239,7 +239,7 @@ class VenueAliasesLoader:
             raise BuildError("Venue alias CSV validation failed.")
 
         db_columns = [
-            'alias_name', 'alias_city', 'alias_nation', 'venue_id',
+            'alias_name', 'alias_city', 'venue_id',
         ]
 
         venue_aliases_to_insert: List[Tuple] = []
@@ -274,7 +274,7 @@ class PlayersLoader:
     The usual process involves this table being populated with players from match_players and then
     the user being prompted for the player's information (e.g. birth_date etc.) for new players.
     To speed up the replication process, that data is provided in a CSV file for initial database creation.
-    The functionality to add new players is coming shortly (all full-member nation T20 players up to 2024
+    The functionality to add new players is included elsewhere (all full-member nation T20 players for 2024
     are already in the database).
     """
     def __init__(self, db_name: str):
