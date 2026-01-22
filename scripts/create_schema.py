@@ -1,6 +1,7 @@
 import sqlite3
 import logging
 import os
+import pandas as pd
 from datetime import datetime
 from config import Config
 from scripts.utils import BuildError
@@ -21,136 +22,135 @@ class CricketDatabase:
                           )
                           """,
         "registry": """
-                       CREATE TABLE IF NOT EXISTS registry
-                       (
-                           identifier           TEXT PRIMARY KEY,
-                           name                 TEXT NOT NULL,
-                           unique_name          TEXT NOT NULL UNIQUE,
-                           key_cricinfo         TEXT NOT NULL,
-                           key_cricinfo_2       TEXT,
-                           key_bcci             TEXT,
-                           key_bcci_2           TEXT,
-                           key_bigbash          TEXT,
-                           key_cricbuzz         TEXT,
-                           key_cricheroes       TEXT,
-                           key_crichq           TEXT,
-                           key_cricingif        TEXT,
-                           key_cricketarchive   TEXT,
-                           key_cricketarchive_2 TEXT,
-                           key_cricketworld     TEXT,
-                           key_nvplay           TEXT,
-                           key_nvplay_2         TEXT,
-                           key_opta             TEXT,
-                           key_opta_2           TEXT,
-                           key_pulse            TEXT,
-                           key_pulse_2          TEXT,
-                           created_at           TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-                           updated_at           TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-                           CHECK (length(identifier) > 0),
-                           CHECK (length(unique_name) > 0)
-                       )
-                       """,
+                    CREATE TABLE IF NOT EXISTS registry
+                    (
+                        identifier           TEXT PRIMARY KEY,
+                        name                 TEXT NOT NULL,
+                        unique_name          TEXT NOT NULL UNIQUE,
+                        key_cricinfo         TEXT NOT NULL,
+                        key_cricinfo_2       TEXT,
+                        key_bcci             TEXT,
+                        key_bcci_2           TEXT,
+                        key_bigbash          TEXT,
+                        key_cricbuzz         TEXT,
+                        key_cricheroes       TEXT,
+                        key_crichq           TEXT,
+                        key_cricingif        TEXT,
+                        key_cricketarchive   TEXT,
+                        key_cricketarchive_2 TEXT,
+                        key_cricketworld     TEXT,
+                        key_nvplay           TEXT,
+                        key_nvplay_2         TEXT,
+                        key_opta             TEXT,
+                        key_opta_2           TEXT,
+                        key_pulse            TEXT,
+                        key_pulse_2          TEXT,
+                        created_at           TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+                        updated_at           TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+                        CHECK (length(identifier) > 0),
+                        CHECK (length(unique_name) > 0)
+                    )
+                    """,
         "teams": """
                  CREATE TABLE IF NOT EXISTS teams
                  (
-                     team_id               TEXT PRIMARY KEY,
-                     format                TEXT NOT NULL,
-                     full_name             TEXT NOT NULL,
-                     short_name            TEXT,
-                     abbreviation          TEXT NOT NULL,
-                     nickname              TEXT,
-                     sex                   TEXT NOT NULL CHECK (sex IN ('male', 'female')),
-                     nation                TEXT NOT NULL,
-                     created_at            TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-                     updated_at            TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+                     team_id      TEXT PRIMARY KEY,
+                     format       TEXT NOT NULL,
+                     full_name    TEXT NOT NULL,
+                     short_name   TEXT,
+                     abbreviation TEXT NOT NULL,
+                     nickname     TEXT,
+                     sex          TEXT NOT NULL CHECK (sex IN ('male', 'female')),
+                     nation       TEXT NOT NULL,
+                     created_at   TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+                     updated_at   TIMESTAMP DEFAULT CURRENT_TIMESTAMP
                  )
-        """,
+                 """,
         "venues": """
-                    CREATE TABLE IF NOT EXISTS venues
-                    (
-                        venue_id           TEXT PRIMARY KEY,
-                        venue_name         TEXT NOT NULL,
-                        city               TEXT NOT NULL,
-                        admin_area_1       TEXT,
-                        admin_area_2       TEXT,
-                        nation             TEXT NOT NULL,
-                        nation_code        TEXT NOT NULL,
-                        continent          TEXT NOT NULL,
-                        hemisphere         TEXT CHECK (hemisphere IN ('N', 'S')),
-                        home_team_id_1     TEXT REFERENCES teams (team_id),
-                        home_team_id_2     TEXT REFERENCES teams (team_id),
-                        latitude           REAL,
-                        longitude          REAL,
-                        elevation          INTEGER,
-                        timezone           TEXT,
-                        utc_offset_str     TEXT,
-                        created_at         TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-                        updated_at         TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-                        UNIQUE (venue_name, city, nation)
-                    )
+                  CREATE TABLE IF NOT EXISTS venues
+                  (
+                      venue_id       TEXT PRIMARY KEY,
+                      venue_name     TEXT NOT NULL,
+                      city           TEXT NOT NULL,
+                      admin_area_1   TEXT,
+                      admin_area_2   TEXT,
+                      nation         TEXT NOT NULL,
+                      nation_code    TEXT NOT NULL,
+                      continent      TEXT NOT NULL,
+                      hemisphere     TEXT CHECK (hemisphere IN ('N', 'S')),
+                      home_team_id_1 TEXT REFERENCES teams (team_id),
+                      home_team_id_2 TEXT REFERENCES teams (team_id),
+                      latitude       REAL,
+                      longitude      REAL,
+                      elevation      INTEGER,
+                      timezone       TEXT,
+                      utc_offset_str TEXT,
+                      created_at     TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+                      updated_at     TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+                      UNIQUE (venue_name, city, nation)
+                  )
                   """,
         "venue_aliases": """
-                         CREATE TABLE IF NOT EXISTS venue_aliases 
+                         CREATE TABLE IF NOT EXISTS venue_aliases
                          (
-                             alias_name      TEXT NOT NULL,
-                             alias_city      TEXT NOT NULL,
-                             alias_nation    TEXT NOT NULL,
-                             venue_id        TEXT NOT NULL REFERENCES venues (venue_id),
-                             created_at      TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-                             updated_at      TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-                             PRIMARY KEY (alias_name, alias_city, alias_nation)
+                             alias_name TEXT NOT NULL,
+                             alias_city TEXT NOT NULL,
+                             venue_id   TEXT NOT NULL REFERENCES venues (venue_id),
+                             created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+                             updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+                             PRIMARY KEY (alias_name, alias_city)
                          )
                          """,
         "matches": """
-                       CREATE TABLE IF NOT EXISTS matches
-                       (
-                           match_id                  TEXT PRIMARY KEY,
-                           match_type                TEXT NOT NULL CHECK (match_type IN ('T20')),
-                           overs                     INTEGER,
-                           balls_per_over            INTEGER,
-                           powerplay_starti1         TEXT,
-                           powerplay_endi1           TEXT,
-                           powerplay_starti2         TEXT,
-                           powerplay_endi2           TEXT,
-                           team_type                 TEXT CHECK (team_type IN ('international')),
-                           sex                       TEXT NOT NULL CHECK (sex IN ('male', 'female')),
-                           start_date                DATE NOT NULL,
-                           end_date                  DATE NOT NULL,
-                           season                    TEXT,
-                           team1_id                  TEXT NOT NULL REFERENCES teams (team_id),
-                           team2_id                  TEXT NOT NULL REFERENCES teams (team_id),
-                           umpire1_id                TEXT REFERENCES registry (identifier),
-                           umpire2_id                TEXT REFERENCES registry (identifier),
-                           tv_umpire_id              TEXT REFERENCES registry (identifier),
-                           match_referee_id          TEXT REFERENCES registry (identifier),
-                           reserve_umpire_id         TEXT REFERENCES registry (identifier),
-                           toss_winner_id            TEXT REFERENCES teams (team_id),
-                           toss_decision             TEXT,
-                           team1_prepostpens         INTEGER   DEFAULT 0,
-                           team2_prepostpens         INTEGER   DEFAULT 0,
-                           winner_id                 TEXT REFERENCES teams(team_id),
-                           by_runs                   INTEGER CHECK (by_runs IN (0, 1)),
-                           victory_margin_runs       INTEGER CHECK ((victory_margin_runs >= 0) OR victory_margin_runs IS NULL),
-                           by_wickets                INTEGER CHECK (by_wickets IN (0, 1)),
-                           victory_margin_wickets    INTEGER CHECK ((victory_margin_wickets >= 1 AND victory_margin_wickets <= 10) OR victory_margin_wickets IS NULL),
-                           by_other                  INTEGER CHECK (by_other IN (0, 1)),
-                           victory_margin_other      TEXT,
-                           no_result                 INTEGER   DEFAULT 0 CHECK (no_result IN (0, 1)),
-                           tie                       INTEGER   DEFAULT 0 CHECK (tie IN (0, 1)),
-                           super_over_pld            INTEGER   DEFAULT 0 CHECK (super_over_pld IN (0, 1)),
-                           bowl_out                  INTEGER   DEFAULT 0 CHECK (bowl_out IN (0, 1)),
-                           DLS                       INTEGER   DEFAULT 0 CHECK (DLS IN (0, 1)),
-                           player_of_match_id        TEXT REFERENCES registry (identifier),
-                           event_name                TEXT,
-                           event_match_number        INTEGER,
-                           venue_id                  TEXT REFERENCES venues (venue_id),
-                           created_at                TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-                           updated_at                TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-                           CHECK (start_date <= end_date),
-                           CHECK (winner_id IS NULL OR winner_id = team1_id OR winner_id = team2_id),
-                           CHECK (team1_id != team2_id)
-                       )
-                       """,
+                   CREATE TABLE IF NOT EXISTS matches
+                   (
+                       match_id               TEXT PRIMARY KEY,
+                       match_type             TEXT NOT NULL CHECK (match_type IN ('T20')),
+                       overs                  INTEGER,
+                       balls_per_over         INTEGER,
+                       powerplay_starti1      TEXT,
+                       powerplay_endi1        TEXT,
+                       powerplay_starti2      TEXT,
+                       powerplay_endi2        TEXT,
+                       team_type              TEXT CHECK (team_type IN ('international')),
+                       sex                    TEXT NOT NULL CHECK (sex IN ('male', 'female')),
+                       start_date             DATE NOT NULL,
+                       end_date               DATE NOT NULL,
+                       season                 TEXT,
+                       team1_id               TEXT NOT NULL REFERENCES teams (team_id),
+                       team2_id               TEXT NOT NULL REFERENCES teams (team_id),
+                       umpire1_id             TEXT REFERENCES registry (identifier),
+                       umpire2_id             TEXT REFERENCES registry (identifier),
+                       tv_umpire_id           TEXT REFERENCES registry (identifier),
+                       match_referee_id       TEXT REFERENCES registry (identifier),
+                       reserve_umpire_id      TEXT REFERENCES registry (identifier),
+                       toss_winner_id         TEXT REFERENCES teams (team_id),
+                       toss_decision          TEXT,
+                       team1_prepostpens      INTEGER   DEFAULT 0,
+                       team2_prepostpens      INTEGER   DEFAULT 0,
+                       winner_id              TEXT REFERENCES teams (team_id),
+                       by_runs                INTEGER CHECK (by_runs IN (0, 1)),
+                       victory_margin_runs    INTEGER CHECK ((victory_margin_runs >= 0) OR victory_margin_runs IS NULL),
+                       by_wickets             INTEGER CHECK (by_wickets IN (0, 1)),
+                       victory_margin_wickets INTEGER CHECK ((victory_margin_wickets >= 1 AND victory_margin_wickets <= 10) OR victory_margin_wickets IS NULL),
+                       by_other               INTEGER CHECK (by_other IN (0, 1)),
+                       victory_margin_other   TEXT,
+                       no_result              INTEGER   DEFAULT 0 CHECK (no_result IN (0, 1)),
+                       tie                    INTEGER   DEFAULT 0 CHECK (tie IN (0, 1)),
+                       super_over_pld         INTEGER   DEFAULT 0 CHECK (super_over_pld IN (0, 1)),
+                       bowl_out               INTEGER   DEFAULT 0 CHECK (bowl_out IN (0, 1)),
+                       DLS                    INTEGER   DEFAULT 0 CHECK (DLS IN (0, 1)),
+                       player_of_match_id     TEXT REFERENCES registry (identifier),
+                       event_name             TEXT,
+                       event_match_number     INTEGER,
+                       venue_id               TEXT REFERENCES venues (venue_id),
+                       created_at             TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+                       updated_at             TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+                       CHECK (start_date <= end_date),
+                       CHECK (winner_id IS NULL OR winner_id = team1_id OR winner_id = team2_id),
+                       CHECK (team1_id != team2_id)
+                   )
+                   """,
         "match_metadata": """
                           CREATE TABLE IF NOT EXISTS match_metadata
                           (
@@ -164,156 +164,156 @@ class CricketDatabase:
                           )
                           """,
         "match_players": """
-                       CREATE TABLE IF NOT EXISTS match_players
-                       (
-                           match_id         TEXT NOT NULL REFERENCES matches (match_id),
-                           identifier       TEXT NOT NULL REFERENCES registry (identifier),
-                           team_id          TEXT NOT NULL REFERENCES teams (team_id),
-                           created_at       TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-                           updated_at       TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-                           PRIMARY KEY (match_id, identifier)
-                       )
-        """,
+                         CREATE TABLE IF NOT EXISTS match_players
+                         (
+                             match_id   TEXT NOT NULL REFERENCES matches (match_id),
+                             identifier TEXT NOT NULL REFERENCES registry (identifier),
+                             team_id    TEXT NOT NULL REFERENCES teams (team_id),
+                             created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+                             updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+                             PRIMARY KEY (match_id, identifier)
+                         )
+                         """,
         "players": """
                    CREATE TABLE IF NOT EXISTS players
-                       (
-                           identifier     TEXT PRIMARY KEY REFERENCES registry (identifier),
-                           unique_name    TEXT NOT NULL UNIQUE,
-                           full_name      TEXT NOT NULL,
-                           display_name   TEXT,
-                           sex            TEXT NOT NULL CHECK (sex IN ('male', 'female')),
-                           birth_date     DATE,
-                           birth_place    TEXT,
-                           birth_nation   TEXT,
-                           bat_hand       TEXT CHECK (bat_hand IN ('R', 'L') OR bat_hand IS NULL),
-                           bowl_hand      TEXT,
-                           bowl_style     TEXT,
-                           current_nation   TEXT NOT NULL,
-                           previous_nation_1  TEXT,
-                           previous_nation_2   TEXT,
-                           wicketkeeper     INTEGER CHECK (wicketkeeper IS NULL OR wicketkeeper = 1),
-                           death_date     DATE,
-                           created_at     TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-                           updated_at     TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-                           CHECK (previous_nation_1 IS NULL OR previous_nation_1 != current_nation),
-                           CHECK (previous_nation_2 IS NULL OR (previous_nation_2 != previous_nation_1 AND previous_nation_2 != current_nation))
-                       )
+                   (
+                       identifier        TEXT PRIMARY KEY REFERENCES registry (identifier),
+                       unique_name       TEXT NOT NULL UNIQUE,
+                       full_name         TEXT NOT NULL,
+                       display_name      TEXT,
+                       sex               TEXT NOT NULL CHECK (sex IN ('male', 'female')),
+                       birth_date        DATE,
+                       birth_place       TEXT,
+                       birth_nation      TEXT,
+                       bat_hand          TEXT CHECK (bat_hand IN ('R', 'L') OR bat_hand IS NULL),
+                       bowl_hand         TEXT,
+                       bowl_style        TEXT,
+                       current_nation    TEXT,
+                       previous_nation_1 TEXT,
+                       previous_nation_2 TEXT,
+                       wicketkeeper      INTEGER CHECK (wicketkeeper IS NULL OR wicketkeeper = 1),
+                       death_date        DATE,
+                       created_at        TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+                       updated_at        TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+                       CHECK (previous_nation_1 IS NULL OR previous_nation_1 != current_nation),
+                       CHECK (previous_nation_2 IS NULL OR (previous_nation_2 != previous_nation_1 AND previous_nation_2 != current_nation))
+                   )
                    """,
         "officials": """
-                     CREATE TABLE IF NOT EXISTS officials 
+                     CREATE TABLE IF NOT EXISTS officials
                      (
-                         identifier     TEXT PRIMARY KEY REFERENCES registry (identifier),
-                         unique_name    TEXT NOT NULL UNIQUE,
-                         full_name      TEXT NOT NULL,
-                         display_name   TEXT,
-                         sex            TEXT NOT NULL CHECK (sex IN ('male', 'female')),
-                         birth_date     DATE,
-                         birth_place    TEXT,
-                         birth_nation   TEXT,
-                         death_date     DATE,
-                         created_at     TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-                         updated_at     TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+                         identifier   TEXT PRIMARY KEY REFERENCES registry (identifier),
+                         unique_name  TEXT NOT NULL UNIQUE,
+                         full_name    TEXT NOT NULL,
+                         display_name TEXT,
+                         sex          TEXT NOT NULL CHECK (sex IN ('male', 'female')),
+                         birth_date   DATE,
+                         birth_place  TEXT,
+                         birth_nation TEXT,
+                         death_date   DATE,
+                         created_at   TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+                         updated_at   TIMESTAMP DEFAULT CURRENT_TIMESTAMP
                      )
-        """,
+                     """,
         "deliveries": """
-                       CREATE TABLE IF NOT EXISTS deliveries
-                       (
-                           match_id                 TEXT NOT NULL,
-                           innings                  INTEGER,
-                           overs                    INTEGER,
-                           balls                    INTEGER,
-                           batter_id                TEXT REFERENCES registry (identifier),
-                           bowler_id                TEXT REFERENCES registry (identifier),
-                           non_striker_id           TEXT REFERENCES registry (identifier),
-                           runs_batter              INTEGER CHECK (runs_batter >= 0),
-                           runs_extras              INTEGER CHECK (runs_extras >= 0),
-                           runs_total               INTEGER CHECK (runs_total >= 0),
-                           runs_batter_non_boundary INTEGER CHECK (
-                               runs_batter_non_boundary IS NULL OR
-                               (runs_batter_non_boundary IN (0, 1) AND runs_batter IN (4, 6))
-                               ),
-                           wickets                  INTEGER CHECK (wickets IN (0, 1)),
-                           player_out_id            TEXT REFERENCES registry (identifier),
-                           how_out                  TEXT CHECK (how_out IN (
-                                                                            'bowled', 'caught', 'caught and bowled',
-                                                                            'lbw', 'stumped',
-                                                                            'run out', 'hit wicket',
-                                                                            'obstructing the field',
-                                                                            'hit the ball twice',
-                                                                            'handled the ball', 'timed out',
+                      CREATE TABLE IF NOT EXISTS deliveries
+                      (
+                          match_id                 TEXT NOT NULL,
+                          innings                  INTEGER,
+                          overs                    INTEGER,
+                          balls                    INTEGER,
+                          batter_id                TEXT REFERENCES registry (identifier),
+                          bowler_id                TEXT REFERENCES registry (identifier),
+                          non_striker_id           TEXT REFERENCES registry (identifier),
+                          runs_batter              INTEGER CHECK (runs_batter >= 0),
+                          runs_extras              INTEGER CHECK (runs_extras >= 0),
+                          runs_total               INTEGER CHECK (runs_total >= 0),
+                          runs_batter_non_boundary INTEGER CHECK (
+                              runs_batter_non_boundary IS NULL OR
+                              (runs_batter_non_boundary IN (0, 1) AND runs_batter IN (4, 6))
+                              ),
+                          wickets                  INTEGER CHECK (wickets IN (0, 1)),
+                          player_out_id            TEXT REFERENCES registry (identifier),
+                          how_out                  TEXT CHECK (how_out IN (
+                                                                           'bowled', 'caught', 'caught and bowled',
+                                                                           'lbw', 'stumped',
+                                                                           'run out', 'hit wicket',
+                                                                           'obstructing the field',
+                                                                           'hit the ball twice',
+                                                                           'handled the ball', 'timed out',
+                                                                           'retired hurt', 'retired out',
+                                                                           'retired not out'
+                              )),
+                          fielder1_id              TEXT REFERENCES registry (identifier),
+                          fielder2_id              TEXT REFERENCES registry (identifier),
+                          fielder3_id              TEXT REFERENCES registry (identifier),
+                          wickets2                 INTEGER CHECK (wickets2 = 0 OR (wickets2 = 1 AND wickets = 1)),
+                          player_out2_id           TEXT REFERENCES registry (identifier),
+                          how_out2                 TEXT CHECK (how_out2 IN (
+                                                                            'timed out',
                                                                             'retired hurt', 'retired out',
-                                                                            'retired not out'
-                               )),
-                           fielder1_id              TEXT REFERENCES registry (identifier),
-                           fielder2_id              TEXT REFERENCES registry (identifier),
-                           fielder3_id              TEXT REFERENCES registry (identifier),
-                           wickets2                 INTEGER CHECK (wickets2 = 0 OR (wickets2 = 1 AND wickets = 1)),
-                           player_out2_id           TEXT REFERENCES registry (identifier),
-                           how_out2                 TEXT CHECK (how_out2 IN (
-                                                                             'timed out',
-                                                                             'retired hurt', 'retired out',
-                                                                             'retired not out', 'run out'
-                               )),
-                           extras_byes              INTEGER   DEFAULT 0 CHECK (extras_byes = 0 OR (extras_byes >= 1 AND runs_extras >= 1)),
-                           extras_legbyes           INTEGER   DEFAULT 0 CHECK (extras_legbyes = 0 OR (extras_legbyes >= 1 AND runs_extras >= 1)),
-                           extras_noballs           INTEGER   DEFAULT 0 CHECK (extras_noballs = 0 OR (extras_noballs >= 1 AND runs_extras >= 1)),
-                           extras_penalty           INTEGER   DEFAULT 0 CHECK (extras_penalty = 0 OR (extras_penalty >= 1 AND runs_extras >= 1)),
-                           extras_wides             INTEGER   DEFAULT 0 CHECK (extras_wides = 0 OR (extras_wides >= 1 AND runs_extras >= 1)),
-                           review                   INTEGER   DEFAULT 0 CHECK (review IN (0, 1)),
-                           ump_decision             TEXT CHECK (
-                               ump_decision IS NULL OR 
-                               (ump_decision IN ('out', 'not out') AND review = 1)
-                               ), -- As umpire reviews are not considered by Cricsheet
-                           review_by_id             TEXT REFERENCES teams (team_id),
-                           review_ump_id            TEXT REFERENCES registry (identifier),
-                           review_batter_id         TEXT REFERENCES registry (identifier),
-                           review_result            TEXT CHECK (review_result IN ('out', 'not out')),
-                           umpires_call             INTEGER   DEFAULT 0 CHECK (umpires_call IS NULL OR (umpires_call IN (0, 1) AND review = 1)),
-                           powerplay                INTEGER   DEFAULT 0 CHECK (powerplay IN (0, 1)),
-                           super_over               INTEGER   DEFAULT 0 CHECK (super_over IN (0, 1)),
-                           created_at               TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-                           updated_at               TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-                           FOREIGN KEY (match_id) REFERENCES matches (match_id),
-                           PRIMARY KEY (match_id, innings, overs, balls),
-                           CHECK (
-                               (player_out_id IS NULL AND wickets = 0) OR 
-                               (player_out_id IS NOT NULL AND wickets = 1)
-                               ),
-                           CHECK (
-                               fielder1_id IS NULL AND (
-                                   wickets = 0 OR 
-                                   how_out IN ('bowled', 'lbw', 'hit wicket', 'obstructing the field',
-                                               'hit the ball twice', 'handled the ball', 'timed out',
-                                               'retired hurt', 'retired out', 'retired not out')
-                                   ) OR
-                               fielder1_id IS NOT NULL AND how_out IN ('caught', 'caught and bowled', 'stumped', 'run out')
-                               ),
-                           CHECK (
-                               fielder2_id IS NULL OR
-                               (fielder2_id IS NOT NULL AND 
-                                fielder1_id IS NOT NULL AND 
-                                how_out = 'run out')
-                               ),
-                           CHECK (
-                               fielder3_id IS NULL OR
-                               (fielder3_id IS NOT NULL AND 
-                                fielder2_id IS NOT NULL AND
-                                fielder1_id IS NOT NULL AND how_out = 'run out')),
-                           CHECK (player_out2_id IS NULL OR (player_out2_id IS NOT NULL AND wickets2 = 1)),
-                           CHECK (review_batter_id IS NULL OR review_batter_id = batter_id),
-                           CHECK (extras_wides = 0 OR extras_noballs = 0), -- Cannot have both wide and no-ball
-                           CHECK (runs_total = runs_batter + runs_extras),
-                           CHECK ((wickets = 1 AND player_out_id IS NOT NULL) OR (wickets = 0 AND player_out_id IS NULL)),
-                           CHECK ((review = 1 AND review_by_id IS NOT NULL AND review_ump_id IS NOT NULL AND
-                                   review_result IS NOT NULL) OR 
-                                  (review = 0 AND review_by_id IS NULL AND review_ump_id IS NULL AND 
-                                   review_result IS NULL)),
-                           CHECK ((ump_decision IS NULL AND review = 0) OR 
-                                  (ump_decision IS NOT NULL AND review = 1)),
-                           CHECK ((wickets2 = 1 AND player_out2_id IS NOT NULL AND how_out2 IS NOT NULL) OR 
-                                  (wickets2 = 0 AND player_out2_id IS NULL AND how_out2 IS NULL))
-                       )
-                       """,
+                                                                            'retired not out', 'run out'
+                              )),
+                          extras_byes              INTEGER   DEFAULT 0 CHECK (extras_byes = 0 OR (extras_byes >= 1 AND runs_extras >= 1)),
+                          extras_legbyes           INTEGER   DEFAULT 0 CHECK (extras_legbyes = 0 OR (extras_legbyes >= 1 AND runs_extras >= 1)),
+                          extras_noballs           INTEGER   DEFAULT 0 CHECK (extras_noballs = 0 OR (extras_noballs >= 1 AND runs_extras >= 1)),
+                          extras_penalty           INTEGER   DEFAULT 0 CHECK (extras_penalty = 0 OR (extras_penalty >= 1 AND runs_extras >= 1)),
+                          extras_wides             INTEGER   DEFAULT 0 CHECK (extras_wides = 0 OR (extras_wides >= 1 AND runs_extras >= 1)),
+                          review                   INTEGER   DEFAULT 0 CHECK (review IN (0, 1)),
+                          ump_decision             TEXT CHECK (
+                              ump_decision IS NULL OR
+                              (ump_decision IN ('out', 'not out') AND review = 1)
+                              ),                                          -- As umpire reviews are not considered by Cricsheet
+                          review_by_id             TEXT REFERENCES teams (team_id),
+                          review_ump_id            TEXT REFERENCES registry (identifier),
+                          review_batter_id         TEXT REFERENCES registry (identifier),
+                          review_result            TEXT CHECK (review_result IN ('out', 'not out')),
+                          umpires_call             INTEGER   DEFAULT 0 CHECK (umpires_call IS NULL OR (umpires_call IN (0, 1) AND review = 1)),
+                          powerplay                INTEGER   DEFAULT 0 CHECK (powerplay IN (0, 1)),
+                          super_over               INTEGER   DEFAULT 0 CHECK (super_over IN (0, 1)),
+                          created_at               TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+                          updated_at               TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+                          FOREIGN KEY (match_id) REFERENCES matches (match_id),
+                          PRIMARY KEY (match_id, innings, overs, balls),
+                          CHECK (
+                              (player_out_id IS NULL AND wickets = 0) OR
+                              (player_out_id IS NOT NULL AND wickets = 1)
+                              ),
+                          CHECK (
+                              fielder1_id IS NULL AND (
+                                  wickets = 0 OR
+                                  how_out IN ('bowled', 'lbw', 'hit wicket', 'obstructing the field',
+                                              'hit the ball twice', 'handled the ball', 'timed out',
+                                              'retired hurt', 'retired out', 'retired not out')
+                                  ) OR
+                              fielder1_id IS NOT NULL AND how_out IN ('caught', 'caught and bowled', 'stumped', 'run out')
+                              ),
+                          CHECK (
+                              fielder2_id IS NULL OR
+                              (fielder2_id IS NOT NULL AND
+                               fielder1_id IS NOT NULL AND
+                               how_out = 'run out')
+                              ),
+                          CHECK (
+                              fielder3_id IS NULL OR
+                              (fielder3_id IS NOT NULL AND
+                               fielder2_id IS NOT NULL AND
+                               fielder1_id IS NOT NULL AND how_out = 'run out')),
+                          CHECK (player_out2_id IS NULL OR (player_out2_id IS NOT NULL AND wickets2 = 1)),
+                          CHECK (review_batter_id IS NULL OR review_batter_id = batter_id),
+                          CHECK (extras_wides = 0 OR extras_noballs = 0), -- Cannot have both wide and no-ball
+                          CHECK (runs_total = runs_batter + runs_extras),
+                          CHECK ((wickets = 1 AND player_out_id IS NOT NULL) OR (wickets = 0 AND player_out_id IS NULL)),
+                          CHECK ((review = 1 AND review_by_id IS NOT NULL AND review_ump_id IS NOT NULL AND
+                                  review_result IS NOT NULL) OR
+                                 (review = 0 AND review_by_id IS NULL AND review_ump_id IS NULL AND
+                                  review_result IS NULL)),
+                          CHECK ((ump_decision IS NULL AND review = 0) OR
+                                 (ump_decision IS NOT NULL AND review = 1)),
+                          CHECK ((wickets2 = 1 AND player_out2_id IS NOT NULL AND how_out2 IS NOT NULL) OR
+                                 (wickets2 = 0 AND player_out2_id IS NULL AND how_out2 IS NULL))
+                      )
+                      """,
         "missing_matches": """
                            CREATE TABLE IF NOT EXISTS missing_matches
                            (
@@ -338,68 +338,68 @@ class CricketDatabase:
                                       BEGIN
                                           SELECT CASE
                                                      WHEN NEW.team_id NOT IN (SELECT team1_id
-                                                                           FROM matches
-                                                                           WHERE match_id = NEW.match_id
-                                                                           UNION
-                                                                           SELECT team2_id
-                                                                           FROM matches
-                                                                           WHERE match_id = NEW.match_id) THEN
+                                                                              FROM matches
+                                                                              WHERE match_id = NEW.match_id
+                                                                              UNION
+                                                                              SELECT team2_id
+                                                                              FROM matches
+                                                                              WHERE match_id = NEW.match_id) THEN
                                                          RAISE(ABORT, 'Team must be either team1 or team2 from the match')
                                                      END;
                                       END;
                                       """,
         "check_review_by_team": """
-                       CREATE TRIGGER IF NOT EXISTS check_review_by_team
-                           BEFORE INSERT
-                           ON deliveries
-                           FOR EACH ROW
-                       BEGIN
-                           SELECT CASE
-                                      WHEN NEW.review_by_id IS NOT NULL
-                                          AND NEW.review_by_id NOT IN (SELECT team1_id
-                                                                    FROM matches
-                                                                    WHERE match_id = NEW.match_id
-                                                                    UNION
-                                                                    SELECT team2_id
-                                                                    FROM matches
-                                                                    WHERE match_id = NEW.match_id)
-                                          THEN RAISE(ABORT, 'review_by must match either team1 or team2 from the match')
-                                      END;
-                       END;
-                       """,
+                                CREATE TRIGGER IF NOT EXISTS check_review_by_team
+                                    BEFORE INSERT
+                                    ON deliveries
+                                    FOR EACH ROW
+                                BEGIN
+                                    SELECT CASE
+                                               WHEN NEW.review_by_id IS NOT NULL
+                                                   AND NEW.review_by_id NOT IN (SELECT team1_id
+                                                                                FROM matches
+                                                                                WHERE match_id = NEW.match_id
+                                                                                UNION
+                                                                                SELECT team2_id
+                                                                                FROM matches
+                                                                                WHERE match_id = NEW.match_id)
+                                                   THEN RAISE(ABORT, 'review_by must match either team1 or team2 from the match')
+                                               END;
+                                END;
+                                """,
         "check_review_ump_official": """
-                       CREATE TRIGGER IF NOT EXISTS check_review_ump_official
-                           BEFORE INSERT
-                           ON deliveries
-                           FOR EACH ROW
-                           WHEN NEW.review_ump_id IS NOT NULL
-                       BEGIN
-                           SELECT CASE
-                                      WHEN NEW.review = 0 THEN
-                                          RAISE(ABORT, 'review_ump cannot be set when review is 0')
-                                      WHEN NEW.review_ump_id NOT IN (SELECT umpire1_id
-                                                                  FROM matches
-                                                                  WHERE match_id = NEW.match_id
-                                                                  UNION
-                                                                  SELECT umpire2_id
-                                                                  FROM matches
-                                                                  WHERE match_id = NEW.match_id
-                                                                  UNION
-                                                                  SELECT reserve_umpire_id
-                                                                  FROM matches
-                                                                  WHERE match_id = NEW.match_id
-                                                                  UNION
-                                                                  SELECT tv_umpire_id
-                                                                  FROM matches
-                                                                  WHERE match_id = NEW.match_id
-                                                                  UNION
-                                                                  SELECT match_referee_id
-                                                                  FROM matches
-                                                                  WHERE match_id = NEW.match_id) THEN
-                                          RAISE(ABORT, 'review_ump must be a match official')
-                                      END;
-                       END;
-                       """,
+                                     CREATE TRIGGER IF NOT EXISTS check_review_ump_official
+                                         BEFORE INSERT
+                                         ON deliveries
+                                         FOR EACH ROW
+                                         WHEN NEW.review_ump_id IS NOT NULL
+                                     BEGIN
+                                         SELECT CASE
+                                                    WHEN NEW.review = 0 THEN
+                                                        RAISE(ABORT, 'review_ump cannot be set when review is 0')
+                                                    WHEN NEW.review_ump_id NOT IN (SELECT umpire1_id
+                                                                                   FROM matches
+                                                                                   WHERE match_id = NEW.match_id
+                                                                                   UNION
+                                                                                   SELECT umpire2_id
+                                                                                   FROM matches
+                                                                                   WHERE match_id = NEW.match_id
+                                                                                   UNION
+                                                                                   SELECT reserve_umpire_id
+                                                                                   FROM matches
+                                                                                   WHERE match_id = NEW.match_id
+                                                                                   UNION
+                                                                                   SELECT tv_umpire_id
+                                                                                   FROM matches
+                                                                                   WHERE match_id = NEW.match_id
+                                                                                   UNION
+                                                                                   SELECT match_referee_id
+                                                                                   FROM matches
+                                                                                   WHERE match_id = NEW.match_id) THEN
+                                                        RAISE(ABORT, 'review_ump must be a match official')
+                                                    END;
+                                     END;
+                                     """,
         "idx_matches_date": """
                             CREATE INDEX IF NOT EXISTS idx_matches_date ON matches (start_date);
                             """,
@@ -419,7 +419,7 @@ class CricketDatabase:
                                     CREATE INDEX IF NOT EXISTS idx_deliveries_dismissal ON deliveries (how_out);
                                     """,
         "idx_registry_unique_name": """
-                                    CREATE INDEX IF NOT EXISTS idx_registry_unique_name ON registry (unique_name); 
+                                    CREATE INDEX IF NOT EXISTS idx_registry_unique_name ON registry (unique_name);
                                     """,
         "idx_matches_venue": """
                              CREATE INDEX IF NOT EXISTS idx_matches_venue ON matches (venue_id);
@@ -440,57 +440,57 @@ class CricketDatabase:
                                    CREATE INDEX IF NOT EXISTS idx_deliveries_fielder1 ON deliveries (fielder1_id);
                                    """,
         "update_registry_timestamp": """
-                       CREATE TRIGGER IF NOT EXISTS update_registry_timestamp
-                           AFTER UPDATE
-                           ON registry
-                       BEGIN
-                           UPDATE registry
-                           SET updated_at = CURRENT_TIMESTAMP
-                           WHERE identifier = NEW.identifier;
-                       END;
-                       """,
+                                     CREATE TRIGGER IF NOT EXISTS update_registry_timestamp
+                                         AFTER UPDATE
+                                         ON registry
+                                     BEGIN
+                                         UPDATE registry
+                                         SET updated_at = CURRENT_TIMESTAMP
+                                         WHERE identifier = NEW.identifier;
+                                     END;
+                                     """,
         "update_teams_timestamp": """
-                       CREATE TRIGGER IF NOT EXISTS update_teams_timestamp
-                           AFTER UPDATE
-                           ON teams
-                       BEGIN
-                           UPDATE teams
-                           SET updated_at = CURRENT_TIMESTAMP
-                           WHERE team_id = NEW.team_id; 
-                       END;
+                                  CREATE TRIGGER IF NOT EXISTS update_teams_timestamp
+                                      AFTER UPDATE
+                                      ON teams
+                                  BEGIN
+                                      UPDATE teams
+                                      SET updated_at = CURRENT_TIMESTAMP
+                                      WHERE team_id = NEW.team_id;
+                                  END;
                                   """,
         "update_venues_timestamp": """
-                                   CREATE TRIGGER IF NOT EXISTS update_venues_timestamp 
-                                       AFTER UPDATE 
+                                   CREATE TRIGGER IF NOT EXISTS update_venues_timestamp
+                                       AFTER UPDATE
                                        on venues
                                    BEGIN
                                        UPDATE venues
                                        SET updated_at = CURRENT_TIMESTAMP
-                                       WHERE venue_id = NEW.venue_id; 
+                                       WHERE venue_id = NEW.venue_id;
                                    END;
                                    """,
         "update_venue_aliases_timestamp": """
-                                          CREATE TRIGGER IF NOT EXISTS update_venue_aliases_timestamp 
-                                              AFTER UPDATE 
-                                              ON venue_aliases 
-                                          BEGIN 
-                                              UPDATE venue_aliases 
-                                              SET updated_at = CURRENT_TIMESTAMP 
-                                              WHERE alias_name = NEW.alias_name 
-                                                AND alias_city = NEW.alias_city 
-                                                AND alias_nation = NEW.alias_nation; 
+                                          CREATE TRIGGER IF NOT EXISTS update_venue_aliases_timestamp
+                                              AFTER UPDATE
+                                              ON venue_aliases
+                                          BEGIN
+                                              UPDATE venue_aliases
+                                              SET updated_at = CURRENT_TIMESTAMP
+                                              WHERE alias_name = NEW.alias_name
+                                                AND alias_city = NEW.alias_city
+                                                AND alias_nation = NEW.alias_nation;
                                           END;
                                           """,
         "update_matches_timestamp": """
-                       CREATE TRIGGER IF NOT EXISTS update_matches_timestamp
-                           AFTER UPDATE
-                           ON matches
-                       BEGIN
-                           UPDATE matches
-                           SET updated_at = CURRENT_TIMESTAMP
-                           WHERE match_id = NEW.match_id;
-                       END;
-                       """,
+                                    CREATE TRIGGER IF NOT EXISTS update_matches_timestamp
+                                        AFTER UPDATE
+                                        ON matches
+                                    BEGIN
+                                        UPDATE matches
+                                        SET updated_at = CURRENT_TIMESTAMP
+                                        WHERE match_id = NEW.match_id;
+                                    END;
+                                    """,
         "update_match_metadata_timestamp": """
                                            CREATE TRIGGER IF NOT EXISTS update_match_metadata_timestamp
                                                AFTER UPDATE
@@ -502,49 +502,49 @@ class CricketDatabase:
                                            END;
                                            """,
         "update_match_players_timestamp": """
-                       CREATE TRIGGER IF NOT EXISTS update_match_players_timestamp
-                           AFTER UPDATE
-                           ON match_players
-                       BEGIN
-                           UPDATE match_players
-                           SET updated_at = CURRENT_TIMESTAMP
-                           WHERE match_id = NEW.match_id
-                             AND identifier = NEW.identifier;
-                       END;
-                       """,
+                                          CREATE TRIGGER IF NOT EXISTS update_match_players_timestamp
+                                              AFTER UPDATE
+                                              ON match_players
+                                          BEGIN
+                                              UPDATE match_players
+                                              SET updated_at = CURRENT_TIMESTAMP
+                                              WHERE match_id = NEW.match_id
+                                                AND identifier = NEW.identifier;
+                                          END;
+                                          """,
         "update_players_timestamp": """
-                                    CREATE TRIGGER IF NOT EXISTS update_players_timestamp 
-                                        AFTER UPDATE 
-                                        ON players 
-                                    BEGIN 
-                                        UPDATE players 
-                                        SET updated_at = CURRENT_TIMESTAMP 
-                                        WHERE identifier = NEW.identifier; 
-                                    END;
-                                    """,
-        "update_officials_timestamp": """
-                                    CREATE TRIGGER IF NOT EXISTS update_officials_timestamp
+                                    CREATE TRIGGER IF NOT EXISTS update_players_timestamp
                                         AFTER UPDATE
-                                        ON officials
-                                    BEGIN 
-                                        UPDATE officials
+                                        ON players
+                                    BEGIN
+                                        UPDATE players
                                         SET updated_at = CURRENT_TIMESTAMP
                                         WHERE identifier = NEW.identifier;
                                     END;
                                     """,
+        "update_officials_timestamp": """
+                                      CREATE TRIGGER IF NOT EXISTS update_officials_timestamp
+                                          AFTER UPDATE
+                                          ON officials
+                                      BEGIN
+                                          UPDATE officials
+                                          SET updated_at = CURRENT_TIMESTAMP
+                                          WHERE identifier = NEW.identifier;
+                                      END;
+                                      """,
         "update_deliveries_timestamp": """
-                       CREATE TRIGGER IF NOT EXISTS update_deliveries_timestamp
-                           AFTER UPDATE
-                           ON deliveries
-                       BEGIN
-                           UPDATE deliveries
-                           SET updated_at = CURRENT_TIMESTAMP
-                           WHERE match_id = NEW.match_id
-                             AND innings = NEW.innings
-                             AND overs = NEW.overs
-                             AND balls = NEW.balls;
-                       END;
-                       """,
+                                       CREATE TRIGGER IF NOT EXISTS update_deliveries_timestamp
+                                           AFTER UPDATE
+                                           ON deliveries
+                                       BEGIN
+                                           UPDATE deliveries
+                                           SET updated_at = CURRENT_TIMESTAMP
+                                           WHERE match_id = NEW.match_id
+                                             AND innings = NEW.innings
+                                             AND overs = NEW.overs
+                                             AND balls = NEW.balls;
+                                       END;
+                                       """,
         "update_missing_matches_timestamp": """
                                             CREATE TRIGGER IF NOT EXISTS update_missing_matches_timestamp
                                                 AFTER UPDATE
@@ -728,9 +728,9 @@ class CricketDatabase:
                                  LEFT JOIN deliveries d ON (p.identifier = d.batter_id OR p.identifier = d.non_striker_id)
                             GROUP BY p.identifier;
                         """,
-        "bowling_stats": """
+        "bowling_stats":"""
                          CREATE VIEW IF NOT EXISTS bowling_stats AS
-                         SELECT
+                         SELECT 
                              p.unique_name AS uniqueName,
                              p.identifier AS playerId,
                              p.bowl_hand AS bowlHand,
@@ -740,13 +740,13 @@ class CricketDatabase:
                              -- Wickets (only those attributable to the bowler)
                              SUM(CASE WHEN d.super_over = 0  AND d.how_out IN ('bowled', 'caught', 'caught and bowled', 'lbw', 'stumped', 'hit wicket') THEN 1 ELSE 0 END) AS bowlWickets,
                              -- Runs Conceded
-                             SUM(CASE WHEN d.super_over = 0 THEN (d.runs_batter + d.extras_wides + d.extras_noballs) ELSE 0 END) AS bowlRuns,                            
+                             SUM(CASE WHEN d.super_over = 0 THEN (d.runs_batter + d.extras_wides + d.extras_noballs) ELSE 0 END) AS bowlRuns,
                              SUM(CASE WHEN d.super_over = 0 THEN d.runs_batter ELSE 0 END) AS bowlRunsBat,
                              -- Balls and Overs
                              COUNT(CASE WHEN d.super_over = 0 THEN d.balls ELSE 0 END) AS ballsBowled,
                              SUM(CASE WHEN d.super_over = 0 AND d.extras_wides = 0 AND d.extras_noballs = 0 THEN 1 ELSE 0 END) AS ballsBowledLegal,
                              CAST(SUM(CASE WHEN d.super_over = 0 AND d.extras_wides = 0 AND d.extras_noballs = 0 THEN 1 ELSE 0 END) / 6 AS TEXT) || '.' || CAST(SUM(CASE WHEN d.super_over = 0 AND d.extras_wides = 0 AND d.extras_noballs = 0 THEN 1 ELSE 0 END) % 6 AS TEXT) AS overs,
-                             -- Runs conceded breakdown
+                         -- Runs conceded breakdown
                              SUM(CASE WHEN d.super_over = 0 AND d.runs_batter = 0 AND d.extras_wides = 0 AND d.extras_noballs = 0 THEN 1 ELSE 0 END) AS zeros,
                              SUM(CASE WHEN d.super_over = 0 AND d.runs_batter = 1 THEN 1 ELSE 0 END) AS singles,
                              SUM(CASE WHEN d.super_over = 0 AND d.runs_batter = 2 THEN 1 ELSE 0 END) AS doubles,
@@ -782,7 +782,7 @@ class CricketDatabase:
                          FROM players p
                                   JOIN deliveries d ON p.identifier = d.bowler_id
                          GROUP BY p.identifier;
-                         """
+                        """
     }
 
     def _init_database(self):
@@ -799,7 +799,7 @@ class CricketDatabase:
                            )
                            """)
 
-            # Check if the schema needs to be initialised
+            # Check if schema needs to be initialised
             cursor.execute("SELECT version FROM schema_version ORDER BY applied_at DESC LIMIT 1")
             result = cursor.fetchone()
 
@@ -859,7 +859,23 @@ class CricketDatabase:
         }
         with db_connection(self.db_name) as conn:
             cursor = conn.cursor()
+
             logging.info("Starting database reset...")
+
+            old_teams = pd.read_sql_query("SELECT * FROM teams", conn)
+            old_players = pd.read_sql_query("SELECT * FROM players", conn)
+            old_officials = pd.read_sql_query("SELECT * FROM officials", conn)
+            old_venues = pd.read_sql_query("SELECT * FROM venues", conn)
+            old_v_aliases = pd.read_sql_query("SELECT * FROM venue_aliases", conn)
+
+            old_teams.to_csv(os.path.join(self.config.BACKUP_DIR, "old_teams.csv"), index=False)
+            old_players.to_csv(os.path.join(self.config.BACKUP_DIR, "old_players.csv"), index=False)
+            old_officials.to_csv(os.path.join(self.config.BACKUP_DIR, "old_officials.csv"), index=False)
+            old_venues.to_csv(os.path.join(self.config.BACKUP_DIR, "old_venues.csv"), index=False)
+            old_v_aliases.to_csv(os.path.join(self.config.BACKUP_DIR, "old_venue_aliases.csv"), index=False)
+
+            logging.info(f"Teams, Players, Officials, Venues and Venue Aliases tables backed up as csv files.")
+
             for obj_type, obj_names in objects_to_drop.items():
                 for name in obj_names:
                     try:
@@ -884,6 +900,40 @@ class CricketDatabase:
             except sqlite3.Error as e:
                 conn.rollback()
                 logging.error(f"Could not clear missing_matches: {e}")
+
+    def update_player_nations(self):
+        with db_connection(self.db_name) as conn:
+            cursor = conn.cursor()
+            cursor.execute("""UPDATE players
+                                SET
+                                    current_nation = pn.current_n,
+                                    previous_nation_1 = pn.prev_n1,
+                                    previous_nation_2 = pn.prev_n2
+                                FROM (
+                                    SELECT
+                                        identifier,
+                                        MAX(CASE WHEN rn = 1 THEN nation END) as current_n,
+                                        MAX(CASE WHEN rn = 2 THEN nation END) as prev_n1,
+                                        MAX(CASE WHEN rn = 3 THEN nation END) as prev_n2
+                                    FROM (
+                                        SELECT
+                                            mp.identifier,
+                                            t.nation,
+                                            ROW_NUMBER() OVER (
+                                                PARTITION BY mp.identifier
+                                                ORDER BY MAX(m.start_date) DESC
+                                            ) as rn
+                                        FROM match_players mp
+                                        JOIN matches m ON mp.match_id = m.match_id
+                                        JOIN teams t ON mp.team_id = t.team_id
+                                        GROUP BY mp.identifier, t.nation
+                                    )
+                                    GROUP BY identifier
+                                ) AS pn
+                                WHERE players.identifier = pn.identifier;
+                           """)
+            conn.commit()
+            logging.info("Updated current nations.")
 
     def verify_data_integrity(self):
         with db_connection(self.db_name) as conn:
@@ -985,12 +1035,12 @@ class CricketDatabase:
                            SELECT DISTINCT match_id
                            FROM match_players mp
                            WHERE team_id NOT IN (SELECT team1_id
-                                                 FROM matches m
-                                                 WHERE m.match_id = mp.match_id
-                                                 UNION
-                                                 SELECT team2_id
-                                                 FROM matches m
-                                                 WHERE m.match_id = mp.match_id)
+                                              FROM matches m
+                                              WHERE m.match_id = mp.match_id
+                                              UNION
+                                              SELECT team2_id
+                                              FROM matches m
+                                              WHERE m.match_id = mp.match_id)
                            """)
             invalid_teams = cursor.fetchall()
             if invalid_teams:
@@ -1004,5 +1054,3 @@ class CricketDatabase:
                 logging.info("All database integrity checks passed successfully")
 
             return len(integrity_issues) == 0
-
-
