@@ -49,7 +49,6 @@ venue_id,venue_name,city,nation,nation_code,home_team_id_1,home_team_id_2,latitu
 8nzl48,Seddon Park,Hamilton,New Zealand,NZL,nzlMT20,nzlFT20,-37.7867613,175.2742998,Pacific/Auckland,+13:00,46.0,S,Oceania,Waikato,Hamilton City
 9nzl49,Saxton Oval,Nelson,New Zealand,NZL,nzlMT20,nzlFT20,-41.3309414,173.2128396,Pacific/Auckland,+13:00,14.0,S,Oceania,Tasman,Tasman District
 10nzl50,Pukekura Park,New Plymouth,New Zealand,NZL,nzlMT20,nzlFT20,-39.062777,174.079292,Pacific/Auckland,+13:00,36.0,S,Oceania,Taranaki,New Plymouth District
-1bmu51,White Hill Field,Hog Bay,Bermuda,BMU,bmuMT20,bmuFT20,32.271763,-64.873785,Atlantic/Bermuda,-04:00,20.0,N,America,Hamilton city,
 11nzl52,Basin Reserve,Wellington,New Zealand,NZL,nzlMT20,nzlFT20,-41.3003599,174.7802545,Pacific/Auckland,+13:00,12.0,S,Oceania,Wellington,Wellington City
 12nzl53,John Davies Oval,Queenstown,New Zealand,NZL,nzlMT20,nzlFT20,-45.0160798,168.7385342,Pacific/Auckland,+13:00,358.0,S,Oceania,Otago,Queenstown-Lakes District
 1are54,Zayed Cricket Stadium,Abu Dhabi,United Arab Emirates,ARE,areMT20,areFT20,24.39656,54.540737,Asia/Dubai,+04:00,3.0,N,Asia,Abu Dhabi,
