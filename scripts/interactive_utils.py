@@ -1,3 +1,4 @@
+from datetime import datetime
 import logging
 import sqlite3
 import urllib.parse
@@ -42,6 +43,15 @@ class InputManager:
                 continue
 
             return value if value else None
+
+    def _check_valid_date(self, date_str) -> bool:
+        """Parses a date pair (start/end) from a string."""
+        if date_str is None: return True
+        try:
+            datetime.strptime(date_str, '%Y-%m-%d').date()
+            return True
+        except ValueError:
+            return False
 
     def _confirm_entry(self, details: Dict) -> bool:
         """Shows the user what they entered and asks for confirmation."""
@@ -347,11 +357,13 @@ class InputManager:
             except sqlite3.Error as e:
                 print(f"  [ERROR] Could not save alias: {e}")
 
-    def resolve_missing_official(self, identifier: str, name_in_json: str):
+    def verifying_official(self, identifier: str):
         """
         Checks if an official exists in the officials table. If not, prompts user.
         Uses registry keys to open Cricinfo pages.
         """
+
+        if not identifier: return
 
         with db_connection(self.db_name) as conn:
             exists = conn.execute("SELECT 1 FROM officials WHERE identifier = ?", (identifier,)).fetchone()
@@ -363,7 +375,7 @@ class InputManager:
                 (identifier,)
             ).fetchone()
 
-        unique_name = reg_row[0] if reg_row else name_in_json
+        unique_name = reg_row[0]
 
         name_parts = unique_name.split(" ")
         f_name = name_parts[0]
@@ -398,15 +410,36 @@ class InputManager:
             full_name = self._get_input("Full Name", default=unique_name, required=True)
             display_name = self._get_input("Display Name", default=full_name, required=True)
 
-            sex = self._get_input("Sex (male/female)", required=True, default="male").lower()
+            sex = self._get_input("Sex (male/female)", required=True).lower()
             while sex not in ['male', 'female']:
                 print("  [!] Sex must be 'male' or 'female'")
-                sex = self._get_input("Sex (male/female)", required=True, default="male").lower()
+                sex = self._get_input("Sex (male/female)", required=True).lower()
 
             birth_date = self._get_input("Birth Date (YYYY-MM-DD)", required=False)
+            while not self._check_valid_date(birth_date):
+                print("  [!] Invalid date format. Use YYYY-MM-DD.")
+                birth_date = self._get_input("Birth Date (YYYY-MM-DD)", required=False)
+
+            death_date = self._get_input("Death Date (YYYY-MM-DD)", required=False)
+            while not self._check_valid_date(death_date):
+                print("  [!] Invalid date format. Use YYYY-MM-DD.")
+                death_date = self._get_input("Death Date (YYYY-MM-DD)", required=False)
+
+            if birth_date and death_date:
+                while birth_date > death_date:
+                    print(f"  [!] Woah. {full_name} died before they were born. Try again.")
+                    birth_date = self._get_input("Birth Date (YYYY-MM-DD)", required=False)
+                    while not self._check_valid_date(birth_date):
+                        print("  [!] Invalid date format. Use YYYY-MM-DD.")
+                        birth_date = self._get_input("Birth Date (YYYY-MM-DD)", required=False)
+
+                    death_date = self._get_input("Death Date (YYYY-MM-DD)", required=False)
+                    while not self._check_valid_date(death_date):
+                        print("  [!] Invalid date format. Use YYYY-MM-DD.")
+                        death_date = self._get_input("Death Date (YYYY-MM-DD)", required=False)
+
             birth_place = self._get_input("Birth Place", required=False)
             birth_nation = self._get_input("Birth Nation", required=False)
-            death_date = self._get_input("Death Date (YYYY-MM-DD)", required=False)
 
             details = {
                 'identifier': identifier,
@@ -431,6 +464,168 @@ class InputManager:
                                      """, details)
                         conn.commit()
                         logging.info(f"Successfully created official {display_name} ({identifier}).")
+                        return
+                    except sqlite3.IntegrityError as e:
+                        print(f"  [!] Database Error: {e}")
+
+    def verifying_player(self, identifier: str):
+        """
+        Checks if a player exists in the players table. If not, prompts user.
+        Uses registry keys to open Cricinfo pages.
+        """
+
+        if not identifier: return
+
+        with db_connection(self.db_name) as conn:
+            exists = conn.execute("SELECT 1 FROM players WHERE identifier = ?", (identifier,)).fetchone()
+            if exists:
+                return
+
+            reg_row = conn.execute(
+                "SELECT unique_name, key_cricinfo, key_cricinfo_2 FROM registry WHERE identifier = ?",
+                (identifier,)
+            ).fetchone()
+
+        unique_name = reg_row[0]
+
+        name_parts = unique_name.split(" ")
+        f_name = name_parts[0]
+        l_name = name_parts[-1] if len(name_parts) > 1 else ""
+        slug = f"{f_name}-{l_name}".strip("-")
+
+        key_cricinfo = reg_row[1] if reg_row else None
+        key_cricinfo_2 = reg_row[2] if reg_row else None
+
+        print(f"\n" + "=" * 60)
+        print(f"[MISSING PLAYER BIO DETECTED]")
+        print(f"Name: {unique_name}")
+        print(f"ID: {identifier}")
+        print("=" * 60)
+
+        for key in [key_cricinfo, key_cricinfo_2]:
+            if key:
+                url = f"https://www.espncricinfo.com/cricketers/{slug}-{key}"
+                print(f"  > Opening: {url}")
+                webbrowser.open(url)
+
+                if key == key_cricinfo_2:
+                    keep = input(f"  Is the second Cricinfo key ({key}) correct? (y/n/skip): ").lower()
+                    if keep == 'n':
+                        with db_connection(self.db_name) as conn:
+                            conn.execute("UPDATE registry SET key_cricinfo_2 = NULL WHERE identifier = ?",
+                                         (identifier,))
+                            conn.commit()
+
+        while True:
+            print("\n  --- Enter Player Details ---")
+            full_name = self._get_input("Full Name", default=unique_name, required=True)
+            display_name = self._get_input("Display Name", default=full_name, required=True)
+
+            sex = self._get_input("Sex (male/female)", required=True).lower()
+            while sex not in ['male', 'female']:
+                print("  [!] Sex must be 'male' or 'female'")
+                sex = self._get_input("Sex (male/female)", required=True).lower()
+
+            birth_date = self._get_input("Birth Date (YYYY-MM-DD)", required=False)
+            while not self._check_valid_date(birth_date):
+                print("  [!] Invalid date format. Use YYYY-MM-DD.")
+                birth_date = self._get_input("Birth Date (YYYY-MM-DD)", required=False)
+
+            death_date = self._get_input("Death Date (YYYY-MM-DD)", required=False)
+            while not self._check_valid_date(death_date):
+                print("  [!] Invalid date format. Use YYYY-MM-DD.")
+                death_date = self._get_input("Death Date (YYYY-MM-DD)", required=False)
+
+            if birth_date and death_date:
+                while birth_date > death_date:
+                    print(f"  [!] Woah. {full_name} died before they were born. Try again.")
+                    birth_date = self._get_input("Birth Date (YYYY-MM-DD)", required=False)
+                    while not self._check_valid_date(birth_date):
+                        print("  [!] Invalid date format. Use YYYY-MM-DD.")
+                        birth_date = self._get_input("Birth Date (YYYY-MM-DD)", required=False)
+
+                    death_date = self._get_input("Death Date (YYYY-MM-DD)", required=False)
+                    while not self._check_valid_date(death_date):
+                        print("  [!] Invalid date format. Use YYYY-MM-DD.")
+                        death_date = self._get_input("Death Date (YYYY-MM-DD)", required=False)
+
+            birth_place = self._get_input("Birth Place", required=False)
+            birth_nation = self._get_input("Birth Nation", required=False)
+
+            bat_hand = self._get_input("Batting Hand (R/L)", required=False)
+            while bat_hand is not None and bat_hand.upper() not in ['R', 'L']:
+                print("  [!] Batting hand must be 'R' or 'L'")
+                bat_hand = self._get_input("Batting Hand (R/L)", required=False)
+
+            bowl_hand = self._get_input("Bowling Hand (R/L). Separate ambidextrous bowlers with a comma.", required=False)
+
+            while bowl_hand is not None and not set(bowl_hand.upper()).issubset(" ,RL"):
+                print(f"  [!] Invalid bowling hand. Should be 'R', 'L', or a comma-separated list of both.")
+                bowl_hand = self._get_input("Bowling Hand (R/L). Separate ambidextrous bowlers with a comma", required=False)
+
+            styles = ['Seam', 'Offbreak', 'Legbreak', 'Orthodox', 'Unorthodox']
+            bowl_style = self._get_input("Bowling Style. Separate multiple styles with a comma", required=False)
+
+            bowl_style = [s.strip() for s in bowl_style.split(',')] if bowl_style else None
+
+            while bowl_style is not None and not set(bowl_style).issubset(styles):
+                print(f"  [!] Invalid bowling style. Should be one of {', '.join(styles)}.")
+                raw_input = self._get_input("Bowling Style. Separate multiple styles with a comma", required=False)
+                bowl_style = [s.strip() for s in raw_input.split(',')] if raw_input else None
+
+            while not bowl_hand and bowl_style:
+                print(f"  [!] You've got to use a hand to bowl {bowl_style}.")
+                bowl_hand = self._get_input("Bowling Hand (R/L). Separate ambidextrous bowlers with a comma", required=False)
+
+                while bowl_hand is not None and not set(bowl_hand.upper()).issubset(" ,RL"):
+                    print(f"  [!] Invalid bowling hand. Should be 'R', 'L', or a comma-separated list of both.")
+                    bowl_hand = self._get_input("Bowling Hand (R/L). Separate ambidextrous bowlers with a comma", required=False)
+
+                bowl_style = [s.strip() for s in bowl_style.split(',')] if bowl_style else None
+
+                while bowl_style is not None and not set(bowl_style).issubset(styles):
+                    print(f"  [!] Invalid bowling style. Should be one of {', '.join(styles)}.")
+                    raw_input = self._get_input("Bowling Style. Separate multiple styles with a comma", required=False)
+                    bowl_style = [s.strip() for s in raw_input.split(',')] if raw_input else None
+
+            bat_hand = bat_hand.upper() if bat_hand else None
+            bowl_hand = bowl_hand.upper() if bowl_hand else None
+            bowl_style = ','.join(bowl_style) if bowl_style else None
+
+            wk = self._get_input("Wicketkeeper (1=Yes, Enter=No)", required=False)
+            while wk is not None and wk != '1':
+                print("  [!] Wicketkeeper must be '1' for Yes or 'Enter' for No.")
+                wk = self._get_input("Wicketkeeper (1=Yes, Enter=No)", required=False)
+
+
+            details = {
+                'identifier': identifier,
+                'unique_name': unique_name,
+                'full_name': full_name,
+                'display_name': display_name,
+                'sex': sex,
+                'birth_date': birth_date,
+                'death_date': death_date,
+                'birth_place': birth_place,
+                'birth_nation': birth_nation,
+                'bat_hand': bat_hand,
+                'bowl_hand': bowl_hand,
+                'bowl_style': bowl_style,
+                'wicketkeeper': wk
+            }
+
+            if self._confirm_entry(details):
+                with db_connection(self.db_name) as conn:
+                    try:
+                        conn.execute("""
+                                     INSERT INTO players (identifier, unique_name, full_name, display_name, sex, 
+                                                          birth_date, death_date, birth_place, birth_nation, bat_hand, 
+                                                          bowl_hand, bowl_style, wicketkeeper)
+                                     VALUES (:identifier, :unique_name, :full_name, :display_name, :sex, :birth_date,
+                                            :death_date, :birth_place, :birth_nation, :bat_hand, :bowl_hand, :bowl_style,
+                                            :wicketkeeper)""", details)
+                        conn.commit()
+                        logging.info(f"Successfully created player {display_name} ({identifier}).")
                         return
                     except sqlite3.IntegrityError as e:
                         print(f"  [!] Database Error: {e}")
