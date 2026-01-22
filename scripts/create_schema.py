@@ -902,39 +902,80 @@ class CricketDatabase:
                 conn.rollback()
                 logging.error(f"Could not clear missing_matches: {e}")
 
-    def update_player_nations(self):
+    def post_update_queries(self):
         with db_connection(self.db_name) as conn:
             cursor = conn.cursor()
             cursor.execute("""UPDATE players
-                                SET
-                                    current_nation = pn.current_n,
-                                    previous_nation_1 = pn.prev_n1,
-                                    previous_nation_2 = pn.prev_n2
-                                FROM (
-                                    SELECT
-                                        identifier,
-                                        MAX(CASE WHEN rn = 1 THEN nation END) as current_n,
-                                        MAX(CASE WHEN rn = 2 THEN nation END) as prev_n1,
-                                        MAX(CASE WHEN rn = 3 THEN nation END) as prev_n2
-                                    FROM (
-                                        SELECT
-                                            mp.identifier,
-                                            t.nation,
-                                            ROW_NUMBER() OVER (
-                                                PARTITION BY mp.identifier
-                                                ORDER BY MAX(m.start_date) DESC
-                                            ) as rn
-                                        FROM match_players mp
-                                        JOIN matches m ON mp.match_id = m.match_id
-                                        JOIN teams t ON mp.team_id = t.team_id
-                                        GROUP BY mp.identifier, t.nation
-                                    )
-                                    GROUP BY identifier
-                                ) AS pn
-                                WHERE players.identifier = pn.identifier;
+                              SET current_nation    = pn.current_n,
+                                  previous_nation_1 = pn.prev_n1,
+                                  previous_nation_2 = pn.prev_n2
+                              FROM (SELECT identifier,
+                                           MAX(CASE WHEN rn = 1 THEN nation END) as current_n,
+                                           MAX(CASE WHEN rn = 2 THEN nation END) as prev_n1,
+                                           MAX(CASE WHEN rn = 3 THEN nation END) as prev_n2
+                                    FROM (SELECT mp.identifier,
+                                                 t.nation,
+                                                 ROW_NUMBER() OVER (
+                                                     PARTITION BY mp.identifier
+                                                     ORDER BY MAX(m.start_date) DESC
+                                                     ) as rn
+                                          FROM match_players mp
+                                                   JOIN matches m ON mp.match_id = m.match_id
+                                                   JOIN teams t ON mp.team_id = t.team_id
+                                          GROUP BY mp.identifier, t.nation)
+                                    GROUP BY identifier) AS pn
+                              WHERE players.identifier = pn.identifier;
                            """)
-            conn.commit()
             logging.info("Updated current nations.")
+            cursor.execute("""
+                           UPDATE venues
+                           SET home_team_id_1 = (SELECT m.team_id
+                                                 FROM teams m
+                                                 WHERE m.sex = 'male'
+                                                   AND m.nation = (
+                                                     CASE
+                                                         WHEN venues.nation = 'Wales' THEN 'England'
+                                                         WHEN venues.nation = 'Northern Ireland' THEN 'Ireland'
+                                                         WHEN venues.nation IN (
+                                                                                'Anguilla', 'Antigua and Barbuda',
+                                                                                'Barbados', 'Dominica',
+                                                                                'Guyana', 'Grenada', 'Jamaica',
+                                                                                'Saint Kitts and Nevis',
+                                                                                'Saint Lucia',
+                                                                                'Saint Vincent and the Grenadines',
+                                                                                'Trinidad and Tobago', 'Sint Maarten',
+                                                                                'British Virgin Islands',
+                                                                                'Montserrat',
+                                                                                'United States Virgin Islands'
+                                                             ) THEN 'West Indies'
+                                                         ELSE venues.nation
+                                                         END
+                                                     )),
+                               home_team_id_2 = (SELECT f.team_id
+                                                 FROM teams f
+                                                 WHERE f.sex = 'female'
+                                                   AND f.nation = (
+                                                     CASE
+                                                         WHEN venues.nation = 'Wales' THEN 'England'
+                                                         WHEN venues.nation = 'Northern Ireland' THEN 'Ireland'
+                                                         WHEN venues.nation IN (
+                                                                                'Anguilla', 'Antigua and Barbuda',
+                                                                                'Barbados', 'Dominica',
+                                                                                'Guyana', 'Grenada', 'Jamaica',
+                                                                                'Saint Kitts and Nevis',
+                                                                                'Saint Lucia',
+                                                                                'Saint Vincent and the Grenadines',
+                                                                                'Trinidad and Tobago', 'Sint Maarten',
+                                                                                'British Virgin Islands',
+                                                                                'Montserrat',
+                                                                                'United States Virgin Islands'
+                                                             ) THEN 'West Indies'
+                                                         ELSE venues.nation
+                                                         END
+                                                     ));
+                           """)
+            logging.info("Updated home team IDs.")
+            conn.commit()
 
     def verify_data_integrity(self):
         with db_connection(self.db_name) as conn:

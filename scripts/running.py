@@ -55,7 +55,7 @@ def main(config: Config, full_reset: bool = False):
         )
 
         logging.info("Cricsheet data loaded successfully.")
-        db_manager.update_player_nations()
+        db_manager.post_update_queries()
         logging.info("[STEP 4/4] Verifying database integrity...")
         db_manager.verify_data_integrity()
         logging.info("Database integrity verified.")
