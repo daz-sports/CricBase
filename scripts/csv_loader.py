@@ -217,7 +217,7 @@ class VenueAliasesLoader:
         self.db_name = db_name
 
     def _validate_venue_aliases_data(self, df: pd.DataFrame) -> bool:
-        required_columns = ['alias_name', 'alias_city', 'venue_id']
+        required_columns = ['alias_name', 'alias_city', 'alias_nation', 'venue_id']
         if not all(column in df.columns for column in required_columns):
             logging.error(f"Venue Aliases CSV is missing required columns. Found: {list(df.columns)}, Required: {required_columns}")
             return False
@@ -239,7 +239,7 @@ class VenueAliasesLoader:
             raise BuildError("Venue alias CSV validation failed.")
 
         db_columns = [
-            'alias_name', 'alias_city', 'venue_id',
+            'alias_name', 'alias_city', 'alias_nation', 'venue_id',
         ]
 
         venue_aliases_to_insert: List[Tuple] = []

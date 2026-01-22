@@ -248,23 +248,26 @@ class InputManager:
             choice = input("Select option (1/2): ").strip()
 
             if choice == '1':
-                search_term = input("  Enter search term (part of venue name or city): ")
+                search_term = input(
+                    "  Search for the venue (search by name, city, or nation - search nation if unsure): ")
                 with db_connection(self.db_name) as conn:
                     sql = """
-                        SELECT venue_id, venue_name, city, nation
-                        FROM venues
-                        WHERE venue_name LIKE ? OR city LIKE ?
-                    """
+                          SELECT venue_id, venue_name, city, nation
+                          FROM venues
+                          WHERE venue_name LIKE ? \
+                             OR city LIKE ? \
+                             OR nation LIKE ? \
+                          """
                     wildcard = f"%{search_term}%"
-                    results = conn.execute(sql, (wildcard, wildcard)).fetchall()
+                    results = conn.execute(sql, (wildcard, wildcard, wildcard)).fetchall()
 
                 if not results:
-                    print("  [!] No matches found. Try again or create new.")
+                    print("  [!] No matches found. Search again or create new.")
                     continue
 
                 print(f"\n  Found {len(results)} matches:")
                 for i, res in enumerate(results):
-                    print(f"    {i+1}. {res[1]} ({res[2]}, {res[3]}) [ID: {res[0]}]")
+                    print(f"    {i + 1}. {res[1]} ({res[2]}, {res[3]}) [ID: {res[0]}]")
 
                 sel = input("\n  Select number to link (or 0 to cancel): ")
                 try:
@@ -272,7 +275,8 @@ class InputManager:
                     if idx == -1: continue
 
                     selected_id = results[idx][0]
-                    self._add_venue_alias(venue_name, city, "Unknown", selected_id)
+                    nation = results[idx][3]
+                    self._add_venue_alias(venue_name, city, nation, selected_id)
                     return selected_id
 
                 except (ValueError, IndexError):

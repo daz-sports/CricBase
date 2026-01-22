@@ -95,10 +95,11 @@ class CricketDatabase:
                          (
                              alias_name TEXT NOT NULL,
                              alias_city TEXT NOT NULL,
+                             alias_nation TEXT NOT NULL,
                              venue_id   TEXT NOT NULL REFERENCES venues (venue_id),
                              created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
                              updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-                             PRIMARY KEY (alias_name, alias_city)
+                             PRIMARY KEY (alias_name, alias_city, alias_nation)
                          )
                          """,
         "matches": """
