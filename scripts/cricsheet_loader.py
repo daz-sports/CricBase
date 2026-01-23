@@ -344,7 +344,7 @@ def load_all_cricsheet_data(config, db_name: str, cricsheet_dir: str, additional
 
     matches_loader = MatchesLoader(db_name, config)
     metadata_loader = MetadataLoader(db_name)
-    players_loader = MatchPlayersLoader(db_name)
+    players_loader = MatchPlayersLoader(db_name, config)
     deliveries_loader = DeliveriesLoader(db_name)
 
     all_files = []
