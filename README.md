@@ -28,6 +28,7 @@ Tools used:
       - logging
       - os
       - sqlite3
+      - time
       - typing
       - urllib
       - webbrowser
@@ -41,19 +42,21 @@ Tools used:
       - reverse_geocoder
       - seaborn
       - statsmodels
+      - xarray
  - SQLite
  - Jupyter Notebooks
- - APIs: [open-meteo](https://open-meteo.com/en/docs) and [opentopography](https://opentopography.org/)
+ - APIs: [open-meteo](https://open-meteo.com/en/docs), [opentopography](https://opentopography.org/) and [Overpass API](https://overpass-api.de/)
 
 
 #### Database Construction Instructions
 1. Clone this repository.
 2. Install the required packages listed above.
-3. Fill in the 'config.py' file.
-3. Run the 'running.py' script in the 'scripts' folder. Split screen your IDE with a web browser if possible.
-4. Explore the database!
+3. Download the NASA distance-to-coast 1-degree map from [here](https://pae-paha.pacioos.hawaii.edu/erddap/griddap/dist2coast_1deg_land.html) (read the licence and click submit to download the file).
+4. Fill in the 'config.py' file.
+5. Run the 'running.py' script in the 'scripts' folder. Split screen your IDE with a web browser if possible.
+6. Explore the database!
 
-The Cricsheet data is made available under the [Open Data Commons Attribution Licence (ODC-By) v1.0](https://opendatacommons.org/licenses/by/1-0/). Missing matches discovery assisted by public record data from the ICC schedule.
+The Cricsheet data is made available under the [Open Data Commons Attribution Licence (ODC-By) v1.0](https://opendatacommons.org/licenses/by/1-0/). Missing matches discovery assisted by public record data from the ICC schedule. The Distance to Coast data is for research purposes only. Neither the author nor the data contributors assume legal liability for the accuracy or usefulness of this information.
 
 *Note on the ICC scraper*:
-This tool is intended for research and educational purposes only. It uses publicly available API endpoints to find data gaps in the database. Please respect the ICC's infrastructure by maintaining a reasonable rate limit.
+This tool is intended for research and educational purposes only. It uses publicly available API endpoints to find data gaps in the database. Please respect the ICC's infrastructure by maintaining a reasonable rate limit. 

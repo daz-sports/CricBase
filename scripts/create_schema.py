@@ -83,6 +83,8 @@ class CricketDatabase:
                       latitude       REAL,
                       longitude      REAL,
                       elevation      INTEGER,
+                      dist2coast_coarse INTEGER,
+                      dist2coast_fine REAL,
                       timezone       TEXT,
                       utc_offset_str TEXT,
                       created_at     TIMESTAMP DEFAULT CURRENT_TIMESTAMP,

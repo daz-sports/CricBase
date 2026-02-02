@@ -6,8 +6,12 @@ import webbrowser
 import requests
 import country_converter as coco
 import reverse_geocoder as rg
+import numpy as np
+import xarray as xr
+import time
 from geopy.geocoders import Nominatim
 from geopy.exc import GeocoderTimedOut, GeocoderServiceError
+from geopy.distance import geodesic
 from typing import Optional, Dict, Any, Tuple
 from utils import db_connection
 from config import Config
@@ -21,6 +25,8 @@ class InputManager:
     def __init__(self, db_name: str, config: Config):
         self.db_name = db_name
         self.geolocator = Nominatim(user_agent=config.USER_AGENT)
+        self.dist2sea_path = config.NASA_DIST2COAST_PATH
+        self.user_agent = config.USER_AGENT
         self.session = requests.Session()
         self.cc = coco.CountryConverter()
 
@@ -128,7 +134,7 @@ class InputManager:
 
     def _get_gis_data(self, lat: float, lon: float) -> Dict[str, Any]:
         """
-        Automated gis based on Lat/Long (Continent, Timezone, Elevation, Administrative Divisions).
+        Automated gis based on Lat/Long (Continent, Timezone, Elevation, Administrative Divisions, Distance from Coast).
         """
         if lat is None or lon is None: return {}
 
@@ -173,8 +179,88 @@ class InputManager:
             logging.warning(f"GIS Elevation Error: {e}")
             gis['elevation'] = None
 
+        gis['dist2coast_coarse'] = self._get_coarse_dist2sea(lat, lon)
+        gis['dist2coast_fine'] = self._get_precise_dist2sea(lat, lon, gis['dist2coast_coarse'])
+
         logging.info(f"  [GIS] Enriched: {gis.get('continent')}, {gis.get('timezone')}")
         return gis
+
+    def _get_coarse_dist2sea(self, lat, lon):
+        """
+        Uses NASA 0.01 degree dist2coast map to get approximate distance to coast.
+        Used to inform the search radius for Overpass API calls.
+        """
+
+        dataset = xr.open_dataset(self.dist2sea_path)
+        try:
+            val = dataset['dist'].sel(
+                latitude=lat,
+                longitude=lon,
+                method='nearest',
+                tolerance=0.1
+            ).values.item()
+        except KeyError as e:
+            logging.warning(f"Error lookup up {lat}, {lon}: {e}")
+            return np.nan
+
+        if np.isnan(val):
+            return 0.0
+        return val
+
+    def _get_precise_dist2sea(self, lat, lon, rough_dist_km):
+        """Uses Overpass API to get the precise distance to coast. Searches for a maximum radius of 300km."""
+
+        search_radius_km = min(max(rough_dist_km + 50, 50), 300)
+        search_radius = search_radius_km * 1000
+
+        overpass_url = "http://overpass-api.de/api/interpreter"
+        overpass_query = f"""
+        [out:json][timeout:90];
+        (
+          way["natural"="coastline"](around:{search_radius},{lat},{lon});
+          relation["natural"="coastline"](around:{search_radius},{lat},{lon});
+        );
+        out geom;
+        """
+
+        headers = {
+            'User-Agent': self.user_agent,
+            'Accept-Encoding': 'gzip, deflate'
+        }
+
+        try:
+            logging.info(f"  [GIS] Calculating precise distance to coast (Radius: {search_radius_km}km)...")
+            response = requests.get(overpass_url, params={'data': overpass_query}, headers=headers)
+
+            retries = 0
+            while response.status_code in [429, 503, 504] and retries < 3:
+                logging.info(f"  [GIS] Server busy (Status {response.status_code}). Waiting 30s... (Attempt {retries + 1})")
+                time.sleep(30)
+                response = requests.get(overpass_url, params={'data': overpass_query}, headers=headers)
+                retries += 1
+
+            if response.status_code != 200:
+                logging.info(f"  [GIS] Failed to get data for {lat}, {lon} after retries. Code: {response.status_code}")
+                return None
+
+            data = response.json()
+
+            if not data.get('elements'):
+                return None
+
+            min_dist = float('inf')
+            for element in data['elements']:
+                if 'geometry' in element:
+                    for point in element['geometry']:
+                        dist = geodesic((lat, lon), (point['lat'], point['lon'])).km
+                        if dist < min_dist:
+                            min_dist = dist
+
+            return min_dist
+
+        except Exception as e:
+            print(f"Error fetching data for {lat}, {lon}: {e}")
+            return rough_dist_km
 
     def resolve_missing_team(self, team_name: str, sex: str) -> str | None:
         """Prompts the user to create a new team entry."""

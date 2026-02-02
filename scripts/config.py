@@ -17,6 +17,7 @@ class Config:
     VENUE_ALIASES_CSV_PATH: str = "path/to/venue_aliases_sample.csv"
     PLAYERS_CSV_PATH: str = "path/to/players_info_sample.csv"
     OFFICIALS_CSV_PATH: str = "path/to/officials_sample.csv"
+    NASA_DIST2COAST_PATH: str = "path/to/dist2coast.nc"
 
     # --- Scraper/API Settings ---
     USER_AGENT: str = "give-yourself-user-agent"

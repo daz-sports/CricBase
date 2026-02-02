@@ -165,7 +165,7 @@ class VenuesLoader:
 
             nullable_string_cols = [
                 'admin_area_1', 'admin_area_2', 'hemisphere', 'home_team_id_1', 'home_team_id_2', 'latitude',
-                'longitude', 'elevation', 'timezone', 'utc_offset_str'
+                'longitude', 'elevation', 'dist2coast_coarse', 'dist2coast_fine', 'timezone', 'utc_offset_str'
             ]
 
             for col in nullable_string_cols:
@@ -181,8 +181,8 @@ class VenuesLoader:
 
         db_columns = [
             'venue_id', 'venue_name', 'city', 'admin_area_1', 'admin_area_2', 'nation', 'nation_code', 'continent',
-            'hemisphere', 'home_team_id_1', 'home_team_id_2', 'latitude', 'longitude', 'elevation', 'timezone',
-            'utc_offset_str'
+            'hemisphere', 'home_team_id_1', 'home_team_id_2', 'latitude', 'longitude', 'elevation', 'dist2coast_coarse',
+            'dist2coast_fine', 'timezone', 'utc_offset_str'
         ]
 
         venues_to_insert: List[Tuple] = []
