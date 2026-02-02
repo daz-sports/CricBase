@@ -1,3 +1,4 @@
+import re
 import requests
 import pandas as pd
 import calendar
@@ -5,6 +6,7 @@ import logging
 import time
 import random
 from typing import Dict, List, Tuple
+from datetime import timedelta
 
 class ICCScraper:
     """Handles scraping the ICC website for T20I matches."""
@@ -72,7 +74,12 @@ class ICCScraper:
             'North Sound': 'Antigua and Barbuda', 'Coolidge': 'Antigua and Barbuda',
             'Kingstown': 'Saint Vincent and the Grenadines', 'Providence': 'Guyana',
             'Guyana': 'Guyana', 'Saint Peters': 'Antigua and Barbuda', 'Cardiff': 'Wales',
-            'Episkopi': 'Cyprus', 'Oslo': 'Norway'
+            'Episkopi': 'Cyprus', 'Oslo': 'Norway', "St George'S": 'Grenada', 'Gros Islet, St Lucia': 'Saint Lucia',
+            'North Sound, Antigua': 'Antigua and Barbuda', 'Bridgetown, Barbados': 'Barbados',
+            'Basseterre': 'Saint Kitts and Nevis', 'Roseau': 'Dominica', 'Belfast': 'Northern Ireland',
+            'Bready': 'Northern Ireland', 'Osbourn': 'Antigua and Barbuda', 'Antigua':'Antigua and Barbuda',
+            'Basseterre, St Kitts': 'Saint Kitts and Nevis', 'St Kitts': 'Saint Kitts and Nevis', 'Latschach': 'Austria',
+            'Windhoek': 'Namibia', 'Tromode': 'Isle of Man'
         }
 
         # Cleanup column names and strings
@@ -80,12 +87,8 @@ class ICCScraper:
         df['city'] = df['city'].str.title().str.strip()
         df['venue_nation'] = df['venue_nation'].str.strip().replace({'USA': 'United States of America'})
 
-        # Map West Indies cities
-        wi_mask = df['venue_nation'] == 'West Indies'
-        df.loc[wi_mask, 'venue_nation'] = df.loc[wi_mask, 'city'].map(place_map).fillna('West Indies')
-
-        # General city overrides (Wales, etc)
         df.loc[df['city'].isin(place_map), 'venue_nation'] = df['city'].map(place_map).fillna(df['venue_nation'])
+        df.loc[df['venue_name'] == 'Namibia Cricket Ground', 'venue_nation'] = 'Namibia'
 
         return df
 
@@ -94,7 +97,11 @@ class ICCScraper:
         # Filter for T20Is (3) and Women's T20Is (13)
         df = df[df['comp_type_id'].isin(['3', '13'])].copy()
 
-        # Handle Dates
+        utc_series = pd.to_datetime(df['start_date'], utc=True)
+        df['scheduled_start_utc'] = utc_series
+        df['estimated_end_utc'] = utc_series + timedelta(hours=4)
+        df['pre_start_utc'] = utc_series - timedelta(hours=2)
+        df['start_date_utc'] = utc_series.dt.strftime('%Y-%m-%d')
         df['start_date'] = pd.to_datetime(df['match_date_local']).dt.strftime('%Y-%m-%d')
         df['sex'] = df['comp_type'].str.contains('w', case=False).map({True: 'female', False: 'male'})
 
@@ -110,13 +117,19 @@ class ICCScraper:
 
         df = self._clean_venue_data(df)
 
+        bad = df[df['venue_nation'].isna()]
+        if len(bad) > 0:
+            print(bad.head(20))
+            print(f"Total bad rows: {len(bad)}")
+
         # Generate Results
         df['toss_result'] = df.apply(lambda r: self._generate_toss_result(r), axis=1)
         df['match_result'] = df.apply(lambda r: self._generate_match_result(r), axis=1)
         df['match_result'] = df['match_result'].replace('Match Abandoned', 'No Result')
 
-        return df[['icc_id', 'start_date', 'team1', 'team2', 'toss_result', 'match_result', 'venue_name', 'city',
-                   'venue_nation']]
+        return df[
+            ['icc_id', 'start_date', 'start_date_utc', 'pre_start_utc', 'scheduled_start_utc', 'estimated_end_utc',
+             'team1', 'team2', 'toss_result', 'match_result', 'venue_name', 'city', 'venue_nation']]
 
     def _build_team_map(self, df: pd.DataFrame) -> Dict:
         suffix = {'male': ' Men', 'female': ' Women'}
@@ -132,10 +145,29 @@ class ICCScraper:
         return f"{winner} won the toss and chose to {decision}"
 
     def _generate_match_result(self, row: pd.Series) -> str:
-        if row['match_status'] in ['No Result', 'Abandoned']: return "No Result"
+        if row['match_status'] in ['No Result', 'Abandoned']:
+            return "No Result"
 
         winner = self.team_map.get(row['winning_team_id'])
-        if row['match_result'] == 'Tie' or 'super over' in str(row['match_result']).lower():
+
+        res_str_raw = str(row['match_result'])
+        res_str_lower = res_str_raw.lower()
+
+        if 'tie' in res_str_lower or 'super over' in res_str_lower:
+            if not winner:
+                bracket_match = re.search(r'\((.*?)\)', res_str_raw)
+                if bracket_match:
+                    sub_status = bracket_match.group(1).lower()
+
+                    target_suffix = " Women" if row.get('sex') == 'female' else " Men"
+
+                    for team_id, team_name in self.team_map.items():
+                        if team_name.endswith(target_suffix):
+                            base_name = team_name.replace(target_suffix, '').strip().lower()
+                            if base_name in sub_status:
+                                winner = team_name
+                                break
+
             return f"Tie ({winner} won the Super Over)" if winner else "Match Tied"
 
         margin = str(row['winning_margin']).replace('(DLS method)', '').replace('(D/L method)', '').strip()

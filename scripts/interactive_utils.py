@@ -334,16 +334,13 @@ class InputManager:
             choice = input("Select option (1/2): ").strip()
 
             if choice == '1':
-                search_term = input(
-                    "  Search for the venue (search by name, city, or nation - search nation if unsure): ")
+                search_term = input("  Search for the venue (search by name, city, or nation - search nation if unsure): ")
                 with db_connection(self.db_name) as conn:
                     sql = """
-                          SELECT venue_id, venue_name, city, nation
-                          FROM venues
-                          WHERE venue_name LIKE ? \
-                             OR city LIKE ? \
-                             OR nation LIKE ? \
-                          """
+                        SELECT venue_id, venue_name, city, nation
+                        FROM venues
+                        WHERE venue_name LIKE ? OR city LIKE ? OR nation LIKE ?
+                    """
                     wildcard = f"%{search_term}%"
                     results = conn.execute(sql, (wildcard, wildcard, wildcard)).fetchall()
 
@@ -353,7 +350,7 @@ class InputManager:
 
                 print(f"\n  Found {len(results)} matches:")
                 for i, res in enumerate(results):
-                    print(f"    {i + 1}. {res[1]} ({res[2]}, {res[3]}) [ID: {res[0]}]")
+                    print(f"    {i+1}. {res[1]} ({res[2]}, {res[3]}) [ID: {res[0]}]")
 
                 sel = input("\n  Select number to link (or 0 to cancel): ")
                 try:
@@ -371,6 +368,7 @@ class InputManager:
             elif choice == '2':
                 print("\n --- New Venue Details ---")
                 webbrowser.open_new(f"https://www.google.com/search?q={urllib.parse.quote_plus(venue_name)}")
+                canonical_name = self._get_input("Canonical Venue Name", default=venue_name, required=True)
                 new_nation = self._get_input("Nation", required=True)
                 if count == 0:
                     webbrowser.open_new(f"https://www.iban.com/country-codes")
@@ -399,7 +397,7 @@ class InputManager:
 
                 details = {
                     'venue_id': venue_id,
-                    'venue_name': venue_name,
+                    'venue_name': canonical_name,
                     'city': new_city,
                     'admin_area_1': gis_data.get('admin_area_1', 'Unknown'),
                     'admin_area_2': gis_data.get('admin_area_2', 'Unknown'),
@@ -412,6 +410,8 @@ class InputManager:
                     'latitude': lat,
                     'longitude': lon,
                     'elevation': gis_data.get('elevation'),
+                    'dist2coast_coarse': gis_data.get('dist2coast_coarse'),
+                    'dist2coast_fine': gis_data.get('dist2coast_fine'),
                     'timezone': gis_data.get('timezone'),
                     'utc_offset_str': gis_data.get('utc_offset_str')
                 }
@@ -421,12 +421,14 @@ class InputManager:
                         conn.execute("""
                                      INSERT INTO venues (venue_id, venue_name, city, admin_area_1, admin_area_2, 
                                                          nation, nation_code, continent, hemisphere, home_team_id_1, 
-                                                         home_team_id_2, latitude, longitude, elevation, timezone, 
-                                                         utc_offset_str
+                                                         home_team_id_2, latitude, longitude, elevation, 
+                                                         dist2coast_coarse, dist2coast_fine, timezone, utc_offset_str
                                                         )
                                      VALUES (:venue_id, :venue_name, :city, :admin_area_1, :admin_area_2, :nation, 
                                              :nation_code, :continent, :hemisphere, :home_team_id_1, :home_team_id_2,
-                                             :latitude, :longitude, :elevation, :timezone, :utc_offset_str)
+                                             :latitude, :longitude, :elevation, :dist2coast_coarse, :dist2coast_fine,
+                                             :timezone, :utc_offset_str
+                                            )
                                      """, details)
                         conn.commit()
                         self._add_venue_alias(venue_name, city, new_nation, venue_id)

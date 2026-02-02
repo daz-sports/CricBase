@@ -119,6 +119,7 @@ class CricketDatabase:
                        sex                    TEXT NOT NULL CHECK (sex IN ('male', 'female')),
                        start_date             DATE NOT NULL,
                        end_date               DATE NOT NULL,
+                       scheduled_start_utc    TIMESTAMP,
                        season                 TEXT,
                        team1_id               TEXT NOT NULL REFERENCES teams (team_id),
                        team2_id               TEXT NOT NULL REFERENCES teams (team_id),
@@ -250,6 +251,7 @@ class CricketDatabase:
                           fielder1_id              TEXT REFERENCES registry (identifier),
                           fielder2_id              TEXT REFERENCES registry (identifier),
                           fielder3_id              TEXT REFERENCES registry (identifier),
+                          fielder_missing          INTEGER DEFAULT 0 CHECK (fielder_missing IN (0, 1)),
                           wickets2                 INTEGER CHECK (wickets2 = 0 OR (wickets2 = 1 AND wickets = 1)),
                           player_out2_id           TEXT REFERENCES registry (identifier),
                           how_out2                 TEXT CHECK (how_out2 IN (
@@ -266,7 +268,7 @@ class CricketDatabase:
                           ump_decision             TEXT CHECK (
                               ump_decision IS NULL OR
                               (ump_decision IN ('out', 'not out') AND review = 1)
-                              ),                                          -- As umpire reviews are not considered by Cricsheet
+                              ), -- As umpire reviews are not considered by Cricsheet
                           review_by_id             TEXT REFERENCES teams (team_id),
                           review_ump_id            TEXT REFERENCES registry (identifier),
                           review_batter_id         TEXT REFERENCES registry (identifier),
@@ -283,14 +285,30 @@ class CricketDatabase:
                               (player_out_id IS NOT NULL AND wickets = 1)
                               ),
                           CHECK (
-                              fielder1_id IS NULL AND (
-                                  wickets = 0 OR
-                                  how_out IN ('bowled', 'lbw', 'hit wicket', 'obstructing the field',
-                                              'hit the ball twice', 'handled the ball', 'timed out',
-                                              'retired hurt', 'retired out', 'retired not out')
-                                  ) OR
-                              fielder1_id IS NOT NULL AND how_out IN ('caught', 'caught and bowled', 'stumped', 'run out')
-                              ),
+                              (
+                                wickets = 0
+                                AND fielder1_id IS NULL
+                                AND fielder_missing = 0
+                              )
+                              OR
+                              (
+                                wickets = 1
+                                AND how_out IN ('bowled', 'lbw', 'hit wicket', 'obstructing the field',
+                                                'hit the ball twice', 'handled the ball', 'timed out',
+                                                'retired hurt', 'retired out', 'retired not out')
+                                AND fielder1_id IS NULL
+                                AND fielder_missing = 0
+                              )
+                              OR
+                              (
+                                wickets = 1
+                                AND how_out IN ('caught', 'caught and bowled', 'stumped', 'run out')
+                                AND (
+                                  (fielder1_id IS NOT NULL AND fielder_missing = 0) OR
+                                  (fielder1_id IS NULL AND fielder_missing = 1)
+                                )
+                              )
+                           ),
                           CHECK (
                               fielder2_id IS NULL OR
                               (fielder2_id IS NOT NULL AND
@@ -307,10 +325,11 @@ class CricketDatabase:
                           CHECK (extras_wides = 0 OR extras_noballs = 0), -- Cannot have both wide and no-ball
                           CHECK (runs_total = runs_batter + runs_extras),
                           CHECK ((wickets = 1 AND player_out_id IS NOT NULL) OR (wickets = 0 AND player_out_id IS NULL)),
-                          CHECK ((review = 1 AND review_by_id IS NOT NULL AND review_ump_id IS NOT NULL AND
-                                  review_result IS NOT NULL) OR
-                                 (review = 0 AND review_by_id IS NULL AND review_ump_id IS NULL AND
-                                  review_result IS NULL)),
+                          CHECK (
+                               (review = 1 AND review_result IS NOT NULL)
+                                   OR 
+                               (review = 0 AND review_by_id IS NULL AND review_ump_id IS NULL AND review_result IS NULL)
+                               ),
                           CHECK ((ump_decision IS NULL AND review = 0) OR
                                  (ump_decision IS NOT NULL AND review = 1)),
                           CHECK ((wickets2 = 1 AND player_out2_id IS NOT NULL AND how_out2 IS NOT NULL) OR
@@ -333,6 +352,36 @@ class CricketDatabase:
                                updated_at   TIMESTAMP DEFAULT CURRENT_TIMESTAMP
                            )
                            """,
+        "weather": """
+                   CREATE TABLE IF NOT EXISTS weather
+                   (
+                       match_id                TEXT NOT NULL REFERENCES matches (match_id),
+                       time_utc                TIMESTAMP NOT NULL,
+                       temperature_2m          REAL,
+                       relative_humidity_2m    REAL,
+                       dew_point_2m            REAL,
+                       pressure_msl            REAL,
+                       cloud_cover             INTEGER,
+                       cloud_cover_low         INTEGER,
+                       cloud_cover_mid         INTEGER,
+                       cloud_cover_high        INTEGER,
+                       wind_speed_10m          REAL,
+                       wind_direction_10m      INTEGER,
+                       wind_gusts_10m          REAL,
+                       vapour_pressure_deficit REAL,
+                       cape                    REAL,
+                       rain                    REAL,
+                       showers                 REAL,
+                       weather_code            INTEGER,
+                       visibility              REAL,
+                       is_day                  INTEGER,
+                       shortwave_radiation     REAL,
+                       diffuse_radiation       REAL,
+                       created_at              TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+                       updated_at              TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+                       PRIMARY KEY (match_id, time_utc)
+                   )
+                   """,
         "check_correct_team_players": """
                                       CREATE TRIGGER IF NOT EXISTS check_correct_team_players
                                           BEFORE INSERT
@@ -558,6 +607,17 @@ class CricketDatabase:
                                                 WHERE icc_id = NEW.icc_id;
                                             END;
                                             """,
+        "update_weather_timestamp": """
+                                    CREATE TRIGGER IF NOT EXISTS update_weather_timestamp
+                                        AFTER UPDATE
+                                        ON weather
+                                    BEGIN
+                                        UPDATE weather
+                                        SET updated_at = CURRENT_TIMESTAMP
+                                        WHERE match_id = NEW.match_id
+                                          AND time_utc = NEW.time_utc;
+                                    END;
+                                    """,
         "match_summary": """
                        CREATE VIEW IF NOT EXISTS match_summary AS
                        WITH delivery_summary AS ( 
@@ -842,15 +902,14 @@ class CricketDatabase:
             "view": ["batting_stats", "bowling_stats", "match_summary"],
             "trigger": [
                 "update_registry_timestamp", "update_teams_timestamp", "update_venues_timestamp",
-                "update_venue_aliases_timestamp",
-                "update_matches_timestamp", "update_match_metadata_timestamp", "update_match_players_timestamp",
-                "update_players_timestamp", "update_officials_timestamp",
-                "update_deliveries_timestamp", "update_missing_matches_timestamp", "check_review_by_team",
-                "check_correct_team_players", "check_review_ump_official"
+                "update_venue_aliases_timestamp", "update_matches_timestamp", "update_match_metadata_timestamp",
+                "update_match_players_timestamp", "update_players_timestamp", "update_officials_timestamp",
+                "update_deliveries_timestamp", "update_missing_matches_timestamp", "update_weather_timestamp",
+                "check_review_by_team", "check_correct_team_players", "check_review_ump_official"
             ],
             "table": [
-                "missing_matches", "deliveries", "match_players", "match_metadata", "matches", "venue_aliases",
-                "venues", "players", "officials", "teams", "registry", "schema_version"
+                "weather", "missing_matches", "deliveries", "match_players", "match_metadata", "matches",
+                "venue_aliases", "venues", "players", "officials", "teams", "registry", "schema_version"
             ],
             "index": [
                 "idx_matches_date", "idx_matches_team", "idx_deliveries_match_innings", "idx_deliveries_batter",
@@ -1039,6 +1098,64 @@ class CricketDatabase:
                 integrity_issues.append(
                     f"Found {unique_ids} unique match_ids in match_players with no associated matches entry.")
 
+            # Orphaned Matches (Venue)
+            cursor.execute("""
+                           SELECT m.match_id, m.venue_id
+                           FROM matches m
+                                    LEFT JOIN venues v ON m.venue_id = v.venue_id
+                           WHERE m.venue_id IS NOT NULL
+                             AND v.venue_id IS NULL
+                           """)
+            orphaned_match_venues = cursor.fetchall()
+            if orphaned_match_venues:
+                integrity_issues.append(
+                    f"Found {len(orphaned_match_venues)} matches referencing a venue_id that does not exist in venues.")
+
+            # Orphaned Aliases
+            cursor.execute("""
+                           SELECT va.alias_name, va.venue_id
+                           FROM venue_aliases va
+                                    LEFT JOIN venues v ON va.venue_id = v.venue_id
+                           WHERE v.venue_id IS NULL
+                           """)
+            orphaned_aliases = cursor.fetchall()
+            if orphaned_aliases:
+                integrity_issues.append(
+                    f"Found {len(orphaned_aliases)} venue_aliases referencing a venue_id that does not exist in venues.")
+
+            # Orphaned Officials (Checks all 5 official roles in matches)
+            cursor.execute("""
+                           SELECT m.match_id
+                           FROM matches m
+                                    LEFT JOIN registry r1 ON m.umpire1_id = r1.identifier
+                                    LEFT JOIN registry r2 ON m.umpire2_id = r2.identifier
+                                    LEFT JOIN registry r3 ON m.tv_umpire_id = r3.identifier
+                                    LEFT JOIN registry r4 ON m.match_referee_id = r4.identifier
+                                    LEFT JOIN registry r5 ON m.reserve_umpire_id = r5.identifier
+                           WHERE (m.umpire1_id IS NOT NULL AND r1.identifier IS NULL)
+                              OR (m.umpire2_id IS NOT NULL AND r2.identifier IS NULL)
+                              OR (m.tv_umpire_id IS NOT NULL AND r3.identifier IS NULL)
+                              OR (m.match_referee_id IS NOT NULL AND r4.identifier IS NULL)
+                              OR (m.reserve_umpire_id IS NOT NULL AND r5.identifier IS NULL)
+                           """)
+            orphaned_officials = cursor.fetchall()
+            if orphaned_officials:
+                integrity_issues.append(
+                    f"Found {len(orphaned_officials)} matches with official references missing from registry.")
+
+            # Orphaned Weather
+            cursor.execute("""
+                           SELECT w.match_id
+                           FROM weather w
+                                    LEFT JOIN matches m ON w.match_id = m.match_id
+                           WHERE m.match_id IS NULL
+                           """)
+            orphaned_weather = cursor.fetchall()
+            if orphaned_weather:
+                unique_ids = len(set([row[0] for row in orphaned_weather]))
+                integrity_issues.append(
+                    f"Found {unique_ids} unique match_ids in weather with no associated matches entry.")
+
             # Check for matches with invalid dates
             cursor.execute("""
                            SELECT match_id, start_date, end_date
@@ -1079,12 +1196,12 @@ class CricketDatabase:
                            SELECT DISTINCT match_id
                            FROM match_players mp
                            WHERE team_id NOT IN (SELECT team1_id
-                                              FROM matches m
-                                              WHERE m.match_id = mp.match_id
-                                              UNION
-                                              SELECT team2_id
-                                              FROM matches m
-                                              WHERE m.match_id = mp.match_id)
+                                                 FROM matches m
+                                                 WHERE m.match_id = mp.match_id
+                                                 UNION
+                                                 SELECT team2_id
+                                                 FROM matches m
+                                                 WHERE m.match_id = mp.match_id)
                            """)
             invalid_teams = cursor.fetchall()
             if invalid_teams:

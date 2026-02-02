@@ -2,7 +2,9 @@ import os
 import json
 import sqlite3
 import logging
+import requests
 import pandas as pd
+from datetime import timedelta
 from typing import Dict, List, Tuple
 from utils import BuildError, db_connection, open_icc_url, get_files_to_process
 from cricsheet_extract_transform import MatchesExtractor, MetadataExtractor, MatchPlayersExtractor, DeliveriesExtractor
@@ -58,7 +60,10 @@ class MatchesLoader(BaseLoader):
 
         if lookup_key not in maps['venues']:
             venue_id = self.input_manager.resolve_missing_venue(raw_venue, city)
-            maps['venues'][lookup_key] = venue_id
+            if venue_id:
+                maps['venues'][lookup_key] = venue_id
+            else:
+                raise BuildError(f"Could not resolve venue: {raw_venue}")
 
         df.loc[0, 'venue_id'] = maps['venues'][lookup_key]
 
@@ -156,16 +161,16 @@ class DeliveriesLoader(BaseLoader):
         db_columns = [
             'match_id', 'innings', 'overs', 'balls', 'batter_id', 'bowler_id', 'non_striker_id',
             'runs_batter', 'runs_extras', 'runs_total', 'runs_batter_non_boundary', 'wickets',
-            'player_out_id', 'how_out', 'fielder1_id', 'fielder2_id', 'fielder3_id', 'wickets2',
-            'player_out2_id', 'how_out2', 'extras_byes', 'extras_legbyes', 'extras_noballs',
-            'extras_penalty', 'extras_wides', 'review', 'ump_decision', 'review_by_id',
-            'review_ump_id', 'review_batter_id', 'review_result', 'umpires_call', 'powerplay',
-            'super_over'
+            'player_out_id', 'how_out', 'fielder1_id', 'fielder2_id', 'fielder3_id', 'fielder_missing',
+            'wickets2', 'player_out2_id', 'how_out2', 'extras_byes', 'extras_legbyes',
+            'extras_noballs', 'extras_penalty', 'extras_wides', 'review', 'ump_decision',
+            'review_by_id', 'review_ump_id', 'review_batter_id', 'review_result', 'umpires_call',
+            'powerplay', 'super_over'
         ]
 
         numeric_cols = ['innings', 'overs', 'balls', 'runs_batter', 'runs_extras', 'runs_total',
-                        'wickets', 'wickets2', 'extras_byes', 'extras_legbyes', 'extras_noballs',
-                        'extras_penalty', 'extras_wides']
+                        'wickets', 'fielder_missing', 'wickets2', 'extras_byes', 'extras_legbyes',
+                        'extras_noballs', 'extras_penalty', 'extras_wides']
         for col in numeric_cols:
             df[col] = pd.to_numeric(df[col], errors='coerce').fillna(0).astype(int)
 
@@ -185,15 +190,11 @@ class DeliveriesLoader(BaseLoader):
 class MissingMatchesLoader(BaseLoader):
     """Loads missing matches into the database."""
 
-    def __init__(self, db_name: str, user_agent: str):
+    def __init__(self, db_name: str):
         super().__init__(db_name)
-        self.scraper = ICCScraper(user_agent)
 
-    def update_missing_matches(self, start_y: int, start_m: int, end_y: int, end_m: int):
+    def update_missing_matches(self, icc_df: pd.DataFrame):
         logging.info("--- Starting Missing Matches Check ---")
-
-        icc_df = self.scraper.scrape_period(start_y, start_m, end_y, end_m)
-        logging.info(f"Total ICC Matches Scraped: {len(icc_df)}")
 
         if icc_df.empty:
             logging.warning("No data found from ICC. Skipping comparison.")
@@ -202,8 +203,10 @@ class MissingMatchesLoader(BaseLoader):
         logging.info("Checking for missing venue_nation...")
 
         icc_df = self._handle_icc_duplicates(icc_df)
-        icc_df['match_teams_key'] = icc_df.apply(lambda x: tuple(sorted([str(x['team1']), str(x['team2'])])), axis=1)
-
+        icc_df.loc[:, 'match_teams_key'] = icc_df.apply(
+            lambda x: tuple(sorted([str(x['team1']), str(x['team2'])])),
+            axis=1
+        )
         db_df = self._fetch_existing_matches()
         logging.info(f"Total Matches in DB: {len(db_df)}")
 
@@ -223,7 +226,7 @@ class MissingMatchesLoader(BaseLoader):
             duplicates = df[duplicated_mask].sort_values(by='icc_id')
 
             if not duplicates.empty:
-                logging.warning(f"Found {len(duplicates)} rows with duplicate ICC IDs due to month crossover (Gibraltar vs Serbia on 2024-09-30 should appear).")
+                logging.warning(f"Found {len(duplicates)} rows with duplicate ICC IDs due to month crossover. Should be 2024-09-30 Gibraltar vs Serbia.")
                 for icc_id, group in duplicates.groupby('icc_id'):
                     logging.info(
                         f"   [DUPLICATE DETECTED] ID: {icc_id} | {group.iloc[0]['team1']} vs {group.iloc[0]['team2']} on {group.iloc[0]['start_date']}")
@@ -282,6 +285,7 @@ class MissingMatchesLoader(BaseLoader):
         res_mismatch = pd.merge(unmatched_db, icc_df, on=['start_date', 'match_teams_key', 'venue_nation'],
                                 suffixes=('_db', '_icc'))
         for _, row in res_mismatch.iterrows():
+            logging.info("There is a known issue for India Women vs New Zealand Women on 2020-02-27")
             logging.warning(
                 f"   [RESULT MISMATCH]: {row['match_teams_key']} on {row['start_date']}. DB Result: '{row['match_result_db']}' | ICC Result: '{row['match_result_icc']}'")
 
@@ -321,6 +325,200 @@ class MissingMatchesLoader(BaseLoader):
 
         sql = f"INSERT INTO missing_matches ({', '.join(db_columns)}) VALUES ({', '.join(['?'] * len(db_columns))})"
         self._execute_many(sql, data_to_insert, 'missing_matches')
+
+class WeatherLoader(BaseLoader):
+    """
+    Integrates ICC start times into the matches table and fetches/loads weather data.
+    """
+
+    def __init__(self, db_name: str):
+        super().__init__(db_name)
+
+    def process_weather(self, icc_df: pd.DataFrame):
+        logging.info("--- Starting Weather Processing ---")
+
+        processing_df = self._prepare_processing_df(icc_df)
+        if processing_df.empty:
+            logging.info("No matches found to process for weather.")
+            return
+
+        self._update_match_times(processing_df)
+
+        matches_needing_weather = self._filter_existing_weather(processing_df)
+
+        if matches_needing_weather.empty:
+            logging.info("All matched games already have weather data in DB. Skipping API calls.")
+            return
+
+        weather_df = self._fetch_weather_bulk(matches_needing_weather)
+
+        if weather_df is not None and not weather_df.empty:
+            self._insert_weather(weather_df)
+
+    def _filter_existing_weather(self, df: pd.DataFrame) -> pd.DataFrame:
+        """Checks which match_ids already exist in the weather table."""
+        with db_connection(self.db_name) as conn:
+            existing_ids = pd.read_sql("SELECT DISTINCT match_id FROM weather", conn)['match_id'].tolist()
+
+        filtered_df = df[~df['match_id'].isin(existing_ids)].copy()
+
+        diff = len(df) - len(filtered_df)
+        if diff > 0:
+            logging.info(f"Skipping {diff} matches that already have weather records.")
+
+        return filtered_df
+
+    def _prepare_processing_df(self, icc_df: pd.DataFrame) -> pd.DataFrame:
+        """Matches ICC Scraped data with DB data to get Match IDs and Lat/Lon."""
+        if icc_df.empty: return pd.DataFrame()
+
+        if 'icc_id' in icc_df.columns:
+            icc_df = icc_df.drop_duplicates(subset=['icc_id'], keep='first')
+
+        icc_df.loc[:, 'match_teams_key'] = icc_df.apply(
+            lambda x: tuple(sorted([str(x['team1']), str(x['team2'])])),
+            axis=1
+        )
+
+        with db_connection(self.db_name) as conn:
+            query = """
+                    SELECT ms.start_date, \
+                           ms.team1, \
+                           ms.team2, \
+                           ms.toss_result, \
+                           ms.match_result, \
+                           ms.venue_nation,
+                           ms.match_id, \
+                           v.latitude, \
+                           v.longitude
+                    FROM match_summary ms
+                             JOIN matches m ON ms.match_id = m.match_id
+                             JOIN venues v ON m.venue_id = v.venue_id \
+                    """
+            db_df = pd.read_sql(query, conn)
+
+        if db_df.empty: return pd.DataFrame()
+
+        db_df['match_teams_key'] = db_df.apply(lambda x: tuple(sorted([str(x['team1']), str(x['team2'])])), axis=1)
+
+        join_keys = ['start_date', 'match_teams_key', 'match_result', 'toss_result', 'venue_nation']
+        merged_df = pd.merge(icc_df, db_df, on=join_keys, how='inner')
+
+        logging.info(f"Matched {len(merged_df)} database matches with ICC data for weather processing.")
+        return merged_df
+
+    def _update_match_times(self, df: pd.DataFrame):
+        """Updates the matches table with the precise scheduled_start_utc from the scraper."""
+        logging.info("Updating matches table with precise UTC start times...")
+
+        update_data = []
+        for _, row in df.iterrows():
+            if pd.notnull(row['scheduled_start_utc']):
+                ts = row['scheduled_start_utc'].strftime('%Y-%m-%d %H:%M:%S')
+                update_data.append((ts, row['match_id']))
+
+        if not update_data:
+            return
+
+        with db_connection(self.db_name) as conn:
+            cursor = conn.cursor()
+            try:
+                cursor.executemany("UPDATE matches SET scheduled_start_utc = ? WHERE match_id = ?", update_data)
+                conn.commit()
+                logging.info(f"Updated start times for {cursor.rowcount} matches.")
+            except sqlite3.Error as e:
+                logging.error(f"Failed to update match times: {e}")
+                conn.rollback()
+
+    def _fetch_weather_bulk(self, df: pd.DataFrame) -> pd.DataFrame:
+        """Iterates through matches and fetches weather data."""
+        logging.info(f"Fetching 6-hour weather windows for {len(df)} matches...")
+        all_records = []
+
+        for i, row in df.iterrows():
+            if pd.isnull(row['latitude']) or pd.isnull(row['longitude']):
+                continue
+
+            hourly_data = self._fetch_single_weather(
+                row['latitude'], row['longitude'], row['scheduled_start_utc']
+            )
+
+            if hourly_data is not None:
+                hourly_data['match_id'] = row['match_id']
+                all_records.append(hourly_data)
+
+            if i > 0 and i % 50 == 0:
+                logging.info(f"Processed {i}/{len(df)} matches...")
+
+        if not all_records:
+            return None
+
+        return pd.concat(all_records, ignore_index=True)
+
+    def _fetch_single_weather(self, lat, lon, match_start_utc):
+        """Calls Open-Meteo API."""
+        if pd.isnull(match_start_utc): return None
+
+        pre_game = match_start_utc - timedelta(hours=2)
+        post_game = match_start_utc + timedelta(hours=4)
+        date_str = match_start_utc.strftime('%Y-%m-%d')
+
+        url = "https://archive-api.open-meteo.com/v1/archive"
+
+        params = {
+            "latitude": lat, "longitude": lon,
+            "start_date": date_str, "end_date": date_str,
+            "hourly": [
+                "temperature_2m", "relative_humidity_2m", "dew_point_2m",
+                "pressure_msl", "cloud_cover", "cloud_cover_low",
+                "cloud_cover_mid", "cloud_cover_high", "wind_speed_10m",
+                "wind_direction_10m", "wind_gusts_10m", "vapour_pressure_deficit",
+                "cape", "rain", "showers", "weather_code", "visibility", "is_day",
+                "shortwave_radiation", "diffuse_radiation"
+            ],
+            "timezone": "UTC"
+        }
+
+        try:
+            response = requests.get(url, params=params, timeout=10)
+            if response.status_code == 200:
+                data = response.json()
+                if 'hourly' not in data: return None
+
+                w_df = pd.DataFrame(data['hourly'])
+                w_df['time'] = pd.to_datetime(w_df['time'], utc=True)
+
+                mask = (w_df['time'] >= pre_game) & (w_df['time'] <= post_game)
+                return w_df.loc[mask].copy()
+            else:
+                logging.warning(f"Weather API Status {response.status_code} for {lat},{lon}")
+                return None
+        except Exception as e:
+            logging.error(f"Weather API Error: {e}")
+            return None
+
+    def _insert_weather(self, df: pd.DataFrame):
+        """Inserts the dataframe into the weather table."""
+        logging.info(f"Inserting {len(df)} weather records...")
+
+        db_columns = [
+            'match_id', 'time', 'temperature_2m', 'relative_humidity_2m', 'dew_point_2m',
+            'pressure_msl', 'cloud_cover', 'cloud_cover_low', 'cloud_cover_mid',
+            'cloud_cover_high', 'wind_speed_10m', 'wind_direction_10m', 'wind_gusts_10m',
+            'vapour_pressure_deficit', 'cape', 'rain', 'showers', 'weather_code',
+            'visibility', 'is_day', 'shortwave_radiation', 'diffuse_radiation'
+        ]
+
+        df = df.rename(columns={'time': 'time_utc'})
+
+        df['time_utc'] = df['time_utc'].dt.strftime('%Y-%m-%d %H:%M:%S')
+
+        columns_to_insert = ['match_id', 'time_utc'] + db_columns[2:]
+
+        data_to_insert = [tuple(row.get(col) for col in columns_to_insert) for _, row in df.iterrows()]
+
+        sql = f"INSERT OR IGNORE INTO weather ({', '.join(columns_to_insert)}) VALUES ({', '.join(['?'] * len(columns_to_insert))})"
+        self._execute_many(sql, data_to_insert, 'weather')
 
 def load_all_cricsheet_data(config, db_name: str, cricsheet_dir: str, additional_dir: str, start_y: int, start_m: int, end_y: int, end_m: int, user_agent: str):
     """
@@ -391,6 +589,17 @@ def load_all_cricsheet_data(config, db_name: str, cricsheet_dir: str, additional
 
         logging.info("All Cricsheet data loading tasks complete.")
 
-        # Run the Missing Matches Check
-        missing_loader = MissingMatchesLoader(db_name, user_agent)
-        missing_loader.update_missing_matches(start_y, start_m, end_y, end_m)
+    logging.info(f"--- Initiating Unified ICC Scrape ({start_y}/{start_m} to {end_y}/{end_m}) ---")
+    scraper = ICCScraper(user_agent)
+    icc_df = scraper.scrape_period(start_y, start_m, end_y, end_m).copy()
+
+    if icc_df.empty:
+        logging.warning("No data returned from ICC Scraper. Skipping Missing Matches and Weather steps.")
+    else:
+        logging.info(f"Scraped {len(icc_df)} matches from ICC. Proceeding to analysis.")
+
+        missing_loader = MissingMatchesLoader(db_name)
+        missing_loader.update_missing_matches(icc_df)
+
+        weather_loader = WeatherLoader(db_name)
+        weather_loader.process_weather(icc_df)

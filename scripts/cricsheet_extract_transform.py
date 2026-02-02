@@ -8,7 +8,6 @@ class MatchesExtractor:
     def __init__(self):
         self.column_map = {
             'info.match_type': 'match_type',
-            'info.overs': 'overs',
             'info.balls_per_over': 'balls_per_over',
             'info.team_type': 'team_type',
             'info.gender': 'sex',
@@ -32,6 +31,9 @@ class MatchesExtractor:
         if dates:
             df.loc[0, 'start_date'] = dates[0]
             df.loc[0, 'end_date'] = dates[-1]
+        overs = get_nested_value(data, 'info.overs', [])
+        # Cricsheet has some spurious matches with overs > 20 (even though they were actually T20s, e.g. 1430821)
+        df.loc[0, 'overs'] = 20 if overs > 20 else overs
 
     def _extract_official_id(self, data: Dict, official_name: str) -> Optional[str]:
         registry = get_nested_value(data, 'info.registry.people', {})
@@ -55,6 +57,10 @@ class MatchesExtractor:
         reserve_ump = get_nested_value(data, 'info.officials.reserve_umpires', [])
         if reserve_ump:
             df.loc[0, 'reserve_umpire_id'] = self._extract_official_id(data, reserve_ump[0])
+
+    def _extract_overs(self, data: Dict, df: pd.DataFrame):
+        overs = get_nested_value(data, 'info.overs', [])
+        df.loc[0, 'overs_count'] = len(overs)
 
     def _extract_outcome(self, data: Dict, df: pd.DataFrame):
         outcome = get_nested_value(data, 'info.outcome', {})
@@ -230,6 +236,7 @@ class DeliveriesExtractor:
                         'fielder1_id': None,
                         'fielder2_id': None,
                         'fielder3_id': None,
+                        'fielder_missing': 0,
                         'wickets2': 0,
                         'player_out2': None,
                         'how_out2': None,
@@ -262,6 +269,9 @@ class DeliveriesExtractor:
                             delivery_dict['fielder1_id'] = delivery_dict['bowler_id']
                         if len(fielders) > 1: delivery_dict['fielder2_id'] = self._get_fielder_id(fielders[1], registry)
                         if len(fielders) > 2: delivery_dict['fielder3_id'] = self._get_fielder_id(fielders[2], registry)
+                        if delivery_dict['how_out'] in ('caught', 'caught and bowled', 'stumped', 'run out') and \
+                                delivery_dict['fielder1_id'] is None:
+                            delivery_dict['fielder_missing'] = 1
                     else:
                         delivery_dict['wickets'] = 0
 
