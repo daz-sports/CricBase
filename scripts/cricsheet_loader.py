@@ -11,6 +11,7 @@ from cricsheet_extract_transform import MatchesExtractor, MetadataExtractor, Mat
 from scraper import ICCScraper
 from interactive_utils import InputManager
 
+
 class BaseLoader:
     """A base class for loaders to share common functionality."""
 
@@ -31,6 +32,7 @@ class BaseLoader:
                 logging.error(f"DB error during bulk insert into '{table_name}': {e}")
                 conn.rollback()
                 raise BuildError(e)
+
 
 class MatchesLoader(BaseLoader):
     """Loads data for a single match into the matches table."""
@@ -95,7 +97,7 @@ class MatchesLoader(BaseLoader):
             'team2_prepostpens', 'winner_id', 'by_runs', 'victory_margin_runs', 'by_wickets',
             'victory_margin_wickets', 'by_other', 'victory_margin_other', 'no_result', 'tie', 'super_over_pld',
             'bowl_out', 'DLS', 'player_of_match_id', 'event_name', 'event_match_number', 'venue_id'
-            ]
+        ]
 
         def convert_to_native_type(value):
             if pd.isna(value):
@@ -108,6 +110,7 @@ class MatchesLoader(BaseLoader):
         sql = f"INSERT INTO matches ({', '.join(db_columns)}) VALUES ({', '.join(['?'] * len(db_columns))})"
         self._execute_many(sql, [match_tuple], 'matches')
 
+
 class MetadataLoader(BaseLoader):
     """Loads data for the metadata table."""
 
@@ -117,6 +120,7 @@ class MetadataLoader(BaseLoader):
 
         sql = f"INSERT INTO match_metadata ({', '.join(db_columns)}) VALUES ({', '.join(['?'] * len(db_columns))})"
         self._execute_many(sql, md_to_insert, 'match_metadata')
+
 
 class MatchPlayersLoader(BaseLoader):
     """Loads data for the match_players table."""
@@ -187,6 +191,7 @@ class DeliveriesLoader(BaseLoader):
         sql = f"INSERT INTO deliveries ({', '.join(db_columns)}) VALUES ({', '.join(['?'] * len(db_columns))})"
         self._execute_many(sql, deliveries_to_insert, 'deliveries')
 
+
 class MissingMatchesLoader(BaseLoader):
     """Loads missing matches into the database."""
 
@@ -202,7 +207,7 @@ class MissingMatchesLoader(BaseLoader):
 
         logging.info("Checking for missing venue_nation...")
 
-        icc_df = self._handle_icc_duplicates(icc_df)
+        icc_df = self._handle_icc_duplicates(icc_df).copy()
         icc_df.loc[:, 'match_teams_key'] = icc_df.apply(
             lambda x: tuple(sorted([str(x['team1']), str(x['team2'])])),
             axis=1
@@ -226,7 +231,8 @@ class MissingMatchesLoader(BaseLoader):
             duplicates = df[duplicated_mask].sort_values(by='icc_id')
 
             if not duplicates.empty:
-                logging.warning(f"Found {len(duplicates)} rows with duplicate ICC IDs due to month crossover. Should be 2024-09-30 Gibraltar vs Serbia.")
+                logging.warning(
+                    f"Found {len(duplicates)} rows with duplicate ICC IDs due to month crossover. Should be 2024-09-30 Gibraltar vs Serbia.")
                 for icc_id, group in duplicates.groupby('icc_id'):
                     logging.info(
                         f"   [DUPLICATE DETECTED] ID: {icc_id} | {group.iloc[0]['team1']} vs {group.iloc[0]['team2']} on {group.iloc[0]['start_date']}")
@@ -326,6 +332,7 @@ class MissingMatchesLoader(BaseLoader):
         sql = f"INSERT INTO missing_matches ({', '.join(db_columns)}) VALUES ({', '.join(['?'] * len(db_columns))})"
         self._execute_many(sql, data_to_insert, 'missing_matches')
 
+
 class WeatherLoader(BaseLoader):
     """
     Integrates ICC start times into the matches table and fetches/loads weather data.
@@ -374,7 +381,7 @@ class WeatherLoader(BaseLoader):
 
         if 'icc_id' in icc_df.columns:
             icc_df = icc_df.drop_duplicates(subset=['icc_id'], keep='first')
-
+        icc_df = icc_df.copy()
         icc_df.loc[:, 'match_teams_key'] = icc_df.apply(
             lambda x: tuple(sorted([str(x['team1']), str(x['team2'])])),
             axis=1
@@ -520,7 +527,9 @@ class WeatherLoader(BaseLoader):
         sql = f"INSERT OR IGNORE INTO weather ({', '.join(columns_to_insert)}) VALUES ({', '.join(['?'] * len(columns_to_insert))})"
         self._execute_many(sql, data_to_insert, 'weather')
 
-def load_all_cricsheet_data(config, db_name: str, cricsheet_dir: str, additional_dir: str, start_y: int, start_m: int, end_y: int, end_m: int, user_agent: str):
+
+def load_all_cricsheet_data(config, db_name: str, cricsheet_dir: str, additional_dir: str, start_y: int, start_m: int,
+                            end_y: int, end_m: int, user_agent: str):
     """
     Orchestrates the loading process for a directory of Cricsheet files.
     """
@@ -528,7 +537,8 @@ def load_all_cricsheet_data(config, db_name: str, cricsheet_dir: str, additional
 
     maps = {}
     with db_connection(db_name) as conn:
-        maps['teams_men'] = dict(conn.cursor().execute("SELECT nation, team_id FROM teams WHERE sex = 'male'").fetchall())
+        maps['teams_men'] = dict(
+            conn.cursor().execute("SELECT nation, team_id FROM teams WHERE sex = 'male'").fetchall())
         maps['teams_women'] = dict(
             conn.cursor().execute("SELECT nation, team_id FROM teams WHERE sex = 'female'").fetchall())
         venue_data = conn.cursor().execute("SELECT alias_name, alias_city, venue_id FROM venue_aliases").fetchall()
