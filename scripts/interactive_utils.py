@@ -1,4 +1,3 @@
-from datetime import datetime
 import logging
 import sqlite3
 import urllib.parse
@@ -9,6 +8,9 @@ import reverse_geocoder as rg
 import numpy as np
 import xarray as xr
 import time
+import pandas as pd
+import os
+from datetime import datetime, timezone
 from geopy.geocoders import Nominatim
 from geopy.exc import GeocoderTimedOut, GeocoderServiceError
 from geopy.distance import geodesic
@@ -24,6 +26,7 @@ class InputManager:
 
     def __init__(self, db_name: str, config: Config):
         self.db_name = db_name
+        self.config = config
         self.geolocator = Nominatim(user_agent=config.USER_AGENT)
         self.dist2sea_path = config.NASA_DIST2COAST_PATH
         self.user_agent = config.USER_AGENT
@@ -72,6 +75,84 @@ class InputManager:
 
         choice = input("\n  Save this entry? (y/n/retry): ").lower()
         return choice == 'y'
+
+    def _issue_log_path(self):
+        return self.config.CRICSHEET_ISSUES_CSV_PATH
+
+    def _load_issue_ids(self):
+        path = self._issue_log_path()
+        if not os.path.exists(path):
+            return set()
+
+        try:
+            df = pd.read_csv(path, dtype=str, na_filter=False)
+        except Exception as e:
+            logging.warning(f"Could not read issue log CSV: {e}")
+            return set()
+
+        required_cols = {'cricsheet_identifier', 'conflicting_cricsheet_id'}
+        if not required_cols.issubset(df.columns):
+            logging.warning(f"Issue log CSV missing required columns: {required_cols}")
+            return set()
+
+        ids = df['cricsheet_identifier'].str.strip().tolist() + \
+              df['conflicting_cricsheet_id'].str.strip().tolist()
+
+        return {i for i in ids if i}
+
+    def warn_if_issue_id(self, identifier: str):
+        if not identifier:
+            return
+
+        issue_ids = self._load_issue_ids()
+        if identifier in issue_ids:
+            print("\n[WARNING] This Cricsheet ID appears in your issue log CSV.")
+
+    def _append_issue_log(self, row: dict):
+        path = self._issue_log_path()
+        is_new = not os.path.exists(path)
+
+        df = pd.DataFrame([row])
+        try:
+            df.to_csv(path, mode='a', header=is_new, index=False)
+        except Exception as e:
+            logging.error(f"Failed to write issue log CSV: {e}")
+
+    def _should_trigger_issue_log(self, full_name: str):
+        return (full_name or "").strip().upper() == "[[LOG_ISSUE]]"
+
+    def _run_issue_log_prompt(self, identifier: str, unique_name: str, key_cricinfo: str):
+        print("\n--- Issue Log: Duplicate/Incorrect Cricinfo Key ---")
+        print("This only logs the issue. Please update data manually afterwards.")
+        print("Leave fields blank if unknown.")
+
+        wrong_cricinfo_id = self._get_input(
+            "Wrong Cricinfo ID",
+            required=False,
+            default=key_cricinfo or None
+        )
+        correct_cricinfo_id = self._get_input("Correct Cricinfo ID", required=False)
+        canonical_name = self._get_input("Canonical Name", required=False)
+        conflicting_cricsheet_id = self._get_input("Conflicting CricSheet ID", required=False)
+        match_id = self._get_input("Match ID (if known)", required=False)
+        notes = self._get_input("Notes", required=False)
+
+        row = {
+            'logged_at_utc': datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M:%S'),
+            'cricsheet_identifier': identifier,
+            'cricsheet_name': unique_name,
+            'wrong_cricinfo_id': wrong_cricinfo_id,
+            'correct_cricinfo_id': correct_cricinfo_id,
+            'conflicting_cricsheet_id': conflicting_cricsheet_id,
+            'canonical_name': canonical_name,
+            'match_id': match_id,
+            'notes': notes
+        }
+
+        self._append_issue_log(row)
+
+        print("\n[LOGGED] Issue saved to CSV.")
+        print("Manual action required: due to the nuance of these problems, update registry/records yourself.")
 
     def _get_lat_long(self, venue: str, city: str, nation: str) -> Tuple[Optional[float], Optional[float]]:
         """
@@ -461,6 +542,9 @@ class InputManager:
             exists = conn.execute("SELECT 1 FROM officials WHERE identifier = ?", (identifier,)).fetchone()
             if exists:
                 return
+            issue_ids = self._load_issue_ids()
+            if identifier in issue_ids:
+                print("\n[WARNING] This Cricsheet ID appears in your issue log CSV.")
 
             reg_row = conn.execute(
                 "SELECT unique_name, key_cricinfo, key_cricinfo_2 FROM registry WHERE identifier = ?",
@@ -500,6 +584,9 @@ class InputManager:
         while True:
             print("\n  --- Enter Official Details ---")
             full_name = self._get_input("Full Name", default=unique_name, required=True)
+            if self._should_trigger_issue_log(full_name):
+                self._run_issue_log_prompt(identifier, unique_name, key_cricinfo)
+                continue
             display_name = self._get_input("Display Name", default=full_name, required=True)
 
             sex = self._get_input("Sex (male/female)", required=True).lower()
@@ -572,6 +659,9 @@ class InputManager:
             exists = conn.execute("SELECT 1 FROM players WHERE identifier = ?", (identifier,)).fetchone()
             if exists:
                 return
+            issue_ids = self._load_issue_ids()
+            if identifier in issue_ids:
+                print("\n[WARNING] This Cricsheet ID appears in your issue log CSV.")
 
             reg_row = conn.execute(
                 "SELECT unique_name, key_cricinfo, key_cricinfo_2 FROM registry WHERE identifier = ?",
@@ -611,6 +701,9 @@ class InputManager:
         while True:
             print("\n  --- Enter Player Details ---")
             full_name = self._get_input("Full Name", default=unique_name, required=True)
+            if self._should_trigger_issue_log(full_name):
+                self._run_issue_log_prompt(identifier, unique_name, key_cricinfo)
+                continue
             display_name = self._get_input("Display Name", default=full_name, required=True)
 
             sex = self._get_input("Sex (male/female)", required=True).lower()
