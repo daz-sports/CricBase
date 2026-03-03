@@ -11,6 +11,7 @@ class Config:
     # --- Input Data Paths ---
     CRICSHEET_JSON_DIR: str = "path/to/t20s_json_sample/"
     ADDITIONAL_JSON_DIR: str = "path/to/abandoned_pre_start/"
+    CRICSHEET_ISSUES_CSV_PATH: str = "path/to/registry_issues.csv"
     REGISTRY_CSV_PATH: str = "path/to/registry_100725.csv"
     TEAMS_CSV_PATH: str = "path/to/teams_sample.csv"
     VENUES_CSV_PATH: str = "path/to/venues_sample.csv"
