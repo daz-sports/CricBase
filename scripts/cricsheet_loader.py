@@ -74,6 +74,7 @@ class MatchesLoader(BaseLoader):
 
         for col in ['umpire1_id', 'umpire2_id', 'tv_umpire_id', 'match_referee_id', 'reserve_umpire_id']:
             if col in df.columns:
+                self.input_manager.warn_if_issue_id(df.loc[0, col])
                 self.input_manager.verifying_official(df.loc[0, col])
 
         numeric_cols = ['overs', 'balls_per_over', 'team1_prepostpens', 'team2_prepostpens', 'by_runs',
@@ -97,7 +98,7 @@ class MatchesLoader(BaseLoader):
             'team2_prepostpens', 'winner_id', 'by_runs', 'victory_margin_runs', 'by_wickets',
             'victory_margin_wickets', 'by_other', 'victory_margin_other', 'no_result', 'tie', 'super_over_pld',
             'bowl_out', 'DLS', 'player_of_match_id', 'event_name', 'event_match_number', 'venue_id'
-        ]
+            ]
 
         def convert_to_native_type(value):
             if pd.isna(value):
@@ -136,6 +137,7 @@ class MatchPlayersLoader(BaseLoader):
             return
 
         for identifier in df['identifier'].tolist():
+            self.input_manager.warn_if_issue_id(identifier)
             self.input_manager.verifying_player(identifier)
 
         active_team_map = maps['teams_women'] if df.loc[0, 'sex'] == 'female' else maps['teams_men']
@@ -231,8 +233,7 @@ class MissingMatchesLoader(BaseLoader):
             duplicates = df[duplicated_mask].sort_values(by='icc_id')
 
             if not duplicates.empty:
-                logging.warning(
-                    f"Found {len(duplicates)} rows with duplicate ICC IDs due to month crossover. Should be 2024-09-30 Gibraltar vs Serbia.")
+                logging.warning(f"Found {len(duplicates)} rows with duplicate ICC IDs due to month crossover. Should be 2024-09-30 Gibraltar vs Serbia.")
                 for icc_id, group in duplicates.groupby('icc_id'):
                     logging.info(
                         f"   [DUPLICATE DETECTED] ID: {icc_id} | {group.iloc[0]['team1']} vs {group.iloc[0]['team2']} on {group.iloc[0]['start_date']}")
@@ -290,8 +291,15 @@ class MissingMatchesLoader(BaseLoader):
         # Test 1: Result Mismatch
         res_mismatch = pd.merge(unmatched_db, icc_df, on=['start_date', 'match_teams_key', 'venue_nation'],
                                 suffixes=('_db', '_icc'))
+        known_issue_logged = False
         for _, row in res_mismatch.iterrows():
-            logging.info("There is a known issue for India Women vs New Zealand Women on 2020-02-27")
+            if row['match_result_db'] == row['match_result_icc']:
+                continue
+            if (not known_issue_logged
+                    and row['match_teams_key'] == tuple(sorted(['India Women', 'New Zealand Women']))
+                    and str(row['start_date']) == '2020-02-27'):
+                logging.info("There is a known issue for India Women vs New Zealand Women on 2020-02-27")
+                known_issue_logged = True
             logging.warning(
                 f"   [RESULT MISMATCH]: {row['match_teams_key']} on {row['start_date']}. DB Result: '{row['match_result_db']}' | ICC Result: '{row['match_result_icc']}'")
 

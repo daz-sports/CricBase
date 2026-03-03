@@ -79,12 +79,14 @@ class ICCScraper:
             'Basseterre': 'Saint Kitts and Nevis', 'Roseau': 'Dominica', 'Belfast': 'Northern Ireland',
             'Bready': 'Northern Ireland', 'Osbourn': 'Antigua and Barbuda', 'Antigua':'Antigua and Barbuda',
             'Basseterre, St Kitts': 'Saint Kitts and Nevis', 'St Kitts': 'Saint Kitts and Nevis', 'Latschach': 'Austria',
-            'Windhoek': 'Namibia', 'Tromode': 'Isle of Man'
+            'Windhoek': 'Namibia', 'Tromode': 'Isle of Man', 'Stormont, Belfast': 'Northern Ireland'
         }
 
         # Cleanup column names and strings
         df.rename(columns={'country': 'venue_nation', 'match_id': 'icc_id'}, inplace=True)
         df['city'] = df['city'].str.title().str.strip()
+        df['team1'] = df['team1'].str.strip().replace({'USA Men': 'United States of America Men'})
+        df['team2'] = df['team2'].str.strip().replace({'USA Men': 'United States of America Men'})
         df['venue_nation'] = df['venue_nation'].str.strip().replace({'USA': 'United States of America'})
 
         df.loc[df['city'].isin(place_map), 'venue_nation'] = df['city'].map(place_map).fillna(df['venue_nation'])
@@ -140,6 +142,7 @@ class ICCScraper:
 
     def _generate_toss_result(self, row: pd.Series) -> str:
         winner = self.team_map.get(row['toss_won_by'])
+        if winner == 'USA Men': winner = 'United States of America Men'
         if not winner: return "Toss Info Missing/No Toss"
         decision = 'bat' if 'bat' in str(row['toss_elected_to']).lower() else 'field'
         return f"{winner} won the toss and chose to {decision}"
@@ -149,7 +152,7 @@ class ICCScraper:
             return "No Result"
 
         winner = self.team_map.get(row['winning_team_id'])
-
+        if winner and winner == 'USA Men': winner = 'United States of America Men'
         res_str_raw = str(row['match_result'])
         res_str_lower = res_str_raw.lower()
 
@@ -166,15 +169,17 @@ class ICCScraper:
                             base_name = team_name.replace(target_suffix, '').strip().lower()
                             if base_name in sub_status:
                                 winner = team_name
+                                if winner == 'USA Men': winner = 'United States of America Men'
                                 break
-
             return f"Tie ({winner} won the Super Over)" if winner else "Match Tied"
 
         margin = str(row['winning_margin']).replace('(DLS method)', '').replace('(D/L method)', '').strip()
         if winner and margin:
+            if winner == 'USA Men': winner = 'United States of America Men'
             is_dls = 'DLS' in row['match_result'] or 'D/L' in row['match_result']
             suffix = (" (DLS method)" if row['start_date'] >= '2014-11-01' else " (D/L method)") if is_dls else ""
             return f"{winner} won by {margin}{suffix}"
+
 
         return str(row['match_result'])
 
