@@ -27,7 +27,7 @@ class CricketDatabase:
                         identifier           TEXT PRIMARY KEY,
                         name                 TEXT NOT NULL,
                         unique_name          TEXT NOT NULL UNIQUE,
-                        key_cricinfo         TEXT NOT NULL UNIQUE,
+                        key_cricinfo         TEXT NOT NULL,
                         key_cricinfo_2       TEXT,
                         key_bcci             TEXT,
                         key_bcci_2           TEXT,

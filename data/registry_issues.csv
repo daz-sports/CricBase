@@ -1,0 +1,2 @@
+logged_at_utc,cricsheet_identifier,cricsheet_name,wrong_cricinfo_id,correct_cricinfo_id,conflicting_cricsheet_id,canonical_name,match_id,notes
+2026-02-22 12:15:18,bb20a975,S Jeyasooriyam,1484969,634625,3cc94090,Sanjeev Jeyasooriyam,1510282,"This Cricinfo ID is clearly wrong, the correct one is occupied by a similarly named player, so that is flagged. I only updated the ID for this clearly wrong person, not the conflicting person."
