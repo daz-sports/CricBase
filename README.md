@@ -1,7 +1,7 @@
 # CricBase
 Documenting my journey building an ETL pipeline for cricsheet ball-by-ball cricket data for use in modelling and analysis.
 
-*Status Update:* I am taking a break from producing modelling output to focus on increasing the size and complexity of the database. This expansion will enable me to utilise more advanced modelling and machine learning techniques to study aspects such as the expected run value of wickets or principal component analysis to classify batter and bowler types.
+*Status Update:* After expanding my personal version of this database to include more games and more metrics, I am resuming work on modelling output.
 
 #### Project Background
 Equipped with a love of sabermetrics and all things sport, there was only so much data collection I could do in my job before I inevitably wanted to get my hands on some cricket data myself. Finding accessible, high-quality ball-by-ball data proved to be a significantly harder task than I expected. I settled on using data provided by Cricsheet (https://cricsheet.org/), a site inspired by Retrosheet that provides similar data for Major League Baseball. This repository serves as an organised collection of a small fraction of the work done on this project over the last year.
